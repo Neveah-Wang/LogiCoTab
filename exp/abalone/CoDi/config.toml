@@ -1,0 +1,78 @@
+parent_dir = "exp/abalone/CoDi"
+real_data_path = "Dataset/abalone/real"
+dataname = "abalone"
+task_type = "regression"
+num_classes = 0
+num_numerical_features = 7
+num_categorical_features = 1
+num_categorical = [
+    3,
+]
+model_type = "transformer"
+seed = 0
+device = "cuda"
+X_num_columns = [
+    "Length",
+    "Diameter",
+    "Height",
+    "Whole weight",
+    "Shucked weight",
+    "Viscera weight",
+    "Shell weight",
+]
+X_cat_columns = [
+    "Sex",
+]
+y_column = [
+    "Rings",
+]
+
+[Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "one-hot"
+y_policy = "minmax"
+y_plus1 = false
+
+[model_params]
+is_y_cond = false
+dataname = "abalone"
+encoder_dim_con = [
+    64,
+    128,
+    256,
+]
+encoder_dim_dis = [
+    64,
+    128,
+    256,
+]
+nf_con = 16
+nf_dis = 64
+mean_type = "epsilon"
+var_type = "fixedsmall"
+activation = "relu"
+training_batch_size = 2100
+eval_batch_size = 2100
+total_epochs_both = 10000
+T = 50
+beta_1 = 1e-05
+beta_T = 0.02
+lr_con = 0.002
+lr_dis = 0.002
+grad_clip = 1
+parallel = false
+sample_step = 2000
+ns_method = 0
+lambda_con = 0.2
+lambda_dis = 0.2
+
+[sample]
+device = "cuda"
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "None"
+cat_encode_policy = "None"
+y_policy = "None"

@@ -1,0 +1,74 @@
+parent_dir = "exp/abalone/TabDDPM"
+real_data_path = "Dataset/abalone/real"
+task_type = "regression"
+dataname = "abalone"
+num_numerical_features = 7
+num_categorical_features = 1
+model_type = "mlp"
+seed = 0
+device = "cuda"
+X_num_columns = [
+    "Length",
+    "Diameter",
+    "Height",
+    "Whole weight",
+    "Shucked weight",
+    "Viscera weight",
+    "Shell weight",
+]
+X_cat_columns = [
+    "Sex",
+]
+y_column = [
+    "Rings",
+]
+
+[model_params]
+num_classes = 0
+is_y_cond = false
+
+[model_params.rtdl_params]
+d_layers = [
+    256,
+    1024,
+    1024,
+    256,
+]
+dropout = 0.0
+
+[diffusion_params]
+num_timesteps = 1000
+gaussian_loss_type = "mse"
+
+[train.main]
+steps = 30000
+lr = 0.002
+weight_decay = 0.0
+batch_size = 1024
+
+[Transform]
+seed = 0
+num_nan_policy = "__none__"
+cat_nan_policy = "__none__"
+cat_min_frequency = "__none__"
+normalization = "quantile"
+cat_encode_policy = "Ordinal"
+y_policy = "quantile"
+
+[sample]
+num_samples = 2923
+batch_size = 2923
+seed = 0
+
+[eval.type]
+eval_model = "catboost"
+eval_type = "synthetic"
+
+[eval.Transform]
+seed = 0
+num_nan_policy = "__none__"
+cat_nan_policy = "__none__"
+cat_min_frequency = "__none__"
+normalization = "None"
+cat_encode_policy = "None"
+y_policy = "None"

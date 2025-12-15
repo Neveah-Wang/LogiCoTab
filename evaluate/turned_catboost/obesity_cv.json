@@ -1,0 +1,22 @@
+{
+    "learning_rate": 0.16147381808339628,
+    "depth": 4,
+    "l2_leaf_reg": 0.2,
+    "bagging_temperature": 0.11959130879575816,
+    "leaf_estimation_iterations": 10,
+    "iterations": 2000,
+    "early_stopping_rounds": 50,
+    "od_pval": 0.001,
+    "task_type": "GPU",
+    "thread_count": 10,
+    "cat_features":[
+        "Gender",
+        "family_history_with_overweight",
+        "FAVC",
+        "CAEC",
+        "SMOKE",
+        "SCC",
+        "CALC",
+        "MTRANS"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "name": "productivity",
+    "id": "productivity--id",
+    "task_type": "regression",
+    "train_size": 837,
+    "val_size": 162,
+    "test_size": 198,
+    "n_num_features": 11,
+    "n_cat_features": 2,
+    "cat_prompt": [
+        "quarter is {quarter}",
+        "department is {department}"
+    ],
+    "label_prompt": "today is {day}"
+}

@@ -1,0 +1,40 @@
+parent_dir = "exp/abalone/GReaT"
+real_data_path = "Dataset/abalone/real"
+task_type = "regression"
+dataname = "abalone"
+num_classes = 0
+num_numerical_features = 7
+num_categorical_features = 1
+num_categorical = [
+    3,
+]
+device = "cuda"
+X_num_columns = [
+    "Length",
+    "Diameter",
+    "Height",
+    "Whole weight",
+    "Shucked weight",
+    "Viscera weight",
+    "Shell weight",
+]
+X_cat_columns = [
+    "Sex",
+]
+y_column = [
+    "Rings",
+]
+
+[model_params]
+dataname = "abalone"
+batch_size = 16
+
+[sample]
+device = "cuda"
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "None"
+cat_encode_policy = "None"
+y_policy = "None"

@@ -1,0 +1,32 @@
+{
+    "name": "Shoppers",
+    "id": "Shoppers--default",
+    "task_type": "binclass",
+    "n_num_features": 10,
+    "n_cat_features": 7,
+    "train_size": 9247,
+    "val_size": 1388,
+    "test_size": 1695,
+    "num_prompt": [
+        "The user accessed Administrative pages {Administrative} times",
+        "The time spent in Administration pages is {Administrative_Duration}",
+        "The user accessed Informational pages {Informational} times",
+        "The time spent in Informational pages is {Informational_Duration}",
+        "The user accessed ProductRelated pages {ProductRelated} times",
+        "The time spent in ProductRelated pages is {ProductRelated_Duration}",
+        "Bounce Rate is {BounceRates}",
+        "Exit Rate is {BounceRates}",
+        "Page Value is {PageValues}",
+        "The distance between the browsing date and a special day is {SpecialDay}"
+    ],
+    "cat_prompt": [
+        "The browsing took place in {Month}",
+        "Operating Systems is {OperatingSystems}",
+        "Browser is {Browser}",
+        "Region is {Region}",
+        "Traffic Type is {TrafficType}",
+        "Visitor Type is {VisitorType}",
+        "Session {Weekend} on a weekend"
+    ],
+    "label_prompt": "The user {Revenue} the purchase"
+}

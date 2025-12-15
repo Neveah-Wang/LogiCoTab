@@ -1,0 +1,57 @@
+parent_dir = "exp/abalone/TabSyn"
+real_data_path = "Dataset/abalone/real"
+task_type = "regression"
+dataname = "abalone"
+num_classes = 0
+num_numerical_features = 7
+num_categorical_features = 1
+num_categorical = [3]
+seed = 0
+device = "cuda"
+X_num_columns = [
+    "Length",
+    "Diameter",
+    "Height",
+    "Whole weight",
+    "Shucked weight",
+    "Viscera weight",
+    "Shell weight",
+]
+X_cat_columns = [
+    "Sex",
+]
+y_column = [
+    "Rings",
+]
+
+[Transform]
+seed = 0
+normalization = "quantile"
+cat_encode_policy = "Ordinal"
+y_policy = "quantile"
+y_plus1 = false
+
+[VAE]
+lr = 0.001
+wd = 0
+d_token = 4
+token_bias = true
+n_head = 1
+factor = 32
+num_layers = 2
+batch_size = 1024
+
+[model_params]
+is_y_cond = false
+batch_size = 4096
+num_epochs = 10001
+
+[sample]
+device = "cuda"
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "None"
+cat_encode_policy = "None"
+y_policy = "None"

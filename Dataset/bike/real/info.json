@@ -1,0 +1,20 @@
+{
+    "name": "Abalone",
+    "id": "abalone--id",
+    "task_type": "regression",
+    "train_size": 12165,
+    "val_size": 2347,
+    "test_size": 2867,
+    "n_num_features": 6,
+    "n_cat_features": 8,
+    "cat_prompt": [
+        "season is {season}",
+        "year is {yr}",
+        "month is {mnth}",
+        "it's about {hr} o'clock",
+        "today {holiday} holiday",
+        "today {workingday} workingday",
+        "weather is {weathersit}"
+    ],
+    "label_prompt": "Today is {weekday}"
+}

@@ -1,0 +1,54 @@
+parent_dir = "exp/adult/CTGAN"
+real_data_path = "Dataset/adult/"
+seed = 0
+device = "cuda"
+task_type = "binclass"
+num_classes = 2
+num_numerical_features = 6
+num_categorical_features = 8
+num_categorical = [
+    9,
+    16,
+    7,
+    15,
+    6,
+    5,
+    2,
+    42,
+]
+X_num_columns = [
+    "age",
+    "fnlwgt",
+    "education_num",
+    "capital-gain",
+    "capital-loss",
+    "hours-per-week",
+]
+X_cat_columns = [
+    "workclass",
+    "education",
+    "marital-status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "native-country",
+]
+y_column = [
+    "salary",
+]
+
+[train_params]
+epochs = 20000
+batch_size = 1000
+
+[sample]
+seed = 0
+num_samples = 26048
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "None"
+y_plus1 = false

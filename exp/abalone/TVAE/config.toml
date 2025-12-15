@@ -1,0 +1,52 @@
+parent_dir = "exp/abalone/TVAE"
+real_data_path = "Dataset/abalone/real"
+dataname = "abalone"
+seed = 0
+device = "cuda"
+task_type = "regression"
+num_classes = 0
+num_numerical_features = 7
+num_categorical_features = 1
+num_categorical = [
+    3,
+]
+X_num_columns = [
+    "Length",
+    "Diameter",
+    "Height",
+    "Whole weight",
+    "Shucked weight",
+    "Viscera weight",
+    "Shell weight",
+]
+X_cat_columns = [
+    "Sex",
+]
+y_column = [
+    "Rings",
+]
+
+[train_params]
+epochs = 30000
+embedding_dim = 512
+batch_size = 4096
+loss_factor = 1.1675626917524105
+compress_dims = [
+    256,
+    512,
+]
+decompress_dims = [
+    256,
+    512,
+]
+
+[sample]
+seed = 0
+num_samples = 2923
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "None"
+y_plus1 = false

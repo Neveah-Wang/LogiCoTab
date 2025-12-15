@@ -1,0 +1,40 @@
+parent_dir = "exp/abalone/smote"
+real_data_path = "Dataset/abalone/real"
+task_type = "regression"
+dataname = "abalone"
+num_classes = 0
+num_numerical_features = 7
+num_categorical_features = 1
+num_categorical = [
+    3,
+]
+device = "cuda"
+X_num_columns = [
+    "Length",
+    "Diameter",
+    "Height",
+    "Whole weight",
+    "Shucked weight",
+    "Viscera weight",
+    "Shell weight",
+]
+X_cat_columns = [
+    "Sex",
+]
+y_column = [
+    "Rings",
+]
+
+[smote_params]
+k_neighbours = 5
+frac_samples = 1
+frac_lam_del = 0.65
+
+[sample]
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "None"

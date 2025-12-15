@@ -1,0 +1,16 @@
+{
+    "name": "insurance",
+    "id": "insurance--id",
+    "task_type": "regression",
+    "train_size": 869,
+    "val_size": 212,
+    "test_size": 257,
+    "n_num_features": 3,
+    "n_cat_features": 3,
+    "cat_prompt": [
+        "sex is {sex}",
+        "The number of children is {children}",
+        "smoker? {smoker}"
+    ],
+    "label_prompt": "region is {region}"
+}

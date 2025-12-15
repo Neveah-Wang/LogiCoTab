@@ -1,0 +1,19 @@
+{
+    "name": "page",
+    "id": "page--default",
+    "task_type": "multiclass",
+    "n_classes": 5,
+    "n_num_features": 10,
+    "n_cat_features": 0,
+    "train_size": 3831,
+    "test_size": 903,
+    "val_size": 739,
+    "label_prompt": "{Class}",
+    "Class": {
+        "1": "text",
+        "2": "horiz. line",
+        "3": "graphic",
+        "4": "vert. line",
+        "5": "picture"
+    }
+}

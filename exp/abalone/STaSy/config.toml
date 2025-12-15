@@ -1,0 +1,45 @@
+parent_dir = "exp/abalone/STaSy"
+real_data_path = "Dataset/abalone/real"
+task_type = "regression"
+dataname = "abalone"
+num_classes = 0
+num_numerical_features = 7
+num_categorical_features = 1
+num_categorical = [3,]
+device = "cuda"
+X_num_columns = [
+    "Length",
+    "Diameter",
+    "Height",
+    "Whole weight",
+    "Shucked weight",
+    "Viscera weight",
+    "Shell weight",
+]
+X_cat_columns = [
+    "Sex",
+]
+y_column = [
+    "Rings",
+]
+
+[Transform]
+seed = 0
+normalization = "quantile"
+cat_encode_policy = "one-hot"
+y_policy = "quantile"
+y_plus1 = false
+
+[model_params]
+is_y_cond = false
+dataname = "abalone"
+
+[sample]
+device = "cuda"
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "None"
+cat_encode_policy = "None"
+y_policy = "None"

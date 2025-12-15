@@ -1,0 +1,19 @@
+{
+    "task_type": "multiclass",
+    "name": "buddy",
+    "id": "buddy--id",
+    "n_classes": 3,
+    "train_size": 12054,
+    "val_size": 3014,
+    "test_size": 3767,
+    "n_num_features": 4,
+    "n_cat_features": 5,
+    "cat_prompt": [
+        "condition is {condition}",
+        "color type is {color_type}",
+        "X1 is {X1}",
+        "X2 is {X2}",
+        "breed category is {breed_category}"
+    ],
+    "label_prompt": "pet category is {pet_category}"
+}

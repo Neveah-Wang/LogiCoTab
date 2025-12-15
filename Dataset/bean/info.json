@@ -1,0 +1,21 @@
+{
+    "name": "bean",
+    "id": "bean--default",
+    "task_type": "multiclass",
+    "n_classes": 7,
+    "n_num_features": 16,
+    "n_cat_features": 0,
+    "train_size": 9527,
+    "test_size": 2246,
+    "val_size": 1838,
+    "label_prompt": "{Class}",
+    "Class": {
+        "0": "BARBUNYA",
+        "1": "BOMBAY",
+        "2": "CALI",
+        "3": "DERMASON",
+        "4": "HOROZ",
+        "5": "SEKER",
+        "6": "SIRA"
+    }
+}

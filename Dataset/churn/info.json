@@ -1,0 +1,17 @@
+{
+    "name": "Churn Modelling",
+    "id": "churn--default",
+    "task_type": "binclass",
+    "n_num_features": 5,
+    "n_cat_features": 5,
+    "train_size": 7000,
+    "val_size": 1200,
+    "test_size": 1800,
+    "cat_prompt": [
+        "country is {Geography}",
+        "gender is {Gender}",
+        "The customer is using {NumOfProducts} bank products",
+        "the customer {HasCrCard} a credit card",
+        "the customer {IsActiveMember} an active member"
+    ]
+}
