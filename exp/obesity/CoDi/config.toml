@@ -1,0 +1,91 @@
+parent_dir = "exp/obesity/CoDi"
+real_data_path = "Dataset/obesity/"
+task_type = "multiclass"
+num_classes = 7
+num_numerical_features = 8
+num_categorical_features = 8
+num_categorical = [
+    2,
+    2,
+    2,
+    4,
+    2,
+    2,
+    4,
+    5,
+]
+seed = 0
+device = "cuda"
+X_num_columns = [
+    "Age",
+    "Height",
+    "Weight",
+    "FCVC",
+    "NCP",
+    "CH2O",
+    "FAF",
+    "TUE",
+]
+X_cat_columns = [
+    "Gender",
+    "family_history_with_overweight",
+    "FAVC",
+    "CAEC",
+    "SMOKE",
+    "SCC",
+    "CALC",
+    "MTRANS",
+]
+y_column = [
+    "NObeyesdad",
+]
+
+[Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "one-hot"
+y_policy = "one-hot"
+y_plus1 = false
+
+[model_params]
+is_y_cond = false
+dataname = "buddy"
+encoder_dim_con = [
+    64,
+    128,
+    256,
+]
+encoder_dim_dis = [
+    64,
+    128,
+    256,
+]
+nf_con = 16
+nf_dis = 64
+mean_type = "epsilon"
+var_type = "fixedsmall"
+activation = "relu"
+training_batch_size = 2100
+eval_batch_size = 2100
+total_epochs_both = 10000
+T = 50
+beta_1 = 1e-05
+beta_T = 0.02
+lr_con = 0.002
+lr_dis = 0.002
+grad_clip = 1
+parallel = false
+sample_step = 2000
+ns_method = 0
+lambda_con = 0.2
+lambda_dis = 0.2
+
+[sample]
+device = "cuda"
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"

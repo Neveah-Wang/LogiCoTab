@@ -1,0 +1,39 @@
+parent_dir = "exp/page/smote"
+real_data_path = "Dataset/page/"
+task_type = "multiclass"
+dataname = "page"
+num_classes = 5
+num_numerical_features = 10
+num_categorical_features = 0
+num_categorical = []
+model_type = "transformer"
+X_num_columns = [
+    "height",
+    "lenght",
+    "area",
+    "eccen",
+    "p_black",
+    "p_and",
+    "mean_tr",
+    "blackpix",
+    "blackand",
+    "wb_trans",
+]
+X_cat_columns = []
+y_column = [
+    "Class",
+]
+
+[smote_params]
+k_neighbours = 5
+frac_samples = 1
+frac_lam_del = 0.65
+
+[sample]
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"

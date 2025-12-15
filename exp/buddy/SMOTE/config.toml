@@ -1,0 +1,43 @@
+parent_dir = "exp/buddy/smote"
+real_data_path = "Dataset/buddy/"
+task_type = "multiclass"
+dataname = "buddy"
+num_classes = 3
+num_numerical_features = 2
+num_categorical_features = 5
+num_categorical = [
+    4,
+    56,
+    20,
+    10,
+    4,
+]
+device = "cuda"
+X_num_columns = [
+    "length(m)",
+    "height(cm)",
+]
+X_cat_columns = [
+    "condition",
+    "color_type",
+    "X1",
+    "X2",
+    "breed_category",
+]
+y_column = [
+    "pet_category",
+]
+
+[smote_params]
+k_neighbours = 5
+frac_samples = 1
+frac_lam_del = 0.65
+
+[sample]
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"

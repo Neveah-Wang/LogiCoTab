@@ -1,0 +1,63 @@
+parent_dir = "exp/bike/TabSyn"
+real_data_path = "Dataset/bike/real"
+task_type = "regression"
+dataname = "bike"
+num_classes = 0
+num_numerical_features = 6
+num_categorical_features = 8
+num_categorical = []
+seed = 0
+device = "cuda"
+X_num_columns = [
+    "temp",
+    "atemp",
+    "hum",
+    "windspeed",
+    "casual",
+    "registered",
+]
+X_cat_columns = [
+    "season",
+    "yr",
+    "mnth",
+    "hr",
+    "holiday",
+    "weekday",
+    "workingday",
+    "weathersit",
+]
+y_column = [
+    "cnt",
+]
+
+[Transform]
+seed = 0
+normalization = "quantile"
+cat_encode_policy = "Ordinal"
+y_policy = "quantile"
+y_plus1 = false
+
+[VAE]
+lr = 0.001
+wd = 0
+d_token = 4
+token_bias = true
+n_head = 1
+factor = 32
+num_layers = 2
+batch_size = 1024
+
+[model_params]
+is_y_cond = false
+batch_size = 4096
+num_epochs = 10001
+
+[sample]
+device = "cuda"
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "None"
+cat_encode_policy = "None"
+y_policy = "None"

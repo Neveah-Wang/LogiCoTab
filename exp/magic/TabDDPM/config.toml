@@ -1,0 +1,76 @@
+parent_dir = "exp/magic/TabDDPM"
+real_data_path = "Dataset/magic/"
+task_type = "binclass"
+num_classes = 2
+num_numerical_features = 10
+num_categorical_features = 0
+num_categorical = []
+model_type = "mlp"
+seed = 0
+device = "cuda"
+X_num_columns = [
+    "Length",
+    "Width",
+    "Size",
+    "Conc",
+    "Conc1",
+    "Asym",
+    "M3Long",
+    "M3Trans",
+    "Alpha",
+    "Dist",
+]
+X_cat_columns = []
+y_column = [
+    "class",
+]
+
+[model_params]
+num_classes = 2
+is_y_cond = false
+
+[model_params.rtdl_params]
+d_layers = [
+    256,
+    1024,
+    1024,
+    256,
+]
+dropout = 0.0
+
+[diffusion_params]
+num_timesteps = 1000
+gaussian_loss_type = "mse"
+
+[train.main]
+steps = 30000
+lr = 0.0020099410620098234
+weight_decay = 0.0
+batch_size = 1024
+
+[Transform]
+seed = 0
+num_nan_policy = "__none__"
+cat_nan_policy = "__none__"
+cat_min_frequency = "__none__"
+normalization = "quantile"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"
+
+[sample]
+num_samples = 13313
+batch_size = 13313
+seed = 0
+
+[eval.type]
+eval_model = "catboost"
+eval_type = "synthetic"
+
+[eval.Transform]
+seed = 0
+num_nan_policy = "__none__"
+cat_nan_policy = "__none__"
+cat_min_frequency = "__none__"
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"

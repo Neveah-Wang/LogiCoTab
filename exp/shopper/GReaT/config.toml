@@ -1,0 +1,55 @@
+parent_dir = "exp/shopper/GReaT"
+real_data_path = "Dataset/shopper/"
+task_type = "binclass"
+dataname = "shopper"
+num_classes = 2
+num_numerical_features = 10
+num_categorical_features = 7
+num_categorical = [
+    10,
+    8,
+    13,
+    9,
+    20,
+    3,
+    2,
+]
+device = "cuda"
+X_num_columns = [
+    "Administrative",
+    "Administrative_Duration",
+    "Informational",
+    "Informational_Duration",
+    "ProductRelated",
+    "ProductRelated_Duration",
+    "BounceRates",
+    "ExitRates",
+    "PageValues",
+    "SpecialDay",
+]
+X_cat_columns = [
+    "Month",
+    "OperatingSystems",
+    "Browser",
+    "Region",
+    "TrafficType",
+    "VisitorType",
+    "Weekend",
+]
+y_column = [
+    "Revenue",
+]
+
+[model_params]
+dataname = "shopper"
+batch_size = 16
+
+[sample]
+device = "cuda"
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"

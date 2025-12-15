@@ -1,0 +1,103 @@
+parent_dir = "exp/bean/CoTable"
+real_data_path = "D:/Study/自学/表格数据生成/v10/Dataset/bean/"
+task_type = "multiclass"
+num_classes = 7
+num_numerical_features = 16
+num_categorical_features = 0
+num_categorical = []
+model_type = "transformer"
+seed = 0
+device = "cuda"
+X_num_columns = [
+    "Area",
+    "Perimeter",
+    "MajorAxisLength",
+    "MinorAxisLength",
+    "AspectRation",
+    "Eccentricity",
+    "ConvexArea",
+    "EquivDiameter",
+    "Extent",
+    "Solidity",
+    "roundness",
+    "Compactness",
+    "ShapeFactor1",
+    "ShapeFactor2",
+    "ShapeFactor3",
+    "ShapeFactor4",
+]
+X_cat_columns = []
+y_column = [
+    "Class",
+]
+
+[Transform]
+seed = 0
+normalization = "quantile"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"
+y_plus1 = false
+
+[VAE]
+lr = 0.003
+epoch = 10000
+wd = 0
+d_token = 4
+token_bias = true
+n_head = 1
+factor = 32
+num_layers = 2
+batch_size = 1024
+scheduler_fac = 0.98
+scheduler_patience = 10
+
+[model_params]
+is_y_cond = true
+d_in = 64
+dim_t = 128
+feedforward_layer = [
+    512,
+    1024,
+    512,
+]
+depth = 2
+ff_dropout = 0.0
+activation = "reglu"
+bert = "prajjwal1/bert-tiny"
+bert_max_length = 6
+
+[model_params.attention]
+n_head = 2
+attention_dropout = 0.0
+
+[ddpm]
+num_Timesteps = 1000
+drop_prob_of_context_mask = 0.9
+gaussian_loss_type = "mse"
+schedule_name = "linear_beta_schedule"
+use_guide = false
+guide_w = 2
+
+[ddpm_train]
+epoch = 30000
+lr = 0.003
+lr_min = 5e-08
+weight_decay = 0.0
+batch_size = 2048
+
+[ddpm_train.lr_scheduler]
+step_size = 15
+gamma = 0.987
+
+[sample]
+device = "cuda"
+batch_size = 20000
+n_sample_of_each_class = 10000
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"
+y_plus1 = false

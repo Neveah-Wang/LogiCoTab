@@ -1,0 +1,45 @@
+parent_dir = "exp/bean/GReaT"
+real_data_path = "Dataset/bean/"
+task_type = "multiclass"
+dataname = "bean"
+num_classes = 7
+num_numerical_features = 16
+num_categorical_features = 0
+num_categorical = []
+device = "cuda"
+X_num_columns = [
+    "Area",
+    "Perimeter",
+    "MajorAxisLength",
+    "MinorAxisLength",
+    "AspectRation",
+    "Eccentricity",
+    "ConvexArea",
+    "EquivDiameter",
+    "Extent",
+    "Solidity",
+    "roundness",
+    "Compactness",
+    "ShapeFactor1",
+    "ShapeFactor2",
+    "ShapeFactor3",
+    "ShapeFactor4",
+]
+X_cat_columns = []
+y_column = [
+    "Class",
+]
+
+[model_params]
+dataname = "bean"
+batch_size = 16
+
+[sample]
+device = "cuda"
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"

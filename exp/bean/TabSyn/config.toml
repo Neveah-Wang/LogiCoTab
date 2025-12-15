@@ -1,0 +1,63 @@
+parent_dir = "exp/bean/TabSyn"
+real_data_path = "Dataset/bean/"
+task_type = "multiclass"
+num_classes = 7
+num_numerical_features = 16
+num_categorical_features = 0
+num_categorical = []
+seed = 0
+device = "cuda"
+X_num_columns = [
+    "Area",
+    "Perimeter",
+    "MajorAxisLength",
+    "MinorAxisLength",
+    "AspectRation",
+    "Eccentricity",
+    "ConvexArea",
+    "EquivDiameter",
+    "Extent",
+    "Solidity",
+    "roundness",
+    "Compactness",
+    "ShapeFactor1",
+    "ShapeFactor2",
+    "ShapeFactor3",
+    "ShapeFactor4",
+]
+X_cat_columns = []
+y_column = [
+    "Class",
+]
+
+[Transform]
+seed = 0
+normalization = "quantile"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"
+y_plus1 = false
+
+[VAE]
+lr = 0.001
+wd = 0
+d_token = 4
+token_bias = true
+n_head = 1
+factor = 32
+num_layers = 2
+batch_size = 1024
+
+[model_params]
+is_y_cond = false
+batch_size = 4096
+num_epochs = 10001
+
+[sample]
+device = "cuda"
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"

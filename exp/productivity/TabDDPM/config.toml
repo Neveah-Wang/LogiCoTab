@@ -1,0 +1,79 @@
+parent_dir = "exp/productivity/TabDDPM"
+real_data_path = "Dataset/productivity/real"
+task_type = "regression"
+dataname = "productivity"
+num_numerical_features = 10
+num_categorical_features = 3
+model_type = "mlp"
+seed = 0
+device = "cuda"
+X_num_columns = [
+    "team",
+    "targeted_productivity",
+    "smv",
+    "wip",
+    "over_time",
+    "incentive",
+    "idle_time",
+    "idle_men",
+    "no_of_style_change",
+    "no_of_workers",
+]
+X_cat_columns = [
+    "quarter",
+    "department",
+    "day",
+]
+y_column = [
+    "actual_productivity",
+]
+
+[model_params]
+num_classes = 0
+is_y_cond = false
+
+[model_params.rtdl_params]
+d_layers = [
+    256,
+    1024,
+    1024,
+    256,
+]
+dropout = 0.0
+
+[diffusion_params]
+num_timesteps = 1000
+gaussian_loss_type = "mse"
+
+[train.main]
+steps = 30000
+lr = 0.002
+weight_decay = 0.0
+batch_size = 1024
+
+[Transform]
+seed = 0
+num_nan_policy = "__none__"
+cat_nan_policy = "__none__"
+cat_min_frequency = "__none__"
+normalization = "quantile"
+cat_encode_policy = "Ordinal"
+y_policy = "quantile"
+
+[sample]
+num_samples = 837
+batch_size = 837
+seed = 0
+
+[eval.type]
+eval_model = "catboost"
+eval_type = "synthetic"
+
+[eval.Transform]
+seed = 0
+num_nan_policy = "__none__"
+cat_nan_policy = "__none__"
+cat_min_frequency = "__none__"
+normalization = "None"
+cat_encode_policy = "None"
+y_policy = "None"

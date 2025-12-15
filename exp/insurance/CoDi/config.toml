@@ -1,0 +1,79 @@
+parent_dir = "exp/insurance/CoDi"
+real_data_path = "Dataset/insurance/real"
+dataname = "insurance"
+task_type = "regression"
+num_classes = 0
+num_numerical_features = 2
+num_categorical_features = 4
+num_categorical = [
+    2,
+    6,
+    2,
+    4,
+]
+model_type = "transformer"
+seed = 0
+device = "cuda"
+X_num_columns = [
+    "age",
+    "bmi",
+]
+X_cat_columns = [
+    "sex",
+    "children",
+    "smoker",
+    "region",
+]
+y_column = [
+    "charges",
+]
+
+[Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "one-hot"
+y_policy = "minmax"
+y_plus1 = false
+
+[model_params]
+is_y_cond = false
+dataname = "insurance"
+encoder_dim_con = [
+    64,
+    128,
+    256,
+]
+encoder_dim_dis = [
+    64,
+    128,
+    256,
+]
+nf_con = 16
+nf_dis = 64
+mean_type = "epsilon"
+var_type = "fixedsmall"
+activation = "relu"
+training_batch_size = 2100
+eval_batch_size = 2100
+total_epochs_both = 10000
+T = 50
+beta_1 = 1e-05
+beta_T = 0.02
+lr_con = 0.002
+lr_dis = 0.002
+grad_clip = 1
+parallel = false
+sample_step = 2000
+ns_method = 0
+lambda_con = 0.2
+lambda_dis = 0.2
+
+[sample]
+device = "cuda"
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "None"
+cat_encode_policy = "None"
+y_policy = "None"

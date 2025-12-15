@@ -1,0 +1,48 @@
+parent_dir = "exp/insurance/STaSy"
+real_data_path = "Dataset/insurance/real"
+task_type = "regression"
+dataname = "insurance"
+num_classes = 0
+num_numerical_features = 2
+num_categorical_features = 4
+num_categorical = [
+    2,
+    6,
+    2,
+    4,
+]
+device = "cuda"
+X_num_columns = [
+    "age",
+    "bmi",
+]
+X_cat_columns = [
+    "sex",
+    "children",
+    "smoker",
+    "region",
+]
+y_column = [
+    "charges",
+]
+
+[Transform]
+seed = 0
+normalization = "quantile"
+cat_encode_policy = "one-hot"
+y_policy = "quantile"
+y_plus1 = false
+
+[model_params]
+is_y_cond = false
+dataname = "insurance"
+
+[sample]
+device = "cuda"
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "None"
+cat_encode_policy = "None"
+y_policy = "None"

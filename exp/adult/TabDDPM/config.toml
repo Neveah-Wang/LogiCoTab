@@ -1,0 +1,81 @@
+parent_dir = "exp/adult/TabDDPM"
+real_data_path = "Dataset/adult/"
+task_type = "binclass"
+num_numerical_features = 6
+num_categorical_features = 8
+model_type = "mlp"
+seed = 0
+device = "cuda"
+X_num_columns = [
+    "age",
+    "fnlwgt",
+    "education_num",
+    "capital-gain",
+    "capital-loss",
+    "hours-per-week",
+]
+X_cat_columns = [
+    "workclass",
+    "education",
+    "marital-status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "native-country",
+]
+y_column = [
+    "salary",
+]
+
+[model_params]
+num_classes = 2
+is_y_cond = false
+
+[model_params.rtdl_params]
+d_layers = [
+    256,
+    1024,
+    1024,
+    1024,
+    1024,
+    256,
+]
+dropout = 0.0
+
+[diffusion_params]
+num_timesteps = 1000
+gaussian_loss_type = "mse"
+
+[train.main]
+steps = 30000
+lr = 0.0020099410620098234
+weight_decay = 0.0
+batch_size = 1024
+
+[Transform]
+seed = 0
+num_nan_policy = "__none__"
+cat_nan_policy = "__none__"
+cat_min_frequency = "__none__"
+normalization = "quantile"
+cat_encode_policy = "Ordinal"
+y_policy = "None"
+
+[sample]
+num_samples = 26048
+batch_size = 26048
+seed = 0
+
+[eval.type]
+eval_model = "catboost"
+eval_type = "synthetic"
+
+[eval.Transform]
+seed = 0
+num_nan_policy = "__none__"
+cat_nan_policy = "__none__"
+cat_min_frequency = "__none__"
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "None"

@@ -1,0 +1,46 @@
+parent_dir = "exp/bike/GReaT"
+real_data_path = "Dataset/bike/real"
+task_type = "regression"
+dataname = "bike"
+num_classes = 0
+num_numerical_features = 6
+num_categorical_features = 8
+num_categorical = [
+    2,
+]
+device = "cuda"
+X_num_columns = [
+    "temp",
+    "atemp",
+    "hum",
+    "windspeed",
+    "casual",
+    "registered",
+]
+X_cat_columns = [
+    "season",
+    "yr",
+    "mnth",
+    "hr",
+    "holiday",
+    "weekday",
+    "workingday",
+    "weathersit",
+]
+y_column = [
+    "cnt",
+]
+
+[model_params]
+dataname = "bike"
+batch_size = 16
+
+[sample]
+device = "cuda"
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "None"
+cat_encode_policy = "None"
+y_policy = "None"

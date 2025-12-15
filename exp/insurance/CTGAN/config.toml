@@ -1,0 +1,43 @@
+parent_dir = "exp/insurance/CTGAN"
+real_data_path = "Dataset/insurance/real"
+dataname = "insurance"
+seed = 0
+device = "cuda"
+task_type = "regression"
+num_classes = 0
+num_numerical_features = 2
+num_categorical_features = 4
+num_categorical = [
+    2,
+    6,
+    2,
+    4,
+]
+X_num_columns = [
+    "age",
+    "bmi",
+]
+X_cat_columns = [
+    "sex",
+    "children",
+    "smoker",
+    "region",
+]
+y_column = [
+    "charges",
+]
+
+[train_params]
+epochs = 20000
+batch_size = 1000
+
+[sample]
+seed = 0
+num_samples = 869
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "None"
+y_plus1 = false

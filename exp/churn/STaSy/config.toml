@@ -1,0 +1,53 @@
+parent_dir = "exp/churn/STaSy"
+real_data_path = "Dataset/churn/"
+task_type = "binclass"
+dataname = "adult"
+num_classes = 2
+num_numerical_features = 5
+num_categorical_features = 5
+num_categorical = [
+    3,
+    2,
+    4,
+    2,
+    2,
+]
+device = "cuda"
+X_num_columns = [
+    "CreditScore",
+    "Age",
+    "Tenure",
+    "Balance",
+    "EstimatedSalary",
+]
+X_cat_columns = [
+    "Geography",
+    "Gender",
+    "NumOfProducts",
+    "HasCrCard",
+    "IsActiveMember",
+]
+y_column = [
+    "Exited",
+]
+
+[Transform]
+seed = 0
+normalization = "quantile"
+cat_encode_policy = "one-hot"
+y_policy = "one-hot"
+y_plus1 = false
+
+[model_params]
+is_y_cond = false
+dataname = "churn"
+
+[sample]
+device = "cuda"
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"

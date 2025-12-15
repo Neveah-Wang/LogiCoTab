@@ -1,0 +1,60 @@
+parent_dir = "exp/bike/STaSy"
+real_data_path = "Dataset/bike/real"
+task_type = "regression"
+dataname = "bike"
+num_classes = 0
+num_numerical_features = 6
+num_categorical_features = 8
+num_categorical = [
+    4,
+    2,
+    12,
+    24,
+    2,
+    7,
+    2,
+    4,
+]
+device = "cuda"
+X_num_columns = [
+    "temp",
+    "atemp",
+    "hum",
+    "windspeed",
+    "casual",
+    "registered",
+]
+X_cat_columns = [
+    "season",
+    "yr",
+    "mnth",
+    "hr",
+    "holiday",
+    "weekday",
+    "workingday",
+    "weathersit",
+]
+y_column = [
+    "cnt",
+]
+
+[Transform]
+seed = 0
+normalization = "quantile"
+cat_encode_policy = "one-hot"
+y_policy = "quantile"
+y_plus1 = false
+
+[model_params]
+is_y_cond = false
+dataname = "bike"
+
+[sample]
+device = "cuda"
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "None"
+cat_encode_policy = "None"
+y_policy = "None"

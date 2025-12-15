@@ -1,0 +1,52 @@
+parent_dir = "exp/page/TVAE"
+real_data_path = "Dataset/page/"
+dataname = "page"
+seed = 0
+device = "cuda"
+task_type = "multiclass"
+num_classes = 5
+num_numerical_features = 10
+num_categorical_features = 0
+num_categorical = []
+model_type = "transformer"
+X_num_columns = [
+    "height",
+    "lenght",
+    "area",
+    "eccen",
+    "p_black",
+    "p_and",
+    "mean_tr",
+    "blackpix",
+    "blackand",
+    "wb_trans",
+]
+X_cat_columns = []
+y_column = [
+    "Class",
+]
+
+[train_params]
+epochs = 30000
+embedding_dim = 512
+batch_size = 4096
+loss_factor = 1.1675626917524105
+compress_dims = [
+    256,
+    512,
+]
+decompress_dims = [
+    256,
+    512,
+]
+
+[sample]
+seed = 0
+num_samples = 3831
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"
+y_plus1 = false

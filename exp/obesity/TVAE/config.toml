@@ -1,0 +1,67 @@
+parent_dir = "exp/obesity/TVAE"
+real_data_path = "Dataset/obesity/"
+dataname = "obesity"
+seed = 0
+device = "cuda"
+task_type = "binclass"
+num_classes = 7
+num_numerical_features = 8
+num_categorical_features = 8
+num_categorical = [
+    2,
+    2,
+    2,
+    4,
+    2,
+    2,
+    4,
+    5,
+]
+X_num_columns = [
+    "Age",
+    "Height",
+    "Weight",
+    "FCVC",
+    "NCP",
+    "CH2O",
+    "FAF",
+    "TUE",
+]
+X_cat_columns = [
+    "Gender",
+    "family_history_with_overweight",
+    "FAVC",
+    "CAEC",
+    "SMOKE",
+    "SCC",
+    "CALC",
+    "MTRANS",
+]
+y_column = [
+    "NObeyesdad",
+]
+
+[train_params]
+epochs = 30000
+embedding_dim = 512
+batch_size = 4096
+loss_factor = 1.1675626917524105
+compress_dims = [
+    256,
+    512,
+]
+decompress_dims = [
+    256,
+    512,
+]
+
+[sample]
+seed = 0
+num_samples = 1688
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"
+y_plus1 = false

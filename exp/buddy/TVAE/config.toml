@@ -1,0 +1,55 @@
+parent_dir = "exp/buddy/TVAE"
+real_data_path = "Dataset/buddy/"
+dataname = "buddy"
+seed = 0
+device = "cuda"
+task_type = "multiclass"
+num_classes = 3
+num_numerical_features = 2
+num_categorical_features = 5
+num_categorical = [
+    4,
+    56,
+    20,
+    10,
+    4,
+]
+X_num_columns = [
+    "length(m)",
+    "height(cm)",
+]
+X_cat_columns = [
+    "condition",
+    "color_type",
+    "X1",
+    "X2",
+    "breed_category",
+]
+y_column = [
+    "pet_category",
+]
+
+[train_params]
+epochs = 30000
+embedding_dim = 512
+batch_size = 4096
+loss_factor = 1.1675626917524105
+compress_dims = [
+    256,
+    512,
+]
+decompress_dims = [
+    256,
+    512,
+]
+
+[sample]
+seed = 0
+num_samples = 12054
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"
+y_plus1 = false

@@ -1,0 +1,58 @@
+parent_dir = "exp/churn/TVAE"
+real_data_path = "Dataset/churn/"
+dataname = "churn"
+seed = 0
+device = "cuda"
+task_type = "binclass"
+num_classes = 2
+num_numerical_features = 5
+num_categorical_features = 5
+num_categorical = [
+    3,
+    2,
+    4,
+    2,
+    2,
+]
+X_num_columns = [
+    "CreditScore",
+    "Age",
+    "Tenure",
+    "Balance",
+    "EstimatedSalary",
+]
+X_cat_columns = [
+    "Geography",
+    "Gender",
+    "NumOfProducts",
+    "HasCrCard",
+    "IsActiveMember",
+]
+y_column = [
+    "Exited",
+]
+
+[train_params]
+epochs = 30000
+embedding_dim = 512
+batch_size = 4096
+loss_factor = 1.1675626917524105
+compress_dims = [
+    256,
+    512,
+]
+decompress_dims = [
+    256,
+    512,
+]
+
+[sample]
+seed = 0
+num_samples = 7000
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"
+y_plus1 = false

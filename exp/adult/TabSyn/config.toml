@@ -1,0 +1,72 @@
+parent_dir = "exp/adult/TabSyn"
+real_data_path = "Dataset/adult/"
+task_type = "binclass"
+num_classes = 2
+num_numerical_features = 6
+num_categorical_features = 8
+num_categorical = [
+    9,
+    16,
+    7,
+    15,
+    6,
+    5,
+    2,
+    42,
+]
+model_type = "transformer"
+seed = 0
+device = "cuda"
+X_num_columns = [
+    "age",
+    "fnlwgt",
+    "education_num",
+    "capital-gain",
+    "capital-loss",
+    "hours-per-week",
+]
+X_cat_columns = [
+    "workclass",
+    "education",
+    "marital-status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "native-country",
+]
+y_column = [
+    "salary",
+]
+
+[Transform]
+seed = 0
+normalization = "quantile"
+cat_encode_policy = "Ordinal"
+y_policy = "None"
+y_plus1 = false
+
+[VAE]
+lr = 0.001
+wd = 0
+d_token = 4
+token_bias = true
+n_head = 1
+factor = 32
+num_layers = 2
+batch_size = 1024
+
+[model_params]
+is_y_cond = false
+batch_size = 4096
+num_epochs = 10001
+
+[sample]
+device = "cuda"
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "None"

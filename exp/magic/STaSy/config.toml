@@ -1,0 +1,46 @@
+parent_dir = "exp/magic/STaSy"
+real_data_path = "Dataset/magic/"
+task_type = "binclass"
+dataname = "buddy"
+num_classes = 2
+num_numerical_features = 10
+num_categorical_features = 0
+num_categorical = []
+device = "cuda"
+X_num_columns = [
+    "Length",
+    "Width",
+    "Size",
+    "Conc",
+    "Conc1",
+    "Asym",
+    "M3Long",
+    "M3Trans",
+    "Alpha",
+    "Dist",
+]
+X_cat_columns = []
+y_column = [
+    "class",
+]
+
+[Transform]
+seed = 0
+normalization = "quantile"
+cat_encode_policy = "one-hot"
+y_policy = "one-hot"
+y_plus1 = false
+
+[model_params]
+is_y_cond = false
+dataname = "magic"
+
+[sample]
+device = "cuda"
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"

@@ -1,0 +1,57 @@
+parent_dir = "exp/page/TabSyn"
+real_data_path = "Dataset/page/"
+task_type = "multiclass"
+num_classes = 5
+num_numerical_features = 10
+num_categorical_features = 0
+num_categorical = []
+seed = 0
+device = "cuda"
+X_num_columns = [
+    "height",
+    "lenght",
+    "area",
+    "eccen",
+    "p_black",
+    "p_and",
+    "mean_tr",
+    "blackpix",
+    "blackand",
+    "wb_trans",
+]
+X_cat_columns = []
+y_column = [
+    "Class",
+]
+
+[Transform]
+seed = 0
+normalization = "quantile"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"
+y_plus1 = false
+
+[VAE]
+lr = 0.001
+wd = 0
+d_token = 4
+token_bias = true
+n_head = 1
+factor = 32
+num_layers = 2
+batch_size = 1024
+
+[model_params]
+is_y_cond = false
+batch_size = 4096
+num_epochs = 10001
+
+[sample]
+device = "cuda"
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"

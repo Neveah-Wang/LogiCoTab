@@ -1,0 +1,59 @@
+parent_dir = "exp/productivity/TVAE"
+real_data_path = "Dataset/productivity/real"
+dataname = "productivity"
+seed = 0
+device = "cuda"
+task_type = "regression"
+num_classes = 0
+num_numerical_features = 10
+num_categorical_features = 3
+num_categorical = [
+    5,
+    2,
+    6,
+]
+X_num_columns = [
+    "team",
+    "targeted_productivity",
+    "smv",
+    "wip",
+    "over_time",
+    "incentive",
+    "idle_time",
+    "idle_men",
+    "no_of_style_change",
+    "no_of_workers",
+]
+X_cat_columns = [
+    "quarter",
+    "department",
+    "day",
+]
+y_column = [
+    "actual_productivity",
+]
+
+[train_params]
+epochs = 30000
+embedding_dim = 512
+batch_size = 4096
+loss_factor = 1.1675626917524105
+compress_dims = [
+    256,
+    512,
+]
+decompress_dims = [
+    256,
+    512,
+]
+
+[sample]
+seed = 0
+num_samples = 837
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "None"
+y_plus1 = false

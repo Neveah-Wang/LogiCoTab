@@ -1,0 +1,53 @@
+parent_dir = "exp/bike/smote"
+real_data_path = "Dataset/bike/real"
+task_type = "regression"
+dataname = "bike"
+num_classes = 0
+num_numerical_features = 6
+num_categorical_features = 8
+num_categorical = [
+    4,
+    2,
+    12,
+    24,
+    2,
+    7,
+    2,
+    4,
+]
+device = "cuda"
+X_num_columns = [
+    "temp",
+    "atemp",
+    "hum",
+    "windspeed",
+    "casual",
+    "registered",
+]
+X_cat_columns = [
+    "season",
+    "yr",
+    "mnth",
+    "hr",
+    "holiday",
+    "weekday",
+    "workingday",
+    "weathersit",
+]
+y_column = [
+    "cnt",
+]
+
+[smote_params]
+k_neighbours = 5
+frac_samples = 1
+frac_lam_del = 0.65
+
+[sample]
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "None"

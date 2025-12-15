@@ -1,0 +1,53 @@
+parent_dir = "exp/adult/smote"
+real_data_path = "Dataset/adult/"
+task_type = "binclass"
+dataname = "adult"
+num_classes = 2
+num_numerical_features = 6
+num_categorical_features = 8
+num_categorical = [
+    9,
+    16,
+    7,
+    15,
+    6,
+    5,
+    2,
+    42,
+]
+device = "cuda"
+X_num_columns = [
+    "age",
+    "fnlwgt",
+    "education_num",
+    "capital-gain",
+    "capital-loss",
+    "hours-per-week",
+]
+X_cat_columns = [
+    "workclass",
+    "education",
+    "marital-status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "native-country",
+]
+y_column = [
+    "salary",
+]
+
+[smote_params]
+k_neighbours = 5
+frac_samples = 1
+frac_lam_del = 0.65
+
+[sample]
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "None"

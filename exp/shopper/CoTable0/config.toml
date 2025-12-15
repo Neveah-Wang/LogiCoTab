@@ -1,0 +1,114 @@
+parent_dir = "exp/shopper/CoTable"
+real_data_path = "Dataset/shopper/"
+dataname = "shopper"
+task_type = "binclass"
+num_classes = 2
+num_numerical_features = 10
+num_categorical_features = 7
+num_categorical = [
+    10,
+    8,
+    13,
+    9,
+    20,
+    3,
+    2,
+]
+model_type = "transformer"
+seed = 0
+device = "cuda"
+X_num_columns = [
+    "Administrative",
+    "Administrative_Duration",
+    "Informational",
+    "Informational_Duration",
+    "ProductRelated",
+    "ProductRelated_Duration",
+    "BounceRates",
+    "ExitRates",
+    "PageValues",
+    "SpecialDay",
+]
+X_cat_columns = [
+    "Month",
+    "OperatingSystems",
+    "Browser",
+    "Region",
+    "TrafficType",
+    "VisitorType",
+    "Weekend",
+]
+y_column = [
+    "Revenue",
+]
+
+[Transform]
+seed = 0
+normalization = "quantile"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"
+y_plus1 = false
+
+[VAE]
+lr = 0.005
+epoch = 30000
+wd = 0
+d_token = 5
+token_bias = true
+n_head = 1
+factor = 32
+num_layers = 2
+batch_size = 1024
+scheduler_fac = 0.985
+scheduler_patience = 10
+
+[model_params]
+is_y_cond = true
+d_in = 85
+dim_t = 128
+feedforward_layer = [
+    1024,
+    2048,
+    2048,
+    1024,
+]
+depth = 2
+ff_dropout = 0.0
+activation = "reglu"
+bert = "prajjwal1/bert-tiny"
+
+[model_params.attention]
+n_head = 1
+attention_dropout = 0.0
+
+[ddpm]
+num_Timesteps = 1000
+drop_prob_of_context_mask = 0.9
+gaussian_loss_type = "mse"
+schedule_name = "linear_beta_schedule"
+use_guide = false
+guide_w = 2
+
+[ddpm_train]
+epoch = 50000
+lr = 0.002
+lr_min = 5e-06
+weight_decay = 0.0
+batch_size = 1024
+
+[ddpm_train.lr_scheduler]
+step_size = 20
+gamma = 0.988
+
+[sample]
+device = "cuda"
+n_sample_of_each_class = 10000
+batch_size = 8631
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"
+y_plus1 = false

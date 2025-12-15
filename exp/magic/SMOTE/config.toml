@@ -1,0 +1,39 @@
+parent_dir = "exp/magic/smote"
+real_data_path = "Dataset/magic/"
+task_type = "binclass"
+dataname = "magic"
+num_classes = 2
+num_numerical_features = 10
+num_categorical_features = 0
+num_categorical = []
+device = "cuda"
+X_num_columns = [
+    "Length",
+    "Width",
+    "Size",
+    "Conc",
+    "Conc1",
+    "Asym",
+    "M3Long",
+    "M3Trans",
+    "Alpha",
+    "Dist",
+]
+X_cat_columns = []
+y_column = [
+    "class",
+]
+
+[smote_params]
+k_neighbours = 5
+frac_samples = 1
+frac_lam_del = 0.65
+
+[sample]
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"

@@ -1,0 +1,106 @@
+parent_dir = "exp/churn/CoTable"
+real_data_path = "D:/Study/自学/表格数据生成/v11/Dataset/churn/"
+task_type = "binclass"
+dataname = "churn"
+num_classes = 2
+num_numerical_features = 5
+num_categorical_features = 5
+num_categorical = [
+    3,
+    2,
+    4,
+    2,
+    2,
+]
+model_type = "transformer"
+seed = 0
+device = "cuda"
+X_num_columns = [
+    "CreditScore",
+    "Age",
+    "Tenure",
+    "Balance",
+    "EstimatedSalary",
+]
+X_cat_columns = [
+    "Geography",
+    "Gender",
+    "NumOfProducts",
+    "HasCrCard",
+    "IsActiveMember",
+]
+y_column = [
+    "Exited",
+]
+
+[Transform]
+seed = 0
+normalization = "quantile"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"
+y_plus1 = false
+
+[VAE]
+lr = 0.004
+epoch = 10000
+wd = 0
+d_token = 5
+token_bias = true
+n_head = 1
+factor = 32
+num_layers = 2
+batch_size = 1024
+scheduler_fac = 0.985
+scheduler_patience = 10
+
+[model_params]
+is_y_cond = true
+d_in = 50
+dim_t = 128
+feedforward_layer = [
+    512,
+    1024,
+    1024,
+    512,
+]
+depth = 2
+ff_dropout = 0.0
+activation = "reglu"
+bert = "prajjwal1/bert-tiny"
+bert_max_length = 10
+
+[model_params.attention]
+n_head = 2
+attention_dropout = 0.0
+
+[ddpm]
+num_Timesteps = 1000
+drop_prob_of_context_mask = 0.9
+gaussian_loss_type = "mse"
+schedule_name = "linear_beta_schedule"
+use_guide = false
+guide_w = 2
+
+[ddpm_train]
+epoch = 100000
+lr = 0.002
+lr_min = 5e-06
+weight_decay = 0.0
+batch_size = 1024
+
+[ddpm_train.lr_scheduler]
+step_size = 20
+gamma = 0.988
+
+[sample]
+device = "cuda"
+n_sample_of_each_class = 10000
+batch_size = 8631
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"
+y_plus1 = false

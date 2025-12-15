@@ -1,0 +1,65 @@
+parent_dir = "exp/bike/TVAE"
+real_data_path = "Dataset/bike/real"
+dataname = "bike"
+seed = 0
+device = "cuda"
+task_type = "regression"
+num_classes = 0
+num_numerical_features = 6
+num_categorical_features = 8
+num_categorical = [
+    4,
+    2,
+    12,
+    24,
+    2,
+    7,
+    2,
+    4,
+]
+X_num_columns = [
+    "temp",
+    "atemp",
+    "hum",
+    "windspeed",
+    "casual",
+    "registered",
+]
+X_cat_columns = [
+    "season",
+    "yr",
+    "mnth",
+    "hr",
+    "holiday",
+    "weekday",
+    "workingday",
+    "weathersit",
+]
+y_column = [
+    "cnt",
+]
+
+[train_params]
+epochs = 30000
+embedding_dim = 512
+batch_size = 4096
+loss_factor = 1.1675626917524105
+compress_dims = [
+    256,
+    512,
+]
+decompress_dims = [
+    256,
+    512,
+]
+
+[sample]
+seed = 0
+num_samples = 12165
+
+[eval.Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "Ordinal"
+y_policy = "None"
+y_plus1 = false

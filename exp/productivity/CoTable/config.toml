@@ -1,0 +1,126 @@
+parent_dir = "exp/productivity/CoTable"
+real_data_path = "Dataset/productivity/"
+task_type = "regression"
+dataname = "productivity"
+num_classes = 6
+num_numerical_features = 11
+num_categorical_features = 2
+num_categorical = [
+    5,
+    2,
+]
+model_type = "transformer"
+seed = 0
+device = "cuda"
+X_num_columns = [
+    "team",
+    "targeted_productivity",
+    "smv",
+    "wip",
+    "over_time",
+    "incentive",
+    "idle_time",
+    "idle_men",
+    "no_of_style_change",
+    "no_of_workers",
+    "actual_productivity",
+]
+X_cat_columns = [
+    "quarter",
+    "department",
+]
+y_column = [
+    "day",
+]
+X_num_columns_real = [
+    "team",
+    "targeted_productivity",
+    "smv",
+    "wip",
+    "over_time",
+    "incentive",
+    "idle_time",
+    "idle_men",
+    "no_of_style_change",
+    "no_of_workers",
+]
+X_cat_columns_real = [
+    "quarter",
+    "department",
+    "day",
+]
+y_column_real = [
+    "actual_productivity",
+]
+
+[Transform]
+seed = 0
+normalization = "quantile"
+cat_encode_policy = "Ordinal"
+y_policy = "Ordinal"
+y_plus1 = false
+
+[VAE]
+lr = 0.005
+epoch = 30000
+wd = 0
+d_token = 5
+token_bias = true
+n_head = 1
+factor = 32
+num_layers = 2
+batch_size = 1024
+scheduler_fac = 0.98
+scheduler_patience = 10
+
+[model_params]
+is_y_cond = true
+d_in = 65
+dim_t = 128
+feedforward_layer = [
+    1024,
+    2048,
+    2048,
+    1024,
+]
+depth = 1
+ff_dropout = 0.0
+activation = "reglu"
+bert = "prajjwal1/bert-tiny"
+bert_max_length = 10
+
+[model_params.attention]
+n_head = 1
+attention_dropout = 0.0
+
+[ddpm]
+num_Timesteps = 1000
+drop_prob_of_context_mask = 0.9
+gaussian_loss_type = "mse"
+schedule_name = "linear_beta_schedule"
+use_guide = false
+guide_w = 2
+
+[ddpm_train]
+epoch = 100000
+lr = 0.003
+lr_min = 5e-08
+weight_decay = 0.0
+batch_size = 1024
+
+[ddpm_train.lr_scheduler]
+step_size = 15
+gamma = 0.988
+
+[sample]
+device = "cuda"
+batch_size = 20000
+n_sample_of_each_class = 10000
+seed = 0
+
+[eval.Transform]
+seed = 0
+normalization = "None"
+cat_encode_policy = "None"
+y_policy = "None"
+y_plus1 = false
