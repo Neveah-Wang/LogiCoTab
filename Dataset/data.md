@@ -1,7 +1,22 @@
 ## ✅Adult
+IR = 多数类样本/少数类样本
+
+训练集：
+ - 样本数量：26048
+ - 多数类样本数（salary is less than 50k）：19775
+ - 少数类样本数（salary is greater than or equal to 50k）：6273
+ - IR = 3.15
+
 数据来源：https://archive.ics.uci.edu/dataset/2/adult
 
 ## ✅shopper
+
+训练集：
+ - 样本数量：9247
+ - 多数类样本数（False）：7839
+ - 少数类样本数（True）：1408
+ - IR = 5.57
+
 数据来源：https://archive.ics.uci.edu/dataset/468/online+shoppers+purchasing+intention+dataset 或者 https://www.kaggle.com/datasets/henrysue/online-shoppers-intention
 
 ## ❌convertype
@@ -30,12 +45,24 @@ https://www.kaggle.com/datasets/uciml/forest-cover-type-dataset/data
 3. TabSyn中使用了
 4. 问题：目前我的方法生成的数据中包含逻辑错误数据！！！
 
+训练集：
+ - 样本数量：13313
+ - 多数类样本数（False）：8636
+ - 少数类样本数（True）：4677
+ - IR = 1.85
+
 数据来源： https://archive.ics.uci.edu/dataset/159/magic+gamma+telescope
 
 ## ✅churn
 1. 没有明显的逻辑关系
 2. label列为0时，NumOfProduct不存在4
 3. TabDDPM 使用了
+
+训练集：
+ - 样本数量：7000
+ - 多数类样本数（0）：5577
+ - 少数类样本数（1）：1423
+ - IR = 3.92
 
 数据来源：https://www.kaggle.com/datasets/shrutimechlearn/churn-modelling
 

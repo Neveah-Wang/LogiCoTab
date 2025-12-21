@@ -8,6 +8,7 @@ import tomli
 import torch
 from pathlib import Path
 from tqdm import tqdm
+from sklearn.utils import shuffle
 from sklearn.model_selection import train_test_split
 from typing import Any, Literal, Optional, Union, cast, Tuple, Dict, List
 
@@ -209,6 +210,7 @@ def make_dataset_for_evaluation(raw_config, synthetic_data_path, real_data_path,
     # T_dict["normalization"] = "minmax"
     # T_dict["cat_encoding"] = None
 
+    # 不需要 change_val。我们的目标的测试合成的数据得的质量，每次都不一样。多合成->测试 几次，即可避免偶然性。
     if change_val:  # 把 train 和 val 合并打乱，再划分一遍
         X_num_real, X_cat_real, y_real, X_num_val, X_cat_val, y_val = read_changed_val(real_data_path, val_size=0.2)
 
@@ -226,7 +228,7 @@ def make_dataset_for_evaluation(raw_config, synthetic_data_path, real_data_path,
         if not change_val:
             X_num_real, X_cat_real, y_real = read_pure_data(real_data_path, raw_config, split='train')
         X_num_fake, X_cat_fake, y_fake = read_pure_data(synthetic_data_path, raw_config, split='synthesis')
-        y = np.concatenate([y_real, y_fake], axis=0)
+        y_train = np.concatenate([y_real, y_fake], axis=0)
 
         X_num_train = None
         if X_num_real is not None:
@@ -255,6 +257,24 @@ def make_dataset_for_evaluation(raw_config, synthetic_data_path, real_data_path,
         X_num_val = val[raw_config['X_num_columns_real']].values.astype(np.float32)
         X_cat_val = val[raw_config['X_cat_columns_real']].values
         y_val = val[raw_config['y_column_real']].values.astype(np.float32)
+
+    else:
+        train = concat_to_pd(raw_config, X_num_train, X_cat_train, y_train)
+        # train.to_csv(f"{synthetic_data_path}/merge1.csv", index=False)
+        train = shuffle(train)
+        # train.to_csv(f"{synthetic_data_path}/merge2.csv", index=False)
+        # breakpoint()
+        X_num_train = train[raw_config['X_num_columns']].values
+        X_cat_train = train[raw_config['X_cat_columns']].values
+        y_train = train[raw_config['y_column']].values
+        test = concat_to_pd(raw_config, X_num_test, X_cat_test, y_test)
+        X_num_test = test[raw_config['X_num_columns']].values
+        X_cat_test = test[raw_config['X_cat_columns']].values
+        y_test = test[raw_config['y_column']].values
+        val = concat_to_pd(raw_config, X_num_val, X_cat_val, y_val)
+        X_num_val = val[raw_config['X_num_columns']].values
+        X_cat_val = val[raw_config['X_cat_columns']].values
+        y_val = val[raw_config['y_column']].values
 
 
     X_num = {'train': X_num_train, 'val': X_num_val, 'test': X_num_test} if X_num_train is not None else None

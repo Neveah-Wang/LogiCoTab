@@ -406,6 +406,45 @@ class DDPM(nn.Module):
         x_i_store = np.array(x_i_store)
         return x_sample, x_i_store, c_i
 
+    def sample_bert_specify(self, dataset, n_sample, raw_config):
+        """
+        * 指定少数类 y 作为条件 c，生成指定数量的数据
+        * 不使用 ClassifierFree Guidance。
+        * 使用 bert 引入语言上的引导。
+        """
+        device = raw_config['sample']['device']
+        size = (raw_config['model_params']['d_in'],)
+
+        # 采样的数量
+        # n_sample = 50 * 7
+        x_i = torch.randn(n_sample, *size, device=device)
+        c_i = torch.zeros((n_sample, 1), dtype=torch.long, device=device) + 1
+        c_i = torch.reshape(c_i, (-1,))
+        context_mask = torch.ones_like(c_i).type(torch.int).to(device)
+
+        cls_head = default_sentences(c_i, dataset, raw_config)
+        print("cls_head.shape: ", cls_head.shape)
+
+        x_i_store = []
+        for i in range(self.n_T, 0, -1):
+            print("\r", end='')
+            print(f'sampling timestep {i}', flush=True, end=" ")
+            t_is = torch.tensor(i / self.n_T).to(device)  # 是个数字
+            t_is = t_is.repeat(n_sample)  # torch.Size([150])
+
+            z = torch.randn(n_sample, *size).to(device) if i > 1 else 0
+
+            # 预测噪声
+            eps = self.noise_prediction_model(x_i, c_i, cls_head, t_is, context_mask, if_mask=False, device=device).to(device)
+
+            # 去噪 x_t -> x_{t-1}
+            mean = (self.oneover_sqrta[i - 1].to(device) * (x_i.to(device) - eps.to(device) * self.mab_over_sqrtmab[i - 1].to(device)))
+            sigma_sqrt = torch.sqrt(self.posterior_variance)[i - 1].to(device)
+            x_i = (mean + sigma_sqrt * z)
+
+        x_i_store = np.array(x_i_store)
+        return x_i, x_i_store, c_i
+
 
 def ddpm_schedules(T, schedule_name, beta1=1e-4, beta2=0.02, s=0.008):
     """

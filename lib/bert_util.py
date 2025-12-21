@@ -216,8 +216,11 @@ def default_sentences(label, dataset, raw_config):
         bertmodel = BertModel.from_pretrained('huawei-noah/TinyBERT_General_4L_312D')
 
     elif raw_config['model_params']['bert'] == 'prajjwal1/bert-tiny':
-        berttokenizer = BertTokenizer.from_pretrained('prajjwal1/bert-tiny')  # 128
-        bertmodel = BertModel.from_pretrained('prajjwal1/bert-tiny')
+        # berttokenizer = BertTokenizer.from_pretrained('prajjwal1/bert-tiny')  # 128
+        # bertmodel = BertModel.from_pretrained('prajjwal1/bert-tiny')
+
+        berttokenizer = BertTokenizer.from_pretrained('D:\Study\自学\表格数据生成\models\prajjwal1-bert-tiny')
+        bertmodel = BertModel.from_pretrained('D:\Study\自学\表格数据生成\models\prajjwal1-bert-tiny')
 
     else:
         raise ValueError("wrong bert name!")
@@ -239,28 +242,28 @@ def default_sentences(label, dataset, raw_config):
             # sen1 = ['salary is greater than or equal to 50k', 'sex is Female']
             # sen0 = ['salary is less than 50k', 'Workclass is State-gov']
             # sen1 = ['salary is greater than or equal to 50k', 'Workclass is State-gov']
-            # sen0 = ['salary is less than 50k']
-            # sen1 = ['salary is greater than or equal to 50k']
+            sen0 = ['salary is less than 50k']
+            sen1 = ['salary is greater than or equal to 50k']
             # sen0 = ['salary is less than 50k', 'relationship is Wife', 'sex is Female', 'Workclass is Private']
             # sen1 = ['salary is greater than or equal to 50k', 'relationship is Wife', 'sex is Female', 'Workclass is Private']
-            sen0 = ['salary is less than 50k',
-                    'relationship is Husband',
-                    'sex is Male',
-                    'Workclass is Private',
-                    'Education is Masters',
-                    'marital-status is Married-civ-spouse',
-                    'Occupation is Exec-managerial',
-                    'race is White',
-                    'native-country is United-States']
-            sen1 = ['salary is greater than or equal to 50k',
-                    'relationship is Husband',
-                    'sex is Male',
-                    'Workclass is Private',
-                    'Education is Masters',
-                    'marital-status is Married-civ-spouse',
-                    'Occupation is Exec-managerial',
-                    'race is White',
-                    'native-country is United-States']
+            # sen0 = ['salary is less than 50k',
+            #         'relationship is Husband',
+            #         'sex is Male',
+            #         'Workclass is Private',
+            #         'Education is Masters',
+            #         'marital-status is Married-civ-spouse',
+            #         'Occupation is Exec-managerial',
+            #         'race is White',
+            #         'native-country is United-States']
+            # sen1 = ['salary is greater than or equal to 50k',
+            #         'relationship is Husband',
+            #         'sex is Male',
+            #         'Workclass is Private',
+            #         'Education is Masters',
+            #         'marital-status is Married-civ-spouse',
+            #         'Occupation is Exec-managerial',
+            #         'race is White',
+            #         'native-country is United-States']
 
             sen_list.append(sen0)
             sen_list.append(sen1)
@@ -409,18 +412,18 @@ def default_sentences(label, dataset, raw_config):
 
         elif dataset_name == "churn":
             sen0 = ['the customer is retained',
-                    'gender is Male',
-                    'country is France',
-                    'The customer is using 1 bank products',
-                    'the customer holds a credit card',
-                    'the customer is not an active member',
+                    # 'gender is Male',
+                    # 'country is France',
+                    # 'The customer is using 1 bank products',
+                    # 'the customer holds a credit card',
+                    # 'the customer is not an active member',
                     ]
             sen1 = ['the customer closed account',
-                    'gender is Male',
-                    'country is France',
-                    'The customer is using 1 bank products',
-                    'the customer holds a credit card',
-                    'the customer is not an active member',
+                    # 'gender is Male',
+                    # 'country is France',
+                    # 'The customer is using 1 bank products',
+                    # 'the customer holds a credit card',
+                    # 'the customer is not an active member',
                     ]
             sen_list.append(sen0)
             sen_list.append(sen1)

@@ -13,7 +13,7 @@ from lib.data_preprocess import inverse_transformer_respectively
 from TabClassifierfree.VAE import Decoder_model
 from lib import save_synthesis_data
 
-def sapmle(dataset, train_z, pre_decoder, raw_config):
+def sapmle(dataset, train_z, pre_decoder, raw_config, n_sample):
     device = torch.device(raw_config['sample']['device'])
     save_dir = raw_config['parent_dir']
     epoch = raw_config['ddpm_train']['epoch']
@@ -35,7 +35,8 @@ def sapmle(dataset, train_z, pre_decoder, raw_config):
             x_synthesis, x_synthesis_store, y = ddpm.sample_balance_bert_classifierfree(raw_config, guide_w=w)
         else:
             # x_synthesis, x_synthesis_store, y = ddpm.sample_bert(dataset, raw_config)
-            x_synthesis, x_synthesis_store, y = ddpm.sample_bert_batch(dataset, raw_config)
+            # x_synthesis, x_synthesis_store, y = ddpm.sample_bert_batch(dataset, raw_config)
+            x_synthesis, x_synthesis_store, y = ddpm.sample_bert_specify(dataset, n_sample, raw_config)
 
         x_synthesis = x_synthesis * 2 + train_z.mean(0).to(device)
         x_synthesis = x_synthesis.reshape(x_synthesis.shape[0], -1, raw_config['VAE']['d_token'])
@@ -62,6 +63,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', metavar='FILE')
     parser.add_argument('--sample', action='store_true', default=False)
+    parser.add_argument('--n_sample', type=int, default=50, help="指定采样的数量")
 
     args = parser.parse_args()
     raw_config = lib.util.load_config(args.config)
@@ -81,7 +83,7 @@ if __name__ == "__main__":
                                 d_numerical=raw_config['num_numerical_features'],
                                 categories=raw_config['num_categorical']).to(device)
 
-    sapmle(dataset, train_z, pre_decoder, raw_config)
+    sapmle(dataset, train_z, pre_decoder, raw_config, args.n_sample)
 
 """
 python main_sample.py --config exp/adult/CoTable/config.toml

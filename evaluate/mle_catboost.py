@@ -122,6 +122,7 @@ def eval_seeds_catboost(
         sampling_method="ddpm",
         model_type="catboost",
         n_datasets=1,
+        n_sample=50,
         dump=True,
         change_val=False
 ):
@@ -180,7 +181,7 @@ def eval_seeds_catboost(
             temp_config['sample']['seed'] = sample_seed
             util.dump_config(temp_config, dir_ / "config.toml")
             if eval_type != 'real':
-                subprocess.run(['python', f'{pipeline[sampling_method]}', '--config', f'{str(dir_ / "config.toml")}', '--sample'],  check=True)
+                subprocess.run(['python', f'{pipeline[sampling_method]}', '--config', f'{str(dir_ / "config.toml")}', '--n_sample', f'{n_sample}', '--sample'],  check=True)
 
             for seed in range(n_seeds):
                 print(f'\n\n**Eval Iter: {sample_seed * n_seeds + (seed + 1)}/{n_seeds * n_datasets}**')
@@ -209,12 +210,15 @@ def eval_seeds_catboost(
                 metrics_seeds_report.add_report(metric_report)
 
     # %%
-    metrics_seeds_report.get_mean_std()
+    # metrics_seeds_report.get_mean_std()
+    metrics_seeds_report.get_mean_std_min_max()
     print("=" * 100)
     res = metrics_seeds_report.print_result('catboost')
 
-    if eval_type != 'real':
+    if eval_type == 'synthetic':
         file_path = f"synthesis_{guide_w}/eval_{model_type}.json"
+    elif eval_type == 'merged':
+        file_path = f"synthesis_{guide_w}/eval_{model_type}_nsample{n_sample}.json"
     else:
         file_path = f"eval_{model_type}_real.json"
 

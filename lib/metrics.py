@@ -91,6 +91,35 @@ class SeedsMetricsReport:
 
         return agg_res
 
+    def get_mean_std_min_max(self) -> dict:
+        res = {k: {} for k in ["train", "val", "test"]}
+        splits = self._reports[0].get_splits_names()
+        metrics = self._reports[0].get_metrics_names()
+
+        for split in splits:
+            for metric in metrics:
+                res[split][metric] = [x.get_metric(split, metric) for x in self._reports]
+
+        agg_res = {k: {} for k in ["train", "val", "test"]}
+        # 扩展统计函数：新增 min 和 max
+        stats_funcs = [
+            ("count", len),
+            ("mean", np.mean),
+            ("std", np.std),
+            ("min", np.min),
+            ("max", np.max)
+        ]
+
+        for split in splits:
+            for metric in metrics:
+                for suffix, func in stats_funcs:
+                    agg_res[split][f"{metric}-{suffix}"] = float(func(res[split][metric]))
+
+        self._res = res
+        self._agg_res = agg_res
+
+        return agg_res
+
     def print_result(self, model_name) -> dict:
         res = {split: {k: float(np.around(self._agg_res[split][k], 4)) for k in self._agg_res[split]} for split in ["train", "val", "test"]}
         print(f"\nEVAL RESULTS of {model_name}:")
