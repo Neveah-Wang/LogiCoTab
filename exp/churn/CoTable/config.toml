@@ -1,5 +1,6 @@
 parent_dir = "exp/churn/CoTable"
-real_data_path = "D:/Study/自学/表格数据生成/v11/Dataset/churn/"
+real_data_path = "D:/Study/自学/表格数据生成/LogiCoTab-oversampling/Dataset/churn/"
+all_data_path = "D:/Study/自学/表格数据生成/LogiCoTab-oversampling/Dataset-all/churn/"
 task_type = "binclass"
 dataname = "churn"
 num_classes = 2
@@ -86,7 +87,7 @@ epoch = 100000
 lr = 0.002
 lr_min = 5e-06
 weight_decay = 0.0
-batch_size = 1024
+batch_size = 1423
 
 [ddpm_train.lr_scheduler]
 step_size = 20

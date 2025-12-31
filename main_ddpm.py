@@ -67,7 +67,7 @@ def train(train_loader, ddpm, raw_config, drawloss=True):
         data.to_csv(os.path.join(raw_config['parent_dir'], "ddpm_loss.csv"), mode='a', header=False, index=False)
 
 
-        if ep in [100000, 150000]:
+        if ep in [50000, 80000]:
             file = f"model_{ep}.pth" if raw_config['ddpm']['use_guide'] else f"model_{ep}_null.pth"
             torch.save(ddpm, os.path.join(save_dir, file))
             print('saved model at ' + save_dir + f"/model_{ep}.pth")
@@ -94,19 +94,7 @@ if __name__ == "__main__":
     # parser.add_argument('--sample', action='store_true', default=False)
     # args = parser.parse_args()
 
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/adult\CoTable\config.toml")
-    raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/shopper\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/buddy\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/obesity\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/magic\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/churn\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/bean\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/page\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/abalone\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/bike\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/insurance\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/productivity\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/churn\CoTable\config.toml")
+    raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-oversampling\exp\churn\CoTable\config.toml")
     device = torch.device(raw_config['device'])
 
     """准备 train_z 和 y"""
@@ -125,8 +113,8 @@ if __name__ == "__main__":
         bertmodel = BertModel.from_pretrained('huawei-noah/TinyBERT_General_4L_312D').to(device)
 
     elif raw_config['model_params']['bert'] == 'prajjwal1/bert-tiny':
-        berttokenizer = BertTokenizer.from_pretrained('prajjwal1/bert-tiny')  # 128
-        bertmodel = BertModel.from_pretrained('prajjwal1/bert-tiny').to(device)
+        berttokenizer = BertTokenizer.from_pretrained('D:\Study\自学\表格数据生成\models\prajjwal1-bert-tiny') # 128
+        bertmodel = BertModel.from_pretrained('D:\Study\自学\表格数据生成\models\prajjwal1-bert-tiny').to(device)
 
     else:
         raise ValueError("wrong bert name!")

@@ -152,6 +152,7 @@ def transform_dataset(
         X_num: Optional[ArrayDict],
         X_cat: Optional[ArrayDict],
         y: Optional[ArrayDict],
+        real_data_path: str,
         normalization: Normalization,
         cat_encode_policy: CatEncoding,
         y_policy: YEncoding,
@@ -164,7 +165,7 @@ def transform_dataset(
 
     # 对数值型数据进行标准化
     if X_num is not None and normalization != "None":
-        X_num, num_transformer = data_preprocess.normalize(raw_config, X_num, normalization, return_normalizer=True)
+        X_num, num_transformer = data_preprocess.normalize(real_data_path, X_num, normalization, return_normalizer=True)
 
     # 对离散型数据进行编码
     if X_cat is not None and cat_encode_policy != "None":
@@ -189,11 +190,16 @@ def make_dataset(data_path, raw_config: dict) -> Dataset:
     # print(y)
     # 处理数据
     y_plus1 = raw_config['Transform'].get('y_plus1', False)
-    X_num, X_cat, y, num_transformer, cat_transformer, y_transformer, y_info = transform_dataset(raw_config, X_num, X_cat, y,
-                                                                                         raw_config['Transform']['normalization'],
-                                                                                         raw_config['Transform']['cat_encode_policy'],
-                                                                                         raw_config['Transform']['y_policy'],
-                                                                                         y_plus1)
+    X_num, X_cat, y, num_transformer, cat_transformer, y_transformer, y_info = transform_dataset(
+        raw_config,
+        X_num, X_cat, y,
+        data_path,
+        raw_config['Transform']['normalization'],
+        raw_config['Transform']['cat_encode_policy'],
+        raw_config['Transform']['y_policy'],
+        y_plus1
+    )
+
     # make dataset
     info = util.load_json(os.path.join(data_path, 'info.json'))
     dataset = Dataset(X_num, X_cat, y, info=info, y_info=y_info, task_type=info.get('task_type'), n_classes=info.get('n_classes'))
@@ -258,7 +264,7 @@ def make_dataset_for_evaluation(raw_config, synthetic_data_path, real_data_path,
         X_cat_val = val[raw_config['X_cat_columns_real']].values
         y_val = val[raw_config['y_column_real']].values.astype(np.float32)
 
-    else:
+    if eval_type == 'merged':
         train = concat_to_pd(raw_config, X_num_train, X_cat_train, y_train)
         # train.to_csv(f"{synthetic_data_path}/merge1.csv", index=False)
         train = shuffle(train)
@@ -276,18 +282,26 @@ def make_dataset_for_evaluation(raw_config, synthetic_data_path, real_data_path,
         X_cat_val = val[raw_config['X_cat_columns']].values
         y_val = val[raw_config['y_column']].values
 
-
-    X_num = {'train': X_num_train, 'val': X_num_val, 'test': X_num_test} if X_num_train is not None else None
-    X_cat = {'train': X_cat_train, 'val': X_cat_val, 'test': X_cat_test} if X_cat_train is not None else None
-    y = {'train': y_train, 'val': y_val, 'test': y_test}
+    if eval_type == 'merged':
+        X_num = {'train': X_num_train, 'val': X_num_val, 'test': X_num_test, 'train_real': X_num_real} if X_num_train is not None else None
+        X_cat = {'train': X_cat_train, 'val': X_cat_val, 'test': X_cat_test, 'train_real': X_cat_real} if X_cat_train is not None else None
+        y = {'train': y_train, 'val': y_val, 'test': y_test, 'train_real': y_real}
+    else:
+        X_num = {'train': X_num_train, 'val': X_num_val, 'test': X_num_test} if X_num_train is not None else None
+        X_cat = {'train': X_cat_train, 'val': X_cat_val, 'test': X_cat_test} if X_cat_train is not None else None
+        y = {'train': y_train, 'val': y_val, 'test': y_test}
 
     # 2.transform data
     y_plus1 = T_dict.get('y_plus1', False)
-    X_num, X_cat, y, num_transformer, cat_transformer, y_transformer, y_info = transform_dataset(raw_config, X_num, X_cat, y,
-                                                                                                 T_dict["normalization"],
-                                                                                                 T_dict["cat_encode_policy"],
-                                                                                                 T_dict["y_policy"],
-                                                                                                 y_plus1)
+    X_num, X_cat, y, num_transformer, cat_transformer, y_transformer, y_info = transform_dataset(
+        raw_config,
+        X_num, X_cat, y,
+        real_data_path,
+        T_dict["normalization"],
+        T_dict["cat_encode_policy"],
+        T_dict["y_policy"],
+        y_plus1
+    )
     # 3.make dataset
     info = util.load_json(os.path.join(real_data_path, 'info.json'))
     dataset = Dataset(X_num, X_cat, y, info=info, y_info=y_info, task_type=info.get('task_type'), n_classes=info.get('n_classes'))
@@ -299,7 +313,8 @@ def make_dataset_for_evaluation(raw_config, synthetic_data_path, real_data_path,
     else:
         X = concat_features(dataset, raw_config['X_num_columns'], raw_config['X_cat_columns'])
 
-    print(f'Train size: {X["train"].shape}, Val size: {X["val"].shape}, Test size: {X["test"].shape}')
+    train_real_shape = X["train_real"].shape if "train_real" in X else "N/A"
+    print(f'Train: {X["train"].shape}, Train real size: {train_real_shape}, Val size: {X["val"].shape}, Test size: {X["test"].shape}')
     # print(T_dict)
 
     return dataset, X
@@ -346,11 +361,15 @@ def make_dataset_for_uncondition(data_path, raw_config: dict):
         y['val'] = val[raw_config['y_column_real']].values.astype(np.float32)
 
     # 2.transform data
-    X_num, X_cat, y, num_transformer, cat_transformer, y_transformer, y_info = transform_dataset(raw_config, X_num, X_cat, y,
-                                                                                                 raw_config['Transform']['normalization'],
-                                                                                                 raw_config['Transform']['cat_encode_policy'],
-                                                                                                 raw_config['Transform']['y_policy'],
-                                                                                                 y_plus1=False)
+    X_num, X_cat, y, num_transformer, cat_transformer, y_transformer, y_info = transform_dataset(
+        raw_config,
+        X_num, X_cat, y,
+        data_path,
+        raw_config['Transform']['normalization'],
+        raw_config['Transform']['cat_encode_policy'],
+        raw_config['Transform']['y_policy'],
+        y_plus1=False
+    )
     # classification
     if raw_config['task_type'] == 'binclass' or raw_config['task_type'] == 'multiclass':
         if X_cat:

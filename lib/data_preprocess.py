@@ -20,7 +20,7 @@ def concat_y_to_X(X, y):
     return np.concatenate([y.reshape(-1, 1), X], axis=1)
 
 
-def normalize(raw_config, X: ArrayDict, normalization: Normalization, seed=0, return_normalizer: bool = False) -> ArrayDict:
+def normalize(real_data_path, X: ArrayDict, normalization: Normalization, seed=0, return_normalizer: bool = False) -> ArrayDict:
     """
     对连续型的数据进行标准化
     :param X: Dict[str, np.ndarray], 待标准化的数据
@@ -34,7 +34,7 @@ def normalize(raw_config, X: ArrayDict, normalization: Normalization, seed=0, re
     #     X_train = np.load(os.path.join(real_data_path, f'X_num_train.npy'), allow_pickle=True)
     # else:
     #     X_train = X['train']
-    real_data_path = raw_config['real_data_path']
+
     X_train = np.load(os.path.join(real_data_path, f'X_num_train.npy'), allow_pickle=True)
 
     # if not raw_config['model_params']['is_y_cond'] and raw_config['task_type'] == 'regression':
@@ -74,7 +74,7 @@ def cat_encoder(raw_config, X: ArrayDict, cat_encode_policy: CatEncoding, return
     #     X_train = np.load(os.path.join(real_data_path, f'X_cat_train.npy'), allow_pickle=True).astype(str)
     # else:
     #     X_train = X['train']
-    real_data_path = raw_config['real_data_path']
+    real_data_path = raw_config['all_data_path']
     X_train = np.load(os.path.join(real_data_path, f'X_cat_train.npy'), allow_pickle=True).astype(str)
 
     # if not raw_config['model_params']['is_y_cond'] and raw_config['task_type'] != 'regression':
@@ -108,7 +108,7 @@ def lable_encoder(raw_config, Y:ArrayDict, policy: YEncoding, plus1: bool = True
     #     Y_train = np.load(os.path.join(real_data_path, f'Y_train.npy'), allow_pickle=True).astype(str).reshape(-1,1)
     # else:
     #     Y_train = Y['train']
-    real_data_path = raw_config['real_data_path']
+    real_data_path = raw_config['all_data_path']
     Y_train = np.load(os.path.join(real_data_path, f'Y_train.npy'), allow_pickle=True).astype(str).reshape(-1, 1)
 
     if policy == 'Ordinal':
@@ -188,7 +188,6 @@ def inverse_transformer_respectively(x_num: torch.Tensor, x_cat: torch.Tensor, y
     x_num = x_num.cpu().detach().numpy()
     x_cat = x_cat.cpu().detach().numpy() if x_cat is not None else None
     y = y.cpu().detach().numpy()
-
     x_num_restored = dataset.num_transformer.inverse_transform(x_num) if dataset.num_transformer is not None else x_num
     x_cat_restored = dataset.cat_transformer.inverse_transform(x_cat) if dataset.cat_transformer is not None else x_cat
     if plus1:

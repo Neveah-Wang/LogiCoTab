@@ -53,12 +53,15 @@ class MetricsReport:
     def print_metrics(self) -> None:
         res = {
             "train": {k: np.around(self._res["train"][k], 4) for k in self._res["train"]},
+            "train_real": {k: np.around(self._res["train_real"][k], 4) for k in self._res["train_real"]},
             "val": {k: np.around(self._res["val"][k], 4) for k in self._res["val"]},
             "test": {k: np.around(self._res["test"][k], 4) for k in self._res["test"]}
         }
 
         print("train: ", end=' ')
         print(res["train"])
+        print("train_real: ", end=' ')
+        print(res["train_real"])
         print("val: ", end=' ')
         print(res["val"])
         print("test: ", end=' ')
@@ -76,12 +79,12 @@ class SeedsMetricsReport:
         self._reports.append(report)
     
     def get_mean_std(self) -> dict:
-        res = {k: {} for k in ["train", "val", "test"]}
+        res = {k: {} for k in ["train", "val", "test", "train_real"]}
         for split in self._reports[0].get_splits_names():
             for metric in self._reports[0].get_metrics_names():
                 res[split][metric] = [x.get_metric(split, metric) for x in self._reports]
 
-        agg_res = {k: {} for k in ["train", "val", "test"]}
+        agg_res = {k: {} for k in ["train", "val", "test", "train_real"]}
         for split in self._reports[0].get_splits_names():
             for metric in self._reports[0].get_metrics_names():
                 for k, f in [("count", len), ("mean", np.mean), ("std", np.std)]:
@@ -92,7 +95,7 @@ class SeedsMetricsReport:
         return agg_res
 
     def get_mean_std_min_max(self) -> dict:
-        res = {k: {} for k in ["train", "val", "test"]}
+        res = {k: {} for k in ["train", "val", "test", "train_real"]}
         splits = self._reports[0].get_splits_names()
         metrics = self._reports[0].get_metrics_names()
 
@@ -100,7 +103,7 @@ class SeedsMetricsReport:
             for metric in metrics:
                 res[split][metric] = [x.get_metric(split, metric) for x in self._reports]
 
-        agg_res = {k: {} for k in ["train", "val", "test"]}
+        agg_res = {k: {} for k in ["train", "val", "test", "train_real"]}
         # 扩展统计函数：新增 min 和 max
         stats_funcs = [
             ("count", len),
@@ -121,16 +124,77 @@ class SeedsMetricsReport:
         return agg_res
 
     def print_result(self, model_name) -> dict:
-        res = {split: {k: float(np.around(self._agg_res[split][k], 4)) for k in self._agg_res[split]} for split in ["train", "val", "test"]}
+        res = {split: {k: float(np.around(self._agg_res[split][k], 4)) for k in self._agg_res[split]} for split in ["train", "val", "test", "train_real"]}
         print(f"\nEVAL RESULTS of {model_name}:")
         print("[train] ", end=' ')
         print(res["train"])
+        print("[train_real] ", end=' ')
+        print(res["train_real"])
         print("[val] ", end=' ')
         print(res["val"])
         print("[test] ", end=' ')
         print(res["test"])
         return res
 
+
+def aggregate_metrics(metrics_list):
+    if not metrics_list:
+        raise ValueError("metrics_list is empty")
+
+    # 定义所有需要聚合的路径
+    # 每个路径是 (split, sub_key, metric_name) 三元组
+    paths = []
+    splits = list(metrics_list[0].keys())  # ['train', 'val', 'test', 'train_real']
+    labels = ['0', '1', 'macro avg', 'weighted avg']
+    label_metrics = ['precision', 'recall', 'f1-score', 'support']
+    global_metrics = ['accuracy', 'roc_auc', 'score']
+
+    for split in splits:
+        for label in labels:
+            for m in label_metrics:
+                paths.append((split, label, m))
+        for m in global_metrics:
+            paths.append((split, m))  # 注意：全局指标只有两层
+
+    # 初始化结果字典（按第一个元素结构复制）
+    result = {}
+    for split in splits:
+        result[split] = {}
+        # 类别和 avg 指标
+        for label in labels:
+            result[split][label] = {}
+            for m in label_metrics:
+                result[split][label][m] = {}
+        # 全局指标
+        for m in global_metrics:
+            result[split][m] = {}
+
+    # 对每条路径收集数值并计算统计量
+    for path in paths:
+        values = []
+        for metrics in metrics_list:
+            if len(path) == 3:
+                # (split, label, metric)
+                val = metrics[path[0]][path[1]][path[2]]
+            else:
+                # (split, metric)
+                val = metrics[path[0]][path[1]]
+            values.append(val)
+
+        stats = {
+            'mean': np.mean(values),
+            'std': np.std(values),
+            'min': min(values),
+            'max': max(values)
+        }
+
+        # 写回 result
+        if len(path) == 3:
+            result[path[0]][path[1]][path[2]] = stats
+        else:
+            result[path[0]][path[1]] = stats
+
+    return result
 
 
 def calculate_rmse(y_true: np.ndarray, y_pred: np.ndarray, std: Optional[float]) -> float:
@@ -151,11 +215,12 @@ def _get_labels_and_probs(
     if prediction_type is None:
         return y_pred, None
 
+    # 如果 y_pred 是 logits（未归一化的原始分数）
     if prediction_type == PredictionType.LOGITS:
         probs = (
-            scipy.special.expit(y_pred)
+            scipy.special.expit(y_pred)   # 二分类：用 scipy.special.expit（即 sigmoid 函数）将其转为 [0,1] 的概率。
             if task_type == 'binclass'
-            else scipy.special.softmax(y_pred, axis=1)
+            else scipy.special.softmax(y_pred, axis=1) # 多元分类：用 scipy.special.softmax 沿 axis=1（对每个样本的类别维度）做 softmax，得到概率分布。
         )
         # print("probs01: ", probs)
     elif prediction_type == PredictionType.PROBS:

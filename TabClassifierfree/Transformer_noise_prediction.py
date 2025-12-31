@@ -77,7 +77,7 @@ class Transformer(nn.Module):
                 ):
         x = x.to(device)
         y = y.squeeze().to(device)
-        cls_head = cls_head.to(device)
+        # cls_head = cls_head.to(device)
         timesteps = timesteps.to(device)
         context_mask = context_mask.squeeze().to(device)
 
@@ -92,13 +92,13 @@ class Transformer(nn.Module):
         time_emb = self.time_embed(module.timestep_embedding(timesteps, self.dim_t)).to(device)
         label_emb = F.silu(self.label_emb(y)).to(device)
         x += (time_emb + label_emb)
-
+        """
         cls_sum, cls_label = sum_cls_head_mask(cls_head, device, if_mask)
 
         if self.linear is not None:
             cls_sum = self.linear(cls_sum)
             cls_label = self.linear(cls_label)
-
+        """
         # for _ in range(self.depth):
         #     x_residual = x
         #     x = self.norm(x)
@@ -108,15 +108,15 @@ class Transformer(nn.Module):
 
         x_residual = x
         x = self.norm(x)
-        x = self.attention1(cls_sum, x, x)
+        x = self.attention1(x, x, x)  # 不用其他特征。试一试效果
         x = x_residual + x
         x = self.feedforward(x) + x
 
-        x_residual = x
-        x = self.norm(x)
-        x = self.attention2(cls_label, x, x)
-        x = x_residual + x
-        x = self.feedforward(x) + x
+        # x_residual = x
+        # x = self.norm(x)
+        # x = self.attention2(cls_label, x, x)
+        # x = x_residual + x
+        # x = self.feedforward(x) + x
 
         return self.out(x)
 

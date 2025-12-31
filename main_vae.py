@@ -229,25 +229,14 @@ def main(train_loader, all_pooler_outputs_val, raw_config, dataset):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
+    # parser = argparse.ArgumentParser()
     # parser.add_argument('--config', metavar='FILE')
     #
     # args = parser.parse_args()
     # raw_config = lib.util.load_config(args.config)
 
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/adult\CoTable\config.toml")
-    raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/shopper\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/covertype\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/buddy\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/obesity\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/magic\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/churn\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/bean\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/page\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/abalone\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/bike\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/insurance\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/productivity\CoTable\config.toml")
+    raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-oversampling\exp\churn\CoTable\config.toml")
+
 
     real_data_path = raw_config['real_data_path']
     device = torch.device(raw_config['device'])
@@ -270,8 +259,8 @@ if __name__ == '__main__':
             bertmodel = BertModel.from_pretrained('huawei-noah/TinyBERT_General_4L_312D').to(device)
 
         elif raw_config['model_params']['bert'] == 'prajjwal1/bert-tiny':
-            berttokenizer = BertTokenizer.from_pretrained('prajjwal1/bert-tiny')  # 128
-            bertmodel = BertModel.from_pretrained('prajjwal1/bert-tiny').to(device)
+            berttokenizer = BertTokenizer.from_pretrained('D:\Study\自学\表格数据生成\models\prajjwal1-bert-tiny')
+            bertmodel = BertModel.from_pretrained('D:\Study\自学\表格数据生成\models\prajjwal1-bert-tiny').to(device)
 
         else:
             raise ValueError("wrong bert name!")

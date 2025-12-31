@@ -422,8 +422,8 @@ class DDPM(nn.Module):
         c_i = torch.reshape(c_i, (-1,))
         context_mask = torch.ones_like(c_i).type(torch.int).to(device)
 
-        cls_head = default_sentences(c_i, dataset, raw_config)
-        print("cls_head.shape: ", cls_head.shape)
+        # cls_head = default_sentences(c_i, dataset, raw_config)
+        # print("cls_head.shape: ", cls_head.shape)
 
         x_i_store = []
         for i in range(self.n_T, 0, -1):
@@ -435,7 +435,7 @@ class DDPM(nn.Module):
             z = torch.randn(n_sample, *size).to(device) if i > 1 else 0
 
             # 预测噪声
-            eps = self.noise_prediction_model(x_i, c_i, cls_head, t_is, context_mask, if_mask=False, device=device).to(device)
+            eps = self.noise_prediction_model(x_i, c_i, None, t_is, context_mask, if_mask=False, device=device).to(device)
 
             # 去噪 x_t -> x_{t-1}
             mean = (self.oneover_sqrta[i - 1].to(device) * (x_i.to(device) - eps.to(device) * self.mab_over_sqrtmab[i - 1].to(device)))

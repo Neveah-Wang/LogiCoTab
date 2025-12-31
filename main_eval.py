@@ -86,5 +86,7 @@ python main_eval.py --config exp/shopper/CoDi/config.toml --n_seeds 5 --sampling
 
 
 churn
+python main_eval.py --config exp/churn/CoTable/config.toml --n_seeds 3 --sampling_method CoTable --eval_type merged --model_type catboost --n_datasets 5 --n_sample 200
+python main_eval.py --config exp/churn/CoTable/config.toml --n_seeds 3 --sampling_method CoTable --eval_type real --model_type catboost --n_datasets 5 --n_sample 200
 subprocess.run(['python', 'main_eval.py', '--config', 'exp/churn/CoTable/config.toml', '--n_seeds', '3', '--sampling_method', 'CoTable', '--eval_type', 'merged', '--model_type', 'catboost', '--n_datasets', '5', '--n_sample', f'{50*i}'])
 '''
