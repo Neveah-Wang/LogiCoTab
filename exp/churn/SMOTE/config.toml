@@ -1,5 +1,6 @@
 parent_dir = "exp/churn/smote"
-real_data_path = "Dataset/churn/"
+real_data_path = "Dataset-all/churn/"
+all_data_path = "Dataset-all/churn/"
 task_type = "binclass"
 dataname = "churn"
 num_classes = 2
@@ -30,6 +31,13 @@ X_cat_columns = [
 y_column = [
     "Exited",
 ]
+
+[Transform]
+seed = 0
+normalization = "minmax"
+cat_encode_policy = "None"
+y_policy = "None"
+y_plus1 = false
 
 [smote_params]
 k_neighbours = 5
