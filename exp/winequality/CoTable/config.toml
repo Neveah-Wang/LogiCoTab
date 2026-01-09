@@ -1,36 +1,23 @@
-parent_dir = "exp/bean/CoTable"
-real_data_path = "Dataset-minority/bean/"
-all_data_path = "Dataset-all/bean/"
-dataname = "bean"
+parent_dir = "exp/winequality/CoTable"
+real_data_path = "Dataset-minority/winequality/"
+all_data_path = "Dataset-all/winequality/"
+dataname = "winequality"
 task_type = "binclass"
 num_classes = 2
-num_numerical_features = 16
+num_numerical_features = 11
 num_categorical_features = 0
 num_categorical = []
 model_type = "transformer"
 seed = 0
 device = "cuda"
 X_num_columns = [
-    "Area",
-    "Perimeter",
-    "MajorAxisLength",
-    "MinorAxisLength",
-    "AspectRation",
-    "Eccentricity",
-    "ConvexArea",
-    "EquivDiameter",
-    "Extent",
-    "Solidity",
-    "roundness",
-    "Compactness",
-    "ShapeFactor1",
-    "ShapeFactor2",
-    "ShapeFactor3",
-    "ShapeFactor4",
+    'fixed_acidity', 'volatile_acidity', 'citric_acid', 'residual_sugar',
+    'chlorides', 'free_sulfur_dioxide', 'total_sulfur_dioxide', 'density',
+    'pH', 'sulphates', 'alcohol'
 ]
 X_cat_columns = []
 y_column = [
-    "Class",
+    "quality",
 ]
 
 [Transform]

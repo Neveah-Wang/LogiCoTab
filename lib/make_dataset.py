@@ -172,7 +172,7 @@ def transform_dataset(
         X_cat, cat_transformer = data_preprocess.cat_encoder(raw_config, X_cat, cat_encode_policy, return_encoder=True)
 
     # 对 Lable 进行encode
-    if y is not None:
+    if y is not None and y_policy != "None":
         y, y_info, y_transformer = data_preprocess.lable_encoder(raw_config, y, y_policy, y_plus1, return_encoder=True)
 
     return X_num, X_cat, y, num_transformer, cat_transformer, y_transformer, y_info

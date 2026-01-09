@@ -1,5 +1,5 @@
 parent_dir = "exp/churn/CoTable"
-real_data_path = "D:/Study/自学/表格数据生成/LogiCoTab-oversampling/Dataset/churn/"
+real_data_path = "D:/Study/自学/表格数据生成/LogiCoTab-oversampling/Dataset-minority/churn/"
 all_data_path = "D:/Study/自学/表格数据生成/LogiCoTab-oversampling/Dataset-all/churn/"
 task_type = "binclass"
 dataname = "churn"

@@ -1,4 +1,4 @@
-import zero
+import json
 from pathlib import Path
 import subprocess
 import tempfile
@@ -104,13 +104,16 @@ def train_catboost(
     report['metrics'] = dataset.calculate_metrics(predictions, None if dataset.is_regression() else 'probs')
 
     # 打印指标
-    metrics_report = metrics.MetricsReport(report['metrics'], dataset.task_type)
-    metrics_report.print_metrics()
+    print('-' * 100)
+    # print(json.dumps(report, indent=4))
+
+    # metrics_report = metrics.MetricsReport(report['metrics'], dataset.task_type)
+    # metrics_report.print_metrics()
 
     if parent_dir is not None:
         util.dump_json(report, os.path.join(parent_dir, "results_catboost.json"))
 
-    return metrics_report
+    return report
 
 
 
@@ -126,7 +129,7 @@ def eval_seeds_catboost(
         dump=True,
         change_val=False
 ):
-    metrics_seeds_report = metrics.SeedsMetricsReport()
+    metrics_list = []
     parent_dir = Path(raw_config["parent_dir"])
 
     if eval_type == 'real':
@@ -139,7 +142,7 @@ def eval_seeds_catboost(
     temp_config = deepcopy(raw_config)
 
     # %%  通过with语句创建临时文件，with会自动关闭临时文件
-    with tempfile.TemporaryDirectory(dir='D:\Study\自学\表格数据生成/v11') as dir_:
+    with tempfile.TemporaryDirectory(dir='D:\Study\自学\表格数据生成/LogiCoTab-oversampling') as dir_:
         dir_ = Path(dir_)
         temp_config["parent_dir"] = str(dir_)  # 把"parent_dir"改成了一个临时目录，使用完会自动清除。
         # temp_config['ddpm']['guide_w_list'] = [guide_w]
@@ -189,7 +192,7 @@ def eval_seeds_catboost(
                 metric_report = train_catboost(
                     raw_config,
                     parent_dir=temp_config['parent_dir'],
-                    real_data_path=temp_config['real_data_path'],
+                    real_data_path=temp_config['all_data_path'],
                     eval_type=eval_type,
                     T_dict=T_dict,
                     guide_w=guide_w,
@@ -207,13 +210,12 @@ def eval_seeds_catboost(
                 }
                 """
 
-                metrics_seeds_report.add_report(metric_report)
+                metrics_list.append(metric_report['metrics'])
 
     # %%
-    # metrics_seeds_report.get_mean_std()
-    metrics_seeds_report.get_mean_std_min_max()
     print("=" * 100)
-    res = metrics_seeds_report.print_result('catboost')
+    res = metrics.aggregate_metrics(metrics_list)
+    print(json.dumps(res, indent=4))
 
     if eval_type == 'synthetic':
         file_path = f"synthesis_{guide_w}/eval_{model_type}.json"

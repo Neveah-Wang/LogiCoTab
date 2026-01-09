@@ -6,6 +6,26 @@ from transformers import BertModel, BertTokenizer
 
 from lib.make_dataset import read_pure_data
 
+def get_bert_model(raw_config):
+    device = torch.device(raw_config['device'])
+
+    if raw_config['model_params']['bert'] == 'bert-base-uncased':
+        berttokenizer = BertTokenizer.from_pretrained('bert-base-uncased')  # 768
+        bertmodel = BertModel.from_pretrained('bert-base-uncased').to(device)
+
+    elif raw_config['model_params']['bert'] == 'huawei-noah/TinyBERT_General_4L_312D':
+        berttokenizer = BertTokenizer.from_pretrained('huawei-noah/TinyBERT_General_4L_312D')  # 312
+        bertmodel = BertModel.from_pretrained('huawei-noah/TinyBERT_General_4L_312D').to(device)
+
+    elif raw_config['model_params']['bert'] == 'prajjwal1/bert-tiny':
+        berttokenizer = BertTokenizer.from_pretrained('D:\Study\自学\表格数据生成\models\prajjwal1-bert-tiny')
+        bertmodel = BertModel.from_pretrained('D:\Study\自学\表格数据生成\models\prajjwal1-bert-tiny').to(device)
+
+    else:
+        raise ValueError("wrong bert name!")
+
+    return berttokenizer, bertmodel
+
 
 def row_to_sentences(row, raw_config, with_label: bool):
     real_data_path = raw_config['real_data_path']
@@ -74,6 +94,12 @@ def row_to_sentences(row, raw_config, with_label: bool):
         sentences = []
         if with_label:
             label_prompt = [config['label_prompt'].format(Class=row['Class'])]
+            sentences = label_prompt + sentences
+
+    elif dataset_name == 'winequality':
+        sentences = []
+        if with_label:
+            label_prompt = [config['label_prompt'].format(Class=row['quality'])]
             sentences = label_prompt + sentences
 
     elif dataset_name == 'page':
@@ -146,10 +172,10 @@ def row_to_sentences(row, raw_config, with_label: bool):
     return sentences
 
 
-def make_dataset_and_encode(raw_config, berttokenizer, bertmodel, device, with_label, split='train'):
+def make_dataset_and_encode(raw_config, berttokenizer, bertmodel, device, with_label, data_path, split='train'):
     with torch.no_grad():
         # 读取并准备数据
-        X_num, X_cat, y = read_pure_data(raw_config['real_data_path'], raw_config, split)
+        X_num, X_cat, y = read_pure_data(data_path, raw_config, split)
         X_cat = X_cat if X_cat is not None else np.empty((X_num.shape[0], 0))
         if y.ndim == 1:
             y = y[:, None]
