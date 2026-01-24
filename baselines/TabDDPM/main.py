@@ -1,5 +1,5 @@
 import sys
-sys.path.append(r'D:\Study\自学\表格数据生成\v11')
+sys.path.append(r'D:\Study\自学\表格数据生成\LogiCoTab-vae')
 
 import tomli
 import shutil
@@ -7,6 +7,7 @@ import os
 import argparse
 from baselines.TabDDPM.train import train
 from baselines.TabDDPM.sample import sample
+from baselines.TabDDPM.eval import eval
 import zero
 import lib
 import torch
@@ -32,6 +33,7 @@ def main():
     parser.add_argument('--config', metavar='FILE')
     parser.add_argument('--train', action='store_true', default=False)
     parser.add_argument('--sample', action='store_true',  default=False)
+    parser.add_argument('--eval', action='store_true',  default=False)
     parser.add_argument('--change_val', action='store_true',  default=False)
     args = parser.parse_args()
     """
@@ -72,7 +74,7 @@ def main():
     if args.sample:
         sample(
             raw_config,
-            num_samples=raw_config['sample']['num_samples'],
+            num_samples=int(raw_config['sample']['num_samples'] * (raw_config['ir'] - 1)),
             batch_size=raw_config['sample']['batch_size'],
             **raw_config['diffusion_params'],
             model_save_path=raw_config['parent_dir'],
@@ -84,6 +86,8 @@ def main():
             device=device,
             change_val=args.change_val
         )
+    if args.eval:
+        eval(raw_config)
 
     save_file(os.path.join(raw_config['parent_dir'], 'info.json'), os.path.join(raw_config['real_data_path'], 'info.json'))
 
@@ -93,18 +97,14 @@ if __name__ == '__main__':
     main()
 
 """
-python baselines/TabDDPM/main.py --config exp/adult/TabDDPM/config.toml --train
-python baselines/TabDDPM/main.py --config exp/adult/TabDDPM/config.toml --sample
-python baselines/TabDDPM/main.py --config exp/shopper/TabDDPM/config.toml --train --sample
-python baselines/TabDDPM/main.py --config exp/covertype/TabDDPM/config.toml --train --sample
-python baselines/TabDDPM/main.py --config exp/buddy/TabDDPM/config.toml --train --sample
-python baselines/TabDDPM/main.py --config exp/obesity/TabDDPM/config.toml --train --sample
-python baselines/TabDDPM/main.py --config exp/magic/TabDDPM/config.toml --train --sample
-python baselines/TabDDPM/main.py --config exp/churn/TabDDPM/config.toml --train --sample
-python baselines/TabDDPM/main.py --config exp/bean/TabDDPM/config.toml --train --sample
-python baselines/TabDDPM/main.py --config exp/page/TabDDPM/config.toml --train --sample
-python baselines/TabDDPM/main.py --config exp/abalone/TabDDPM/config.toml --train --sample
-python baselines/TabDDPM/main.py --config exp/bike/TabDDPM/config.toml --train --sample
-python baselines/TabDDPM/main.py --config exp/insurance/TabDDPM/config.toml --train --sample
-python baselines/TabDDPM/main.py --config exp/productivity/TabDDPM/config.toml --train --sample
+python baselines/TabDDPM/main.py --config exp/adult/TabDDPM/config.toml --train --sample --eval
+python baselines/TabDDPM/main.py --config exp/magic/TabDDPM/config.toml --train --sample --eval
+python baselines/TabDDPM/main.py --config exp/churn/TabDDPM/config.toml --train --sample --eval
+python baselines/TabDDPM/main.py --config exp/shopper/TabDDPM/config.toml --train --sample --eval
+python baselines/TabDDPM/main.py --config exp/obesity/TabDDPM/config.toml --train --sample --eval
+python baselines/TabDDPM/main.py --config exp/winequality/TabDDPM/config.toml --train --sample --eval
+python baselines/TabDDPM/main.py --config exp/bean/TabDDPM/config.toml --train --sample --eval
+python baselines/TabDDPM/main.py --config exp/yeast_me2/TabDDPM/config.toml --train --sample --eval
+python baselines/TabDDPM/main.py --config exp/page/TabDDPM/config.toml --train --sample --eval
+python baselines/TabDDPM/main.py --config exp/buddy/TabDDPM/config.toml --train --sample --eval
 """

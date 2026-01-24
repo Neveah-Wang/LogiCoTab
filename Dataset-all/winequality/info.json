@@ -1,0 +1,11 @@
+{
+    "name": "winequality",
+    "id": "winequality--default",
+    "task_type": "binclass",
+    "n_num_features": 11,
+    "n_cat_features": 0,
+    "train_size": 4547,
+    "val_size": 975,
+    "test_size": 975,
+    "label_prompt": "The quality of the red wine is {quality}"
+}

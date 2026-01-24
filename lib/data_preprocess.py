@@ -74,7 +74,7 @@ def cat_encoder(raw_config, X: ArrayDict, cat_encode_policy: CatEncoding, return
     #     X_train = np.load(os.path.join(real_data_path, f'X_cat_train.npy'), allow_pickle=True).astype(str)
     # else:
     #     X_train = X['train']
-    real_data_path = raw_config['all_data_path']
+    real_data_path = raw_config['real_data_path']
     X_train = np.load(os.path.join(real_data_path, f'X_cat_train.npy'), allow_pickle=True).astype(str)
 
     # if not raw_config['model_params']['is_y_cond'] and raw_config['task_type'] != 'regression':
@@ -108,7 +108,7 @@ def lable_encoder(raw_config, Y:ArrayDict, policy: YEncoding, plus1: bool = True
     #     Y_train = np.load(os.path.join(real_data_path, f'Y_train.npy'), allow_pickle=True).astype(str).reshape(-1,1)
     # else:
     #     Y_train = Y['train']
-    real_data_path = raw_config['all_data_path']
+    real_data_path = raw_config['real_data_path']
     Y_train = np.load(os.path.join(real_data_path, f'Y_train.npy'), allow_pickle=True).astype(str).reshape(-1, 1)
 
     if policy == 'Ordinal':

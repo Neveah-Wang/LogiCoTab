@@ -192,7 +192,7 @@ def eval_seeds_catboost(
                 metric_report = train_catboost(
                     raw_config,
                     parent_dir=temp_config['parent_dir'],
-                    real_data_path=temp_config['all_data_path'],
+                    real_data_path=temp_config['real_data_path'],
                     eval_type=eval_type,
                     T_dict=T_dict,
                     guide_w=guide_w,

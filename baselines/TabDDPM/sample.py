@@ -98,10 +98,37 @@ def sample(
 
     print('Sampling time:', end_time - start_time)
 
-    # 保存生成的数据
+    # ------------ 开始保存数据 --------------
     save_dir = sample_save_path
     if not os.path.exists(f"{save_dir}/synthesis_null"):
         os.makedirs(f"{save_dir}/synthesis_null")
+
+    # 仅保存少数类数据
+    TARGET = y_column[0]
+    value_counts = merged_df[TARGET].value_counts()
+    majority_class = value_counts.idxmax()
+    minority_class = value_counts.idxmin()
+    df_minority = merged_df[merged_df[TARGET] == minority_class]
+    df_minority.to_csv(f"{save_dir}/synthesis_null/synthesis_null.csv", index=False)
+
+    if raw_config['num_numerical_features'] != 0:
+        syn_num = df_minority[raw_config['X_num_columns']].values
+        np.save(f"{save_dir}/synthesis_null/X_num_synthesis", syn_num)
+
+    if raw_config['num_categorical_features'] != 0:
+        syn_cat = df_minority[raw_config['X_cat_columns']].values
+        np.save(f"{save_dir}/synthesis_null/X_cat_synthesis", syn_cat)
+
+    y_real = np.load(os.path.join(real_data_path, f'Y_train.npy'), allow_pickle=True)
+    print("type(y_real) = ", y_real.dtype)
+    syn_y = df_minority[raw_config['y_column']].values
+    if y_real.dtype == bool:
+        np.save(f"{save_dir}/synthesis_null/Y_synthesis", syn_y)
+    else:
+        np.save(f"{save_dir}/synthesis_null/Y_synthesis", syn_y.astype(y_real.dtype))
+
+    # 保存全部生成的数据
+    '''
     merged_df.to_csv(f"{save_dir}/synthesis_null/synthesis_null.csv", index=False)
     if raw_config['num_numerical_features'] != 0:
         np.save(f"{save_dir}/synthesis_null/X_num_synthesis", syn_num)
@@ -113,4 +140,6 @@ def sample(
         np.save(f"{save_dir}/synthesis_null/Y_synthesis", syn_target)
     else:
         np.save(f"{save_dir}/synthesis_null/Y_synthesis", syn_target.astype(y_real.dtype))
+    '''
+
     print(f'The generated data has been saved at {save_dir}/synthesis_null')

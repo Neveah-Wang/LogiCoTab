@@ -1,10 +1,9 @@
 {
     "name": "obesity",
     "id": "obesity--id",
-    "task_type": "multiclass",
+    "task_type": "binclass",
     "n_num_features": 8,
     "n_cat_features": 8,
-    "n_classes": 7,
     "train_size": 1688,
     "val_size": 212,
     "test_size": 211,
@@ -18,14 +17,5 @@
         "take extra calories? {CALC}",
         "transportation method is {MTRANS}"
     ],
-    "label_prompt": "obesity level is {NObeyesdad}",
-    "NObeyesdad": {
-        "0": "Insufficient_Weight",
-        "1": "Normal_Weight",
-        "5": "Overweight_Level_I",
-        "6": "Overweight_Level_II",
-        "2": "Obesity_Type_I",
-        "3": "Obesity_Type_II",
-        "4": "Obesity_Type_III"
-    }
+    "label_prompt": "obesity level is {NObeyesdad}"
 }

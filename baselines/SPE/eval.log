@@ -1,0 +1,143 @@
+-------------------- Self-Paced Ensemble, Dataset:churn --------------------
+F1 (macro): 0.7408
+AUC: 0.8431
+mcc: 0.4836
+G_mean: 0.7432
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9039    0.8737    0.8885       958
+           1     0.5584    0.6322    0.5930       242
+
+    accuracy                         0.8250      1200
+   macro avg     0.7311    0.7530    0.7408      1200
+weighted avg     0.8342    0.8250    0.8289      1200
+
+
+-------------------- Self-Paced Ensemble, Dataset:adult --------------------
+F1 (macro): 0.8099
+AUC: 0.9258
+mcc: 0.6217
+G_mean: 0.8193
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9199    0.8874    0.9033      4945
+           1     0.6804    0.7564    0.7164      1568
+
+    accuracy                         0.8558      6513
+   macro avg     0.8002    0.8219    0.8099      6513
+weighted avg     0.8623    0.8558    0.8583      6513
+
+
+-------------------- Self-Paced Ensemble, Dataset:shopper --------------------
+F1 (macro): 0.8051
+AUC: 0.9324
+mcc: 0.6135
+G_mean: 0.8215
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9510    0.9220    0.9363      1179
+           1     0.6245    0.7321    0.6740       209
+
+    accuracy                         0.8934      1388
+   macro avg     0.7877    0.8270    0.8051      1388
+weighted avg     0.9018    0.8934    0.8968      1388
+
+
+-------------------- Self-Paced Ensemble, Dataset:magic --------------------
+F1 (macro): 0.8790
+AUC: 0.9476
+mcc: 0.7601
+G_mean: 0.8695
+Report:
+              precision    recall  f1-score   support
+
+           0     0.8962    0.9388    0.9170      1830
+           1     0.8802    0.8053    0.8411      1022
+
+    accuracy                         0.8910      2852
+   macro avg     0.8882    0.8720    0.8790      2852
+weighted avg     0.8905    0.8910    0.8898      2852
+
+
+-------------------- Self-Paced Ensemble, Dataset:bean --------------------
+F1 (macro): 1.0000
+AUC: 1.0000
+mcc: 1.0000
+G_mean: 1.0000
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    1.0000    1.0000      1767
+           1     1.0000    1.0000    1.0000        71
+
+    accuracy                         1.0000      1838
+   macro avg     1.0000    1.0000    1.0000      1838
+weighted avg     1.0000    1.0000    1.0000      1838
+
+
+-------------------- Self-Paced Ensemble, Dataset:winequality --------------------
+F1 (macro): 0.5537
+AUC: 0.8270
+mcc: 0.1914
+G_mean: 0.6692
+Report:
+              precision    recall  f1-score   support
+
+           0     0.1135    0.5161    0.1860        31
+           1     0.9820    0.8676    0.9213       944
+
+    accuracy                         0.8564       975
+   macro avg     0.5477    0.6919    0.5537       975
+weighted avg     0.9544    0.8564    0.8979       975
+
+
+-------------------- Self-Paced Ensemble, Dataset:obesity --------------------
+F1 (macro): 0.9665
+AUC: 0.9981
+mcc: 0.9336
+G_mean: 0.9772
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9943    0.9831    0.9886       177
+           1     0.9189    0.9714    0.9444        35
+
+    accuracy                         0.9811       212
+   macro avg     0.9566    0.9772    0.9665       212
+weighted avg     0.9818    0.9811    0.9813       212
+
+
+-------------------- Self-Paced Ensemble, Dataset:yeast_me2 --------------------
+F1 (macro): 0.6336
+AUC: 0.9192
+mcc: 0.2746
+G_mean: 0.5994
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9763    0.9581    0.9671       215
+           1     0.2500    0.3750    0.3000         8
+
+    accuracy                         0.9372       223
+   macro avg     0.6132    0.6666    0.6336       223
+weighted avg     0.9502    0.9372    0.9432       223
+
+
+-------------------- Self-Paced Ensemble, Dataset:page --------------------
+F1 (macro): 0.8558
+AUC: 1.0000
+mcc: 0.7433
+G_mean: 0.9973
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9946    0.9973       734
+           1     0.5556    1.0000    0.7143         5
+
+    accuracy                         0.9946       739
+   macro avg     0.7778    0.9973    0.8558       739
+weighted avg     0.9970    0.9946    0.9954       739
+

@@ -11,7 +11,7 @@ from torch.optim.lr_scheduler import ReduceLROnPlateau, StepLR
 import lib
 from lib import util, latent_util
 from lib.make_dataset import FastTensorDataLoader
-from lib.bert_util import make_dataset_and_encode
+from lib.bert_util import make_dataset_and_encode, get_bert_model
 from lib.data_preprocess import inverse_transformer
 from TabClassifierfree.MLP_noise_prediction import MLPDiffusion
 from TabClassifierfree.Transformer_noise_prediction import Transformer
@@ -88,13 +88,14 @@ def train(train_loader, ddpm, raw_config, drawloss=True):
 
 
 if __name__ == "__main__":
-    # parser = argparse.ArgumentParser()
-    # parser.add_argument('--config', metavar='FILE')
-    # parser.add_argument('--train', action='store_true', default=False)
-    # parser.add_argument('--sample', action='store_true', default=False)
-    # args = parser.parse_args()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--config', metavar='FILE')
+    parser.add_argument('--train', action='store_true', default=False)
+    parser.add_argument('--sample', action='store_true', default=False)
+    args = parser.parse_args()
+    raw_config = lib.util.load_config(args.config)
 
-    raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-oversampling\exp\churn\CoTable\config.toml")
+    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp\churn\CoTable\config.toml")
     device = torch.device(raw_config['device'])
 
     """准备 train_z 和 y"""
@@ -103,23 +104,9 @@ if __name__ == "__main__":
     train_z = (train_z - mean) / 2
 
     """ 准备 sentences """
+    berttokenizer, bertmodel = get_bert_model(raw_config)
 
-    if raw_config['model_params']['bert'] == 'bert-base-uncased':
-        berttokenizer = BertTokenizer.from_pretrained('bert-base-uncased')   # 768
-        bertmodel = BertModel.from_pretrained('bert-base-uncased').to(device)
-
-    elif raw_config['model_params']['bert'] == 'huawei-noah/TinyBERT_General_4L_312D':
-        berttokenizer = BertTokenizer.from_pretrained('huawei-noah/TinyBERT_General_4L_312D')  # 312
-        bertmodel = BertModel.from_pretrained('huawei-noah/TinyBERT_General_4L_312D').to(device)
-
-    elif raw_config['model_params']['bert'] == 'prajjwal1/bert-tiny':
-        berttokenizer = BertTokenizer.from_pretrained('D:\Study\自学\表格数据生成\models\prajjwal1-bert-tiny') # 128
-        bertmodel = BertModel.from_pretrained('D:\Study\自学\表格数据生成\models\prajjwal1-bert-tiny').to(device)
-
-    else:
-        raise ValueError("wrong bert name!")
-
-    all_pooler_outputs = make_dataset_and_encode(raw_config, berttokenizer, bertmodel, device, with_label=True, split='train')
+    all_pooler_outputs = make_dataset_and_encode(raw_config, berttokenizer, bertmodel, device, with_label=True, data_path=raw_config['real_data_path'], split='train')
     torch.save(all_pooler_outputs, f"{raw_config['parent_dir']}/all_pooler_outputs.pth")
     """
     all_pooler_outputs = torch.load(f"{raw_config['parent_dir']}/all_pooler_outputs.pth")
@@ -146,5 +133,12 @@ if __name__ == "__main__":
     util.dump_config(raw_config, os.path.join(raw_config['parent_dir'], 'config.toml'))
 
     """
-    python main_ddpm.py 
+    python main_ddpm.py --config exp\churn\CoTable\config.toml
+    python main_ddpm.py --config exp\magic\CoTable\config.toml
+    
+    python main_ddpm.py --config exp/bean\CoTable\config.toml
+    python main_ddpm.py --config exp/page\CoTable\config.toml
+    python main_ddpm.py --config exp/obesity\CoTable\config.toml
+    python main_ddpm.py --config exp/yeast_me2\CoTable\config.toml
+    python main_ddpm.py --config exp/winequality\CoTable\config.toml
     """

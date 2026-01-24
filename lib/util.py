@@ -83,7 +83,9 @@ def draw_loss(Loss_list, epoch, raw_config):
         save_file = os.path.join(raw_config['parent_dir'], "Train_loss_null.png")
     plt.savefig(save_file)
     print(f"loss pitcure has saved at {save_file}")
-    plt.show()
+    plt.show(block=False)
+    plt.pause(1)  # 显示1秒钟
+    plt.close()
 
 
 def concat_to_pd(raw_config, X_num, X_cat, y):

@@ -3,7 +3,7 @@ import os
 import sys
 pythonpath = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 sys.path.insert(0, pythonpath)
-sys.path.append(r'D:\Study\自学\表格数据生成\v9')
+sys.path.append(r'D:\Study\自学\表格数据生成\LogiCoTab-vae')
 
 import time
 import pandas as pd

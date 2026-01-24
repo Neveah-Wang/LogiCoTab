@@ -14,6 +14,7 @@ from sklearn.utils import resample
 from collections import Counter
 import warnings
 import subprocess
+import argparse
 
 import lib
 from lib.make_dataset import read_pure_data, make_dataset_for_evaluation
@@ -213,7 +214,8 @@ class IterativeFilteredOversampling:
             synthetic_samples = self.generator_func(
                 minority_class,
                 sampling_method='CoTable',
-                n_sample=len(X_minority) * 2
+                n_sample=len(X_minority) * 4
+                # n_sample=12000
             )
             if len(X_current[y_current == minority_class]) > len(X_majority) + len(X_minority) :
                 print("!!!Already balanced!!!")
@@ -254,35 +256,23 @@ class IterativeFilteredOversampling:
 
 
 if __name__ == "__main__":
-    """
-    # 创建模拟不平衡数据集（含类重叠）
-    X, y = make_classification(
-        n_samples=3000,
-        n_features=10,
-        n_informative=5,
-        n_redundant=2,
-        n_clusters_per_class=1,
-        weights=[0.9, 0.1],  # 严重不平衡
-        flip_y=0.1,  # 引入噪声/重叠
-        random_state=0
-    )
-    X = pd.DataFrame(X)
-    y = pd.Series(y)
+    # ==================== 加载配置 ====================
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--config', metavar='FILE')
+    args = parser.parse_args()
+    raw_config = lib.util.load_config(args.config)
 
-    # 划分训练/测试
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, stratify=y, random_state=42)
-    """
+    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp\churn\CoTable\config.toml")
+    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/adult\CoTable\config.toml")
+    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/shopper\CoTable\config.toml")
 
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-oversampling\exp\churn\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-oversampling\exp/adult\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-oversampling\exp/shopper\CoTable\config.toml")
-    raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-oversampling\exp/bean\CoTable\config.toml")
+    # ==================== 加载数据 ====================
     T_dict = raw_config['eval']['Transform']
     T_dict['normalization'] = "None"
     dataset, X = make_dataset_for_evaluation(
         raw_config,
         synthetic_data_path=None,
-        real_data_path=raw_config['all_data_path'],
+        real_data_path=raw_config['real_data_path'],
         eval_type='real',
         T_dict=T_dict,
         change_val=False,
@@ -294,22 +284,7 @@ if __name__ == "__main__":
     X_val = X['val']
     y_val = pd.Series(dataset.y['val'].ravel())
 
-    # 基线：原始决策树
-    # base_clf = RandomForestClassifier(random_state=42)
-    # base_clf = XGBClassifier(
-    #     objective='binary:logistic',
-    #     eval_metric='logloss',
-    #     scale_pos_weight=1.0,
-    #     random_state=0,
-    #     use_label_encoder=False,
-    #     verbosity=0,
-    #     # 可根据需要调整以下参数
-    #     max_depth=8,
-    #     learning_rate=0.1,
-    #     subsample=0.8,
-    #     colsample_bytree=0.8,
-    #     n_estimators=200
-    # )
+    # ==================== 基线 ====================
     base_clf = build_CatBoostClassifier(seed=0)
     base_clf.fit(X_train, y_train, eval_set=(X_val, y_val), verbose=100)
 
@@ -317,34 +292,14 @@ if __name__ == "__main__":
     evaluate(base_clf, X_val, y_val, 'Baseline（原始训练集）')
 
 
-    # 使用提出的迭代过滤过采样方法
+    # ==================== 过滤过采样 ====================
     model = IterativeFilteredOversampling(
-        # base_classifier=RandomForestClassifier(random_state=42),
-        # base_classifier=XGBClassifier(
-        #     objective='binary:logistic',
-        #     eval_metric='logloss',
-        #     scale_pos_weight=1.0,
-        #     random_state=0,
-        #     use_label_encoder=False,
-        #     verbosity=0,
-        #     # 可根据需要调整以下参数
-        #     max_depth=8,
-        #     learning_rate=0.1,
-        #     subsample=0.8,
-        #     colsample_bytree=0.8,
-        #     n_estimators=200
-        # ),
         n_synthetic_per_iter=150,
         confidence_threshold=0.8,
         max_iter=20,
         patience=5,
         scoring='auc'
     )
-
-    # 先过滤掉多数类中的 噪声
-    # cleaned = pd.read_csv(f"{raw_config['parent_dir']}\cleaned.csv")
-    # X_train = cleaned.drop(raw_config['y_column'][0], axis=1)
-    # y_train = cleaned[raw_config['y_column'][0]]
 
     model.fit(X_train, y_train, X_val, y_val)
 
@@ -353,3 +308,9 @@ if __name__ == "__main__":
     evaluate(model.best_auc_model, X_val, y_val, "final_best_auc_model")
     evaluate(model.worst_auc_model_baseline, X_val, y_val, "baseline_worst_auc_model")
     evaluate(model.worst_f1_model_baseline, X_val, y_val, "baseline_worst_f1_model")
+
+"""
+python filter.py --config D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/adult\CoTable\config.toml > evaluate/mle_log(AucF1AccGmeanMcc)/adult.log
+python filter.py --config D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/churn\CoTable\config.toml > evaluate/mle_log(AucF1AccGmeanMcc)/churn.log
+python filter.py --config D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/magic\CoTable\config.toml > evaluate/mle_log(AucF1AccGmeanMcc)/magic.log
+"""

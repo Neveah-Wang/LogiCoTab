@@ -271,15 +271,15 @@ def make_dataset_for_evaluation(raw_config, synthetic_data_path, real_data_path,
         # train.to_csv(f"{synthetic_data_path}/merge2.csv", index=False)
         # breakpoint()
         X_num_train = train[raw_config['X_num_columns']].values
-        X_cat_train = train[raw_config['X_cat_columns']].values
+        X_cat_train = train[raw_config['X_cat_columns']].values if X_cat_train is not None else None
         y_train = train[raw_config['y_column']].values
         test = concat_to_pd(raw_config, X_num_test, X_cat_test, y_test)
         X_num_test = test[raw_config['X_num_columns']].values
-        X_cat_test = test[raw_config['X_cat_columns']].values
+        X_cat_test = test[raw_config['X_cat_columns']].values if X_cat_test is not None else None
         y_test = test[raw_config['y_column']].values
         val = concat_to_pd(raw_config, X_num_val, X_cat_val, y_val)
         X_num_val = val[raw_config['X_num_columns']].values
-        X_cat_val = val[raw_config['X_cat_columns']].values
+        X_cat_val = val[raw_config['X_cat_columns']].values if X_cat_val is not None else None
         y_val = val[raw_config['y_column']].values
 
     if eval_type == 'merged':

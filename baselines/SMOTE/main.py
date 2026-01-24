@@ -3,7 +3,7 @@ import os
 import sys
 pythonpath = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 sys.path.insert(0, pythonpath)
-sys.path.append(r'D:\Study\自学\表格数据生成\LogiCoTab-oversampling')
+sys.path.append(r'D:\Study\自学\表格数据生成\LogiCoTab-vae')
 
 import os
 import lib
@@ -11,8 +11,10 @@ import argparse
 import numpy as np
 import pandas as pd
 from imblearn.over_sampling import SMOTE, SMOTENC
-from lib.make_dataset import make_dataset, concat_features
+from lib.make_dataset import make_dataset, concat_features, make_dataset_for_evaluation
+from lib.metrics import evaluate_to_file
 from collections import Counter
+from catboost import CatBoostClassifier
 
 def save_data(raw_config, X_num, X_cat, y):
     save_dir = raw_config['parent_dir']
@@ -64,6 +66,7 @@ def sample(raw_config):
     print("y_resampled.shape", y_resampled.shape)
     print(sorted(Counter(y_resampled).items()))
 
+
     X_num = X_resampled[X_num_columns].to_numpy().astype(np.float32)
     X_cat = X_resampled[X_cat_columns].to_numpy()
     y = y_resampled[:, None]
@@ -80,6 +83,32 @@ def sample(raw_config):
     X_cat_synthesis = X_cat[dataset.info['train_size']:]
     y_synthesis = y[dataset.info['train_size']:]
     save_data(raw_config, X_num_synthesis, X_cat_synthesis, y_synthesis)
+
+def main(raw_config):
+    T_dict = raw_config['eval']['Transform']
+    T_dict['normalization'] = "None"
+    dataname = raw_config['dataname']
+    dataset, X = make_dataset_for_evaluation(
+        raw_config,
+        synthetic_data_path=None,
+        real_data_path=raw_config['real_data_path'],
+        eval_type='real',
+        T_dict=T_dict,
+        change_val=False,
+        sampling_method=None
+    )
+
+    X_train = X['train']
+    y_train = pd.Series(dataset.y['train'].ravel())
+    X_val = X['val']
+    y_val = pd.Series(dataset.y['val'].ravel())
+
+    smote = SMOTE()
+    X_resampled, y_resampled = smote.fit_resample(X_train, y_train)
+
+    clf = CatBoostClassifier()
+    clf.fit(X_train, y_train)
+    evaluate_to_file(clf, X_val, y_val, help_str=f"SMOTE + CatBoost, Dataset:{dataname}", log_file='eval.log')
 
 
 if __name__ == '__main__':

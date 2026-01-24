@@ -1,12 +1,12 @@
 {
-    "task_type": "multiclass",
+    "task_type": "binclass",
     "name": "buddy",
     "id": "buddy--id",
     "n_classes": 3,
-    "train_size": 12054,
-    "val_size": 3014,
-    "test_size": 3767,
-    "n_num_features": 4,
+    "train_size": 13185,
+    "val_size": 2826,
+    "test_size": 2825,
+    "n_num_features": 2,
     "n_cat_features": 5,
     "cat_prompt": [
         "condition is {condition}",

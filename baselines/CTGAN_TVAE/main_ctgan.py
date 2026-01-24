@@ -3,7 +3,7 @@ import os
 import sys
 pythonpath = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 sys.path.insert(0, pythonpath)
-sys.path.append(r'D:\Study\自学\表格数据生成\v11')
+sys.path.append(r'D:\Study\自学\表格数据生成\LogiCoTab-vae')
 
 import shutil
 
@@ -12,6 +12,7 @@ import os
 import numpy as np
 import argparse
 from ctgan import CTGAN as CTGANSynthesizer
+from baselines.CTGAN_TVAE.eval import eval
 from pathlib import Path
 import torch
 import pickle
@@ -98,14 +99,46 @@ def sample_ctgan(
     X_num = gen_data.values[:, :X_num_train.shape[1]] if X_num_train is not None else None
 
 
-    # 保存生成的数据
+
     X_num_columns = raw_config['X_num_columns']
     X_cat_columns = raw_config['X_cat_columns']
     y_column = raw_config['y_column']
     x_df = pd.DataFrame(np.concatenate((X_num, X_cat), axis=1), columns=X_num_columns + X_cat_columns)
     y_df = pd.DataFrame(y, columns=y_column)
     merged_df = pd.concat([x_df, y_df], axis=1)
-    lib.save_synthesis_data(raw_config, merged_df, X_num, X_cat, y, w='null')
+
+
+    # ------------ 开始保存数据 --------------
+    save_dir = raw_config['parent_dir']
+    if not os.path.exists(f"{save_dir}/synthesis_null"):
+        os.makedirs(f"{save_dir}/synthesis_null")
+
+    # 仅保存少数类数据
+    TARGET = y_column[0]
+    value_counts = merged_df[TARGET].value_counts()
+    majority_class = value_counts.idxmax()
+    minority_class = value_counts.idxmin()
+    df_minority = merged_df[merged_df[TARGET] == minority_class]
+    df_minority.to_csv(f"{save_dir}/synthesis_null/synthesis_null.csv", index=False)
+
+    if raw_config['num_numerical_features'] != 0:
+        syn_num = df_minority[raw_config['X_num_columns']].values
+        np.save(f"{save_dir}/synthesis_null/X_num_synthesis", syn_num)
+
+    if raw_config['num_categorical_features'] != 0:
+        syn_cat = df_minority[raw_config['X_cat_columns']].values
+        np.save(f"{save_dir}/synthesis_null/X_cat_synthesis", syn_cat)
+
+    y_real = np.load(os.path.join(real_data_path, f'Y_train.npy'), allow_pickle=True)
+    print("type(y_real) = ", y_real.dtype)
+    syn_y = df_minority[raw_config['y_column']].values
+    if y_real.dtype == bool:
+        np.save(f"{save_dir}/synthesis_null/Y_synthesis", syn_y)
+    else:
+        np.save(f"{save_dir}/synthesis_null/Y_synthesis", syn_y.astype(y_real.dtype))
+
+    # 保存全部的数据
+    # lib.save_synthesis_data(raw_config, merged_df, X_num, X_cat, y, w='null')
 
 
 def save_file(parent_dir, config_path):
@@ -141,6 +174,7 @@ if __name__ == '__main__':
     parser.add_argument('--config', metavar='FILE')
     parser.add_argument('--train', action='store_true', default=False)
     parser.add_argument('--sample', action='store_true', default=False)
+    parser.add_argument('--eval', action='store_true', default=False)
 
     args = parser.parse_args()
 
@@ -168,16 +202,23 @@ if __name__ == '__main__':
             synthesizer=ctgan,
             parent_dir=raw_config['parent_dir'],
             real_data_path=raw_config['real_data_path'],
-            num_samples=raw_config['sample']['num_samples'],
+            num_samples=int(raw_config['sample']['num_samples'] * (raw_config['ir'] - 1)),
             train_params=raw_config['train_params'],
             seed=raw_config['sample']['seed'],
             device=raw_config['device']
         )
+    if args.eval:
+        eval(raw_config)
 
 """
-python baselines/CTGAN_TVAE/main_ctgan.py --config exp/shopper/CTGAN/config.toml --train --sample
-python baselines/CTGAN_TVAE/main_ctgan.py --config exp/obesity/CTGAN/config.toml --train --sample
-python baselines/CTGAN_TVAE/main_ctgan.py --config exp/page/CTGAN/config.toml --train --sample
-python baselines/CTGAN_TVAE/main_ctgan.py --config exp/buddy/CTGAN/config.toml --train --sample
-python baselines/CTGAN_TVAE/main_ctgan.py --config exp/magic/CTGAN/config.toml --train --sample
+python baselines/CTGAN_TVAE/main_ctgan.py --config exp/adult/CTGAN/config.toml --train --sample --eval
+python baselines/CTGAN_TVAE/main_ctgan.py --config exp/magic/CTGAN/config.toml --train --sample --eval
+python baselines/CTGAN_TVAE/main_ctgan.py --config exp/churn/CTGAN/config.toml --train --sample --eval
+python baselines/CTGAN_TVAE/main_ctgan.py --config exp/shopper/CTGAN/config.toml --train --sample --eval
+python baselines/CTGAN_TVAE/main_ctgan.py --config exp/obesity/CTGAN/config.toml --train --sample --eval
+python baselines/CTGAN_TVAE/main_ctgan.py --config exp/bean/CTGAN/config.toml --train --sample --eval
+python baselines/CTGAN_TVAE/main_ctgan.py --config exp/page/CTGAN/config.toml --train --sample --eval
+python baselines/CTGAN_TVAE/main_ctgan.py --config exp/buddy/CTGAN/config.toml --train --sample --eval
+python baselines/CTGAN_TVAE/main_ctgan.py --config exp/winequality/CTGAN/config.toml --train --sample --eval
+python baselines/CTGAN_TVAE/main_ctgan.py --config exp/yeast_me2/CTGAN/config.toml --train --sample --eval
 """

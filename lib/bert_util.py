@@ -99,14 +99,19 @@ def row_to_sentences(row, raw_config, with_label: bool):
     elif dataset_name == 'winequality':
         sentences = []
         if with_label:
-            label_prompt = [config['label_prompt'].format(Class=row['quality'])]
+            label_prompt = [config['label_prompt'].format(quality=row['quality'])]
+            sentences = label_prompt + sentences
+
+    elif dataset_name == 'yeast_me2':
+        sentences = []
+        if with_label:
+            label_prompt = [config['label_prompt'].format(localization_site=row['localization_site'])]
             sentences = label_prompt + sentences
 
     elif dataset_name == 'page':
         sentences = []
         if with_label:
-            Class = config['Class'][str(row['Class'])]
-            label_prompt = [config['label_prompt'].format(Class=Class)]
+            label_prompt = [config['label_prompt'].format(Class=row['Class'])]
             sentences = label_prompt + sentences
 
     elif dataset_name == 'churn':

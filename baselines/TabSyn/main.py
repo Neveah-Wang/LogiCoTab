@@ -3,7 +3,7 @@ import os
 import sys
 pythonpath = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 sys.path.insert(0, pythonpath)
-sys.path.append(r'D:\Study\自学\表格数据生成\v11')
+sys.path.append(r'D:\Study\自学\表格数据生成\LogiCoTab-vae')
 
 
 import argparse
@@ -11,6 +11,7 @@ import lib
 from baselines.TabSyn.train_vae import main as train_vae
 from baselines.TabSyn.train import main as train_dm
 from baselines.TabSyn.sample import main as sample
+from baselines.TabSyn.eval import eval
 
 
 if __name__ == '__main__':
@@ -18,6 +19,7 @@ if __name__ == '__main__':
     parser.add_argument('--config', metavar='FILE')
     parser.add_argument('--train', action='store_true', default=False)
     parser.add_argument('--sample', action='store_true', default=False)
+    parser.add_argument('--eval', action='store_true',  default=False)
     args = parser.parse_args()
     '''
     class Args():
@@ -34,19 +36,18 @@ if __name__ == '__main__':
         train_dm(raw_config)
     if args.sample:
         sample(raw_config)
+    if args.eval:
+        eval(raw_config)
 
 """
-python baselines/TabSyn/main.py --config exp/adult/TabSyn/config.toml --train --sample
-python baselines/TabSyn/main.py --config exp/shopper/TabSyn/config.toml --train --sample
-python baselines/TabSyn/main.py --config exp/covertype/TabSyn/config.toml --train --sample
-python baselines/TabSyn/main.py --config exp/buddy/TabSyn/config.toml --train --sample
-python baselines/TabSyn/main.py --config exp/obesity/TabSyn/config.toml --train --sample
-python baselines/TabSyn/main.py --config exp/magic/TabSyn/config.toml --train --sample
-python baselines/TabSyn/main.py --config exp/churn/TabSyn/config.toml --train --sample
-python baselines/TabSyn/main.py --config exp/bean/TabSyn/config.toml --train --sample
-python baselines/TabSyn/main.py --config exp/page/TabSyn/config.toml --train --sample
-python baselines/TabSyn/main.py --config exp/abalone/TabSyn/config.toml --train --sample
-python baselines/TabSyn/main.py --config exp/bike/TabSyn/config.toml --train --sample
-python baselines/TabSyn/main.py --config exp/insurance/TabSyn/config.toml --train --sample
-python baselines/TabSyn/main.py --config exp/productivity/TabSyn/config.toml --train --sample
+python baselines/TabSyn/main.py --config exp/adult/TabSyn/config.toml --train --sample --eval
+python baselines/TabSyn/main.py --config exp/magic/TabSyn/config.toml --train --sample --eval
+python baselines/TabSyn/main.py --config exp/churn/TabSyn/config.toml --train --sample --eval
+python baselines/TabSyn/main.py --config exp/shopper/TabSyn/config.toml --train --sample --eval
+python baselines/TabSyn/main.py --config exp/obesity/TabSyn/config.toml --train --sample --eval
+python baselines/TabSyn/main.py --config exp/bean/TabSyn/config.toml --train --sample --eval
+python baselines/TabSyn/main.py --config exp/page/TabSyn/config.toml --train --sample --eval
+python baselines/TabSyn/main.py --config exp/buddy/TabSyn/config.toml --train --sample --eval
+python baselines/TabSyn/main.py --config exp/winequality/TabSyn/config.toml --train --sample --eval
+python baselines/TabSyn/main.py --config exp/yeast_me2/TabSyn/config.toml --train --sample --eval
 """

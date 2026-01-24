@@ -272,3 +272,44 @@ def calculate_metrics(
         if task_type == 'binclass':
             result['roc_auc'] = skm.roc_auc_score(y_true, probs)
     return result
+
+
+
+from sklearn.metrics import classification_report, f1_score, roc_auc_score, matthews_corrcoef, confusion_matrix
+from contextlib import redirect_stdout
+
+def evaluate(classifier, X, y, help:str):
+    y_pred = classifier.predict(X)
+    y_score = classifier.predict_proba(X)[:, 1]
+
+    f1 = f1_score(y, y_pred, average='macro')
+    auc = roc_auc_score(y, y_score)
+    mcc = matthews_corrcoef(y, y_pred)
+    report = classification_report(y, y_pred, digits=4)
+
+    # 计算G-mean
+    cm = confusion_matrix(y, y_pred)
+    tn, fp, fn, tp = cm.ravel()
+    sensitivity = tp / (tp + fn) if (tp + fn) > 0 else 0
+    specificity = tn / (tn + fp) if (tn + fp) > 0 else 0
+    G_mean = np.sqrt(sensitivity * specificity)
+
+    print("")
+    print('-' * 20, help, '-' * 20)
+    print(f"F1 (macro): {f1:.4f}")
+    print(f"AUC: {auc:.4f}")
+    print(f"mcc: {mcc:.4f}")
+    print(f"G_mean: {G_mean:.4f}")
+    print("Report:")
+    print(report)
+
+    return auc, f1
+
+def evaluate_to_file(classifier, X, y, help_str, log_file=None):
+    if log_file:
+        # 以追加模式打开文件
+        with open(log_file, 'a', encoding='utf-8') as f:
+            with redirect_stdout(f):
+                return evaluate(classifier, X, y, help_str)
+    else:
+        return evaluate(classifier, X, y, help_str)

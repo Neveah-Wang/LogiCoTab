@@ -230,6 +230,7 @@ class VAE(nn.Module):
         return self.encoder_mu(x, x).detach() 
 
     def reparameterize(self, mu, logvar):
+        # 重参数化技巧：从N(mu, var)采样
         std = torch.exp(0.5 * logvar)
         eps = torch.randn_like(std)
         return mu + eps * std
@@ -244,7 +245,7 @@ class VAE(nn.Module):
 
         h = self.decoder(z[:, 1:])
         
-        return h, mu_z, std_z
+        return h, mu_z, std_z, z
 
 class Reconstructor(nn.Module):
     def __init__(self, d_numerical, categories, d_token):
@@ -279,7 +280,7 @@ class Reconstructor(nn.Module):
 class Model_VAE(nn.Module):
     def __init__(self, num_layers, d_numerical, categories, d_token, n_head=1, factor=4,  bias=True, bert_name="prajjwal1/bert-tiny"):
         super(Model_VAE, self).__init__()
-
+        self.class_centers = nn.Parameter(torch.randn(2, d_numerical+len(categories)+1, d_token))
         self.VAE = VAE(d_numerical, categories, num_layers, d_token, n_head=n_head, factor=factor, bias=bias, bert_name=bert_name)
         self.Reconstructor = Reconstructor(d_numerical, categories, d_token)
 
@@ -289,12 +290,12 @@ class Model_VAE(nn.Module):
 
     def forward(self, x_num, x_cat, cls_heads):
 
-        h, mu_z, std_z = self.VAE(x_num, x_cat, cls_heads)
+        h, mu_z, std_z, z = self.VAE(x_num, x_cat, cls_heads)
 
         # recon_x_num, recon_x_cat = self.Reconstructor(h[:, 1:])
         recon_x_num, recon_x_cat = self.Reconstructor(h)
 
-        return recon_x_num, recon_x_cat, mu_z, std_z
+        return recon_x_num, recon_x_cat, mu_z, std_z, z
 
 
 class Encoder_model(nn.Module):
