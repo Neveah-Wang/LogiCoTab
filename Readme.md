@@ -1,5 +1,9 @@
-本文件主要解释：本版本的代码都做了哪些修改：
+当前分支为:
 
+研究内容一：基于语义增强与类别分离的生成式过采样方法 的全部代码
+
+GOSCA: Generative Oversampling Method Based on Semantic Enhancement and Class
+Separation
 # 关于数据
 - 所有使用到的数据全都存放在`Dataset-all`中，
 - 所有数据都更改为二分类
