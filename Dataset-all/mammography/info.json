@@ -1,0 +1,11 @@
+{
+    "name": "mammography",
+    "id": "mammography--default",
+    "task_type": "binclass",
+    "n_num_features": 6,
+    "n_cat_features": 0,
+    "train_size": 7828,
+    "test_size": 1677,
+    "val_size": 1678,
+    "label_prompt": "Target is {target}"
+}

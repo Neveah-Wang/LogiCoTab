@@ -115,7 +115,7 @@ def plot_tsne_comparison(original_data, latent_data, labels, title_suffix=""):
         hue=labels,                 # 按标签着色
         palette=["red", "blue"],    # 颜色映射：标签0=红色，标签1=蓝色
         ax=ax1,                     # 绘制在第一个坐标轴上
-        alpha=0.8,                  # 0~1：透明~完全不透明
+        alpha=0.6,                  # 0~1：透明~完全不透明
         s=3,                        # 点的大小为5
         legend="full",              # 显示完整图例
         edgecolors='none',          # 去掉点的边框颜色
@@ -133,7 +133,7 @@ def plot_tsne_comparison(original_data, latent_data, labels, title_suffix=""):
         hue=labels,
         palette=["red", "blue"],
         ax=ax2,
-        alpha=1,
+        alpha=0.6,
         s=3,
         legend="full",
         edgecolors='none',
@@ -150,14 +150,17 @@ def plot_tsne_comparison(original_data, latent_data, labels, title_suffix=""):
 
 
 if __name__ == "__main__":
-    raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/winequality\CoTable\config.toml")
+    raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/mammography\CoTable\config.toml")
+    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/winequality\CoTable\config.toml")
     # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/yeast_me2\CoTable\config.toml")
     # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/obesity\CoTable\config.toml")
     # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/bean\CoTable\config.toml")
     # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/page\CoTable\config.toml")
     # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/magic\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/v11\exp/adult\CoTable\config.toml")
+    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/LogiCoTab-vae\exp/adult\CoTable\config.toml")
     # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/LogiCoTab-vae\exp/churn\CoTable\config.toml")
+    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/LogiCoTab-vae\exp/buddy\CoTable\config.toml")
+    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/LogiCoTab-vae\exp/pageblocks\CoTable\config.toml")
     # parser = argparse.ArgumentParser()
     # parser.add_argument('--config', metavar='FILE')
     # args = parser.parse_args()

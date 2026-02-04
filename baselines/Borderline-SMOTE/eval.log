@@ -142,3 +142,35 @@ Report:
    macro avg     0.9167    0.9993    0.9542       739
 weighted avg     0.9989    0.9986    0.9987       739
 
+
+-------------------- Borderline-SMOTE + CatBoost, Dataset:buddy --------------------
+F1 (macro): 0.5885
+AUC: 0.9482
+mcc: 0.1771
+G_mean: 0.4319
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9954    0.9950    0.9952      2810
+           1     0.1765    0.1875    0.1818        16
+
+    accuracy                         0.9904      2826
+   macro avg     0.5859    0.5913    0.5885      2826
+weighted avg     0.9907    0.9904    0.9906      2826
+
+
+-------------------- Borderline-SMOTE + CatBoost, Dataset:mammography --------------------
+F1 (macro): 0.7375
+AUC: 0.9340
+mcc: 0.4777
+G_mean: 0.7314
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9902    0.9854    0.9878      1643
+           1     0.4419    0.5429    0.4872        35
+
+    accuracy                         0.9762      1678
+   macro avg     0.7160    0.7641    0.7375      1678
+weighted avg     0.9788    0.9762    0.9774      1678
+

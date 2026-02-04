@@ -108,6 +108,18 @@ def row_to_sentences(row, raw_config, with_label: bool):
             label_prompt = [config['label_prompt'].format(localization_site=row['localization_site'])]
             sentences = label_prompt + sentences
 
+    elif dataset_name == 'pageblocks':
+        sentences = []
+        if with_label:
+            label_prompt = [config['label_prompt'].format(Class=row['Class'])]
+            sentences = label_prompt + sentences
+
+    elif dataset_name == 'mammography':
+        sentences = []
+        if with_label:
+            label_prompt = [config['label_prompt'].format(target=row['target'])]
+            sentences = label_prompt + sentences
+
     elif dataset_name == 'page':
         sentences = []
         if with_label:

@@ -147,7 +147,7 @@ def split_num_cat_target(syn_data, raw_config, info, num_inverse, cat_inverse, y
         syn_target = syn_cat[:, :n_y_feat]
         syn_cat = syn_cat[:, n_y_feat:]
 
-    syn_num = num_inverse(syn_num) if num_inverse else syn_cat
+    syn_num = num_inverse(syn_num) if num_inverse else syn_num
     syn_cat = cat_inverse(syn_cat) if cat_inverse else syn_cat
     syn_target = y_inverse(syn_target) if y_inverse else syn_target
 

@@ -12,7 +12,7 @@ import numpy as np
 import pandas as pd
 from imblearn.over_sampling import SMOTE, SMOTENC
 from lib.make_dataset import make_dataset, concat_features, make_dataset_for_evaluation
-from lib.metrics import evaluate_to_file
+from lib.metrics import evaluate_to_file, evaluate_multiple_seeds, write_avg_results_to_file
 from collections import Counter
 from catboost import CatBoostClassifier
 
@@ -62,9 +62,23 @@ def main(raw_config):
     smote = SMOTE()
     X_resampled, y_resampled = smote.fit_resample(X_train, y_train)
 
-    clf = CatBoostClassifier()
-    clf.fit(X_resampled, y_resampled)
-    evaluate_to_file(clf, X_val, y_val, help_str=f"SMOTE + CatBoost, Dataset:{dataname}", log_file='eval.log')
+    """单次评估"""
+    # clf = CatBoostClassifier(random_seed=4)
+    # clf.fit(X_resampled, y_resampled)
+    # evaluate_to_file(clf, X_val, y_val, help_str=f"SMOTE + CatBoost, Dataset:{dataname}", log_file='eval.log')
+
+    """多种随机种子，求平均"""
+    avg_results = evaluate_multiple_seeds(
+        X_resampled, y_resampled,
+        X_val, y_val,
+        seeds=list(range(10)),
+        catboost_params={}
+    )
+    write_avg_results_to_file(
+        avg_results,
+        help_str=f"SMOTE + CatBoost, Dataset:{dataname}",
+        log_file="eval_average.log"
+    )
 
 
 if __name__ == '__main__':
@@ -78,6 +92,8 @@ if __name__ == '__main__':
     raw_config_list.append(lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/obesity\CoTable\config.toml"))
     raw_config_list.append(lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/yeast_me2\CoTable\config.toml"))
     raw_config_list.append(lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/page\CoTable\config.toml"))
+    raw_config_list.append(lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/buddy\CoTable\config.toml"))
+    raw_config_list.append(lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/mammography\CoTable\config.toml"))
 
 
     for raw_config in raw_config_list:

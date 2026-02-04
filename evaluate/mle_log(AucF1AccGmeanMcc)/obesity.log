@@ -1,0 +1,1432 @@
+loading real data...
+Train: (1688, 16), Train real size: N/A, Val size: (212, 16), Test size: (211, 16)
+0:	learn: 0.8899501	test: 0.8600540	best: 0.8600540 (0)	total: 31ms	remaining: 1m 2s
+100:	learn: 0.9994082	test: 0.9813405	best: 0.9906703 (39)	total: 1.93s	remaining: 36.2s
+200:	learn: 1.0000000	test: 0.9811321	best: 0.9906703 (39)	total: 3.78s	remaining: 33.9s
+300:	learn: 1.0000000	test: 0.9811321	best: 0.9906703 (39)	total: 5.68s	remaining: 32.1s
+400:	learn: 1.0000000	test: 0.9811321	best: 0.9906703 (39)	total: 7.59s	remaining: 30.3s
+500:	learn: 1.0000000	test: 0.9811321	best: 0.9906703 (39)	total: 9.41s	remaining: 28.2s
+bestTest = 0.990670264
+bestIteration = 39
+Shrink model to first 40 iterations.
+
+-------------------- Baseline（原始训练集） --------------------
+F1 (macro): 0.9833
+AUC: 0.9935
+mcc: 0.9671
+G_mean: 0.9943
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9887    0.9943       177
+           1     0.9459    1.0000    0.9722        35
+
+    accuracy                         0.9906       212
+   macro avg     0.9730    0.9944    0.9833       212
+weighted avg     0.9911    0.9906    0.9907       212
+
+minority_class:  1
+len(X_minority):  220
+len(X_majority):  1468
+
+========================================  Iter 0  ========================================
+The number of training sets:  1688
+The number of X_minority:  220
+The number of X_majority :  1468
+0:	learn: 0.8899501	test: 0.8600540	best: 0.8600540 (0)	total: 21.2ms	remaining: 42.3s
+100:	learn: 0.9994082	test: 0.9813405	best: 0.9906703 (39)	total: 1.88s	remaining: 35.4s
+200:	learn: 1.0000000	test: 0.9811321	best: 0.9906703 (39)	total: 3.76s	remaining: 33.6s
+300:	learn: 1.0000000	test: 0.9811321	best: 0.9906703 (39)	total: 5.67s	remaining: 32s
+400:	learn: 1.0000000	test: 0.9811321	best: 0.9906703 (39)	total: 7.55s	remaining: 30.1s
+500:	learn: 1.0000000	test: 0.9811321	best: 0.9906703 (39)	total: 9.34s	remaining: 27.9s
+bestTest = 0.990670264
+bestIteration = 39
+Shrink model to first 40 iterations.
+
+-------------------- iteration=0, val, seed=0 --------------------
+F1 (macro): 0.9833
+AUC: 0.9935
+mcc: 0.9671
+G_mean: 0.9943
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9887    0.9943       177
+           1     0.9459    1.0000    0.9722        35
+
+    accuracy                         0.9906       212
+   macro avg     0.9730    0.9944    0.9833       212
+weighted avg     0.9911    0.9906    0.9907       212
+
+
+-------------------- iteration=0, train, seed=0 --------------------
+F1 (macro): 0.9816
+AUC: 0.9994
+mcc: 0.9633
+G_mean: 0.9796
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9946    0.9959    0.9952      1468
+           1     0.9725    0.9636    0.9680       220
+
+    accuracy                         0.9917      1688
+   macro avg     0.9835    0.9798    0.9816      1688
+weighted avg     0.9917    0.9917    0.9917      1688
+
+0:	learn: 0.8809593	test: 0.8512135	best: 0.8512135 (0)	total: 19.3ms	remaining: 38.6s
+100:	learn: 0.9958571	test: 0.9859287	best: 0.9906703 (53)	total: 2s	remaining: 37.6s
+200:	learn: 0.9982245	test: 0.9905660	best: 0.9906703 (53)	total: 4.03s	remaining: 36s
+300:	learn: 0.9994082	test: 0.9905660	best: 0.9906703 (53)	total: 5.95s	remaining: 33.6s
+400:	learn: 0.9994082	test: 0.9905660	best: 0.9906703 (53)	total: 7.9s	remaining: 31.5s
+500:	learn: 1.0000000	test: 0.9953096	best: 0.9953096 (467)	total: 9.8s	remaining: 29.3s
+600:	learn: 1.0000000	test: 0.9953096	best: 0.9953096 (467)	total: 11.7s	remaining: 27.1s
+700:	learn: 1.0000000	test: 0.9905660	best: 0.9953096 (467)	total: 13.6s	remaining: 25.1s
+bestTest = 0.9953095558
+bestIteration = 467
+Shrink model to first 468 iterations.
+
+-------------------- iteration=0, val, seed=1 --------------------
+F1 (macro): 0.9915
+AUC: 0.9990
+mcc: 0.9832
+G_mean: 0.9972
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9944    0.9972       177
+           1     0.9722    1.0000    0.9859        35
+
+    accuracy                         0.9953       212
+   macro avg     0.9861    0.9972    0.9915       212
+weighted avg     0.9954    0.9953    0.9953       212
+
+
+-------------------- iteration=0, train, seed=1 --------------------
+F1 (macro): 0.9987
+AUC: 1.0000
+mcc: 0.9974
+G_mean: 0.9997
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9993    0.9997      1468
+           1     0.9955    1.0000    0.9977       220
+
+    accuracy                         0.9994      1688
+   macro avg     0.9977    0.9997    0.9987      1688
+weighted avg     0.9994    0.9994    0.9994      1688
+
+0:	learn: 0.8832523	test: 0.8550523	best: 0.8550523 (0)	total: 18.4ms	remaining: 36.7s
+100:	learn: 0.9976303	test: 0.9813405	best: 0.9859287 (20)	total: 1.87s	remaining: 35.2s
+200:	learn: 0.9994082	test: 0.9859287	best: 0.9859287 (20)	total: 3.73s	remaining: 33.3s
+300:	learn: 1.0000000	test: 0.9811321	best: 0.9859287 (20)	total: 5.63s	remaining: 31.8s
+400:	learn: 1.0000000	test: 0.9811321	best: 0.9859287 (20)	total: 7.5s	remaining: 29.9s
+500:	learn: 1.0000000	test: 0.9811321	best: 0.9859287 (20)	total: 9.41s	remaining: 28.2s
+600:	learn: 1.0000000	test: 0.9811321	best: 0.9859287 (20)	total: 11.3s	remaining: 26.2s
+700:	learn: 1.0000000	test: 0.9859287	best: 0.9859287 (20)	total: 13.1s	remaining: 24.3s
+800:	learn: 1.0000000	test: 0.9859287	best: 0.9859287 (20)	total: 15s	remaining: 22.5s
+900:	learn: 1.0000000	test: 0.9905660	best: 0.9905660 (815)	total: 16.9s	remaining: 20.6s
+1000:	learn: 1.0000000	test: 0.9859287	best: 0.9905660 (815)	total: 18.8s	remaining: 18.8s
+1100:	learn: 1.0000000	test: 0.9859287	best: 0.9905660 (815)	total: 20.7s	remaining: 16.9s
+1200:	learn: 1.0000000	test: 0.9859287	best: 0.9905660 (815)	total: 22.6s	remaining: 15.1s
+bestTest = 0.9905660377
+bestIteration = 815
+Shrink model to first 816 iterations.
+
+-------------------- iteration=0, val, seed=2 --------------------
+F1 (macro): 0.9829
+AUC: 0.9968
+mcc: 0.9658
+G_mean: 0.9828
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9944    0.9944    0.9944       177
+           1     0.9714    0.9714    0.9714        35
+
+    accuracy                         0.9906       212
+   macro avg     0.9829    0.9829    0.9829       212
+weighted avg     0.9906    0.9906    0.9906       212
+
+
+-------------------- iteration=0, train, seed=2 --------------------
+F1 (macro): 0.9987
+AUC: 1.0000
+mcc: 0.9974
+G_mean: 0.9997
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9993    0.9997      1468
+           1     0.9955    1.0000    0.9977       220
+
+    accuracy                         0.9994      1688
+   macro avg     0.9977    0.9997    0.9987      1688
+weighted avg     0.9994    0.9994    0.9994      1688
+
+0:	learn: 0.8650831	test: 0.8376629	best: 0.8376629 (0)	total: 20.2ms	remaining: 40.4s
+100:	learn: 0.9958571	test: 0.9857664	best: 0.9857664 (83)	total: 1.85s	remaining: 34.8s
+200:	learn: 1.0000000	test: 0.9859287	best: 0.9905660 (132)	total: 3.69s	remaining: 33.1s
+300:	learn: 1.0000000	test: 0.9859287	best: 0.9905660 (132)	total: 5.55s	remaining: 31.3s
+400:	learn: 1.0000000	test: 0.9859287	best: 0.9905660 (132)	total: 7.48s	remaining: 29.8s
+500:	learn: 1.0000000	test: 0.9762774	best: 0.9905660 (132)	total: 9.34s	remaining: 27.9s
+bestTest = 0.9905660377
+bestIteration = 132
+Shrink model to first 133 iterations.
+
+-------------------- iteration=0, val, seed=3 --------------------
+F1 (macro): 0.9829
+AUC: 0.9971
+mcc: 0.9658
+G_mean: 0.9828
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9944    0.9944    0.9944       177
+           1     0.9714    0.9714    0.9714        35
+
+    accuracy                         0.9906       212
+   macro avg     0.9829    0.9829    0.9829       212
+weighted avg     0.9906    0.9906    0.9906       212
+
+
+-------------------- iteration=0, train, seed=3 --------------------
+train_z.shape = torch.Size([1688, 80])
+Data is sampling...
+sampling timestep 1000 sampling timestep 999 sampling timestep 998 sampling timestep 997 sampling timestep 996 sampling timestep 995 sampling timestep 994 sampling timestep 993 sampling timestep 992 sampling timestep 991 sampling timestep 990 sampling timestep 989 sampling timestep 988 sampling timestep 987 sampling timestep 986 sampling timestep 985 sampling timestep 984 sampling timestep 983 sampling timestep 982 sampling timestep 981 sampling timestep 980 sampling timestep 979 sampling timestep 978 sampling timestep 977 sampling timestep 976 sampling timestep 975 sampling timestep 974 sampling timestep 973 sampling timestep 972 sampling timestep 971 sampling timestep 970 sampling timestep 969 sampling timestep 968 sampling timestep 967 sampling timestep 966 sampling timestep 965 sampling timestep 964 sampling timestep 963 sampling timestep 962 sampling timestep 961 sampling timestep 960 sampling timestep 959 sampling timestep 958 sampling timestep 957 sampling timestep 956 sampling timestep 955 sampling timestep 954 sampling timestep 953 sampling timestep 952 sampling timestep 951 sampling timestep 950 sampling timestep 949 sampling timestep 948 sampling timestep 947 sampling timestep 946 sampling timestep 945 sampling timestep 944 sampling timestep 943 sampling timestep 942 sampling timestep 941 sampling timestep 940 sampling timestep 939 sampling timestep 938 sampling timestep 937 sampling timestep 936 sampling timestep 935 sampling timestep 934 sampling timestep 933 sampling timestep 932 sampling timestep 931 sampling timestep 930 sampling timestep 929 sampling timestep 928 sampling timestep 927 sampling timestep 926 sampling timestep 925 sampling timestep 924 sampling timestep 923 sampling timestep 922 sampling timestep 921 sampling timestep 920 sampling timestep 919 sampling timestep 918 sampling timestep 917 sampling timestep 916 sampling timestep 915 sampling timestep 914 sampling timestep 913 sampling timestep 912 sampling timestep 911 sampling timestep 910 sampling timestep 909 sampling timestep 908 sampling timestep 907 sampling timestep 906 sampling timestep 905 sampling timestep 904 sampling timestep 903 sampling timestep 902 sampling timestep 901 sampling timestep 900 sampling timestep 899 sampling timestep 898 sampling timestep 897 sampling timestep 896 sampling timestep 895 sampling timestep 894 sampling timestep 893 sampling timestep 892 sampling timestep 891 sampling timestep 890 sampling timestep 889 sampling timestep 888 sampling timestep 887 sampling timestep 886 sampling timestep 885 sampling timestep 884 sampling timestep 883 sampling timestep 882 sampling timestep 881 sampling timestep 880 sampling timestep 879 sampling timestep 878 sampling timestep 877 sampling timestep 876 sampling timestep 875 sampling timestep 874 sampling timestep 873 sampling timestep 872 sampling timestep 871 sampling timestep 870 sampling timestep 869 sampling timestep 868 sampling timestep 867 sampling timestep 866 sampling timestep 865 sampling timestep 864 sampling timestep 863 sampling timestep 862 sampling timestep 861 sampling timestep 860 sampling timestep 859 sampling timestep 858 sampling timestep 857 sampling timestep 856 sampling timestep 855 sampling timestep 854 sampling timestep 853 sampling timestep 852 sampling timestep 851 sampling timestep 850 sampling timestep 849 sampling timestep 848 sampling timestep 847 sampling timestep 846 sampling timestep 845 sampling timestep 844 sampling timestep 843 sampling timestep 842 sampling timestep 841 sampling timestep 840 sampling timestep 839 sampling timestep 838 sampling timestep 837 sampling timestep 836 sampling timestep 835 sampling timestep 834 sampling timestep 833 sampling timestep 832 sampling timestep 831 sampling timestep 830 sampling timestep 829 sampling timestep 828 sampling timestep 827 sampling timestep 826 sampling timestep 825 sampling timestep 824 sampling timestep 823 sampling timestep 822 sampling timestep 821 sampling timestep 820 sampling timestep 819 sampling timestep 818 sampling timestep 817 sampling timestep 816 sampling timestep 815 sampling timestep 814 sampling timestep 813 sampling timestep 812 sampling timestep 811 sampling timestep 810 sampling timestep 809 sampling timestep 808 sampling timestep 807 sampling timestep 806 sampling timestep 805 sampling timestep 804 sampling timestep 803 sampling timestep 802 sampling timestep 801 sampling timestep 800 sampling timestep 799 sampling timestep 798 sampling timestep 797 sampling timestep 796 sampling timestep 795 sampling timestep 794 sampling timestep 793 sampling timestep 792 sampling timestep 791 sampling timestep 790 sampling timestep 789 sampling timestep 788 sampling timestep 787 sampling timestep 786 sampling timestep 785 sampling timestep 784 sampling timestep 783 sampling timestep 782 sampling timestep 781 sampling timestep 780 sampling timestep 779 sampling timestep 778 sampling timestep 777 sampling timestep 776 sampling timestep 775 sampling timestep 774 sampling timestep 773 sampling timestep 772 sampling timestep 771 sampling timestep 770 sampling timestep 769 sampling timestep 768 sampling timestep 767 sampling timestep 766 sampling timestep 765 sampling timestep 764 sampling timestep 763 sampling timestep 762 sampling timestep 761 sampling timestep 760 sampling timestep 759 sampling timestep 758 sampling timestep 757 sampling timestep 756 sampling timestep 755 sampling timestep 754 sampling timestep 753 sampling timestep 752 sampling timestep 751 sampling timestep 750 sampling timestep 749 sampling timestep 748 sampling timestep 747 sampling timestep 746 sampling timestep 745 sampling timestep 744 sampling timestep 743 sampling timestep 742 sampling timestep 741 sampling timestep 740 sampling timestep 739 sampling timestep 738 sampling timestep 737 sampling timestep 736 sampling timestep 735 sampling timestep 734 sampling timestep 733 sampling timestep 732 sampling timestep 731 sampling timestep 730 sampling timestep 729 sampling timestep 728 sampling timestep 727 sampling timestep 726 sampling timestep 725 sampling timestep 724 sampling timestep 723 sampling timestep 722 sampling timestep 721 sampling timestep 720 sampling timestep 719 sampling timestep 718 sampling timestep 717 sampling timestep 716 sampling timestep 715 sampling timestep 714 sampling timestep 713 sampling timestep 712 sampling timestep 711 sampling timestep 710 sampling timestep 709 sampling timestep 708 sampling timestep 707 sampling timestep 706 sampling timestep 705 sampling timestep 704 sampling timestep 703 sampling timestep 702 sampling timestep 701 sampling timestep 700 sampling timestep 699 sampling timestep 698 sampling timestep 697 sampling timestep 696 sampling timestep 695 sampling timestep 694 sampling timestep 693 sampling timestep 692 sampling timestep 691 sampling timestep 690 sampling timestep 689 sampling timestep 688 sampling timestep 687 sampling timestep 686 sampling timestep 685 sampling timestep 684 sampling timestep 683 sampling timestep 682 sampling timestep 681 sampling timestep 680 sampling timestep 679 sampling timestep 678 sampling timestep 677 sampling timestep 676 sampling timestep 675 sampling timestep 674 sampling timestep 673 sampling timestep 672 sampling timestep 671 sampling timestep 670 sampling timestep 669 sampling timestep 668 sampling timestep 667 sampling timestep 666 sampling timestep 665 sampling timestep 664 sampling timestep 663 sampling timestep 662 sampling timestep 661 sampling timestep 660 sampling timestep 659 sampling timestep 658 sampling timestep 657 sampling timestep 656 sampling timestep 655 sampling timestep 654 sampling timestep 653 sampling timestep 652 sampling timestep 651 sampling timestep 650 sampling timestep 649 sampling timestep 648 sampling timestep 647 sampling timestep 646 sampling timestep 645 sampling timestep 644 sampling timestep 643 sampling timestep 642 sampling timestep 641 sampling timestep 640 sampling timestep 639 sampling timestep 638 sampling timestep 637 sampling timestep 636 sampling timestep 635 sampling timestep 634 sampling timestep 633 sampling timestep 632 sampling timestep 631 sampling timestep 630 sampling timestep 629 sampling timestep 628 sampling timestep 627 sampling timestep 626 sampling timestep 625 sampling timestep 624 sampling timestep 623 sampling timestep 622 sampling timestep 621 sampling timestep 620 sampling timestep 619 sampling timestep 618 sampling timestep 617 sampling timestep 616 sampling timestep 615 sampling timestep 614 sampling timestep 613 sampling timestep 612 sampling timestep 611 sampling timestep 610 sampling timestep 609 sampling timestep 608 sampling timestep 607 sampling timestep 606 sampling timestep 605 sampling timestep 604 sampling timestep 603 sampling timestep 602 sampling timestep 601 sampling timestep 600 sampling timestep 599 sampling timestep 598 sampling timestep 597 sampling timestep 596 sampling timestep 595 sampling timestep 594 sampling timestep 593 sampling timestep 592 sampling timestep 591 sampling timestep 590 sampling timestep 589 sampling timestep 588 sampling timestep 587 sampling timestep 586 sampling timestep 585 sampling timestep 584 sampling timestep 583 sampling timestep 582 sampling timestep 581 sampling timestep 580 sampling timestep 579 sampling timestep 578 sampling timestep 577 sampling timestep 576 sampling timestep 575 sampling timestep 574 sampling timestep 573 sampling timestep 572 sampling timestep 571 sampling timestep 570 sampling timestep 569 sampling timestep 568 sampling timestep 567 sampling timestep 566 sampling timestep 565 sampling timestep 564 sampling timestep 563 sampling timestep 562 sampling timestep 561 sampling timestep 560 sampling timestep 559 sampling timestep 558 sampling timestep 557 sampling timestep 556 sampling timestep 555 sampling timestep 554 sampling timestep 553 sampling timestep 552 sampling timestep 551 sampling timestep 550 sampling timestep 549 sampling timestep 548 sampling timestep 547 sampling timestep 546 sampling timestep 545 sampling timestep 544 sampling timestep 543 sampling timestep 542 sampling timestep 541 sampling timestep 540 sampling timestep 539 sampling timestep 538 sampling timestep 537 sampling timestep 536 sampling timestep 535 sampling timestep 534 sampling timestep 533 sampling timestep 532 sampling timestep 531 sampling timestep 530 sampling timestep 529 sampling timestep 528 sampling timestep 527 sampling timestep 526 sampling timestep 525 sampling timestep 524 sampling timestep 523 sampling timestep 522 sampling timestep 521 sampling timestep 520 sampling timestep 519 sampling timestep 518 sampling timestep 517 sampling timestep 516 sampling timestep 515 sampling timestep 514 sampling timestep 513 sampling timestep 512 sampling timestep 511 sampling timestep 510 sampling timestep 509 sampling timestep 508 sampling timestep 507 sampling timestep 506 sampling timestep 505 sampling timestep 504 sampling timestep 503 sampling timestep 502 sampling timestep 501 sampling timestep 500 sampling timestep 499 sampling timestep 498 sampling timestep 497 sampling timestep 496 sampling timestep 495 sampling timestep 494 sampling timestep 493 sampling timestep 492 sampling timestep 491 sampling timestep 490 sampling timestep 489 sampling timestep 488 sampling timestep 487 sampling timestep 486 sampling timestep 485 sampling timestep 484 sampling timestep 483 sampling timestep 482 sampling timestep 481 sampling timestep 480 sampling timestep 479 sampling timestep 478 sampling timestep 477 sampling timestep 476 sampling timestep 475 sampling timestep 474 sampling timestep 473 sampling timestep 472 sampling timestep 471 sampling timestep 470 sampling timestep 469 sampling timestep 468 sampling timestep 467 sampling timestep 466 sampling timestep 465 sampling timestep 464 sampling timestep 463 sampling timestep 462 sampling timestep 461 sampling timestep 460 sampling timestep 459 sampling timestep 458 sampling timestep 457 sampling timestep 456 sampling timestep 455 sampling timestep 454 sampling timestep 453 sampling timestep 452 sampling timestep 451 sampling timestep 450 sampling timestep 449 sampling timestep 448 sampling timestep 447 sampling timestep 446 sampling timestep 445 sampling timestep 444 sampling timestep 443 sampling timestep 442 sampling timestep 441 sampling timestep 440 sampling timestep 439 sampling timestep 438 sampling timestep 437 sampling timestep 436 sampling timestep 435 sampling timestep 434 sampling timestep 433 sampling timestep 432 sampling timestep 431 sampling timestep 430 sampling timestep 429 sampling timestep 428 sampling timestep 427 sampling timestep 426 sampling timestep 425 sampling timestep 424 sampling timestep 423 sampling timestep 422 sampling timestep 421 sampling timestep 420 sampling timestep 419 sampling timestep 418 sampling timestep 417 sampling timestep 416 sampling timestep 415 sampling timestep 414 sampling timestep 413 sampling timestep 412 sampling timestep 411 sampling timestep 410 sampling timestep 409 sampling timestep 408 sampling timestep 407 sampling timestep 406 sampling timestep 405 sampling timestep 404 sampling timestep 403 sampling timestep 402 sampling timestep 401 sampling timestep 400 sampling timestep 399 sampling timestep 398 sampling timestep 397 sampling timestep 396 sampling timestep 395 sampling timestep 394 sampling timestep 393 sampling timestep 392 sampling timestep 391 sampling timestep 390 sampling timestep 389 sampling timestep 388 sampling timestep 387 sampling timestep 386 sampling timestep 385 sampling timestep 384 sampling timestep 383 sampling timestep 382 sampling timestep 381 sampling timestep 380 sampling timestep 379 sampling timestep 378 sampling timestep 377 sampling timestep 376 sampling timestep 375 sampling timestep 374 sampling timestep 373 sampling timestep 372 sampling timestep 371 sampling timestep 370 sampling timestep 369 sampling timestep 368 sampling timestep 367 sampling timestep 366 sampling timestep 365 sampling timestep 364 sampling timestep 363 sampling timestep 362 sampling timestep 361 sampling timestep 360 sampling timestep 359 sampling timestep 358 sampling timestep 357 sampling timestep 356 sampling timestep 355 sampling timestep 354 sampling timestep 353 sampling timestep 352 sampling timestep 351 sampling timestep 350 sampling timestep 349 sampling timestep 348 sampling timestep 347 sampling timestep 346 sampling timestep 345 sampling timestep 344 sampling timestep 343 sampling timestep 342 sampling timestep 341 sampling timestep 340 sampling timestep 339 sampling timestep 338 sampling timestep 337 sampling timestep 336 sampling timestep 335 sampling timestep 334 sampling timestep 333 sampling timestep 332 sampling timestep 331 sampling timestep 330 sampling timestep 329 sampling timestep 328 sampling timestep 327 sampling timestep 326 sampling timestep 325 sampling timestep 324 sampling timestep 323 sampling timestep 322 sampling timestep 321 sampling timestep 320 sampling timestep 319 sampling timestep 318 sampling timestep 317 sampling timestep 316 sampling timestep 315 sampling timestep 314 sampling timestep 313 sampling timestep 312 sampling timestep 311 sampling timestep 310 sampling timestep 309 sampling timestep 308 sampling timestep 307 sampling timestep 306 sampling timestep 305 sampling timestep 304 sampling timestep 303 sampling timestep 302 sampling timestep 301 sampling timestep 300 sampling timestep 299 sampling timestep 298 sampling timestep 297 sampling timestep 296 sampling timestep 295 sampling timestep 294 sampling timestep 293 sampling timestep 292 sampling timestep 291 sampling timestep 290 sampling timestep 289 sampling timestep 288 sampling timestep 287 sampling timestep 286 sampling timestep 285 sampling timestep 284 sampling timestep 283 sampling timestep 282 sampling timestep 281 sampling timestep 280 sampling timestep 279 sampling timestep 278 sampling timestep 277 sampling timestep 276 sampling timestep 275 sampling timestep 274 sampling timestep 273 sampling timestep 272 sampling timestep 271 sampling timestep 270 sampling timestep 269 sampling timestep 268 sampling timestep 267 sampling timestep 266 sampling timestep 265 sampling timestep 264 sampling timestep 263 sampling timestep 262 sampling timestep 261 sampling timestep 260 sampling timestep 259 sampling timestep 258 sampling timestep 257 sampling timestep 256 sampling timestep 255 sampling timestep 254 sampling timestep 253 sampling timestep 252 sampling timestep 251 sampling timestep 250 sampling timestep 249 sampling timestep 248 sampling timestep 247 sampling timestep 246 sampling timestep 245 sampling timestep 244 sampling timestep 243 sampling timestep 242 sampling timestep 241 sampling timestep 240 sampling timestep 239 sampling timestep 238 sampling timestep 237 sampling timestep 236 sampling timestep 235 sampling timestep 234 sampling timestep 233 sampling timestep 232 sampling timestep 231 sampling timestep 230 sampling timestep 229 sampling timestep 228 sampling timestep 227 sampling timestep 226 sampling timestep 225 sampling timestep 224 sampling timestep 223 sampling timestep 222 sampling timestep 221 sampling timestep 220 sampling timestep 219 sampling timestep 218 sampling timestep 217 sampling timestep 216 sampling timestep 215 sampling timestep 214 sampling timestep 213 sampling timestep 212 sampling timestep 211 sampling timestep 210 sampling timestep 209 sampling timestep 208 sampling timestep 207 sampling timestep 206 sampling timestep 205 sampling timestep 204 sampling timestep 203 sampling timestep 202 sampling timestep 201 sampling timestep 200 sampling timestep 199 sampling timestep 198 sampling timestep 197 sampling timestep 196 sampling timestep 195 sampling timestep 194 sampling timestep 193 sampling timestep 192 sampling timestep 191 sampling timestep 190 sampling timestep 189 sampling timestep 188 sampling timestep 187 sampling timestep 186 sampling timestep 185 sampling timestep 184 sampling timestep 183 sampling timestep 182 sampling timestep 181 sampling timestep 180 sampling timestep 179 sampling timestep 178 sampling timestep 177 sampling timestep 176 sampling timestep 175 sampling timestep 174 sampling timestep 173 sampling timestep 172 sampling timestep 171 sampling timestep 170 sampling timestep 169 sampling timestep 168 sampling timestep 167 sampling timestep 166 sampling timestep 165 sampling timestep 164 sampling timestep 163 sampling timestep 162 sampling timestep 161 sampling timestep 160 sampling timestep 159 sampling timestep 158 sampling timestep 157 sampling timestep 156 sampling timestep 155 sampling timestep 154 sampling timestep 153 sampling timestep 152 sampling timestep 151 sampling timestep 150 sampling timestep 149 sampling timestep 148 sampling timestep 147 sampling timestep 146 sampling timestep 145 sampling timestep 144 sampling timestep 143 sampling timestep 142 sampling timestep 141 sampling timestep 140 sampling timestep 139 sampling timestep 138 sampling timestep 137 sampling timestep 136 sampling timestep 135 sampling timestep 134 sampling timestep 133 sampling timestep 132 sampling timestep 131 sampling timestep 130 sampling timestep 129 sampling timestep 128 sampling timestep 127 sampling timestep 126 sampling timestep 125 sampling timestep 124 sampling timestep 123 sampling timestep 122 sampling timestep 121 sampling timestep 120 sampling timestep 119 sampling timestep 118 sampling timestep 117 sampling timestep 116 sampling timestep 115 sampling timestep 114 sampling timestep 113 sampling timestep 112 sampling timestep 111 sampling timestep 110 sampling timestep 109 sampling timestep 108 sampling timestep 107 sampling timestep 106 sampling timestep 105 sampling timestep 104 sampling timestep 103 sampling timestep 102 sampling timestep 101 sampling timestep 100 sampling timestep 99 sampling timestep 98 sampling timestep 97 sampling timestep 96 sampling timestep 95 sampling timestep 94 sampling timestep 93 sampling timestep 92 sampling timestep 91 sampling timestep 90 sampling timestep 89 sampling timestep 88 sampling timestep 87 sampling timestep 86 sampling timestep 85 sampling timestep 84 sampling timestep 83 sampling timestep 82 sampling timestep 81 sampling timestep 80 sampling timestep 79 sampling timestep 78 sampling timestep 77 sampling timestep 76 sampling timestep 75 sampling timestep 74 sampling timestep 73 sampling timestep 72 sampling timestep 71 sampling timestep 70 sampling timestep 69 sampling timestep 68 sampling timestep 67 sampling timestep 66 sampling timestep 65 sampling timestep 64 sampling timestep 63 sampling timestep 62 sampling timestep 61 sampling timestep 60 sampling timestep 59 sampling timestep 58 sampling timestep 57 sampling timestep 56 sampling timestep 55 sampling timestep 54 sampling timestep 53 sampling timestep 52 sampling timestep 51 sampling timestep 50 sampling timestep 49 sampling timestep 48 sampling timestep 47 sampling timestep 46 sampling timestep 45 sampling timestep 44 sampling timestep 43 sampling timestep 42 sampling timestep 41 sampling timestep 40 sampling timestep 39 sampling timestep 38 sampling timestep 37 sampling timestep 36 sampling timestep 35 sampling timestep 34 sampling timestep 33 sampling timestep 32 sampling timestep 31 sampling timestep 30 sampling timestep 29 sampling timestep 28 sampling timestep 27 sampling timestep 26 sampling timestep 25 sampling timestep 24 sampling timestep 23 sampling timestep 22 sampling timestep 21 sampling timestep 20 sampling timestep 19 sampling timestep 18 sampling timestep 17 sampling timestep 16 sampling timestep 15 sampling timestep 14 sampling timestep 13 sampling timestep 12 sampling timestep 11 sampling timestep 10 sampling timestep 9 sampling timestep 8 sampling timestep 7 sampling timestep 6 sampling timestep 5 sampling timestep 4 sampling timestep 3 sampling timestep 2 sampling timestep 1 The generated data has been saved at D:/Study/自学/表格数据生成/LogiCoTab-vae/exp/obesity/CoTable/synthesis_null
+F1 (macro): 0.9922
+AUC: 0.9999
+mcc: 0.9844
+G_mean: 0.9941
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9986    0.9973    0.9980      1468
+           1     0.9820    0.9909    0.9864       220
+
+    accuracy                         0.9964      1688
+   macro avg     0.9903    0.9941    0.9922      1688
+weighted avg     0.9965    0.9964    0.9965      1688
+
+0:	learn: 0.8809593	test: 0.8512135	best: 0.8512135 (0)	total: 23.6ms	remaining: 47.1s
+100:	learn: 0.9976349	test: 0.9905660	best: 0.9905660 (71)	total: 1.87s	remaining: 35.1s
+200:	learn: 1.0000000	test: 0.9857664	best: 0.9905660 (71)	total: 3.75s	remaining: 33.6s
+300:	learn: 1.0000000	test: 0.9857664	best: 0.9905660 (71)	total: 5.66s	remaining: 31.9s
+400:	learn: 1.0000000	test: 0.9905660	best: 0.9905660 (71)	total: 7.52s	remaining: 30s
+500:	learn: 1.0000000	test: 0.9905660	best: 0.9905660 (71)	total: 9.39s	remaining: 28.1s
+600:	learn: 1.0000000	test: 0.9905660	best: 0.9905660 (71)	total: 11.3s	remaining: 26.3s
+700:	learn: 1.0000000	test: 0.9859287	best: 0.9905660 (71)	total: 13.2s	remaining: 24.5s
+800:	learn: 1.0000000	test: 0.9859287	best: 0.9905660 (71)	total: 15s	remaining: 22.5s
+bestTest = 0.9905660377
+bestIteration = 71
+Shrink model to first 72 iterations.
+
+-------------------- iteration=0, val, seed=4 --------------------
+F1 (macro): 0.9829
+AUC: 0.9984
+mcc: 0.9658
+G_mean: 0.9828
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9944    0.9944    0.9944       177
+           1     0.9714    0.9714    0.9714        35
+
+    accuracy                         0.9906       212
+   macro avg     0.9829    0.9829    0.9829       212
+weighted avg     0.9906    0.9906    0.9906       212
+
+
+-------------------- iteration=0, train, seed=4 --------------------
+F1 (macro): 0.9961
+AUC: 0.9999
+mcc: 0.9922
+G_mean: 0.9990
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9980    0.9990      1468
+           1     0.9865    1.0000    0.9932       220
+
+    accuracy                         0.9982      1688
+   macro avg     0.9933    0.9990    0.9961      1688
+weighted avg     0.9982    0.9982    0.9982      1688
+
+0:	learn: 0.8444182	test: 0.7787431	best: 0.7787431 (0)	total: 19.8ms	remaining: 39.5s
+100:	learn: 0.9994082	test: 0.9905660	best: 0.9905660 (94)	total: 1.86s	remaining: 35.1s
+200:	learn: 0.9994082	test: 0.9906703	best: 0.9906703 (158)	total: 3.73s	remaining: 33.4s
+300:	learn: 0.9994082	test: 0.9906703	best: 0.9906703 (158)	total: 5.59s	remaining: 31.5s
+400:	learn: 0.9994082	test: 0.9906703	best: 0.9906703 (158)	total: 7.46s	remaining: 29.7s
+500:	learn: 1.0000000	test: 0.9906703	best: 0.9906703 (158)	total: 9.35s	remaining: 28s
+600:	learn: 1.0000000	test: 0.9906703	best: 0.9953096 (584)	total: 11.3s	remaining: 26.2s
+700:	learn: 1.0000000	test: 0.9906703	best: 0.9953096 (584)	total: 13.1s	remaining: 24.4s
+800:	learn: 1.0000000	test: 0.9906703	best: 0.9953096 (584)	total: 15.1s	remaining: 22.5s
+bestTest = 0.9953095558
+bestIteration = 584
+Shrink model to first 585 iterations.
+
+-------------------- iteration=0, val, seed=5 --------------------
+F1 (macro): 0.9915
+AUC: 0.9997
+mcc: 0.9832
+G_mean: 0.9972
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9944    0.9972       177
+           1     0.9722    1.0000    0.9859        35
+
+    accuracy                         0.9953       212
+   macro avg     0.9861    0.9972    0.9915       212
+weighted avg     0.9954    0.9953    0.9953       212
+
+
+-------------------- iteration=0, train, seed=5 --------------------
+F1 (macro): 1.0000
+AUC: 1.0000
+mcc: 1.0000
+G_mean: 1.0000
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    1.0000    1.0000      1468
+           1     1.0000    1.0000    1.0000       220
+
+    accuracy                         1.0000      1688
+   macro avg     1.0000    1.0000    1.0000      1688
+weighted avg     1.0000    1.0000    1.0000      1688
+
+0:	learn: 0.8695090	test: 0.8450409	best: 0.8450409 (0)	total: 19.1ms	remaining: 38.2s
+100:	learn: 0.9988152	test: 1.0000000	best: 1.0000000 (66)	total: 1.86s	remaining: 35.1s
+200:	learn: 0.9994070	test: 0.9952555	best: 1.0000000 (66)	total: 3.78s	remaining: 33.8s
+300:	learn: 0.9994070	test: 1.0000000	best: 1.0000000 (66)	total: 5.64s	remaining: 31.8s
+400:	learn: 1.0000000	test: 0.9953096	best: 1.0000000 (66)	total: 7.48s	remaining: 29.8s
+500:	learn: 1.0000000	test: 0.9953096	best: 1.0000000 (66)	total: 9.34s	remaining: 27.9s
+600:	learn: 1.0000000	test: 0.9953096	best: 1.0000000 (66)	total: 11.2s	remaining: 26.1s
+bestTest = 1
+bestIteration = 66
+Shrink model to first 67 iterations.
+
+-------------------- iteration=0, val, seed=6 --------------------
+F1 (macro): 1.0000
+AUC: 1.0000
+mcc: 1.0000
+G_mean: 1.0000
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    1.0000    1.0000       177
+           1     1.0000    1.0000    1.0000        35
+
+    accuracy                         1.0000       212
+   macro avg     1.0000    1.0000    1.0000       212
+weighted avg     1.0000    1.0000    1.0000       212
+
+
+-------------------- iteration=0, train, seed=6 --------------------
+F1 (macro): 0.9935
+AUC: 0.9999
+mcc: 0.9870
+G_mean: 0.9944
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9986    0.9980    0.9983      1468
+           1     0.9864    0.9909    0.9887       220
+
+    accuracy                         0.9970      1688
+   macro avg     0.9925    0.9944    0.9935      1688
+weighted avg     0.9970    0.9970    0.9970      1688
+
+0:	learn: 0.8448310	test: 0.7787431	best: 0.7787431 (0)	total: 18.9ms	remaining: 37.9s
+100:	learn: 0.9982245	test: 0.9905660	best: 1.0000000 (82)	total: 1.86s	remaining: 35s
+200:	learn: 0.9994082	test: 0.9905660	best: 1.0000000 (82)	total: 3.72s	remaining: 33.3s
+300:	learn: 1.0000000	test: 0.9905660	best: 1.0000000 (82)	total: 5.57s	remaining: 31.5s
+400:	learn: 1.0000000	test: 0.9905660	best: 1.0000000 (82)	total: 7.44s	remaining: 29.7s
+500:	learn: 1.0000000	test: 0.9905660	best: 1.0000000 (82)	total: 9.22s	remaining: 27.6s
+bestTest = 1
+bestIteration = 82
+Shrink model to first 83 iterations.
+
+-------------------- iteration=0, val, seed=7 --------------------
+F1 (macro): 1.0000
+AUC: 1.0000
+mcc: 1.0000
+G_mean: 1.0000
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    1.0000    1.0000       177
+           1     1.0000    1.0000    1.0000        35
+
+    accuracy                         1.0000       212
+   macro avg     1.0000    1.0000    1.0000       212
+weighted avg     1.0000    1.0000    1.0000       212
+
+
+-------------------- iteration=0, train, seed=7 --------------------
+F1 (macro): 0.9948
+AUC: 0.9999
+mcc: 0.9896
+G_mean: 0.9967
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9993    0.9980    0.9986      1468
+           1     0.9865    0.9955    0.9910       220
+
+    accuracy                         0.9976      1688
+   macro avg     0.9929    0.9967    0.9948      1688
+weighted avg     0.9976    0.9976    0.9976      1688
+
+0:	learn: 0.8448310	test: 0.7787431	best: 0.7787431 (0)	total: 19.5ms	remaining: 39s
+100:	learn: 0.9982245	test: 0.9860794	best: 0.9906703 (39)	total: 1.92s	remaining: 36.1s
+200:	learn: 1.0000000	test: 0.9860794	best: 0.9906703 (39)	total: 3.79s	remaining: 33.9s
+300:	learn: 1.0000000	test: 0.9813405	best: 0.9906703 (39)	total: 5.69s	remaining: 32.1s
+400:	learn: 1.0000000	test: 0.9813405	best: 0.9906703 (39)	total: 7.6s	remaining: 30.3s
+500:	learn: 1.0000000	test: 0.9813405	best: 0.9906703 (39)	total: 9.47s	remaining: 28.3s
+bestTest = 0.990670264
+bestIteration = 39
+Shrink model to first 40 iterations.
+
+-------------------- iteration=0, val, seed=8 --------------------
+F1 (macro): 0.9833
+AUC: 0.9950
+mcc: 0.9671
+G_mean: 0.9943
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9887    0.9943       177
+           1     0.9459    1.0000    0.9722        35
+
+    accuracy                         0.9906       212
+   macro avg     0.9730    0.9944    0.9833       212
+weighted avg     0.9911    0.9906    0.9907       212
+
+
+-------------------- iteration=0, train, seed=8 --------------------
+F1 (macro): 0.9747
+AUC: 0.9980
+mcc: 0.9505
+G_mean: 0.9912
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9993    0.9871    0.9931      1468
+           1     0.9202    0.9955    0.9563       220
+
+    accuracy                         0.9882      1688
+   macro avg     0.9597    0.9913    0.9747      1688
+weighted avg     0.9890    0.9882    0.9883      1688
+
+0:	learn: 0.8444182	test: 0.7787431	best: 0.7787431 (0)	total: 19.7ms	remaining: 39.3s
+100:	learn: 0.9970408	test: 0.9813405	best: 0.9859287 (45)	total: 1.86s	remaining: 35s
+200:	learn: 0.9976303	test: 0.9813405	best: 0.9859287 (45)	total: 3.72s	remaining: 33.3s
+300:	learn: 0.9982245	test: 0.9859287	best: 0.9859287 (45)	total: 5.6s	remaining: 31.6s
+400:	learn: 0.9988152	test: 0.9811321	best: 0.9859287 (45)	total: 7.45s	remaining: 29.7s
+500:	learn: 0.9988152	test: 0.9811321	best: 0.9859287 (45)	total: 9.31s	remaining: 27.9s
+600:	learn: 0.9988152	test: 0.9811321	best: 0.9859287 (45)	total: 11.3s	remaining: 26.2s
+bestTest = 0.9859286673
+bestIteration = 45
+Shrink model to first 46 iterations.
+
+-------------------- iteration=0, val, seed=9 --------------------
+F1 (macro): 0.9746
+AUC: 0.9927
+mcc: 0.9494
+G_mean: 0.9800
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9943    0.9887    0.9915       177
+           1     0.9444    0.9714    0.9577        35
+
+    accuracy                         0.9858       212
+   macro avg     0.9694    0.9801    0.9746       212
+weighted avg     0.9861    0.9858    0.9859       212
+
+
+-------------------- iteration=0, train, seed=9 --------------------
+F1 (macro): 0.9724
+AUC: 0.9989
+mcc: 0.9448
+G_mean: 0.9694
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9918    0.9939    0.9929      1468
+           1     0.9585    0.9455    0.9519       220
+
+    accuracy                         0.9876      1688
+   macro avg     0.9752    0.9697    0.9724      1688
+weighted avg     0.9875    0.9876    0.9875      1688
+
+!!!!!!!!!!!!!!! AUC有提升 !!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!! F1有提升 !!!!!!!!!!!!!!!
+-------------------- CoTable is sampling...  --------------------
+lalalalalalal
+Generated 880 → Kept 739 high-quality samples
+
+========================================  Iter 1  ========================================
+The number of training sets:  2427
+The number of X_minority:  959
+The number of X_majority :  1468
+0:	learn: 0.8938168	test: 0.8686666	best: 0.8686666 (0)	total: 19.4ms	remaining: 38.7s
+100:	learn: 0.9971166	test: 0.9860794	best: 0.9906703 (85)	total: 1.9s	remaining: 35.7s
+200:	learn: 1.0000000	test: 0.9857664	best: 0.9906703 (85)	total: 3.73s	remaining: 33.4s
+300:	learn: 1.0000000	test: 0.9857664	best: 0.9906703 (85)	total: 5.53s	remaining: 31.2s
+400:	learn: 1.0000000	test: 0.9857664	best: 0.9906703 (85)	total: 7.34s	remaining: 29.3s
+500:	learn: 1.0000000	test: 0.9857664	best: 0.9906703 (85)	total: 9.35s	remaining: 28s
+bestTest = 0.990670264
+bestIteration = 85
+Shrink model to first 86 iterations.
+
+-------------------- iteration=1, val, seed=0 --------------------
+F1 (macro): 0.9833
+AUC: 0.9989
+mcc: 0.9671
+G_mean: 0.9943
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9887    0.9943       177
+           1     0.9459    1.0000    0.9722        35
+
+    accuracy                         0.9906       212
+   macro avg     0.9730    0.9944    0.9833       212
+weighted avg     0.9911    0.9906    0.9907       212
+
+
+-------------------- iteration=1, train, seed=0 --------------------
+F1 (macro): 0.9896
+AUC: 0.9996
+mcc: 0.9793
+G_mean: 0.9934
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9986    0.9959    0.9973      1468
+           1     0.9732    0.9909    0.9820       220
+
+    accuracy                         0.9953      1688
+   macro avg     0.9859    0.9934    0.9896      1688
+weighted avg     0.9953    0.9953    0.9953      1688
+
+0:	learn: 0.8492329	test: 0.8015699	best: 0.8015699 (0)	total: 19ms	remaining: 38s
+100:	learn: 0.9987642	test: 0.9860794	best: 0.9860794 (48)	total: 1.88s	remaining: 35.3s
+200:	learn: 0.9995880	test: 0.9767989	best: 0.9860794 (48)	total: 3.76s	remaining: 33.6s
+300:	learn: 0.9995880	test: 0.9813405	best: 0.9860794 (48)	total: 5.49s	remaining: 31s
+400:	learn: 0.9995880	test: 0.9813405	best: 0.9860794 (48)	total: 7.06s	remaining: 28.2s
+500:	learn: 0.9995880	test: 0.9813405	best: 0.9860794 (48)	total: 8.63s	remaining: 25.8s
+bestTest = 0.9860793553
+bestIteration = 48
+Shrink model to first 49 iterations.
+
+-------------------- iteration=1, val, seed=1 --------------------
+F1 (macro): 0.9752
+AUC: 0.9961
+mcc: 0.9515
+G_mean: 0.9915
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9831    0.9915       177
+           1     0.9211    1.0000    0.9589        35
+
+    accuracy                         0.9858       212
+   macro avg     0.9605    0.9915    0.9752       212
+weighted avg     0.9870    0.9858    0.9861       212
+
+
+-------------------- iteration=1, train, seed=1 --------------------
+F1 (macro): 0.9935
+AUC: 0.9997
+mcc: 0.9870
+G_mean: 0.9964
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9993    0.9973    0.9983      1468
+           1     0.9821    0.9955    0.9887       220
+
+    accuracy                         0.9970      1688
+   macro avg     0.9907    0.9964    0.9935      1688
+weighted avg     0.9971    0.9970    0.9970      1688
+
+0:	learn: 0.8531713	test: 0.8589071	best: 0.8589071 (0)	total: 20.1ms	remaining: 40.3s
+100:	learn: 0.9975278	test: 0.9906703	best: 0.9906703 (51)	total: 1.85s	remaining: 34.8s
+200:	learn: 0.9979397	test: 0.9906703	best: 0.9906703 (51)	total: 3.69s	remaining: 33.1s
+300:	learn: 0.9991758	test: 0.9811321	best: 0.9906703 (51)	total: 5.52s	remaining: 31.2s
+400:	learn: 0.9995879	test: 0.9857664	best: 0.9906703 (51)	total: 7.32s	remaining: 29.2s
+500:	learn: 1.0000000	test: 0.9857664	best: 0.9906703 (51)	total: 9.16s	remaining: 27.4s
+600:	learn: 1.0000000	test: 0.9857664	best: 0.9906703 (51)	total: 11s	remaining: 25.5s
+bestTest = 0.990670264
+bestIteration = 51
+Shrink model to first 52 iterations.
+
+-------------------- iteration=1, val, seed=2 --------------------
+F1 (macro): 0.9833
+AUC: 0.9997
+mcc: 0.9671
+G_mean: 0.9943
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9887    0.9943       177
+           1     0.9459    1.0000    0.9722        35
+
+    accuracy                         0.9906       212
+   macro avg     0.9730    0.9944    0.9833       212
+weighted avg     0.9911    0.9906    0.9907       212
+
+
+-------------------- iteration=1, train, seed=2 --------------------
+F1 (macro): 0.9858
+AUC: 0.9996
+mcc: 0.9716
+G_mean: 0.9904
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9979    0.9946    0.9962      1468
+           1     0.9644    0.9864    0.9753       220
+
+    accuracy                         0.9935      1688
+   macro avg     0.9812    0.9905    0.9858      1688
+weighted avg     0.9936    0.9935    0.9935      1688
+
+0:	learn: 0.8496414	test: 0.8015699	best: 0.8015699 (0)	total: 25.1ms	remaining: 50.1s
+100:	learn: 0.9979404	test: 0.9953096	best: 0.9953096 (37)	total: 1.9s	remaining: 35.8s
+200:	learn: 0.9991759	test: 0.9859287	best: 0.9953096 (37)	total: 3.72s	remaining: 33.3s
+300:	learn: 1.0000000	test: 0.9905660	best: 0.9953096 (37)	total: 5.52s	remaining: 31.2s
+400:	learn: 1.0000000	test: 0.9905660	best: 0.9953096 (37)	total: 7.46s	remaining: 29.8s
+train_z.shape = torch.Size([1688, 80])
+Data is sampling...
+sampling timestep 1000 sampling timestep 999 sampling timestep 998 sampling timestep 997 sampling timestep 996 sampling timestep 995 sampling timestep 994 sampling timestep 993 sampling timestep 992 sampling timestep 991 sampling timestep 990 sampling timestep 989 sampling timestep 988 sampling timestep 987 sampling timestep 986 sampling timestep 985 sampling timestep 984 sampling timestep 983 sampling timestep 982 sampling timestep 981 sampling timestep 980 sampling timestep 979 sampling timestep 978 sampling timestep 977 sampling timestep 976 sampling timestep 975 sampling timestep 974 sampling timestep 973 sampling timestep 972 sampling timestep 971 sampling timestep 970 sampling timestep 969 sampling timestep 968 sampling timestep 967 sampling timestep 966 sampling timestep 965 sampling timestep 964 sampling timestep 963 sampling timestep 962 sampling timestep 961 sampling timestep 960 sampling timestep 959 sampling timestep 958 sampling timestep 957 sampling timestep 956 sampling timestep 955 sampling timestep 954 sampling timestep 953 sampling timestep 952 sampling timestep 951 sampling timestep 950 sampling timestep 949 sampling timestep 948 sampling timestep 947 sampling timestep 946 sampling timestep 945 sampling timestep 944 sampling timestep 943 sampling timestep 942 sampling timestep 941 sampling timestep 940 sampling timestep 939 sampling timestep 938 sampling timestep 937 sampling timestep 936 sampling timestep 935 sampling timestep 934 sampling timestep 933 sampling timestep 932 sampling timestep 931 sampling timestep 930 sampling timestep 929 sampling timestep 928 sampling timestep 927 sampling timestep 926 sampling timestep 925 sampling timestep 924 sampling timestep 923 sampling timestep 922 sampling timestep 921 sampling timestep 920 sampling timestep 919 sampling timestep 918 sampling timestep 917 sampling timestep 916 sampling timestep 915 sampling timestep 914 sampling timestep 913 sampling timestep 912 sampling timestep 911 sampling timestep 910 sampling timestep 909 sampling timestep 908 sampling timestep 907 sampling timestep 906 sampling timestep 905 sampling timestep 904 sampling timestep 903 sampling timestep 902 sampling timestep 901 sampling timestep 900 sampling timestep 899 sampling timestep 898 sampling timestep 897 sampling timestep 896 sampling timestep 895 sampling timestep 894 sampling timestep 893 sampling timestep 892 sampling timestep 891 sampling timestep 890 sampling timestep 889 sampling timestep 888 sampling timestep 887 sampling timestep 886 sampling timestep 885 sampling timestep 884 sampling timestep 883 sampling timestep 882 sampling timestep 881 sampling timestep 880 sampling timestep 879 sampling timestep 878 sampling timestep 877 sampling timestep 876 sampling timestep 875 sampling timestep 874 sampling timestep 873 sampling timestep 872 sampling timestep 871 sampling timestep 870 sampling timestep 869 sampling timestep 868 sampling timestep 867 sampling timestep 866 sampling timestep 865 sampling timestep 864 sampling timestep 863 sampling timestep 862 sampling timestep 861 sampling timestep 860 sampling timestep 859 sampling timestep 858 sampling timestep 857 sampling timestep 856 sampling timestep 855 sampling timestep 854 sampling timestep 853 sampling timestep 852 sampling timestep 851 sampling timestep 850 sampling timestep 849 sampling timestep 848 sampling timestep 847 sampling timestep 846 sampling timestep 845 sampling timestep 844 sampling timestep 843 sampling timestep 842 sampling timestep 841 sampling timestep 840 sampling timestep 839 sampling timestep 838 sampling timestep 837 sampling timestep 836 sampling timestep 835 sampling timestep 834 sampling timestep 833 sampling timestep 832 sampling timestep 831 sampling timestep 830 sampling timestep 829 sampling timestep 828 sampling timestep 827 sampling timestep 826 sampling timestep 825 sampling timestep 824 sampling timestep 823 sampling timestep 822 sampling timestep 821 sampling timestep 820 sampling timestep 819 sampling timestep 818 sampling timestep 817 sampling timestep 816 sampling timestep 815 sampling timestep 814 sampling timestep 813 sampling timestep 812 sampling timestep 811 sampling timestep 810 sampling timestep 809 sampling timestep 808 sampling timestep 807 sampling timestep 806 sampling timestep 805 sampling timestep 804 sampling timestep 803 sampling timestep 802 sampling timestep 801 sampling timestep 800 sampling timestep 799 sampling timestep 798 sampling timestep 797 sampling timestep 796 sampling timestep 795 sampling timestep 794 sampling timestep 793 sampling timestep 792 sampling timestep 791 sampling timestep 790 sampling timestep 789 sampling timestep 788 sampling timestep 787 sampling timestep 786 sampling timestep 785 sampling timestep 784 sampling timestep 783 sampling timestep 782 sampling timestep 781 sampling timestep 780 sampling timestep 779 sampling timestep 778 sampling timestep 777 sampling timestep 776 sampling timestep 775 sampling timestep 774 sampling timestep 773 sampling timestep 772 sampling timestep 771 sampling timestep 770 sampling timestep 769 sampling timestep 768 sampling timestep 767 sampling timestep 766 sampling timestep 765 sampling timestep 764 sampling timestep 763 sampling timestep 762 sampling timestep 761 sampling timestep 760 sampling timestep 759 sampling timestep 758 sampling timestep 757 sampling timestep 756 sampling timestep 755 sampling timestep 754 sampling timestep 753 sampling timestep 752 sampling timestep 751 sampling timestep 750 sampling timestep 749 sampling timestep 748 sampling timestep 747 sampling timestep 746 sampling timestep 745 sampling timestep 744 sampling timestep 743 sampling timestep 742 sampling timestep 741 sampling timestep 740 sampling timestep 739 sampling timestep 738 sampling timestep 737 sampling timestep 736 sampling timestep 735 sampling timestep 734 sampling timestep 733 sampling timestep 732 sampling timestep 731 sampling timestep 730 sampling timestep 729 sampling timestep 728 sampling timestep 727 sampling timestep 726 sampling timestep 725 sampling timestep 724 sampling timestep 723 sampling timestep 722 sampling timestep 721 sampling timestep 720 sampling timestep 719 sampling timestep 718 sampling timestep 717 sampling timestep 716 sampling timestep 715 sampling timestep 714 sampling timestep 713 sampling timestep 712 sampling timestep 711 sampling timestep 710 sampling timestep 709 sampling timestep 708 sampling timestep 707 sampling timestep 706 sampling timestep 705 sampling timestep 704 sampling timestep 703 sampling timestep 702 sampling timestep 701 sampling timestep 700 sampling timestep 699 sampling timestep 698 sampling timestep 697 sampling timestep 696 sampling timestep 695 sampling timestep 694 sampling timestep 693 sampling timestep 692 sampling timestep 691 sampling timestep 690 sampling timestep 689 sampling timestep 688 sampling timestep 687 sampling timestep 686 sampling timestep 685 sampling timestep 684 sampling timestep 683 sampling timestep 682 sampling timestep 681 sampling timestep 680 sampling timestep 679 sampling timestep 678 sampling timestep 677 sampling timestep 676 sampling timestep 675 sampling timestep 674 sampling timestep 673 sampling timestep 672 sampling timestep 671 sampling timestep 670 sampling timestep 669 sampling timestep 668 sampling timestep 667 sampling timestep 666 sampling timestep 665 sampling timestep 664 sampling timestep 663 sampling timestep 662 sampling timestep 661 sampling timestep 660 sampling timestep 659 sampling timestep 658 sampling timestep 657 sampling timestep 656 sampling timestep 655 sampling timestep 654 sampling timestep 653 sampling timestep 652 sampling timestep 651 sampling timestep 650 sampling timestep 649 sampling timestep 648 sampling timestep 647 sampling timestep 646 sampling timestep 645 sampling timestep 644 sampling timestep 643 sampling timestep 642 sampling timestep 641 sampling timestep 640 sampling timestep 639 sampling timestep 638 sampling timestep 637 sampling timestep 636 sampling timestep 635 sampling timestep 634 sampling timestep 633 sampling timestep 632 sampling timestep 631 sampling timestep 630 sampling timestep 629 sampling timestep 628 sampling timestep 627 sampling timestep 626 sampling timestep 625 sampling timestep 624 sampling timestep 623 sampling timestep 622 sampling timestep 621 sampling timestep 620 sampling timestep 619 sampling timestep 618 sampling timestep 617 sampling timestep 616 sampling timestep 615 sampling timestep 614 sampling timestep 613 sampling timestep 612 sampling timestep 611 sampling timestep 610 sampling timestep 609 sampling timestep 608 sampling timestep 607 sampling timestep 606 sampling timestep 605 sampling timestep 604 sampling timestep 603 sampling timestep 602 sampling timestep 601 sampling timestep 600 sampling timestep 599 sampling timestep 598 sampling timestep 597 sampling timestep 596 sampling timestep 595 sampling timestep 594 sampling timestep 593 sampling timestep 592 sampling timestep 591 sampling timestep 590 sampling timestep 589 sampling timestep 588 sampling timestep 587 sampling timestep 586 sampling timestep 585 sampling timestep 584 sampling timestep 583 sampling timestep 582 sampling timestep 581 sampling timestep 580 sampling timestep 579 sampling timestep 578 sampling timestep 577 sampling timestep 576 sampling timestep 575 sampling timestep 574 sampling timestep 573 sampling timestep 572 sampling timestep 571 sampling timestep 570 sampling timestep 569 sampling timestep 568 sampling timestep 567 sampling timestep 566 sampling timestep 565 sampling timestep 564 sampling timestep 563 sampling timestep 562 sampling timestep 561 sampling timestep 560 sampling timestep 559 sampling timestep 558 sampling timestep 557 sampling timestep 556 sampling timestep 555 sampling timestep 554 sampling timestep 553 sampling timestep 552 sampling timestep 551 sampling timestep 550 sampling timestep 549 sampling timestep 548 sampling timestep 547 sampling timestep 546 sampling timestep 545 sampling timestep 544 sampling timestep 543 sampling timestep 542 sampling timestep 541 sampling timestep 540 sampling timestep 539 sampling timestep 538 sampling timestep 537 sampling timestep 536 sampling timestep 535 sampling timestep 534 sampling timestep 533 sampling timestep 532 sampling timestep 531 sampling timestep 530 sampling timestep 529 sampling timestep 528 sampling timestep 527 sampling timestep 526 sampling timestep 525 sampling timestep 524 sampling timestep 523 sampling timestep 522 sampling timestep 521 sampling timestep 520 sampling timestep 519 sampling timestep 518 sampling timestep 517 sampling timestep 516 sampling timestep 515 sampling timestep 514 sampling timestep 513 sampling timestep 512 sampling timestep 511 sampling timestep 510 sampling timestep 509 sampling timestep 508 sampling timestep 507 sampling timestep 506 sampling timestep 505 sampling timestep 504 sampling timestep 503 sampling timestep 502 sampling timestep 501 sampling timestep 500 sampling timestep 499 sampling timestep 498 sampling timestep 497 sampling timestep 496 sampling timestep 495 sampling timestep 494 sampling timestep 493 sampling timestep 492 sampling timestep 491 sampling timestep 490 sampling timestep 489 sampling timestep 488 sampling timestep 487 sampling timestep 486 sampling timestep 485 sampling timestep 484 sampling timestep 483 sampling timestep 482 sampling timestep 481 sampling timestep 480 sampling timestep 479 sampling timestep 478 sampling timestep 477 sampling timestep 476 sampling timestep 475 sampling timestep 474 sampling timestep 473 sampling timestep 472 sampling timestep 471 sampling timestep 470 sampling timestep 469 sampling timestep 468 sampling timestep 467 sampling timestep 466 sampling timestep 465 sampling timestep 464 sampling timestep 463 sampling timestep 462 sampling timestep 461 sampling timestep 460 sampling timestep 459 sampling timestep 458 sampling timestep 457 sampling timestep 456 sampling timestep 455 sampling timestep 454 sampling timestep 453 sampling timestep 452 sampling timestep 451 sampling timestep 450 sampling timestep 449 sampling timestep 448 sampling timestep 447 sampling timestep 446 sampling timestep 445 sampling timestep 444 sampling timestep 443 sampling timestep 442 sampling timestep 441 sampling timestep 440 sampling timestep 439 sampling timestep 438 sampling timestep 437 sampling timestep 436 sampling timestep 435 sampling timestep 434 sampling timestep 433 sampling timestep 432 sampling timestep 431 sampling timestep 430 sampling timestep 429 sampling timestep 428 sampling timestep 427 sampling timestep 426 sampling timestep 425 sampling timestep 424 sampling timestep 423 sampling timestep 422 sampling timestep 421 sampling timestep 420 sampling timestep 419 sampling timestep 418 sampling timestep 417 sampling timestep 416 sampling timestep 415 sampling timestep 414 sampling timestep 413 sampling timestep 412 sampling timestep 411 sampling timestep 410 sampling timestep 409 sampling timestep 408 sampling timestep 407 sampling timestep 406 sampling timestep 405 sampling timestep 404 sampling timestep 403 sampling timestep 402 sampling timestep 401 sampling timestep 400 sampling timestep 399 sampling timestep 398 sampling timestep 397 sampling timestep 396 sampling timestep 395 sampling timestep 394 sampling timestep 393 sampling timestep 392 sampling timestep 391 sampling timestep 390 sampling timestep 389 sampling timestep 388 sampling timestep 387 sampling timestep 386 sampling timestep 385 sampling timestep 384 sampling timestep 383 sampling timestep 382 sampling timestep 381 sampling timestep 380 sampling timestep 379 sampling timestep 378 sampling timestep 377 sampling timestep 376 sampling timestep 375 sampling timestep 374 sampling timestep 373 sampling timestep 372 sampling timestep 371 sampling timestep 370 sampling timestep 369 sampling timestep 368 sampling timestep 367 sampling timestep 366 sampling timestep 365 sampling timestep 364 sampling timestep 363 sampling timestep 362 sampling timestep 361 sampling timestep 360 sampling timestep 359 sampling timestep 358 sampling timestep 357 sampling timestep 356 sampling timestep 355 sampling timestep 354 sampling timestep 353 sampling timestep 352 sampling timestep 351 sampling timestep 350 sampling timestep 349 sampling timestep 348 sampling timestep 347 sampling timestep 346 sampling timestep 345 sampling timestep 344 sampling timestep 343 sampling timestep 342 sampling timestep 341 sampling timestep 340 sampling timestep 339 sampling timestep 338 sampling timestep 337 sampling timestep 336 sampling timestep 335 sampling timestep 334 sampling timestep 333 sampling timestep 332 sampling timestep 331 sampling timestep 330 sampling timestep 329 sampling timestep 328 sampling timestep 327 sampling timestep 326 sampling timestep 325 sampling timestep 324 sampling timestep 323 sampling timestep 322 sampling timestep 321 sampling timestep 320 sampling timestep 319 sampling timestep 318 sampling timestep 317 sampling timestep 316 sampling timestep 315 sampling timestep 314 sampling timestep 313 sampling timestep 312 sampling timestep 311 sampling timestep 310 sampling timestep 309 sampling timestep 308 sampling timestep 307 sampling timestep 306 sampling timestep 305 sampling timestep 304 sampling timestep 303 sampling timestep 302 sampling timestep 301 sampling timestep 300 sampling timestep 299 sampling timestep 298 sampling timestep 297 sampling timestep 296 sampling timestep 295 sampling timestep 294 sampling timestep 293 sampling timestep 292 sampling timestep 291 sampling timestep 290 sampling timestep 289 sampling timestep 288 sampling timestep 287 sampling timestep 286 sampling timestep 285 sampling timestep 284 sampling timestep 283 sampling timestep 282 sampling timestep 281 sampling timestep 280 sampling timestep 279 sampling timestep 278 sampling timestep 277 sampling timestep 276 sampling timestep 275 sampling timestep 274 sampling timestep 273 sampling timestep 272 sampling timestep 271 sampling timestep 270 sampling timestep 269 sampling timestep 268 sampling timestep 267 sampling timestep 266 sampling timestep 265 sampling timestep 264 sampling timestep 263 sampling timestep 262 sampling timestep 261 sampling timestep 260 sampling timestep 259 sampling timestep 258 sampling timestep 257 sampling timestep 256 sampling timestep 255 sampling timestep 254 sampling timestep 253 sampling timestep 252 sampling timestep 251 sampling timestep 250 sampling timestep 249 sampling timestep 248 sampling timestep 247 sampling timestep 246 sampling timestep 245 sampling timestep 244 sampling timestep 243 sampling timestep 242 sampling timestep 241 sampling timestep 240 sampling timestep 239 sampling timestep 238 sampling timestep 237 sampling timestep 236 sampling timestep 235 sampling timestep 234 sampling timestep 233 sampling timestep 232 sampling timestep 231 sampling timestep 230 sampling timestep 229 sampling timestep 228 sampling timestep 227 sampling timestep 226 sampling timestep 225 sampling timestep 224 sampling timestep 223 sampling timestep 222 sampling timestep 221 sampling timestep 220 sampling timestep 219 sampling timestep 218 sampling timestep 217 sampling timestep 216 sampling timestep 215 sampling timestep 214 sampling timestep 213 sampling timestep 212 sampling timestep 211 sampling timestep 210 sampling timestep 209 sampling timestep 208 sampling timestep 207 sampling timestep 206 sampling timestep 205 sampling timestep 204 sampling timestep 203 sampling timestep 202 sampling timestep 201 sampling timestep 200 sampling timestep 199 sampling timestep 198 sampling timestep 197 sampling timestep 196 sampling timestep 195 sampling timestep 194 sampling timestep 193 sampling timestep 192 sampling timestep 191 sampling timestep 190 sampling timestep 189 sampling timestep 188 sampling timestep 187 sampling timestep 186 sampling timestep 185 sampling timestep 184 sampling timestep 183 sampling timestep 182 sampling timestep 181 sampling timestep 180 sampling timestep 179 sampling timestep 178 sampling timestep 177 sampling timestep 176 sampling timestep 175 sampling timestep 174 sampling timestep 173 sampling timestep 172 sampling timestep 171 sampling timestep 170 sampling timestep 169 sampling timestep 168 sampling timestep 167 sampling timestep 166 sampling timestep 165 sampling timestep 164 sampling timestep 163 sampling timestep 162 sampling timestep 161 sampling timestep 160 sampling timestep 159 sampling timestep 158 sampling timestep 157 sampling timestep 156 sampling timestep 155 sampling timestep 154 sampling timestep 153 sampling timestep 152 sampling timestep 151 sampling timestep 150 sampling timestep 149 sampling timestep 148 sampling timestep 147 sampling timestep 146 sampling timestep 145 sampling timestep 144 sampling timestep 143 sampling timestep 142 sampling timestep 141 sampling timestep 140 sampling timestep 139 sampling timestep 138 sampling timestep 137 sampling timestep 136 sampling timestep 135 sampling timestep 134 sampling timestep 133 sampling timestep 132 sampling timestep 131 sampling timestep 130 sampling timestep 129 sampling timestep 128 sampling timestep 127 sampling timestep 126 sampling timestep 125 sampling timestep 124 sampling timestep 123 sampling timestep 122 sampling timestep 121 sampling timestep 120 sampling timestep 119 sampling timestep 118 sampling timestep 117 sampling timestep 116 sampling timestep 115 sampling timestep 114 sampling timestep 113 sampling timestep 112 sampling timestep 111 sampling timestep 110 sampling timestep 109 sampling timestep 108 sampling timestep 107 sampling timestep 106 sampling timestep 105 sampling timestep 104 sampling timestep 103 sampling timestep 102 sampling timestep 101 sampling timestep 100 sampling timestep 99 sampling timestep 98 sampling timestep 97 sampling timestep 96 sampling timestep 95 sampling timestep 94 sampling timestep 93 sampling timestep 92 sampling timestep 91 sampling timestep 90 sampling timestep 89 sampling timestep 88 sampling timestep 87 sampling timestep 86 sampling timestep 85 sampling timestep 84 sampling timestep 83 sampling timestep 82 sampling timestep 81 sampling timestep 80 sampling timestep 79 sampling timestep 78 sampling timestep 77 sampling timestep 76 sampling timestep 75 sampling timestep 74 sampling timestep 73 sampling timestep 72 sampling timestep 71 sampling timestep 70 sampling timestep 69 sampling timestep 68 sampling timestep 67 sampling timestep 66 sampling timestep 65 sampling timestep 64 sampling timestep 63 sampling timestep 62 sampling timestep 61 sampling timestep 60 sampling timestep 59 sampling timestep 58 sampling timestep 57 sampling timestep 56 sampling timestep 55 sampling timestep 54 sampling timestep 53 sampling timestep 52 sampling timestep 51 sampling timestep 50 sampling timestep 49 sampling timestep 48 sampling timestep 47 sampling timestep 46 sampling timestep 45 sampling timestep 44 sampling timestep 43 sampling timestep 42 sampling timestep 41 sampling timestep 40 sampling timestep 39 sampling timestep 38 sampling timestep 37 sampling timestep 36 sampling timestep 35 sampling timestep 34 sampling timestep 33 sampling timestep 32 sampling timestep 31 sampling timestep 30 sampling timestep 29 sampling timestep 28 sampling timestep 27 sampling timestep 26 sampling timestep 25 sampling timestep 24 sampling timestep 23 sampling timestep 22 sampling timestep 21 sampling timestep 20 sampling timestep 19 sampling timestep 18 sampling timestep 17 sampling timestep 16 sampling timestep 15 sampling timestep 14 sampling timestep 13 sampling timestep 12 sampling timestep 11 sampling timestep 10 sampling timestep 9 sampling timestep 8 sampling timestep 7 sampling timestep 6 sampling timestep 5 sampling timestep 4 sampling timestep 3 sampling timestep 2 sampling timestep 1 The generated data has been saved at D:/Study/自学/表格数据生成/LogiCoTab-vae/exp/obesity/CoTable/synthesis_null
+500:	learn: 1.0000000	test: 0.9859287	best: 0.9953096 (37)	total: 9.33s	remaining: 27.9s
+bestTest = 0.9953095558
+bestIteration = 37
+Shrink model to first 38 iterations.
+
+-------------------- iteration=1, val, seed=3 --------------------
+F1 (macro): 0.9915
+AUC: 0.9995
+mcc: 0.9832
+G_mean: 0.9972
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9944    0.9972       177
+           1     0.9722    1.0000    0.9859        35
+
+    accuracy                         0.9953       212
+   macro avg     0.9861    0.9972    0.9915       212
+weighted avg     0.9954    0.9953    0.9953       212
+
+
+-------------------- iteration=1, train, seed=3 --------------------
+F1 (macro): 0.9858
+AUC: 0.9996
+mcc: 0.9718
+G_mean: 0.9924
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9986    0.9939    0.9962      1468
+           1     0.9604    0.9909    0.9754       220
+
+    accuracy                         0.9935      1688
+   macro avg     0.9795    0.9924    0.9858      1688
+weighted avg     0.9936    0.9935    0.9935      1688
+
+0:	learn: 0.8558547	test: 0.8362474	best: 0.8362474 (0)	total: 19.9ms	remaining: 39.7s
+100:	learn: 0.9987640	test: 0.9859287	best: 0.9860794 (59)	total: 1.86s	remaining: 35s
+200:	learn: 0.9991761	test: 0.9859287	best: 0.9906703 (107)	total: 3.71s	remaining: 33.2s
+300:	learn: 0.9991761	test: 0.9859287	best: 0.9906703 (107)	total: 5.5s	remaining: 31s
+400:	learn: 0.9991761	test: 0.9859287	best: 0.9906703 (107)	total: 7.27s	remaining: 29s
+500:	learn: 0.9991761	test: 0.9859287	best: 0.9906703 (107)	total: 8.92s	remaining: 26.7s
+600:	learn: 0.9995880	test: 0.9859287	best: 0.9906703 (107)	total: 10.6s	remaining: 24.8s
+bestTest = 0.990670264
+bestIteration = 107
+Shrink model to first 108 iterations.
+
+-------------------- iteration=1, val, seed=4 --------------------
+F1 (macro): 0.9833
+AUC: 0.9982
+mcc: 0.9671
+G_mean: 0.9943
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9887    0.9943       177
+           1     0.9459    1.0000    0.9722        35
+
+    accuracy                         0.9906       212
+   macro avg     0.9730    0.9944    0.9833       212
+weighted avg     0.9911    0.9906    0.9907       212
+
+
+-------------------- iteration=1, train, seed=4 --------------------
+F1 (macro): 0.9961
+AUC: 0.9999
+mcc: 0.9922
+G_mean: 0.9970
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9993    0.9986    0.9990      1468
+           1     0.9910    0.9955    0.9932       220
+
+    accuracy                         0.9982      1688
+   macro avg     0.9951    0.9970    0.9961      1688
+weighted avg     0.9982    0.9982    0.9982      1688
+
+0:	learn: 0.8525031	test: 0.8134482	best: 0.8134482 (0)	total: 19.1ms	remaining: 38.1s
+100:	learn: 0.9962927	test: 0.9859287	best: 0.9906703 (43)	total: 1.86s	remaining: 35s
+200:	learn: 0.9991759	test: 0.9906703	best: 0.9906703 (43)	total: 3.66s	remaining: 32.8s
+300:	learn: 1.0000000	test: 0.9906703	best: 0.9906703 (43)	total: 5.51s	remaining: 31.1s
+400:	learn: 1.0000000	test: 0.9906703	best: 0.9906703 (43)	total: 7.31s	remaining: 29.2s
+500:	learn: 1.0000000	test: 0.9953096	best: 0.9953096 (426)	total: 9.18s	remaining: 27.5s
+600:	learn: 1.0000000	test: 0.9906703	best: 0.9953096 (426)	total: 11.1s	remaining: 25.8s
+700:	learn: 1.0000000	test: 0.9906703	best: 0.9953096 (426)	total: 12.8s	remaining: 23.8s
+800:	learn: 1.0000000	test: 0.9906703	best: 0.9953096 (426)	total: 14.5s	remaining: 21.7s
+bestTest = 0.9953095558
+bestIteration = 426
+Shrink model to first 427 iterations.
+
+-------------------- iteration=1, val, seed=5 --------------------
+F1 (macro): 0.9915
+AUC: 0.9994
+mcc: 0.9832
+G_mean: 0.9972
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9944    0.9972       177
+           1     0.9722    1.0000    0.9859        35
+
+    accuracy                         0.9953       212
+   macro avg     0.9861    0.9972    0.9915       212
+weighted avg     0.9954    0.9953    0.9953       212
+
+
+-------------------- iteration=1, train, seed=5 --------------------
+F1 (macro): 0.9987
+AUC: 1.0000
+mcc: 0.9974
+G_mean: 0.9997
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9993    0.9997      1468
+           1     0.9955    1.0000    0.9977       220
+
+    accuracy                         0.9994      1688
+   macro avg     0.9977    0.9997    0.9987      1688
+weighted avg     0.9994    0.9994    0.9994      1688
+
+0:	learn: 0.8532432	test: 0.8430072	best: 0.8430072 (0)	total: 20.6ms	remaining: 41.3s
+100:	learn: 0.9979404	test: 0.9953096	best: 0.9953096 (39)	total: 1.87s	remaining: 35.2s
+200:	learn: 0.9991759	test: 0.9953096	best: 0.9953096 (39)	total: 3.68s	remaining: 33s
+300:	learn: 0.9991759	test: 0.9953096	best: 0.9953096 (39)	total: 5.43s	remaining: 30.6s
+400:	learn: 0.9991759	test: 0.9953096	best: 0.9953096 (39)	total: 7.16s	remaining: 28.6s
+500:	learn: 0.9987640	test: 0.9953096	best: 0.9953096 (39)	total: 8.86s	remaining: 26.5s
+600:	learn: 0.9995880	test: 0.9953096	best: 0.9953096 (39)	total: 10.7s	remaining: 24.9s
+700:	learn: 0.9995880	test: 0.9953096	best: 0.9953096 (39)	total: 12.4s	remaining: 23s
+800:	learn: 0.9995880	test: 0.9953096	best: 0.9953096 (39)	total: 14.2s	remaining: 21.3s
+900:	learn: 0.9995880	test: 0.9953096	best: 0.9953096 (39)	total: 16s	remaining: 19.5s
+1000:	learn: 0.9995880	test: 0.9953096	best: 0.9953096 (39)	total: 17.8s	remaining: 17.8s
+1100:	learn: 0.9995880	test: 0.9953096	best: 0.9953096 (39)	total: 19.7s	remaining: 16.1s
+1200:	learn: 0.9995880	test: 0.9953096	best: 0.9953096 (39)	total: 21.5s	remaining: 14.3s
+1300:	learn: 0.9995880	test: 0.9953096	best: 0.9953096 (39)	total: 23.3s	remaining: 12.5s
+1400:	learn: 0.9995880	test: 0.9953096	best: 0.9953096 (39)	total: 25.2s	remaining: 10.8s
+1500:	learn: 0.9995880	test: 0.9953096	best: 0.9953096 (39)	total: 26.9s	remaining: 8.94s
+1600:	learn: 0.9995880	test: 0.9953096	best: 0.9953096 (39)	total: 28.6s	remaining: 7.12s
+1700:	learn: 1.0000000	test: 0.9953096	best: 0.9953096 (39)	total: 30.4s	remaining: 5.34s
+1800:	learn: 1.0000000	test: 0.9953096	best: 0.9953096 (39)	total: 32.2s	remaining: 3.56s
+1900:	learn: 1.0000000	test: 0.9953096	best: 0.9953096 (39)	total: 34s	remaining: 1.77s
+1999:	learn: 1.0000000	test: 0.9953096	best: 0.9953096 (39)	total: 35.9s	remaining: 0us
+bestTest = 0.9953095558
+bestIteration = 39
+Shrink model to first 40 iterations.
+
+-------------------- iteration=1, val, seed=6 --------------------
+F1 (macro): 0.9915
+AUC: 0.9989
+mcc: 0.9832
+G_mean: 0.9972
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9944    0.9972       177
+           1     0.9722    1.0000    0.9859        35
+
+    accuracy                         0.9953       212
+   macro avg     0.9861    0.9972    0.9915       212
+weighted avg     0.9954    0.9953    0.9953       212
+
+
+-------------------- iteration=1, train, seed=6 --------------------
+F1 (macro): 0.9821
+AUC: 0.9996
+mcc: 0.9644
+G_mean: 0.9914
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9986    0.9918    0.9952      1468
+           1     0.9478    0.9909    0.9689       220
+
+    accuracy                         0.9917      1688
+   macro avg     0.9732    0.9914    0.9821      1688
+weighted avg     0.9920    0.9917    0.9918      1688
+
+0:	learn: 0.8463478	test: 0.7998036	best: 0.7998036 (0)	total: 20.4ms	remaining: 40.8s
+100:	learn: 0.9987640	test: 0.9906703	best: 0.9906703 (63)	total: 1.9s	remaining: 35.8s
+200:	learn: 0.9995880	test: 0.9860794	best: 0.9906703 (63)	total: 3.74s	remaining: 33.5s
+300:	learn: 0.9995880	test: 0.9906703	best: 0.9906703 (63)	total: 5.63s	remaining: 31.8s
+400:	learn: 0.9995880	test: 0.9906703	best: 0.9906703 (63)	total: 7.36s	remaining: 29.3s
+500:	learn: 0.9995880	test: 0.9906703	best: 0.9906703 (63)	total: 9.11s	remaining: 27.3s
+600:	learn: 0.9995880	test: 0.9906703	best: 0.9906703 (63)	total: 10.9s	remaining: 25.3s
+bestTest = 0.990670264
+bestIteration = 63
+Shrink model to first 64 iterations.
+
+-------------------- iteration=1, val, seed=7 --------------------
+F1 (macro): 0.9833
+AUC: 0.9985
+mcc: 0.9671
+G_mean: 0.9943
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9887    0.9943       177
+           1     0.9459    1.0000    0.9722        35
+
+    accuracy                         0.9906       212
+   macro avg     0.9730    0.9944    0.9833       212
+weighted avg     0.9911    0.9906    0.9907       212
+
+
+-------------------- iteration=1, train, seed=7 --------------------
+F1 (macro): 0.9821
+AUC: 0.9998
+mcc: 0.9644
+G_mean: 0.9914
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9986    0.9918    0.9952      1468
+           1     0.9478    0.9909    0.9689       220
+
+    accuracy                         0.9917      1688
+   macro avg     0.9732    0.9914    0.9821      1688
+weighted avg     0.9920    0.9917    0.9918      1688
+
+0:	learn: 0.8557625	test: 0.8090983	best: 0.8090983 (0)	total: 18.5ms	remaining: 37s
+100:	learn: 0.9954713	test: 0.9860794	best: 0.9860794 (86)	total: 1.88s	remaining: 35.3s
+200:	learn: 0.9967055	test: 0.9860794	best: 0.9860794 (86)	total: 3.69s	remaining: 33s
+300:	learn: 0.9967055	test: 0.9860794	best: 0.9860794 (86)	total: 5.5s	remaining: 31s
+400:	learn: 0.9971171	test: 0.9860794	best: 0.9860794 (86)	total: 7.29s	remaining: 29.1s
+500:	learn: 0.9979404	test: 0.9860794	best: 0.9906703 (474)	total: 9.17s	remaining: 27.4s
+600:	learn: 0.9983522	test: 0.9860794	best: 0.9906703 (474)	total: 11s	remaining: 25.7s
+700:	learn: 0.9987640	test: 0.9860794	best: 0.9906703 (474)	total: 12.9s	remaining: 23.9s
+800:	learn: 0.9987640	test: 0.9860794	best: 0.9906703 (474)	total: 14.8s	remaining: 22.1s
+900:	learn: 0.9995880	test: 0.9813405	best: 0.9906703 (474)	total: 16.5s	remaining: 20.1s
+1000:	learn: 0.9995880	test: 0.9860794	best: 0.9906703 (474)	total: 18.3s	remaining: 18.2s
+1100:	learn: 0.9995880	test: 0.9860794	best: 0.9906703 (474)	total: 20.1s	remaining: 16.4s
+bestTest = 0.990670264
+bestIteration = 474
+Shrink model to first 475 iterations.
+
+-------------------- iteration=1, val, seed=8 --------------------
+F1 (macro): 0.9833
+AUC: 0.9987
+mcc: 0.9671
+G_mean: 0.9943
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9887    0.9943       177
+           1     0.9459    1.0000    0.9722        35
+
+    accuracy                         0.9906       212
+   macro avg     0.9730    0.9944    0.9833       212
+weighted avg     0.9911    0.9906    0.9907       212
+
+
+-------------------- iteration=1, train, seed=8 --------------------
+F1 (macro): 0.9922
+AUC: 1.0000
+mcc: 0.9845
+G_mean: 0.9960
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9993    0.9966    0.9980      1468
+           1     0.9777    0.9955    0.9865       220
+
+    accuracy                         0.9964      1688
+   macro avg     0.9885    0.9960    0.9922      1688
+weighted avg     0.9965    0.9964    0.9965      1688
+
+0:	learn: 0.8934127	test: 0.8686666	best: 0.8686666 (0)	total: 19ms	remaining: 38s
+100:	learn: 0.9991759	test: 0.9860794	best: 0.9906703 (58)	total: 1.88s	remaining: 35.4s
+200:	learn: 1.0000000	test: 0.9813405	best: 0.9906703 (58)	total: 3.65s	remaining: 32.7s
+300:	learn: 1.0000000	test: 0.9813405	best: 0.9906703 (58)	total: 5.28s	remaining: 29.8s
+400:	learn: 1.0000000	test: 0.9813405	best: 0.9906703 (58)	total: 6.91s	remaining: 27.5s
+500:	learn: 1.0000000	test: 0.9813405	best: 0.9906703 (58)	total: 8.53s	remaining: 25.5s
+bestTest = 0.990670264
+bestIteration = 58
+Shrink model to first 59 iterations.
+
+-------------------- iteration=1, val, seed=9 --------------------
+F1 (macro): 0.9833
+AUC: 0.9984
+mcc: 0.9671
+G_mean: 0.9943
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9887    0.9943       177
+           1     0.9459    1.0000    0.9722        35
+
+    accuracy                         0.9906       212
+   macro avg     0.9730    0.9944    0.9833       212
+weighted avg     0.9911    0.9906    0.9907       212
+
+
+-------------------- iteration=1, train, seed=9 --------------------
+F1 (macro): 0.9884
+AUC: 0.9999
+mcc: 0.9768
+G_mean: 0.9931
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9986    0.9952    0.9969      1468
+           1     0.9689    0.9909    0.9798       220
+
+    accuracy                         0.9947      1688
+   macro avg     0.9838    0.9931    0.9884      1688
+weighted avg     0.9948    0.9947    0.9947      1688
+
+-------------------- CoTable is sampling...  --------------------
+lalalalalalal
+Generated 880 → Kept 740 high-quality samples
+
+========================================  Iter 2  ========================================
+The number of training sets:  3167
+The number of X_minority:  1699
+The number of X_majority :  1468
+0:	learn: 0.8734449	test: 0.8018774	best: 0.8018774 (0)	total: 20.1ms	remaining: 40.1s
+100:	learn: 0.9984210	test: 0.9859287	best: 0.9859287 (99)	total: 1.95s	remaining: 36.6s
+200:	learn: 0.9984210	test: 0.9859287	best: 0.9859287 (99)	total: 3.82s	remaining: 34.2s
+300:	learn: 0.9990527	test: 0.9811321	best: 0.9859287 (99)	total: 5.68s	remaining: 32.1s
+400:	learn: 0.9990527	test: 0.9811321	best: 0.9859287 (99)	total: 7.49s	remaining: 29.9s
+500:	learn: 0.9990527	test: 0.9811321	best: 0.9859287 (99)	total: 9.58s	remaining: 28.7s
+600:	learn: 0.9990527	test: 0.9811321	best: 0.9859287 (99)	total: 11.4s	remaining: 26.6s
+bestTest = 0.9859286673
+bestIteration = 99
+Shrink model to first 100 iterations.
+
+-------------------- iteration=2, val, seed=0 --------------------
+F1 (macro): 0.9746
+AUC: 0.9994
+mcc: 0.9494
+G_mean: 0.9800
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9943    0.9887    0.9915       177
+           1     0.9444    0.9714    0.9577        35
+
+    accuracy                         0.9858       212
+   macro avg     0.9694    0.9801    0.9746       212
+weighted avg     0.9861    0.9858    0.9859       212
+
+
+-------------------- iteration=2, train, seed=0 --------------------
+F1 (macro): 0.9935
+AUC: 1.0000
+mcc: 0.9871
+G_mean: 0.9983
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9966    0.9983      1468
+           1     0.9778    1.0000    0.9888       220
+
+    accuracy                         0.9970      1688
+   macro avg     0.9889    0.9983    0.9935      1688
+weighted avg     0.9971    0.9970    0.9971      1688
+
+0:	learn: 0.8725333	test: 0.8015699	best: 0.8015699 (0)	total: 22.7ms	remaining: 45.4s
+100:	learn: 0.9981054	test: 0.9813405	best: 0.9906703 (15)	total: 1.9s	remaining: 35.8s
+200:	learn: 0.9987370	test: 0.9813405	best: 0.9906703 (15)	total: 3.71s	remaining: 33.2s
+300:	learn: 0.9990527	test: 0.9859287	best: 0.9906703 (15)	total: 5.5s	remaining: 31s
+400:	learn: 0.9990527	test: 0.9859287	best: 0.9906703 (15)	total: 7.27s	remaining: 29s
+500:	learn: 0.9993685	test: 0.9859287	best: 0.9906703 (15)	total: 9.04s	remaining: 27.1s
+600:	learn: 0.9996842	test: 0.9905660	best: 0.9906703 (15)	total: 10.9s	remaining: 25.4s
+700:	learn: 0.9996842	test: 0.9905660	best: 0.9906703 (15)	total: 12.7s	remaining: 23.4s
+800:	learn: 0.9996842	test: 0.9859287	best: 0.9906703 (15)	total: 14.4s	remaining: 21.6s
+900:	learn: 0.9996842	test: 0.9811321	best: 0.9906703 (15)	total: 16.3s	remaining: 19.9s
+1000:	learn: 0.9996842	test: 0.9859287	best: 0.9906703 (15)	total: 18.1s	remaining: 18.1s
+bestTest = 0.990670264
+bestIteration = 15
+Shrink model to first 16 iterations.
+
+-------------------- iteration=2, val, seed=1 --------------------
+F1 (macro): 0.9833
+AUC: 0.9987
+mcc: 0.9671
+G_mean: 0.9943
+Report:
+train_z.shape = torch.Size([1688, 80])
+Data is sampling...
+sampling timestep 1000 sampling timestep 999 sampling timestep 998 sampling timestep 997 sampling timestep 996 sampling timestep 995 sampling timestep 994 sampling timestep 993 sampling timestep 992 sampling timestep 991 sampling timestep 990 sampling timestep 989 sampling timestep 988 sampling timestep 987 sampling timestep 986 sampling timestep 985 sampling timestep 984 sampling timestep 983 sampling timestep 982 sampling timestep 981 sampling timestep 980 sampling timestep 979 sampling timestep 978 sampling timestep 977 sampling timestep 976 sampling timestep 975 sampling timestep 974 sampling timestep 973 sampling timestep 972 sampling timestep 971 sampling timestep 970 sampling timestep 969 sampling timestep 968 sampling timestep 967 sampling timestep 966 sampling timestep 965 sampling timestep 964 sampling timestep 963 sampling timestep 962 sampling timestep 961 sampling timestep 960 sampling timestep 959 sampling timestep 958 sampling timestep 957 sampling timestep 956 sampling timestep 955 sampling timestep 954 sampling timestep 953 sampling timestep 952 sampling timestep 951 sampling timestep 950 sampling timestep 949 sampling timestep 948 sampling timestep 947 sampling timestep 946 sampling timestep 945 sampling timestep 944 sampling timestep 943 sampling timestep 942 sampling timestep 941 sampling timestep 940 sampling timestep 939 sampling timestep 938 sampling timestep 937 sampling timestep 936 sampling timestep 935 sampling timestep 934 sampling timestep 933 sampling timestep 932 sampling timestep 931 sampling timestep 930 sampling timestep 929 sampling timestep 928 sampling timestep 927 sampling timestep 926 sampling timestep 925 sampling timestep 924 sampling timestep 923 sampling timestep 922 sampling timestep 921 sampling timestep 920 sampling timestep 919 sampling timestep 918 sampling timestep 917 sampling timestep 916 sampling timestep 915 sampling timestep 914 sampling timestep 913 sampling timestep 912 sampling timestep 911 sampling timestep 910 sampling timestep 909 sampling timestep 908 sampling timestep 907 sampling timestep 906 sampling timestep 905 sampling timestep 904 sampling timestep 903 sampling timestep 902 sampling timestep 901 sampling timestep 900 sampling timestep 899 sampling timestep 898 sampling timestep 897 sampling timestep 896 sampling timestep 895 sampling timestep 894 sampling timestep 893 sampling timestep 892 sampling timestep 891 sampling timestep 890 sampling timestep 889 sampling timestep 888 sampling timestep 887 sampling timestep 886 sampling timestep 885 sampling timestep 884 sampling timestep 883 sampling timestep 882 sampling timestep 881 sampling timestep 880 sampling timestep 879 sampling timestep 878 sampling timestep 877 sampling timestep 876 sampling timestep 875 sampling timestep 874 sampling timestep 873 sampling timestep 872 sampling timestep 871 sampling timestep 870 sampling timestep 869 sampling timestep 868 sampling timestep 867 sampling timestep 866 sampling timestep 865 sampling timestep 864 sampling timestep 863 sampling timestep 862 sampling timestep 861 sampling timestep 860 sampling timestep 859 sampling timestep 858 sampling timestep 857 sampling timestep 856 sampling timestep 855 sampling timestep 854 sampling timestep 853 sampling timestep 852 sampling timestep 851 sampling timestep 850 sampling timestep 849 sampling timestep 848 sampling timestep 847 sampling timestep 846 sampling timestep 845 sampling timestep 844 sampling timestep 843 sampling timestep 842 sampling timestep 841 sampling timestep 840 sampling timestep 839 sampling timestep 838 sampling timestep 837 sampling timestep 836 sampling timestep 835 sampling timestep 834 sampling timestep 833 sampling timestep 832 sampling timestep 831 sampling timestep 830 sampling timestep 829 sampling timestep 828 sampling timestep 827 sampling timestep 826 sampling timestep 825 sampling timestep 824 sampling timestep 823 sampling timestep 822 sampling timestep 821 sampling timestep 820 sampling timestep 819 sampling timestep 818 sampling timestep 817 sampling timestep 816 sampling timestep 815 sampling timestep 814 sampling timestep 813 sampling timestep 812 sampling timestep 811 sampling timestep 810 sampling timestep 809 sampling timestep 808 sampling timestep 807 sampling timestep 806 sampling timestep 805 sampling timestep 804 sampling timestep 803 sampling timestep 802 sampling timestep 801 sampling timestep 800 sampling timestep 799 sampling timestep 798 sampling timestep 797 sampling timestep 796 sampling timestep 795 sampling timestep 794 sampling timestep 793 sampling timestep 792 sampling timestep 791 sampling timestep 790 sampling timestep 789 sampling timestep 788 sampling timestep 787 sampling timestep 786 sampling timestep 785 sampling timestep 784 sampling timestep 783 sampling timestep 782 sampling timestep 781 sampling timestep 780 sampling timestep 779 sampling timestep 778 sampling timestep 777 sampling timestep 776 sampling timestep 775 sampling timestep 774 sampling timestep 773 sampling timestep 772 sampling timestep 771 sampling timestep 770 sampling timestep 769 sampling timestep 768 sampling timestep 767 sampling timestep 766 sampling timestep 765 sampling timestep 764 sampling timestep 763 sampling timestep 762 sampling timestep 761 sampling timestep 760 sampling timestep 759 sampling timestep 758 sampling timestep 757 sampling timestep 756 sampling timestep 755 sampling timestep 754 sampling timestep 753 sampling timestep 752 sampling timestep 751 sampling timestep 750 sampling timestep 749 sampling timestep 748 sampling timestep 747 sampling timestep 746 sampling timestep 745 sampling timestep 744 sampling timestep 743 sampling timestep 742 sampling timestep 741 sampling timestep 740 sampling timestep 739 sampling timestep 738 sampling timestep 737 sampling timestep 736 sampling timestep 735 sampling timestep 734 sampling timestep 733 sampling timestep 732 sampling timestep 731 sampling timestep 730 sampling timestep 729 sampling timestep 728 sampling timestep 727 sampling timestep 726 sampling timestep 725 sampling timestep 724 sampling timestep 723 sampling timestep 722 sampling timestep 721 sampling timestep 720 sampling timestep 719 sampling timestep 718 sampling timestep 717 sampling timestep 716 sampling timestep 715 sampling timestep 714 sampling timestep 713 sampling timestep 712 sampling timestep 711 sampling timestep 710 sampling timestep 709 sampling timestep 708 sampling timestep 707 sampling timestep 706 sampling timestep 705 sampling timestep 704 sampling timestep 703 sampling timestep 702 sampling timestep 701 sampling timestep 700 sampling timestep 699 sampling timestep 698 sampling timestep 697 sampling timestep 696 sampling timestep 695 sampling timestep 694 sampling timestep 693 sampling timestep 692 sampling timestep 691 sampling timestep 690 sampling timestep 689 sampling timestep 688 sampling timestep 687 sampling timestep 686 sampling timestep 685 sampling timestep 684 sampling timestep 683 sampling timestep 682 sampling timestep 681 sampling timestep 680 sampling timestep 679 sampling timestep 678 sampling timestep 677 sampling timestep 676 sampling timestep 675 sampling timestep 674 sampling timestep 673 sampling timestep 672 sampling timestep 671 sampling timestep 670 sampling timestep 669 sampling timestep 668 sampling timestep 667 sampling timestep 666 sampling timestep 665 sampling timestep 664 sampling timestep 663 sampling timestep 662 sampling timestep 661 sampling timestep 660 sampling timestep 659 sampling timestep 658 sampling timestep 657 sampling timestep 656 sampling timestep 655 sampling timestep 654 sampling timestep 653 sampling timestep 652 sampling timestep 651 sampling timestep 650 sampling timestep 649 sampling timestep 648 sampling timestep 647 sampling timestep 646 sampling timestep 645 sampling timestep 644 sampling timestep 643 sampling timestep 642 sampling timestep 641 sampling timestep 640 sampling timestep 639 sampling timestep 638 sampling timestep 637 sampling timestep 636 sampling timestep 635 sampling timestep 634 sampling timestep 633 sampling timestep 632 sampling timestep 631 sampling timestep 630 sampling timestep 629 sampling timestep 628 sampling timestep 627 sampling timestep 626 sampling timestep 625 sampling timestep 624 sampling timestep 623 sampling timestep 622 sampling timestep 621 sampling timestep 620 sampling timestep 619 sampling timestep 618 sampling timestep 617 sampling timestep 616 sampling timestep 615 sampling timestep 614 sampling timestep 613 sampling timestep 612 sampling timestep 611 sampling timestep 610 sampling timestep 609 sampling timestep 608 sampling timestep 607 sampling timestep 606 sampling timestep 605 sampling timestep 604 sampling timestep 603 sampling timestep 602 sampling timestep 601 sampling timestep 600 sampling timestep 599 sampling timestep 598 sampling timestep 597 sampling timestep 596 sampling timestep 595 sampling timestep 594 sampling timestep 593 sampling timestep 592 sampling timestep 591 sampling timestep 590 sampling timestep 589 sampling timestep 588 sampling timestep 587 sampling timestep 586 sampling timestep 585 sampling timestep 584 sampling timestep 583 sampling timestep 582 sampling timestep 581 sampling timestep 580 sampling timestep 579 sampling timestep 578 sampling timestep 577 sampling timestep 576 sampling timestep 575 sampling timestep 574 sampling timestep 573 sampling timestep 572 sampling timestep 571 sampling timestep 570 sampling timestep 569 sampling timestep 568 sampling timestep 567 sampling timestep 566 sampling timestep 565 sampling timestep 564 sampling timestep 563 sampling timestep 562 sampling timestep 561 sampling timestep 560 sampling timestep 559 sampling timestep 558 sampling timestep 557 sampling timestep 556 sampling timestep 555 sampling timestep 554 sampling timestep 553 sampling timestep 552 sampling timestep 551 sampling timestep 550 sampling timestep 549 sampling timestep 548 sampling timestep 547 sampling timestep 546 sampling timestep 545 sampling timestep 544 sampling timestep 543 sampling timestep 542 sampling timestep 541 sampling timestep 540 sampling timestep 539 sampling timestep 538 sampling timestep 537 sampling timestep 536 sampling timestep 535 sampling timestep 534 sampling timestep 533 sampling timestep 532 sampling timestep 531 sampling timestep 530 sampling timestep 529 sampling timestep 528 sampling timestep 527 sampling timestep 526 sampling timestep 525 sampling timestep 524 sampling timestep 523 sampling timestep 522 sampling timestep 521 sampling timestep 520 sampling timestep 519 sampling timestep 518 sampling timestep 517 sampling timestep 516 sampling timestep 515 sampling timestep 514 sampling timestep 513 sampling timestep 512 sampling timestep 511 sampling timestep 510 sampling timestep 509 sampling timestep 508 sampling timestep 507 sampling timestep 506 sampling timestep 505 sampling timestep 504 sampling timestep 503 sampling timestep 502 sampling timestep 501 sampling timestep 500 sampling timestep 499 sampling timestep 498 sampling timestep 497 sampling timestep 496 sampling timestep 495 sampling timestep 494 sampling timestep 493 sampling timestep 492 sampling timestep 491 sampling timestep 490 sampling timestep 489 sampling timestep 488 sampling timestep 487 sampling timestep 486 sampling timestep 485 sampling timestep 484 sampling timestep 483 sampling timestep 482 sampling timestep 481 sampling timestep 480 sampling timestep 479 sampling timestep 478 sampling timestep 477 sampling timestep 476 sampling timestep 475 sampling timestep 474 sampling timestep 473 sampling timestep 472 sampling timestep 471 sampling timestep 470 sampling timestep 469 sampling timestep 468 sampling timestep 467 sampling timestep 466 sampling timestep 465 sampling timestep 464 sampling timestep 463 sampling timestep 462 sampling timestep 461 sampling timestep 460 sampling timestep 459 sampling timestep 458 sampling timestep 457 sampling timestep 456 sampling timestep 455 sampling timestep 454 sampling timestep 453 sampling timestep 452 sampling timestep 451 sampling timestep 450 sampling timestep 449 sampling timestep 448 sampling timestep 447 sampling timestep 446 sampling timestep 445 sampling timestep 444 sampling timestep 443 sampling timestep 442 sampling timestep 441 sampling timestep 440 sampling timestep 439 sampling timestep 438 sampling timestep 437 sampling timestep 436 sampling timestep 435 sampling timestep 434 sampling timestep 433 sampling timestep 432 sampling timestep 431 sampling timestep 430 sampling timestep 429 sampling timestep 428 sampling timestep 427 sampling timestep 426 sampling timestep 425 sampling timestep 424 sampling timestep 423 sampling timestep 422 sampling timestep 421 sampling timestep 420 sampling timestep 419 sampling timestep 418 sampling timestep 417 sampling timestep 416 sampling timestep 415 sampling timestep 414 sampling timestep 413 sampling timestep 412 sampling timestep 411 sampling timestep 410 sampling timestep 409 sampling timestep 408 sampling timestep 407 sampling timestep 406 sampling timestep 405 sampling timestep 404 sampling timestep 403 sampling timestep 402 sampling timestep 401 sampling timestep 400 sampling timestep 399 sampling timestep 398 sampling timestep 397 sampling timestep 396 sampling timestep 395 sampling timestep 394 sampling timestep 393 sampling timestep 392 sampling timestep 391 sampling timestep 390 sampling timestep 389 sampling timestep 388 sampling timestep 387 sampling timestep 386 sampling timestep 385 sampling timestep 384 sampling timestep 383 sampling timestep 382 sampling timestep 381 sampling timestep 380 sampling timestep 379 sampling timestep 378 sampling timestep 377 sampling timestep 376 sampling timestep 375 sampling timestep 374 sampling timestep 373 sampling timestep 372 sampling timestep 371 sampling timestep 370 sampling timestep 369 sampling timestep 368 sampling timestep 367 sampling timestep 366 sampling timestep 365 sampling timestep 364 sampling timestep 363 sampling timestep 362 sampling timestep 361 sampling timestep 360 sampling timestep 359 sampling timestep 358 sampling timestep 357 sampling timestep 356 sampling timestep 355 sampling timestep 354 sampling timestep 353 sampling timestep 352 sampling timestep 351 sampling timestep 350 sampling timestep 349 sampling timestep 348 sampling timestep 347 sampling timestep 346 sampling timestep 345 sampling timestep 344 sampling timestep 343 sampling timestep 342 sampling timestep 341 sampling timestep 340 sampling timestep 339 sampling timestep 338 sampling timestep 337 sampling timestep 336 sampling timestep 335 sampling timestep 334 sampling timestep 333 sampling timestep 332 sampling timestep 331 sampling timestep 330 sampling timestep 329 sampling timestep 328 sampling timestep 327 sampling timestep 326 sampling timestep 325 sampling timestep 324 sampling timestep 323 sampling timestep 322 sampling timestep 321 sampling timestep 320 sampling timestep 319 sampling timestep 318 sampling timestep 317 sampling timestep 316 sampling timestep 315 sampling timestep 314 sampling timestep 313 sampling timestep 312 sampling timestep 311 sampling timestep 310 sampling timestep 309 sampling timestep 308 sampling timestep 307 sampling timestep 306 sampling timestep 305 sampling timestep 304 sampling timestep 303 sampling timestep 302 sampling timestep 301 sampling timestep 300 sampling timestep 299 sampling timestep 298 sampling timestep 297 sampling timestep 296 sampling timestep 295 sampling timestep 294 sampling timestep 293 sampling timestep 292 sampling timestep 291 sampling timestep 290 sampling timestep 289 sampling timestep 288 sampling timestep 287 sampling timestep 286 sampling timestep 285 sampling timestep 284 sampling timestep 283 sampling timestep 282 sampling timestep 281 sampling timestep 280 sampling timestep 279 sampling timestep 278 sampling timestep 277 sampling timestep 276 sampling timestep 275 sampling timestep 274 sampling timestep 273 sampling timestep 272 sampling timestep 271 sampling timestep 270 sampling timestep 269 sampling timestep 268 sampling timestep 267 sampling timestep 266 sampling timestep 265 sampling timestep 264 sampling timestep 263 sampling timestep 262 sampling timestep 261 sampling timestep 260 sampling timestep 259 sampling timestep 258 sampling timestep 257 sampling timestep 256 sampling timestep 255 sampling timestep 254 sampling timestep 253 sampling timestep 252 sampling timestep 251 sampling timestep 250 sampling timestep 249 sampling timestep 248 sampling timestep 247 sampling timestep 246 sampling timestep 245 sampling timestep 244 sampling timestep 243 sampling timestep 242 sampling timestep 241 sampling timestep 240 sampling timestep 239 sampling timestep 238 sampling timestep 237 sampling timestep 236 sampling timestep 235 sampling timestep 234 sampling timestep 233 sampling timestep 232 sampling timestep 231 sampling timestep 230 sampling timestep 229 sampling timestep 228 sampling timestep 227 sampling timestep 226 sampling timestep 225 sampling timestep 224 sampling timestep 223 sampling timestep 222 sampling timestep 221 sampling timestep 220 sampling timestep 219 sampling timestep 218 sampling timestep 217 sampling timestep 216 sampling timestep 215 sampling timestep 214 sampling timestep 213 sampling timestep 212 sampling timestep 211 sampling timestep 210 sampling timestep 209 sampling timestep 208 sampling timestep 207 sampling timestep 206 sampling timestep 205 sampling timestep 204 sampling timestep 203 sampling timestep 202 sampling timestep 201 sampling timestep 200 sampling timestep 199 sampling timestep 198 sampling timestep 197 sampling timestep 196 sampling timestep 195 sampling timestep 194 sampling timestep 193 sampling timestep 192 sampling timestep 191 sampling timestep 190 sampling timestep 189 sampling timestep 188 sampling timestep 187 sampling timestep 186 sampling timestep 185 sampling timestep 184 sampling timestep 183 sampling timestep 182 sampling timestep 181 sampling timestep 180 sampling timestep 179 sampling timestep 178 sampling timestep 177 sampling timestep 176 sampling timestep 175 sampling timestep 174 sampling timestep 173 sampling timestep 172 sampling timestep 171 sampling timestep 170 sampling timestep 169 sampling timestep 168 sampling timestep 167 sampling timestep 166 sampling timestep 165 sampling timestep 164 sampling timestep 163 sampling timestep 162 sampling timestep 161 sampling timestep 160 sampling timestep 159 sampling timestep 158 sampling timestep 157 sampling timestep 156 sampling timestep 155 sampling timestep 154 sampling timestep 153 sampling timestep 152 sampling timestep 151 sampling timestep 150 sampling timestep 149 sampling timestep 148 sampling timestep 147 sampling timestep 146 sampling timestep 145 sampling timestep 144 sampling timestep 143 sampling timestep 142 sampling timestep 141 sampling timestep 140 sampling timestep 139 sampling timestep 138 sampling timestep 137 sampling timestep 136 sampling timestep 135 sampling timestep 134 sampling timestep 133 sampling timestep 132 sampling timestep 131 sampling timestep 130 sampling timestep 129 sampling timestep 128 sampling timestep 127 sampling timestep 126 sampling timestep 125 sampling timestep 124 sampling timestep 123 sampling timestep 122 sampling timestep 121 sampling timestep 120 sampling timestep 119 sampling timestep 118 sampling timestep 117 sampling timestep 116 sampling timestep 115 sampling timestep 114 sampling timestep 113 sampling timestep 112 sampling timestep 111 sampling timestep 110 sampling timestep 109 sampling timestep 108 sampling timestep 107 sampling timestep 106 sampling timestep 105 sampling timestep 104 sampling timestep 103 sampling timestep 102 sampling timestep 101 sampling timestep 100 sampling timestep 99 sampling timestep 98 sampling timestep 97 sampling timestep 96 sampling timestep 95 sampling timestep 94 sampling timestep 93 sampling timestep 92 sampling timestep 91 sampling timestep 90 sampling timestep 89 sampling timestep 88 sampling timestep 87 sampling timestep 86 sampling timestep 85 sampling timestep 84 sampling timestep 83 sampling timestep 82 sampling timestep 81 sampling timestep 80 sampling timestep 79 sampling timestep 78 sampling timestep 77 sampling timestep 76 sampling timestep 75 sampling timestep 74 sampling timestep 73 sampling timestep 72 sampling timestep 71 sampling timestep 70 sampling timestep 69 sampling timestep 68 sampling timestep 67 sampling timestep 66 sampling timestep 65 sampling timestep 64 sampling timestep 63 sampling timestep 62 sampling timestep 61 sampling timestep 60 sampling timestep 59 sampling timestep 58 sampling timestep 57 sampling timestep 56 sampling timestep 55 sampling timestep 54 sampling timestep 53 sampling timestep 52 sampling timestep 51 sampling timestep 50 sampling timestep 49 sampling timestep 48 sampling timestep 47 sampling timestep 46 sampling timestep 45 sampling timestep 44 sampling timestep 43 sampling timestep 42 sampling timestep 41 sampling timestep 40 sampling timestep 39 sampling timestep 38 sampling timestep 37 sampling timestep 36 sampling timestep 35 sampling timestep 34 sampling timestep 33 sampling timestep 32 sampling timestep 31 sampling timestep 30 sampling timestep 29 sampling timestep 28 sampling timestep 27 sampling timestep 26 sampling timestep 25 sampling timestep 24 sampling timestep 23 sampling timestep 22 sampling timestep 21 sampling timestep 20 sampling timestep 19 sampling timestep 18 sampling timestep 17 sampling timestep 16 sampling timestep 15 sampling timestep 14 sampling timestep 13 sampling timestep 12 sampling timestep 11 sampling timestep 10 sampling timestep 9 sampling timestep 8 sampling timestep 7 sampling timestep 6 sampling timestep 5 sampling timestep 4 sampling timestep 3 sampling timestep 2 sampling timestep 1 The generated data has been saved at D:/Study/自学/表格数据生成/LogiCoTab-vae/exp/obesity/CoTable/synthesis_null
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9887    0.9943       177
+           1     0.9459    1.0000    0.9722        35
+
+    accuracy                         0.9906       212
+   macro avg     0.9730    0.9944    0.9833       212
+weighted avg     0.9911    0.9906    0.9907       212
+
+
+-------------------- iteration=2, train, seed=1 --------------------
+F1 (macro): 0.9338
+AUC: 0.9964
+mcc: 0.8729
+G_mean: 0.9716
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9965    0.9659    0.9810      1468
+           1     0.8113    0.9773    0.8866       220
+
+    accuracy                         0.9674      1688
+   macro avg     0.9039    0.9716    0.9338      1688
+weighted avg     0.9724    0.9674    0.9687      1688
+
+0:	learn: 0.8810985	test: 0.7737805	best: 0.7737805 (0)	total: 27.1ms	remaining: 54.2s
+100:	learn: 0.9987369	test: 0.9906703	best: 0.9906703 (22)	total: 1.95s	remaining: 36.7s
+200:	learn: 0.9996842	test: 0.9905660	best: 0.9906703 (22)	total: 3.87s	remaining: 34.6s
+300:	learn: 0.9996842	test: 0.9905660	best: 0.9906703 (22)	total: 5.72s	remaining: 32.3s
+400:	learn: 0.9996842	test: 0.9953096	best: 0.9953096 (352)	total: 7.55s	remaining: 30.1s
+500:	learn: 0.9996842	test: 0.9859287	best: 0.9953096 (352)	total: 9.36s	remaining: 28s
+600:	learn: 0.9996842	test: 0.9905660	best: 0.9953096 (352)	total: 11.2s	remaining: 26s
+700:	learn: 1.0000000	test: 0.9905660	best: 0.9953096 (352)	total: 13s	remaining: 24.1s
+800:	learn: 1.0000000	test: 0.9905660	best: 0.9953096 (352)	total: 14.8s	remaining: 22.1s
+bestTest = 0.9953095558
+bestIteration = 352
+Shrink model to first 353 iterations.
+
+-------------------- iteration=2, val, seed=2 --------------------
+F1 (macro): 0.9915
+AUC: 0.9997
+mcc: 0.9832
+G_mean: 0.9972
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9944    0.9972       177
+           1     0.9722    1.0000    0.9859        35
+
+    accuracy                         0.9953       212
+   macro avg     0.9861    0.9972    0.9915       212
+weighted avg     0.9954    0.9953    0.9953       212
+
+
+-------------------- iteration=2, train, seed=2 --------------------
+F1 (macro): 0.9987
+AUC: 1.0000
+mcc: 0.9974
+G_mean: 0.9997
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9993    0.9997      1468
+           1     0.9955    1.0000    0.9977       220
+
+    accuracy                         0.9994      1688
+   macro avg     0.9977    0.9997    0.9987      1688
+weighted avg     0.9994    0.9994    0.9994      1688
+
+0:	learn: 0.8753394	test: 0.8036947	best: 0.8036947 (0)	total: 21.2ms	remaining: 42.4s
+100:	learn: 0.9993685	test: 0.9906703	best: 0.9906703 (39)	total: 1.84s	remaining: 34.6s
+200:	learn: 0.9993685	test: 0.9953096	best: 0.9953096 (123)	total: 3.62s	remaining: 32.4s
+300:	learn: 0.9993685	test: 0.9906703	best: 0.9953096 (123)	total: 5.33s	remaining: 30.1s
+400:	learn: 0.9996843	test: 0.9859287	best: 0.9953096 (123)	total: 7.08s	remaining: 28.2s
+500:	learn: 1.0000000	test: 0.9811321	best: 0.9953096 (123)	total: 8.89s	remaining: 26.6s
+bestTest = 0.9953095558
+bestIteration = 123
+Shrink model to first 124 iterations.
+
+-------------------- iteration=2, val, seed=3 --------------------
+F1 (macro): 0.9915
+AUC: 0.9995
+mcc: 0.9832
+G_mean: 0.9972
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9944    0.9972       177
+           1     0.9722    1.0000    0.9859        35
+
+    accuracy                         0.9953       212
+   macro avg     0.9861    0.9972    0.9915       212
+weighted avg     0.9954    0.9953    0.9953       212
+
+
+-------------------- iteration=2, train, seed=3 --------------------
+F1 (macro): 0.9974
+AUC: 1.0000
+mcc: 0.9948
+G_mean: 0.9974
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9993    0.9993    0.9993      1468
+           1     0.9955    0.9955    0.9955       220
+
+    accuracy                         0.9988      1688
+   macro avg     0.9974    0.9974    0.9974      1688
+weighted avg     0.9988    0.9988    0.9988      1688
+
+0:	learn: 0.8953813	test: 0.8058606	best: 0.8058606 (0)	total: 24.3ms	remaining: 48.7s
+100:	learn: 0.9977897	test: 0.9860794	best: 0.9906703 (41)	total: 1.87s	remaining: 35.1s
+200:	learn: 0.9984212	test: 0.9953096	best: 0.9953096 (152)	total: 3.71s	remaining: 33.2s
+300:	learn: 0.9987369	test: 0.9953096	best: 0.9953096 (152)	total: 5.5s	remaining: 31s
+400:	learn: 0.9990527	test: 0.9953096	best: 0.9953096 (152)	total: 7.26s	remaining: 28.9s
+500:	learn: 0.9990527	test: 0.9953096	best: 0.9953096 (152)	total: 8.96s	remaining: 26.8s
+600:	learn: 0.9990527	test: 0.9953096	best: 0.9953096 (152)	total: 10.9s	remaining: 25.3s
+700:	learn: 0.9993685	test: 0.9953096	best: 0.9953096 (152)	total: 13s	remaining: 24.1s
+800:	learn: 0.9996842	test: 0.9953096	best: 0.9953096 (152)	total: 15.1s	remaining: 22.7s
+900:	learn: 0.9996842	test: 1.0000000	best: 1.0000000 (822)	total: 17.3s	remaining: 21.1s
+1000:	learn: 0.9996842	test: 1.0000000	best: 1.0000000 (822)	total: 19.4s	remaining: 19.4s
+1100:	learn: 0.9996842	test: 1.0000000	best: 1.0000000 (822)	total: 21.6s	remaining: 17.6s
+1200:	learn: 0.9996842	test: 1.0000000	best: 1.0000000 (822)	total: 23.7s	remaining: 15.8s
+bestTest = 1
+bestIteration = 822
+Shrink model to first 823 iterations.
+
+-------------------- iteration=2, val, seed=4 --------------------
+F1 (macro): 1.0000
+AUC: 1.0000
+mcc: 1.0000
+G_mean: 1.0000
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    1.0000    1.0000       177
+           1     1.0000    1.0000    1.0000        35
+
+    accuracy                         1.0000       212
+   macro avg     1.0000    1.0000    1.0000       212
+weighted avg     1.0000    1.0000    1.0000       212
+
+
+-------------------- iteration=2, train, seed=4 --------------------
+F1 (macro): 0.9987
+AUC: 1.0000
+mcc: 0.9974
+G_mean: 0.9997
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9993    0.9997      1468
+           1     0.9955    1.0000    0.9977       220
+
+    accuracy                         0.9994      1688
+   macro avg     0.9977    0.9997    0.9987      1688
+weighted avg     0.9994    0.9994    0.9994      1688
+
+0:	learn: 0.8893449	test: 0.8528667	best: 0.8528667 (0)	total: 20.2ms	remaining: 40.3s
+100:	learn: 0.9981054	test: 0.9953096	best: 0.9953096 (72)	total: 1.87s	remaining: 35.2s
+200:	learn: 0.9990527	test: 0.9953096	best: 0.9953096 (72)	total: 3.71s	remaining: 33.2s
+300:	learn: 0.9990527	test: 0.9905660	best: 0.9953096 (72)	total: 5.47s	remaining: 30.9s
+400:	learn: 0.9993685	test: 0.9905660	best: 0.9953096 (72)	total: 7.2s	remaining: 28.7s
+500:	learn: 0.9993685	test: 0.9904538	best: 0.9953096 (72)	total: 9.05s	remaining: 27.1s
+600:	learn: 0.9993685	test: 0.9904538	best: 0.9953096 (72)	total: 10.7s	remaining: 24.9s
+700:	learn: 0.9993685	test: 0.9904538	best: 0.9953096 (72)	total: 12.5s	remaining: 23.2s
+bestTest = 0.9953095558
+bestIteration = 72
+Shrink model to first 73 iterations.
+
+-------------------- iteration=2, val, seed=5 --------------------
+F1 (macro): 0.9915
+AUC: 0.9994
+mcc: 0.9832
+G_mean: 0.9972
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9944    0.9972       177
+           1     0.9722    1.0000    0.9859        35
+
+    accuracy                         0.9953       212
+   macro avg     0.9861    0.9972    0.9915       212
+weighted avg     0.9954    0.9953    0.9953       212
+
+
+-------------------- iteration=2, train, seed=5 --------------------
+F1 (macro): 0.9858
+AUC: 0.9997
+mcc: 0.9716
+G_mean: 0.9904
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9979    0.9946    0.9962      1468
+           1     0.9644    0.9864    0.9753       220
+
+    accuracy                         0.9935      1688
+   macro avg     0.9812    0.9905    0.9858      1688
+weighted avg     0.9936    0.9935    0.9935      1688
+
+0:	learn: 0.8953813	test: 0.8058606	best: 0.8058606 (0)	total: 30.3ms	remaining: 1m
+100:	learn: 0.9971579	test: 0.9906703	best: 0.9906703 (51)	total: 1.86s	remaining: 34.9s
+200:	learn: 0.9987369	test: 0.9860794	best: 0.9906703 (51)	total: 3.73s	remaining: 33.3s
+300:	learn: 0.9993685	test: 0.9860794	best: 0.9906703 (51)	total: 5.54s	remaining: 31.3s
+400:	learn: 0.9993685	test: 0.9860794	best: 0.9906703 (51)	total: 7.31s	remaining: 29.2s
+500:	learn: 0.9996842	test: 0.9860794	best: 0.9906703 (51)	total: 9.15s	remaining: 27.4s
+600:	learn: 0.9996842	test: 0.9906703	best: 0.9906703 (51)	total: 11s	remaining: 25.5s
+700:	learn: 0.9996842	test: 0.9906703	best: 0.9906703 (51)	total: 12.8s	remaining: 23.8s
+800:	learn: 0.9996842	test: 0.9860794	best: 0.9906703 (51)	total: 14.7s	remaining: 21.9s
+900:	learn: 0.9996842	test: 0.9860794	best: 0.9906703 (51)	total: 16.5s	remaining: 20.1s
+1000:	learn: 0.9996842	test: 0.9860794	best: 0.9906703 (51)	total: 18.4s	remaining: 18.3s
+1100:	learn: 0.9996842	test: 0.9860794	best: 0.9906703 (51)	total: 20.2s	remaining: 16.5s
+1200:	learn: 0.9996842	test: 0.9860794	best: 0.9906703 (51)	total: 22s	remaining: 14.6s
+bestTest = 0.990670264
+bestIteration = 51
+Shrink model to first 52 iterations.
+
+-------------------- iteration=2, val, seed=6 --------------------
+F1 (macro): 0.9833
+AUC: 0.9998
+mcc: 0.9671
+G_mean: 0.9943
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9887    0.9943       177
+           1     0.9459    1.0000    0.9722        35
+
+    accuracy                         0.9906       212
+   macro avg     0.9730    0.9944    0.9833       212
+weighted avg     0.9911    0.9906    0.9907       212
+
+
+-------------------- iteration=2, train, seed=6 --------------------
+F1 (macro): 0.9795
+AUC: 0.9994
+mcc: 0.9593
+G_mean: 0.9888
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9979    0.9911    0.9945      1468
+           1     0.9435    0.9864    0.9644       220
+
+    accuracy                         0.9905      1688
+   macro avg     0.9707    0.9888    0.9795      1688
+weighted avg     0.9908    0.9905    0.9906      1688
+
+0:	learn: 0.8775420	test: 0.8090983	best: 0.8090983 (0)	total: 20ms	remaining: 40s
+100:	learn: 0.9987370	test: 0.9813405	best: 0.9815342 (30)	total: 1.94s	remaining: 36.4s
+200:	learn: 0.9996843	test: 0.9813405	best: 0.9860794 (172)	total: 3.73s	remaining: 33.4s
+300:	learn: 0.9996843	test: 0.9813405	best: 0.9860794 (172)	total: 5.69s	remaining: 32.1s
+400:	learn: 0.9996843	test: 0.9813405	best: 0.9860794 (172)	total: 7.62s	remaining: 30.4s
+500:	learn: 0.9996843	test: 0.9767989	best: 0.9860794 (172)	total: 9.6s	remaining: 28.7s
+bestTest = 0.9860793553
+bestIteration = 172
+Shrink model to first 173 iterations.
+
+-------------------- iteration=2, val, seed=7 --------------------
+F1 (macro): 0.9752
+AUC: 0.9995
+mcc: 0.9515
+G_mean: 0.9915
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9831    0.9915       177
+           1     0.9211    1.0000    0.9589        35
+
+    accuracy                         0.9858       212
+   macro avg     0.9605    0.9915    0.9752       212
+weighted avg     0.9870    0.9858    0.9861       212
+
+
+-------------------- iteration=2, train, seed=7 --------------------
+F1 (macro): 0.9961
+AUC: 0.9999
+mcc: 0.9921
+G_mean: 0.9951
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9986    0.9993    0.9990      1468
+           1     0.9954    0.9909    0.9932       220
+
+    accuracy                         0.9982      1688
+   macro avg     0.9970    0.9951    0.9961      1688
+weighted avg     0.9982    0.9982    0.9982      1688
+
+0:	learn: 0.8775420	test: 0.8090983	best: 0.8090983 (0)	total: 19.3ms	remaining: 38.6s
+100:	learn: 0.9974738	test: 0.9813405	best: 0.9859287 (45)	total: 1.93s	remaining: 36.3s
+200:	learn: 0.9977897	test: 0.9813405	best: 0.9859287 (45)	total: 3.9s	remaining: 34.9s
+300:	learn: 0.9977897	test: 0.9813405	best: 0.9859287 (45)	total: 5.72s	remaining: 32.3s
+400:	learn: 0.9977897	test: 0.9813405	best: 0.9859287 (45)	total: 7.59s	remaining: 30.3s
+500:	learn: 0.9993685	test: 0.9813405	best: 0.9859287 (45)	total: 9.46s	remaining: 28.3s
+600:	learn: 0.9993685	test: 0.9813405	best: 0.9859287 (45)	total: 11.3s	remaining: 26.2s
+bestTest = 0.9859286673
+bestIteration = 45
+Shrink model to first 46 iterations.
+
+-------------------- iteration=2, val, seed=8 --------------------
+F1 (macro): 0.9746
+AUC: 0.9992
+mcc: 0.9494
+G_mean: 0.9800
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9943    0.9887    0.9915       177
+           1     0.9444    0.9714    0.9577        35
+
+    accuracy                         0.9858       212
+   macro avg     0.9694    0.9801    0.9746       212
+weighted avg     0.9861    0.9858    0.9859       212
+
+
+-------------------- iteration=2, train, seed=8 --------------------
+F1 (macro): 0.9832
+AUC: 0.9994
+mcc: 0.9666
+G_mean: 0.9898
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9979    0.9932    0.9956      1468
+           1     0.9559    0.9864    0.9709       220
+
+    accuracy                         0.9923      1688
+   macro avg     0.9769    0.9898    0.9832      1688
+weighted avg     0.9925    0.9923    0.9923      1688
+
+0:	learn: 0.8725333	test: 0.8015699	best: 0.8015699 (0)	total: 18.8ms	remaining: 37.6s
+100:	learn: 0.9977897	test: 0.9723013	best: 0.9815342 (21)	total: 1.86s	remaining: 34.9s
+200:	learn: 0.9996842	test: 0.9767989	best: 0.9815342 (21)	total: 3.64s	remaining: 32.6s
+300:	learn: 0.9996842	test: 0.9813405	best: 0.9859287 (295)	total: 5.39s	remaining: 30.5s
+400:	learn: 0.9996842	test: 0.9859287	best: 0.9859287 (295)	total: 7.12s	remaining: 28.4s
+500:	learn: 0.9996842	test: 0.9859287	best: 0.9859287 (295)	total: 8.95s	remaining: 26.8s
+600:	learn: 0.9996842	test: 0.9859287	best: 0.9859287 (295)	total: 10.7s	remaining: 24.9s
+700:	learn: 0.9996842	test: 0.9859287	best: 0.9859287 (295)	total: 12.6s	remaining: 23.3s
+800:	learn: 0.9996842	test: 0.9765478	best: 0.9905660 (749)	total: 14.4s	remaining: 21.5s
+900:	learn: 0.9996842	test: 0.9765478	best: 0.9905660 (749)	total: 16.2s	remaining: 19.7s
+bestTest = 0.9905660377
+bestIteration = 749
+Shrink model to first 750 iterations.
+
+-------------------- iteration=2, val, seed=9 --------------------
+F1 (macro): 0.9829
+AUC: 0.9985
+mcc: 0.9658
+G_mean: 0.9828
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9944    0.9944    0.9944       177
+           1     0.9714    0.9714    0.9714        35
+
+    accuracy                         0.9906       212
+   macro avg     0.9829    0.9829    0.9829       212
+weighted avg     0.9906    0.9906    0.9906       212
+
+
+-------------------- iteration=2, train, seed=9 --------------------
+F1 (macro): 0.9987
+AUC: 1.0000
+mcc: 0.9974
+G_mean: 0.9997
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    0.9993    0.9997      1468
+           1     0.9955    1.0000    0.9977       220
+
+    accuracy                         0.9994      1688
+   macro avg     0.9977    0.9997    0.9987      1688
+weighted avg     0.9994    0.9994    0.9994      1688
+
+-------------------- CoTable is sampling...  --------------------
+!!!Already balanced!!!
+
+-------------------- final_best_f1_model --------------------
+F1 (macro): 1.0000
+AUC: 1.0000
+mcc: 1.0000
+G_mean: 1.0000
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    1.0000    1.0000       177
+           1     1.0000    1.0000    1.0000        35
+
+    accuracy                         1.0000       212
+   macro avg     1.0000    1.0000    1.0000       212
+weighted avg     1.0000    1.0000    1.0000       212
+
+
+-------------------- final_best_auc_model --------------------
+F1 (macro): 1.0000
+AUC: 1.0000
+mcc: 1.0000
+G_mean: 1.0000
+Report:
+              precision    recall  f1-score   support
+
+           0     1.0000    1.0000    1.0000       177
+           1     1.0000    1.0000    1.0000        35
+
+    accuracy                         1.0000       212
+   macro avg     1.0000    1.0000    1.0000       212
+weighted avg     1.0000    1.0000    1.0000       212
+
+
+-------------------- baseline_worst_auc_model --------------------
+F1 (macro): 0.9746
+AUC: 0.9927
+mcc: 0.9494
+G_mean: 0.9800
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9943    0.9887    0.9915       177
+           1     0.9444    0.9714    0.9577        35
+
+    accuracy                         0.9858       212
+   macro avg     0.9694    0.9801    0.9746       212
+weighted avg     0.9861    0.9858    0.9859       212
+
+
+-------------------- baseline_worst_f1_model --------------------
+F1 (macro): 0.9746
+AUC: 0.9927
+mcc: 0.9494
+G_mean: 0.9800
+Report:
+              precision    recall  f1-score   support
+
+           0     0.9943    0.9887    0.9915       177
+           1     0.9444    0.9714    0.9577        35
+
+    accuracy                         0.9858       212
+   macro avg     0.9694    0.9801    0.9746       212
+weighted avg     0.9861    0.9858    0.9859       212
+

@@ -91,6 +91,18 @@ class TensorBoardLogger:
             'val': val_losses['val_proto_dist']
         }, epoch)
 
+        # 9. 类内方差对比
+        self.writer.add_scalars('Metrics/Intra_Var', {
+            'train_class_0': train_losses['intra_var_class_0'],
+            'train_class_1': train_losses['intra_var_class_1'],
+            'train_weighted': train_losses['intra_var_weighted'],
+            'train_mean': train_losses['intra_var_total'],
+            'val_class_0': val_losses['val_intra_var_class_0'],
+            'val_class_1': val_losses['val_intra_var_class_1'],
+            'val_weighted': val_losses['val_intra_var_weighted'],
+            'val_mean': val_losses['val_intra_var_total'],
+        }, epoch)
+
         # 10. 超参数
         self.writer.add_scalar('Hyperparameters/Beta', beta, epoch)
         self.writer.add_scalar('Hyperparameters/Learning_Rate', lr, epoch)

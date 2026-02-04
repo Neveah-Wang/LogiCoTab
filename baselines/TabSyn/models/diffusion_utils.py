@@ -39,6 +39,50 @@ def sample(net, num_samples, dim, num_steps = 50, device = 'cuda:0'):
 
     return x_next
 
+
+def sample_batched(net, num_samples, dim, batch_size=1024, num_steps=50, device='cuda:0'):
+    """
+    分批采样以避免显存溢出。
+
+    Args:
+        net: 去噪网络（需包含 sigma_min, sigma_max, round_sigma 等属性/方法）
+        num_samples: 总样本数
+        dim: 每个样本的维度
+        batch_size: 每批生成的样本数
+        num_steps: 扩散步数
+        device: 设备（如 'cuda:0'）
+
+    Returns:
+        生成的样本张量，shape = [num_samples, dim]
+    """
+    # 预计算 t_steps（与 batch 无关，只需计算一次）
+    step_indices = torch.arange(num_steps, dtype=torch.float32, device=device)
+    sigma_min = max(SIGMA_MIN, net.sigma_min)
+    sigma_max = min(SIGMA_MAX, net.sigma_max)
+
+    t_steps = (sigma_max ** (1 / rho) + step_indices / (num_steps - 1) * (
+            sigma_min ** (1 / rho) - sigma_max ** (1 / rho))) ** rho
+    t_steps = torch.cat([net.round_sigma(t_steps), torch.zeros_like(t_steps[:1])])
+
+    all_samples = []
+    num_generated = 0
+
+    with torch.no_grad():
+        while num_generated < num_samples:
+            current_batch_size = min(batch_size, num_samples - num_generated)
+            latents = torch.randn([current_batch_size, dim], device=device)
+            x_next = latents.to(torch.float32) * t_steps[0]
+
+            for i, (t_cur, t_next) in enumerate(zip(t_steps[:-1], t_steps[1:])):
+                x_next = sample_step(net, num_steps, i, t_cur, t_next, x_next)
+
+            all_samples.append(x_next)
+            num_generated += current_batch_size
+
+    # 拼接所有批次
+    syn_data = torch.cat(all_samples, dim=0).to(device)  # 最终移回 device（如需）
+    return syn_data
+
 def sample_step(net, num_steps, i, t_cur, t_next, x_next):
 
     x_cur = x_next

@@ -45,6 +45,7 @@ GOSC 使用 `filer.py` 评估。
 - 如果有提升，就更新最佳分类器为当前分类器
 - 重复以上步骤，直到数据平衡，或者分数不再上涨
 - 最终返回最好的分类结果
+- 结果都保存在` evaluate/mle_log(AucF1AccGmeanMcc)/[dataset].log`
 
 其他 baseline 的过采样方法的评估方法:
 - 代码在 `baseline/[SMOTE,TabDDPM,TabSyn, ....]/eval.py`

@@ -5,6 +5,8 @@ from functools import partial
 import numpy as np
 import scipy.special
 import sklearn.metrics as skm
+from catboost import CatBoostClassifier
+from collections import defaultdict
 
 from . import util
 from lib.util import TaskType
@@ -278,6 +280,8 @@ def calculate_metrics(
 from sklearn.metrics import classification_report, f1_score, roc_auc_score, matthews_corrcoef, confusion_matrix
 from contextlib import redirect_stdout
 
+
+""" 下面这两个函数，主要用于单个的评估结果 """
 def evaluate(classifier, X, y, help:str):
     y_pred = classifier.predict(X)
     y_score = classifier.predict_proba(X)[:, 1]
@@ -313,3 +317,91 @@ def evaluate_to_file(classifier, X, y, help_str, log_file=None):
                 return evaluate(classifier, X, y, help_str)
     else:
         return evaluate(classifier, X, y, help_str)
+
+
+""" 下面的这两个函数，用于求多次结果的平均值 """
+def evaluate_metrics(classifier, X, y):
+    y_pred = classifier.predict(X)
+    y_score = classifier.predict_proba(X)[:, 1]
+
+    # 基本指标
+    auc = roc_auc_score(y, y_score)
+    mcc = matthews_corrcoef(y, y_pred)
+    f1_macro = f1_score(y, y_pred, average='macro')
+
+    # confusion matrix -> G-mean
+    tn, fp, fn, tp = confusion_matrix(y, y_pred).ravel()
+    sensitivity = tp / (tp + fn) if (tp + fn) > 0 else 0.0
+    specificity = tn / (tn + fp) if (tn + fp) > 0 else 0.0
+    g_mean = np.sqrt(sensitivity * specificity)
+
+    # classification report（字典形式！）
+    report = classification_report(
+        y, y_pred, digits=4, output_dict=True
+    )
+
+    return {
+        "acc": report["accuracy"],
+        "auc": auc,
+        "mcc": mcc,
+        "g_mean": g_mean,
+        "f1_macro": f1_macro,
+
+        # 类别 0
+        "p_0": report["0"]["precision"],
+        "r_0": report["0"]["recall"],
+        "f1_0": report["0"]["f1-score"],
+
+        # 类别 1
+        "p_1": report["1"]["precision"],
+        "r_1": report["1"]["recall"],
+        "f1_1": report["1"]["f1-score"],
+    }
+
+def evaluate_multiple_seeds(
+    X_train, y_train,
+    X_val, y_val,
+    seeds,
+    catboost_params=None
+):
+    if catboost_params is None:
+        catboost_params = {}
+
+    all_results = defaultdict(list)
+
+    for seed in seeds:
+        clf = CatBoostClassifier(
+            random_seed=seed,
+            verbose=False,
+            **catboost_params
+        )
+        clf.fit(X_train, y_train)
+
+        metrics = evaluate_metrics(clf, X_val, y_val)
+        for k, v in metrics.items():
+            all_results[k].append(v)
+
+    # 求均值
+    avg_results = {k: np.mean(v) for k, v in all_results.items()}
+    return avg_results
+
+def write_avg_results_to_file(avg_results, help_str, log_file):
+    with open(log_file, "a", encoding="utf-8") as f:
+        f.write("\n" + "-" * 20 + f" {help_str} (Average over seeds) " + "-" * 20 + "\n")
+
+        f.write(f"ACC: {avg_results['acc']:.4f}\n")
+        f.write(f"AUC: {avg_results['auc']:.4f}\n")
+        f.write(f"MCC: {avg_results['mcc']:.4f}\n")
+        f.write(f"G-mean: {avg_results['g_mean']:.4f}\n")
+        f.write(f"F1 (macro): {avg_results['f1_macro']:.4f}\n\n")
+
+        f.write("Class-wise metrics (averaged):\n")
+        f.write("Class 0:\n")
+        f.write(f"  Precision: {avg_results['p_0']:.4f}\n")
+        f.write(f"  Recall:    {avg_results['r_0']:.4f}\n")
+        f.write(f"  F1-score:  {avg_results['f1_0']:.4f}\n")
+
+        f.write("Class 1:\n")
+        f.write(f"  Precision: {avg_results['p_1']:.4f}\n")
+        f.write(f"  Recall:    {avg_results['r_1']:.4f}\n")
+        f.write(f"  F1-score:  {avg_results['f1_1']:.4f}\n")

@@ -1,0 +1,187 @@
+
+-------------------- SMOTE + CatBoost, Dataset:churn (Average over seeds) --------------------
+ACC: 0.8585
+AUC: 0.8377
+MCC: 0.5177
+G-mean: 0.6906
+F1 (macro): 0.7518
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8831
+  Recall:    0.9483
+  F1-score:  0.9145
+Class 1:
+  Precision: 0.7109
+  Recall:    0.5029
+  F1-score:  0.5891
+
+-------------------- SMOTE + CatBoost, Dataset:adult (Average over seeds) --------------------
+ACC: 0.8643
+AUC: 0.9231
+MCC: 0.6187
+G-mean: 0.7901
+F1 (macro): 0.8087
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8998
+  Recall:    0.9242
+  F1-score:  0.9118
+Class 1:
+  Precision: 0.7385
+  Recall:    0.6755
+  F1-score:  0.7056
+
+-------------------- SMOTE + CatBoost, Dataset:shopper (Average over seeds) --------------------
+ACC: 0.9037
+AUC: 0.9286
+MCC: 0.6209
+G-mean: 0.7964
+F1 (macro): 0.8104
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9419
+  Recall:    0.9450
+  F1-score:  0.9434
+Class 1:
+  Precision: 0.6837
+  Recall:    0.6713
+  F1-score:  0.6774
+
+-------------------- SMOTE + CatBoost, Dataset:magic (Average over seeds) --------------------
+ACC: 0.8873
+AUC: 0.9468
+MCC: 0.7561
+G-mean: 0.8793
+F1 (macro): 0.8780
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9169
+  Recall:    0.9065
+  F1-score:  0.9117
+Class 1:
+  Precision: 0.8359
+  Recall:    0.8528
+  F1-score:  0.8443
+
+-------------------- SMOTE + CatBoost, Dataset:bean (Average over seeds) --------------------
+ACC: 1.0000
+AUC: 1.0000
+MCC: 1.0000
+G-mean: 1.0000
+F1 (macro): 1.0000
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 1.0000
+  Recall:    1.0000
+  F1-score:  1.0000
+Class 1:
+  Precision: 1.0000
+  Recall:    1.0000
+  F1-score:  1.0000
+
+-------------------- SMOTE + CatBoost, Dataset:winequality (Average over seeds) --------------------
+ACC: 0.9489
+AUC: 0.7764
+MCC: 0.2077
+G-mean: 0.4870
+F1 (macro): 0.6036
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9751
+  Recall:    0.9720
+  F1-score:  0.9736
+Class 1:
+  Precision: 0.2239
+  Recall:    0.2452
+  F1-score:  0.2336
+
+-------------------- SMOTE + CatBoost, Dataset:obesity (Average over seeds) --------------------
+ACC: 0.9816
+AUC: 0.9983
+MCC: 0.9352
+G-mean: 0.9775
+F1 (macro): 0.9673
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9943
+  Recall:    0.9836
+  F1-score:  0.9889
+Class 1:
+  Precision: 0.9215
+  Recall:    0.9714
+  F1-score:  0.9458
+
+-------------------- SMOTE + CatBoost, Dataset:yeast_me2 (Average over seeds) --------------------
+ACC: 0.9574
+AUC: 0.9297
+MCC: 0.3734
+G-mean: 0.6151
+F1 (macro): 0.6864
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9772
+  Recall:    0.9786
+  F1-score:  0.9779
+Class 1:
+  Precision: 0.4046
+  Recall:    0.3875
+  F1-score:  0.3949
+
+-------------------- SMOTE + CatBoost, Dataset:page (Average over seeds) --------------------
+ACC: 0.9984
+AUC: 0.9995
+MCC: 0.8895
+G-mean: 0.9782
+F1 (macro): 0.9432
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9997
+  Recall:    0.9986
+  F1-score:  0.9992
+Class 1:
+  Precision: 0.8267
+  Recall:    0.9600
+  F1-score:  0.8873
+
+-------------------- SMOTE + CatBoost, Dataset:buddy (Average over seeds) --------------------
+ACC: 0.9858
+AUC: 0.9354
+MCC: 0.1342
+G-mean: 0.4376
+F1 (macro): 0.5635
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9954
+  Recall:    0.9904
+  F1-score:  0.9929
+Class 1:
+  Precision: 0.1025
+  Recall:    0.1938
+  F1-score:  0.1340
+
+-------------------- SMOTE + CatBoost, Dataset:mammography (Average over seeds) --------------------
+ACC: 0.9802
+AUC: 0.8717
+MCC: 0.5541
+G-mean: 0.7771
+F1 (macro): 0.7761
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9917
+  Recall:    0.9880
+  F1-score:  0.9898
+Class 1:
+  Precision: 0.5206
+  Recall:    0.6114
+  F1-score:  0.5623

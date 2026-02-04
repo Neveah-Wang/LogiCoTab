@@ -188,6 +188,7 @@ if __name__ == '__main__':
     raw_config = lib.load_config(args.config)
     save_file(os.path.join(raw_config['parent_dir'], 'config.toml'), args.config)
     ctgan = None
+    print(f"train = {args.train}")
     if args.train:
         ctgan = train_ctgan(
             parent_dir=raw_config['parent_dir'],
@@ -196,6 +197,7 @@ if __name__ == '__main__':
             device=raw_config['device'],
             raw_config=raw_config
         )
+    print(f"sample = {args.sample}")
     if args.sample:
         sample_ctgan(
             raw_config,
@@ -207,6 +209,7 @@ if __name__ == '__main__':
             seed=raw_config['sample']['seed'],
             device=raw_config['device']
         )
+    print(f"eval = {args.eval}")
     if args.eval:
         eval(raw_config)
 
@@ -221,4 +224,5 @@ python baselines/CTGAN_TVAE/main_ctgan.py --config exp/page/CTGAN/config.toml --
 python baselines/CTGAN_TVAE/main_ctgan.py --config exp/buddy/CTGAN/config.toml --train --sample --eval
 python baselines/CTGAN_TVAE/main_ctgan.py --config exp/winequality/CTGAN/config.toml --train --sample --eval
 python baselines/CTGAN_TVAE/main_ctgan.py --config exp/yeast_me2/CTGAN/config.toml --train --sample --eval
+python baselines/CTGAN_TVAE/main_ctgan.py --config exp/mammography/CTGAN/config.toml --train --sample --eval
 """

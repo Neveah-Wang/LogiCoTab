@@ -1,29 +1,33 @@
-parent_dir = "exp/page/CoTable"
-real_data_path = "Dataset/page/"
-task_type = "multiclass"
-dataname = "page"
-num_classes = 5
-num_numerical_features = 10
-num_categorical_features = 0
-num_categorical = []
+parent_dir = "D:/Study/自学/表格数据生成/LogiCoTab-vae/exp/buddy/CoTable"
+real_data_path = "D:/Study/自学/表格数据生成/LogiCoTab-vae/Dataset-all/buddy/"
+dataname = "buddy"
+task_type = "binclass"
+num_classes =2
+num_numerical_features = 2
+num_categorical_features = 5
+num_categorical = [
+    4,
+    56,
+    20,
+    10,
+    4,
+]
 model_type = "transformer"
 seed = 0
 device = "cuda"
 X_num_columns = [
-    "height",
-    "lenght",
-    "area",
-    "eccen",
-    "p_black",
-    "p_and",
-    "mean_tr",
-    "blackpix",
-    "blackand",
-    "wb_trans",
+    "length(m)",
+    "height(cm)",
 ]
-X_cat_columns = []
+X_cat_columns = [
+    "condition",
+    "color_type",
+    "X1",
+    "X2",
+    "breed_category",
+]
 y_column = [
-    "Class",
+    "pet_category",
 ]
 
 [Transform]
@@ -34,35 +38,35 @@ y_policy = "Ordinal"
 y_plus1 = false
 
 [VAE]
-lr = 0.003
-epoch = 20000
+lr = 0.005
+epoch = 15000
 wd = 0
-d_token = 4
+d_token = 5
 token_bias = true
 n_head = 1
 factor = 32
 num_layers = 2
 batch_size = 1024
-scheduler_fac = 0.98
-scheduler_patience = 10
+scheduler_fac = 0.982
+scheduler_patience = 5
 
 [model_params]
 is_y_cond = true
-d_in = 40
+d_in = 35
 dim_t = 128
 feedforward_layer = [
-    512,
     1024,
-    512,
+    2048,
+    1024,
 ]
 depth = 2
 ff_dropout = 0.0
 activation = "reglu"
 bert = "prajjwal1/bert-tiny"
-bert_max_length = 7
+bert_max_length = 9
 
 [model_params.attention]
-n_head = 2
+n_head = 1
 attention_dropout = 0.0
 
 [ddpm]
@@ -74,11 +78,11 @@ use_guide = false
 guide_w = 2
 
 [ddpm_train]
-epoch = 40000
+epoch = 50000
 lr = 0.003
 lr_min = 5e-08
 weight_decay = 0.0
-batch_size = 1024
+batch_size = 2048
 
 [ddpm_train.lr_scheduler]
 step_size = 15

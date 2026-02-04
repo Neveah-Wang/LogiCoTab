@@ -50,4 +50,5 @@ python baselines/TabSyn/main.py --config exp/page/TabSyn/config.toml --train --s
 python baselines/TabSyn/main.py --config exp/buddy/TabSyn/config.toml --train --sample --eval
 python baselines/TabSyn/main.py --config exp/winequality/TabSyn/config.toml --train --sample --eval
 python baselines/TabSyn/main.py --config exp/yeast_me2/TabSyn/config.toml --train --sample --eval
+python baselines/TabSyn/main.py --config exp/mammography/TabSyn/config.toml --train --sample --eval
 """

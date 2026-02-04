@@ -252,6 +252,75 @@ class AdaptiveVAELoss(nn.Module):
             return 0.0
         return torch.norm(self.prototype_0 - self.prototype_1, p=2).item()
 
+    def compute_intra_class_variance(self, z, labels):
+        """
+        计算类内方差 (Intra-class Variance)
+
+        对每个类别c, 计算:
+        Var_c = 1/N_c Σ_{i∈C_c} ||z_i - μ_c^proto||²
+
+        总体类内方差 (加权平均):
+        Var_intra = Σ_c (N_c/N) * Var_c
+
+        Args:
+            z: 隐向量 [batch_size, seq_len, d_token] 或 [batch_size, latent_dim]
+            labels: 标签 [batch_size]
+
+        Returns:
+            intra_var_dict: 包含各类别方差和总体方差的字典
+        """
+        # 展平隐向量
+        if z.dim() == 3:
+            z_flat = z.reshape(z.size(0), -1)
+        else:
+            z_flat = z
+
+        if not self.prototype_initialized:
+            return {
+                'intra_var_class_0': 0.0,
+                'intra_var_class_1': 0.0,
+                'intra_var_total': 0.0,
+                'intra_var_weighted': 0.0
+            }
+
+        intra_var_dict = {}
+        total_samples = z_flat.shape[0]
+        weighted_var = 0.0
+
+        for class_id in [0, 1]:
+            mask = (labels == class_id)
+            n_samples = mask.sum().item()
+
+            if n_samples > 0:
+                # 获取该类别的隐向量
+                z_c = z_flat[mask]
+
+                # 获取类原型
+                proto_c = self.prototype_0 if class_id == 0 else self.prototype_1
+                proto_c = proto_c.to(self.device)
+
+                # 计算类内方差: 1/N_c Σ ||z_i - μ_proto||²
+                distances_sq = torch.norm(z_c - proto_c, p=2, dim=1) ** 2
+                var_c = distances_sq.mean().item()
+
+                intra_var_dict[f'intra_var_class_{class_id}'] = var_c
+
+                # 加权累积
+                weighted_var += (n_samples / total_samples) * var_c
+            else:
+                intra_var_dict[f'intra_var_class_{class_id}'] = 0.0
+
+        # 简单平均(不考虑样本数量)
+        intra_var_dict['intra_var_total'] = np.mean([
+            intra_var_dict['intra_var_class_0'],
+            intra_var_dict['intra_var_class_1']
+        ])
+
+        # 加权平均(考虑样本数量,推荐使用)
+        intra_var_dict['intra_var_weighted'] = weighted_var
+
+        return intra_var_dict
+
     def forward(self, X_num, X_cat, Recon_X_num, Recon_X_cat,
                 mu, logvar, z, labels, update_prototypes=True):
         """
@@ -281,6 +350,10 @@ class AdaptiveVAELoss(nn.Module):
         # 4. 类原型分离损失
         separation_loss = self.compute_prototype_separation_loss()
 
+        # 5. 计算类内方差 (不参与反向传播,仅用于监控)
+        with torch.no_grad():
+            intra_var_dict = self.compute_intra_class_variance(z, labels)
+
         # 组合损失字典
         loss_dict = {
             'recon_loss': recon_loss.item(),
@@ -290,7 +363,12 @@ class AdaptiveVAELoss(nn.Module):
             'contrast_loss': contrast_loss.item(),
             'separation_loss': separation_loss.item(),
             'acc': acc.item() if isinstance(acc, torch.Tensor) else acc,
-            'proto_dist': self.get_prototype_distance()
+            'proto_dist': self.get_prototype_distance(),
+            # 新增: 类内方差指标
+            'intra_var_class_0': intra_var_dict['intra_var_class_0'],
+            'intra_var_class_1': intra_var_dict['intra_var_class_1'],
+            'intra_var_total': intra_var_dict['intra_var_total'],
+            'intra_var_weighted': intra_var_dict['intra_var_weighted'],
         }
 
         return recon_loss, kl_loss, contrast_loss, separation_loss, loss_dict
@@ -449,10 +527,14 @@ def main_train(train_loader, all_pooler_outputs_val, raw_config, dataset, all_po
         'train_total_loss', 'train_recon_loss', 'train_mse_loss', 'train_ce_loss',
         'train_kl_loss', 'train_contrast_loss', 'train_separation_loss',
         'train_acc', 'train_proto_dist',
+        'train_intra_var_class_0', 'train_intra_var_class_1',
+        'train_intra_var_total', 'train_intra_var_weighted',
         # 验证指标
         'val_total_loss', 'val_recon_loss', 'val_mse_loss', 'val_ce_loss',
         'val_kl_loss', 'val_contrast_loss', 'val_separation_loss',
-        'val_acc', 'val_proto_dist'
+        'val_acc', 'val_proto_dist',
+        'val_intra_var_class_0', 'val_intra_var_class_1',
+        'val_intra_var_total', 'val_intra_var_weighted',
     ]
 
     df_init = pd.DataFrame(columns=csv_columns)
@@ -475,7 +557,9 @@ def main_train(train_loader, all_pooler_outputs_val, raw_config, dataset, all_po
         epoch_train_losses = {
             'total': 0.0, 'recon': 0.0, 'mse': 0.0, 'ce': 0.0,
             'kl': 0.0, 'contrast': 0.0, 'separation': 0.0,
-            'acc': 0.0, 'proto_dist': 0.0
+            'acc': 0.0, 'proto_dist': 0.0,
+            'intra_var_class_0': 0.0, 'intra_var_class_1': 0.0,
+            'intra_var_total': 0.0, 'intra_var_weighted': 0.0,
         }
         total_samples = 0
 
@@ -523,6 +607,10 @@ def main_train(train_loader, all_pooler_outputs_val, raw_config, dataset, all_po
             epoch_train_losses['separation'] += loss_dict['separation_loss'] * batch_size
             epoch_train_losses['acc'] += loss_dict['acc'] * batch_size
             epoch_train_losses['proto_dist'] += loss_dict['proto_dist'] * batch_size
+            epoch_train_losses['intra_var_class_0'] += loss_dict['intra_var_class_0'] * batch_size
+            epoch_train_losses['intra_var_class_1'] += loss_dict['intra_var_class_1'] * batch_size
+            epoch_train_losses['intra_var_total'] += loss_dict['intra_var_total'] * batch_size
+            epoch_train_losses['intra_var_weighted'] += loss_dict['intra_var_weighted'] * batch_size
             total_samples += batch_size
 
         # 计算训练集平均损失
@@ -573,7 +661,8 @@ def main_train(train_loader, all_pooler_outputs_val, raw_config, dataset, all_po
             f"Val Loss: {val_total_loss:.4f} | "
             f"Train Acc: {avg_train_losses['acc']:.4f} | "
             f"Val Acc: {eval_losses['val_acc']:.4f} | "
-            f"Proto Dist: {eval_losses['val_proto_dist']:.4f}"
+            f"Proto Dist: {eval_losses['val_proto_dist']:.4f} |"
+            f"Intra Var: {eval_losses['val_intra_var_weighted']:.4f}"
         )
 
         # ==================== 保存日志 ====================
@@ -591,6 +680,10 @@ def main_train(train_loader, all_pooler_outputs_val, raw_config, dataset, all_po
             'train_separation_loss': avg_train_losses['separation'],
             'train_acc': avg_train_losses['acc'],
             'train_proto_dist': avg_train_losses['proto_dist'],
+            'train_intra_var_class_0': avg_train_losses['intra_var_class_0'],
+            'train_intra_var_class_1': avg_train_losses['intra_var_class_1'],
+            'train_intra_var_total': avg_train_losses['intra_var_total'],
+            'train_intra_var_weighted': avg_train_losses['intra_var_weighted'],
             # 验证指标
             'val_total_loss': eval_losses['val_total_loss'],
             'val_recon_loss': eval_losses['val_recon_loss'],
@@ -600,7 +693,11 @@ def main_train(train_loader, all_pooler_outputs_val, raw_config, dataset, all_po
             'val_contrast_loss': eval_losses['val_contrast_loss'],
             'val_separation_loss': eval_losses['val_separation_loss'],
             'val_acc': eval_losses['val_acc'],
-            'val_proto_dist': eval_losses['val_proto_dist']
+            'val_proto_dist': eval_losses['val_proto_dist'],
+            'val_intra_var_class_0': eval_losses['val_intra_var_class_0'],
+            'val_intra_var_class_1': eval_losses['val_intra_var_class_1'],
+            'val_intra_var_total': eval_losses['val_intra_var_total'],
+            'val_intra_var_weighted': eval_losses['val_intra_var_weighted'],
         }])
 
         # log 保存到文件
@@ -644,9 +741,12 @@ def main_train(train_loader, all_pooler_outputs_val, raw_config, dataset, all_po
         # 编码训练数据
         X_train_num = torch.from_numpy(dataset.X_num['train']).to(device)
         X_train_cat = torch.from_numpy(dataset.X_cat['train']).to(device) if dataset.X_cat else None
+        X_val_num = torch.from_numpy(dataset.X_num['val']).to(device)
+        X_val_cat = torch.from_numpy(dataset.X_cat['val']).to(device) if dataset.X_cat else None
 
         # 获取隐空间表示
         train_z = pre_encoder(X_train_num, X_train_cat, all_pooler_outputs_train).detach().cpu().numpy()
+        val_z = pre_encoder(X_val_num, X_val_cat, all_pooler_outputs_val).detach().cpu().numpy()
 
         # 获取重参数化后的隐向量
         _, _, _, latent_z_after_reparameterize = model.VAE(
@@ -654,12 +754,19 @@ def main_train(train_loader, all_pooler_outputs_val, raw_config, dataset, all_po
         )
         latent_z_after_reparameterize = latent_z_after_reparameterize.detach().cpu().numpy()
 
+        _, _, _, latent_z_after_reparameterize_val = model.VAE(
+            X_val_num, X_val_cat, all_pooler_outputs_val
+        )
+        latent_z_after_reparameterize_val = latent_z_after_reparameterize_val.detach().cpu().numpy()
+
         # 保存隐向量
         latent_dir = os.path.join(save_dir, 'latent_data')
         os.makedirs(latent_dir, exist_ok=True)
 
         np.save(os.path.join(latent_dir, 'train_z.npy'), train_z)
+        np.save(os.path.join(latent_dir, 'val_z.npy'), val_z)
         np.save(os.path.join(latent_dir, 'latent_z_after_reparameterize.npy'), latent_z_after_reparameterize)
+        np.save(os.path.join(latent_dir, 'latent_z_after_reparameterize_val.npy'), latent_z_after_reparameterize_val)
 
         # 额外保存类原型（用于可视化分析）
         prototype_dict = {
@@ -731,7 +838,7 @@ def main(raw_config):
 
 if __name__ == '__main__':
     raw_config_list = []
-    # raw_config_list.append(lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp\shopper\CoTable\config.toml"))
+    # raw_config_list.append(lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/buddy\CoTable\config.toml"))
     # raw_config_list.append(lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp\shopper\CoTable\config.toml"))
     # raw_config_list.append(lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp\churn\CoTable\config.toml"))
     # raw_config_list.append(lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/adult\CoTable\config.toml"))
@@ -740,7 +847,9 @@ if __name__ == '__main__':
     # raw_config_list.append(lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/bean\CoTable\config.toml"))
     # raw_config_list.append(lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/page\CoTable\config.toml"))
     # raw_config_list.append(lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/yeast_me2\CoTable\config.toml"))
-    raw_config_list.append(lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/winequality\CoTable\config.toml"))
+    # raw_config_list.append(lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/winequality1\CoTable\config.toml"))
+    # raw_config_list.append(lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/pageblocks\CoTable\config.toml"))
+    raw_config_list.append(lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/mammography\CoTable\config.toml"))
 
     for raw_config in raw_config_list:
         main(raw_config)

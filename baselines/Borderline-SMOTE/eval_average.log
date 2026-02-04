@@ -1,0 +1,187 @@
+
+-------------------- Borderline-SMOTE + CatBoost, Dataset:churn (Average over seeds) --------------------
+ACC: 0.8566
+AUC: 0.8389
+MCC: 0.5113
+G-mean: 0.6877
+F1 (macro): 0.7488
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8822
+  Recall:    0.9468
+  F1-score:  0.9133
+Class 1:
+  Precision: 0.7034
+  Recall:    0.4996
+  F1-score:  0.5842
+
+-------------------- Borderline-SMOTE + CatBoost, Dataset:adult (Average over seeds) --------------------
+ACC: 0.8647
+AUC: 0.9240
+MCC: 0.6208
+G-mean: 0.7926
+F1 (macro): 0.8099
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9011
+  Recall:    0.9231
+  F1-score:  0.9120
+Class 1:
+  Precision: 0.7373
+  Recall:    0.6805
+  F1-score:  0.7078
+
+-------------------- Borderline-SMOTE + CatBoost, Dataset:shopper (Average over seeds) --------------------
+ACC: 0.9050
+AUC: 0.9302
+MCC: 0.6282
+G-mean: 0.8032
+F1 (macro): 0.8141
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9439
+  Recall:    0.9443
+  F1-score:  0.9441
+Class 1:
+  Precision: 0.6850
+  Recall:    0.6833
+  F1-score:  0.6841
+
+-------------------- Borderline-SMOTE + CatBoost, Dataset:magic (Average over seeds) --------------------
+ACC: 0.8794
+AUC: 0.9465
+MCC: 0.7438
+G-mean: 0.8779
+F1 (macro): 0.8711
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9254
+  Recall:    0.8832
+  F1-score:  0.9038
+Class 1:
+  Precision: 0.8066
+  Recall:    0.8726
+  F1-score:  0.8383
+
+-------------------- Borderline-SMOTE + CatBoost, Dataset:bean (Average over seeds) --------------------
+ACC: 0.9999
+AUC: 1.0000
+MCC: 0.9986
+G-mean: 0.9999
+F1 (macro): 0.9993
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 1.0000
+  Recall:    0.9999
+  F1-score:  0.9999
+Class 1:
+  Precision: 0.9972
+  Recall:    1.0000
+  F1-score:  0.9986
+
+-------------------- Borderline-SMOTE + CatBoost, Dataset:winequality (Average over seeds) --------------------
+ACC: 0.9478
+AUC: 0.7837
+MCC: 0.2358
+G-mean: 0.5299
+F1 (macro): 0.6171
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9765
+  Recall:    0.9694
+  F1-score:  0.9729
+Class 1:
+  Precision: 0.2377
+  Recall:    0.2903
+  F1-score:  0.2613
+
+-------------------- Borderline-SMOTE + CatBoost, Dataset:obesity (Average over seeds) --------------------
+ACC: 0.9816
+AUC: 0.9980
+MCC: 0.9352
+G-mean: 0.9775
+F1 (macro): 0.9673
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9943
+  Recall:    0.9836
+  F1-score:  0.9889
+Class 1:
+  Precision: 0.9215
+  Recall:    0.9714
+  F1-score:  0.9458
+
+-------------------- Borderline-SMOTE + CatBoost, Dataset:yeast_me2 (Average over seeds) --------------------
+ACC: 0.9596
+AUC: 0.9137
+MCC: 0.2965
+G-mean: 0.4965
+F1 (macro): 0.6435
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9725
+  Recall:    0.9860
+  F1-score:  0.9792
+Class 1:
+  Precision: 0.4000
+  Recall:    0.2500
+  F1-score:  0.3077
+
+-------------------- Borderline-SMOTE + CatBoost, Dataset:page (Average over seeds) --------------------
+ACC: 0.9978
+AUC: 0.9995
+MCC: 0.8441
+G-mean: 0.9360
+F1 (macro): 0.9213
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9992
+  Recall:    0.9986
+  F1-score:  0.9989
+Class 1:
+  Precision: 0.8133
+  Recall:    0.8800
+  F1-score:  0.8436
+
+-------------------- Borderline-SMOTE + CatBoost, Dataset:buddy (Average over seeds) --------------------
+ACC: 0.9903
+AUC: 0.9420
+MCC: 0.1550
+G-mean: 0.4002
+F1 (macro): 0.5774
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9952
+  Recall:    0.9951
+  F1-score:  0.9951
+Class 1:
+  Precision: 0.1576
+  Recall:    0.1625
+  F1-score:  0.1597
+
+-------------------- Borderline-SMOTE + CatBoost, Dataset:mammography (Average over seeds) --------------------
+ACC: 0.9773
+AUC: 0.9336
+MCC: 0.5013
+G-mean: 0.7468
+F1 (macro): 0.7492
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9907
+  Recall:    0.9861
+  F1-score:  0.9884
+Class 1:
+  Precision: 0.4651
+  Recall:    0.5657
+  F1-score:  0.5101

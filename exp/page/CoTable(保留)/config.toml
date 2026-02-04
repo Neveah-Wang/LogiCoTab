@@ -1,8 +1,8 @@
-parent_dir = "exp/page/CoTable"
-real_data_path = "Dataset/page/"
-task_type = "multiclass"
+parent_dir = "D:/Study/自学/表格数据生成/LogiCoTab-vae/exp/page/CoTable"
+real_data_path = "D:/Study/自学/表格数据生成/LogiCoTab-vae/Dataset-all/page/"
+task_type = "binclass"
 dataname = "page"
-num_classes = 5
+num_classes = 2
 num_numerical_features = 10
 num_categorical_features = 0
 num_categorical = []
@@ -37,7 +37,7 @@ y_plus1 = false
 lr = 0.003
 epoch = 20000
 wd = 0
-d_token = 4
+d_token = 5
 token_bias = true
 n_head = 1
 factor = 32
@@ -48,7 +48,7 @@ scheduler_patience = 10
 
 [model_params]
 is_y_cond = true
-d_in = 40
+d_in = 50
 dim_t = 128
 feedforward_layer = [
     512,
@@ -74,7 +74,7 @@ use_guide = false
 guide_w = 2
 
 [ddpm_train]
-epoch = 30000
+epoch = 40000
 lr = 0.003
 lr_min = 5e-08
 weight_decay = 0.0

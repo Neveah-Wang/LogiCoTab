@@ -7,6 +7,7 @@ sys.path.append(r'D:\Study\自学\表格数据生成\v9')
 
 import os
 import torch
+import math
 import pandas as pd
 import numpy as np
 import argparse
@@ -15,7 +16,7 @@ import time
 import lib
 from baselines.TabSyn.models.model import MLPDiffusion, Model
 from baselines.TabSyn.models.latent_util import get_input_generate, split_num_cat_target
-from baselines.TabSyn.models.diffusion_utils import sample
+from baselines.TabSyn.models.diffusion_utils import sample, sample_batched
 
 warnings.filterwarnings('ignore')
 
@@ -41,12 +42,34 @@ def main(raw_config):
     num_samples = int(train_z.shape[0] * (raw_config['ir'] - 1))
     sample_dim = in_dim
 
-    x_next = sample(model.denoise_fn_D, num_samples, sample_dim)
-    x_next = x_next * 2 + mean.to(device)
-    syn_data = x_next.float()
+    batch_size = 1024
+    # 初始化列表用于收集各批次结果
+    all_syn_num = []
+    all_syn_cat = []
+    all_syn_target = []
+    # 分批生成
+    num_batches = math.ceil(num_samples / batch_size)
+    for i in range(num_batches):
+        current_batch_size = min(batch_size, num_samples - i * batch_size)
+        if current_batch_size <= 0:
+            break
+        x_next = sample(model.denoise_fn_D, current_batch_size, sample_dim)
+        x_next = x_next * 2 + mean.to(device)
+        syn_data = x_next.float()
 
-    # 该步骤将Diffusion生成的数据(latent space) 解码到 真实空间，并划分 num和cat
-    syn_num, syn_cat, syn_target = split_num_cat_target(syn_data, raw_config, info, num_inverse, cat_inverse, y_inverse)
+        # 该步骤将Diffusion生成的数据(latent space) 解码到 真实空间，并划分 num和cat
+        syn_num, syn_cat, syn_target = split_num_cat_target(syn_data, raw_config, info, num_inverse, cat_inverse, y_inverse)
+
+        # 累积结果（确保是 NumPy）
+        all_syn_num.append(syn_num)
+        all_syn_cat.append(syn_cat)
+        all_syn_target.append(syn_target)
+
+    # 拼接所有批次（沿第0维）
+    syn_num = np.concatenate(all_syn_num, axis=0) if all_syn_num else np.empty((0, 0))
+    syn_cat = np.concatenate(all_syn_cat, axis=0) if all_syn_cat else np.empty((0, 0))
+    syn_target = np.concatenate(all_syn_target, axis=0) if all_syn_target else np.empty((0,))
+
     X_num_columns = raw_config['X_num_columns']
     X_cat_columns = raw_config['X_cat_columns']
     y_column = raw_config['y_column']
