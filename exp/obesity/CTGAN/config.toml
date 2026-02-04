@@ -1,9 +1,11 @@
 parent_dir = "exp/obesity/CTGAN"
-real_data_path = "Dataset/obesity/"
+real_data_path = "Dataset-all/obesity/"
+dataname = "obesity"
 seed = 0
+ir = 6.36
 device = "cuda"
 task_type = "binclass"
-num_classes = 7
+num_classes = 2
 num_numerical_features = 8
 num_categorical_features = 8
 num_categorical = [

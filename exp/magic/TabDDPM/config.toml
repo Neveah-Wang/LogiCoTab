@@ -1,6 +1,8 @@
 parent_dir = "exp/magic/TabDDPM"
-real_data_path = "Dataset/magic/"
+real_data_path = "Dataset-all/magic/"
 task_type = "binclass"
+dataname = "magic"
+ir = 1.84
 num_classes = 2
 num_numerical_features = 10
 num_categorical_features = 0

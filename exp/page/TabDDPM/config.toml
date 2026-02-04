@@ -1,7 +1,9 @@
 parent_dir = "exp/page/TabDDPM"
-real_data_path = "Dataset/page/"
-task_type = "multiclass"
-num_classes = 5
+real_data_path = "Dataset-all/page/"
+task_type = "binclass"
+dataname = "page"
+ir = 194.46
+num_classes = 2
 num_numerical_features = 10
 num_categorical_features = 0
 num_categorical = []

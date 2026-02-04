@@ -1,0 +1,29 @@
+{
+    "name": "Adult",
+    "id": "adult--default",
+    "task_type": "binclass",
+    "n_num_features": 6,
+    "n_cat_features": 8,
+    "test_size": 16281,
+    "train_size": 26048,
+    "val_size": 6513,
+    "num_prompt": [
+        "age is {age}",
+        "fnlwgt is {fnlwgt}",
+        "education_num is {education_num}",
+        "capital-gain is {capital-gain}",
+        "capital-loss is {capital-loss}",
+        "hours-per-week is {hours-per-week}"
+    ],
+    "cat_prompt": [
+        "Workclass is {workclass}",
+        "Education is {education}",
+        "marital-status is {marital_status}",
+        "Occupation is {occupation}",
+        "relationship is {relationship}",
+        "race is {race}",
+        "sex is {sex}",
+        "native-country is {native_country}"
+    ],
+    "label_prompt": "salary is {salary}"
+}

@@ -1,5 +1,5 @@
-parent_dir = "exp/bean/CoTable"
-real_data_path = "Dataset-all/bean/"
+parent_dir = "D:/Study/自学/表格数据生成/LogiCoTab-vae/exp/bean/CoTable"
+real_data_path = "D:/Study/自学/表格数据生成/LogiCoTab-vae/Dataset-all/bean/"
 dataname = "bean"
 task_type = "binclass"
 num_classes = 2
@@ -43,7 +43,7 @@ y_plus1 = false
 lr = 0.003
 epoch = 10000
 wd = 0
-d_token = 4
+d_token = 5
 token_bias = true
 n_head = 1
 factor = 32
@@ -54,7 +54,7 @@ scheduler_patience = 10
 
 [model_params]
 is_y_cond = true
-d_in = 64
+d_in = 80
 dim_t = 128
 feedforward_layer = [
     512,

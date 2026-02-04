@@ -1,6 +1,5 @@
-parent_dir = "exp/adult/CoTable"
-real_data_path = "Dataset-minority/adult/"
-all_data_path = "Dataset-all/adult/"
+parent_dir = "D:/Study/自学/表格数据生成/LogiCoTab-vae/exp/adult/CoTable"
+real_data_path = "D:/Study/自学/表格数据生成/LogiCoTab-vae/Dataset-all/adult/"
 dataname = "adult"
 task_type = "binclass"
 num_classes = 2
@@ -50,7 +49,7 @@ y_plus1 = false
 
 [VAE]
 lr = 0.008
-epoch = 10000
+epoch = 800
 wd = 0
 d_token = 5
 token_bias = true
@@ -60,6 +59,7 @@ num_layers = 2
 batch_size = 1024
 scheduler_fac = 0.98
 scheduler_patience = 10
+update_rate = 0.8
 
 [model_params]
 is_y_cond = true
@@ -88,7 +88,7 @@ use_guide = false
 guide_w = 2
 
 [ddpm_train]
-epoch = 200000
+epoch = 150000
 lr = 0.002
 lr_min = 5e-06
 weight_decay = 0.0

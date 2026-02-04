@@ -1,8 +1,10 @@
 parent_dir = "exp/adult/TabDDPM"
-real_data_path = "Dataset/adult/"
+real_data_path = "Dataset-all/adult/"
+dataname = "adult"
 task_type = "binclass"
 num_numerical_features = 6
 num_categorical_features = 8
+ir = 3.18
 model_type = "mlp"
 seed = 0
 device = "cuda"
@@ -60,7 +62,7 @@ cat_nan_policy = "__none__"
 cat_min_frequency = "__none__"
 normalization = "quantile"
 cat_encode_policy = "Ordinal"
-y_policy = "None"
+y_policy = "Ordinal"
 
 [sample]
 num_samples = 26048
@@ -78,4 +80,4 @@ cat_nan_policy = "__none__"
 cat_min_frequency = "__none__"
 normalization = "minmax"
 cat_encode_policy = "Ordinal"
-y_policy = "None"
+y_policy = "Ordinal"

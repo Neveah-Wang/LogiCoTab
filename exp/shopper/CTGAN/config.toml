@@ -1,6 +1,7 @@
 parent_dir = "exp/shopper/CTGAN"
-real_data_path = "Dataset/shopper/"
+real_data_path = "Dataset-all/shopper/"
 dataname = "shopper"
+ir = 5.46
 seed = 0
 device = "cuda"
 task_type = "binclass"

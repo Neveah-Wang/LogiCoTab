@@ -1,0 +1,12 @@
+{
+    "name": "page",
+    "id": "page--default",
+    "task_type": "binclass",
+    "n_classes": 2,
+    "n_num_features": 10,
+    "n_cat_features": 0,
+    "train_size": 3831,
+    "test_size": 903,
+    "val_size": 739,
+    "label_prompt": "Class is {Class}"
+}

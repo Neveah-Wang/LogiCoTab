@@ -1,6 +1,5 @@
-parent_dir = "exp/winequality/CoTable"
-real_data_path = "Dataset-minority/winequality/"
-all_data_path = "Dataset-all/winequality/"
+parent_dir = "D:/Study/自学/表格数据生成/LogiCoTab-vae/exp/winequality/CoTable"
+real_data_path = "D:/Study/自学/表格数据生成/LogiCoTab-vae/Dataset-all/winequality/"
 dataname = "winequality"
 task_type = "binclass"
 num_classes = 2
@@ -11,9 +10,17 @@ model_type = "transformer"
 seed = 0
 device = "cuda"
 X_num_columns = [
-    'fixed_acidity', 'volatile_acidity', 'citric_acid', 'residual_sugar',
-    'chlorides', 'free_sulfur_dioxide', 'total_sulfur_dioxide', 'density',
-    'pH', 'sulphates', 'alcohol'
+    "fixed_acidity",
+    "volatile_acidity",
+    "citric_acid",
+    "residual_sugar",
+    "chlorides",
+    "free_sulfur_dioxide",
+    "total_sulfur_dioxide",
+    "density",
+    "pH",
+    "sulphates",
+    "alcohol",
 ]
 X_cat_columns = []
 y_column = [
@@ -29,20 +36,25 @@ y_plus1 = false
 
 [VAE]
 lr = 0.003
-epoch = 10000
+epoch = 20000
 wd = 0
-d_token = 4
+d_token = 5
 token_bias = true
 n_head = 1
 factor = 32
 num_layers = 2
-batch_size = 1024
+batch_size = 5000
 scheduler_fac = 0.98
 scheduler_patience = 10
+lambd = 0.7
+lambda_sep = 1
+gamma = 1
+margin = 5
+temperature = 0.05
 
 [model_params]
 is_y_cond = true
-d_in = 64
+d_in = 55
 dim_t = 128
 feedforward_layer = [
     512,

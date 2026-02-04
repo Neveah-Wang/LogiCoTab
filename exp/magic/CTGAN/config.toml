@@ -1,6 +1,7 @@
 parent_dir = "exp/magic/CTGAN"
-real_data_path = "Dataset/magic/"
+real_data_path = "Dataset-all/magic/"
 dataname = "magic"
+ir = 1.84
 seed = 0
 device = "cuda"
 task_type = "binclass"

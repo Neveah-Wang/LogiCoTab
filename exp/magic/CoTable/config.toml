@@ -1,6 +1,7 @@
-parent_dir = "exp/magic/CoTable"
-real_data_path = "Dataset/magic/"
+parent_dir = "D:/Study/自学/表格数据生成/LogiCoTab-vae/exp/magic/CoTable"
+real_data_path = "D:/Study/自学/表格数据生成/LogiCoTab-vae/Dataset-all/magic/"
 task_type = "binclass"
+dataname = "magic"
 num_classes = 2
 num_numerical_features = 10
 num_categorical_features = 0
@@ -34,7 +35,7 @@ y_plus1 = false
 
 [VAE]
 lr = 0.008
-epoch = 10000
+epoch = 850
 wd = 0
 d_token = 5
 token_bias = true

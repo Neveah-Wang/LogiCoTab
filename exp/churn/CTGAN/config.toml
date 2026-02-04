@@ -1,6 +1,7 @@
 parent_dir = "exp/churn/CTGAN"
-real_data_path = "Dataset/churn/"
+real_data_path = "Dataset-all/churn/"
 dataname = "churn"
+ir = 3.91
 seed = 0
 device = "cuda"
 task_type = "binclass"

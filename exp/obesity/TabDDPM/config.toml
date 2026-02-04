@@ -1,6 +1,8 @@
 parent_dir = "exp/obesity/TabDDPM"
-real_data_path = "Dataset/obesity/"
-task_type = "multiclass"
+real_data_path = "Dataset-all/obesity/"
+dataname = "obesity"
+task_type = "binclass"
+ir = 6.36
 num_numerical_features = 8
 num_categorical_features = 8
 model_type = "mlp"

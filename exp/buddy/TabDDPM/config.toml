@@ -1,6 +1,8 @@
 parent_dir = "exp/buddy/TabDDPM"
-real_data_path = "Dataset/buddy/"
-task_type = "multiclass"
+real_data_path = "Dataset-all/buddy/"
+dataname = "buddy"
+task_type = "binclass"
+ir = 213.02
 num_numerical_features = 2
 num_categorical_features = 5
 model_type = "mlp"
@@ -22,7 +24,7 @@ y_column = [
 ]
 
 [model_params]
-num_classes = 3
+num_classes = 2
 is_y_cond = false
 
 [model_params.rtdl_params]
@@ -51,11 +53,11 @@ cat_nan_policy = "__none__"
 cat_min_frequency = "__none__"
 normalization = "quantile"
 cat_encode_policy = "Ordinal"
-y_policy = "None"
+y_policy = "Ordinal"
 
 [sample]
-num_samples = 12054
-batch_size = 12054
+num_samples = 13185
+batch_size = 13185
 seed = 0
 
 [eval.type]
@@ -69,4 +71,4 @@ cat_nan_policy = "__none__"
 cat_min_frequency = "__none__"
 normalization = "minmax"
 cat_encode_policy = "Ordinal"
-y_policy = "None"
+y_policy = "Ordinal"

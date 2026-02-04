@@ -1,0 +1,11 @@
+{
+    "name": "yeast_me2",
+    "id": "yeast_me2--default",
+    "task_type": "binclass",
+    "n_num_features": 8,
+    "n_cat_features": 0,
+    "train_size": 1038,
+    "test_size": 223,
+    "val_size": 223,
+    "label_prompt": "localization_site is {localization_site}"
+}

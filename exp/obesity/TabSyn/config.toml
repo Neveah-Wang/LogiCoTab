@@ -1,7 +1,9 @@
 parent_dir = "exp/obesity/TabSyn"
-real_data_path = "Dataset/obesity/"
-task_type = "multiclass"
-num_classes = 7
+real_data_path = "Dataset-all/obesity/"
+dataname = "obesity"
+task_type = "binclass"
+ir = 6.36
+num_classes = 2
 num_numerical_features = 8
 num_categorical_features = 8
 num_categorical = [

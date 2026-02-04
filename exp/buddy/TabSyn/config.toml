@@ -1,7 +1,9 @@
 parent_dir = "exp/buddy/TabSyn"
-real_data_path = "Dataset/buddy/"
-task_type = "multiclass"
-num_classes = 3
+real_data_path = "Dataset-all/buddy/"
+dataname = "buddy"
+task_type = "binclass"
+ir = 213.02
+num_classes = 2
 num_numerical_features = 2
 num_categorical_features = 5
 num_categorical = [
@@ -32,7 +34,7 @@ y_column = [
 seed = 0
 normalization = "quantile"
 cat_encode_policy = "Ordinal"
-y_policy = "None"
+y_policy = "Ordinal"
 y_plus1 = false
 
 [VAE]
@@ -58,4 +60,4 @@ seed = 0
 seed = 0
 normalization = "minmax"
 cat_encode_policy = "Ordinal"
-y_policy = "None"
+y_policy = "Ordinal"

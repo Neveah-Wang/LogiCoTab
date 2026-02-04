@@ -1,10 +1,11 @@
 parent_dir = "exp/page/CTGAN"
-real_data_path = "Dataset/page/"
+real_data_path = "Dataset-all/page/"
 dataname = "page"
+ir = 194.46
 seed = 0
 device = "cuda"
-task_type = "multiclass"
-num_classes = 5
+task_type = "binclass"
+num_classes = 2
 num_numerical_features = 10
 num_categorical_features = 0
 num_categorical = []

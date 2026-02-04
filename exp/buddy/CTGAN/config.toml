@@ -1,10 +1,11 @@
 parent_dir = "exp/buddy/CTGAN"
-real_data_path = "Dataset/buddy/"
+real_data_path = "Dataset-all/buddy/"
 dataname = "buddy"
 seed = 0
+ir = 213.02
 device = "cuda"
-task_type = "multiclass"
-num_classes = 3
+task_type = "binclass"
+num_classes = 2
 num_numerical_features = 2
 num_categorical_features = 5
 num_categorical = [
@@ -30,22 +31,12 @@ y_column = [
 ]
 
 [train_params]
-epochs = 30000
-embedding_dim = 512
-batch_size = 4096
-loss_factor = 1.1675626917524105
-compress_dims = [
-    256,
-    512,
-]
-decompress_dims = [
-    256,
-    512,
-]
+epochs = 100000
+batch_size = 1000
 
 [sample]
 seed = 0
-num_samples = 12054
+num_samples = 13185
 
 [eval.Transform]
 seed = 0

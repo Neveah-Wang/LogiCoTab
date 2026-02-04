@@ -1,8 +1,8 @@
-parent_dir = "exp/obesity/CoTable"
-real_data_path = "Dataset/obesity/"
+parent_dir = "D:/Study/自学/表格数据生成/LogiCoTab-vae/exp/obesity/CoTable"
+real_data_path = "D:/Study/自学/表格数据生成/LogiCoTab-vae/Dataset-all/obesity/"
 dataname = "obesity"
-task_type = "multiclass"
-num_classes = 7
+task_type = "binclass"
+num_classes = 2
 num_numerical_features = 8
 num_categorical_features = 8
 num_categorical = [
@@ -51,7 +51,7 @@ y_plus1 = false
 
 [VAE]
 lr = 0.005
-epoch = 100000
+epoch = 10000
 wd = 0
 d_token = 5
 token_bias = true
