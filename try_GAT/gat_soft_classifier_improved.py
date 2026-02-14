@@ -104,6 +104,8 @@ class LabelPropagationSoftLabelGenerator:
         self, neigh_idx, weights, seeds_mask, y,
         alpha_pos=0.80,
         alpha_neg=0.95,
+        # alpha_pos=0.0,
+        # alpha_neg=0.0,
         forbid_flip=True,
         flip_margin=1e-2
     ):

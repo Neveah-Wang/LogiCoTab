@@ -394,8 +394,8 @@ def ablation_study(Z_train, y_train, Z_val, y_val, Z_test, y_test, device="cuda"
 
 if __name__ == "__main__":
 
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-LP-GAT\exp/churn\CoTable\config.toml")
-    raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-LP-GAT\exp/adult\CoTable\config.toml")
+    raw_config = lib.util.load_config("/exp/churn/CoTable/config.toml")
+    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-LP-GAT\exp/adult\CoTable\config.toml")
     # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-LP-GAT\exp/bean\CoTable\config.toml")
     # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-LP-GAT\exp/page\CoTable\config.toml")
     # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-LP-GAT\exp/buddy\CoTable\config.toml")
