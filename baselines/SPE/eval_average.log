@@ -1,0 +1,204 @@
+
+-------------------- SPE + CatBoost, Dataset:churn (Average over seeds) --------------------
+ACC: 0.8302
+AUC: 0.8436
+MCC: 0.4925
+G-mean: 0.7444
+F1 (macro): 0.7456
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9038
+  Recall:    0.8810
+  F1-score:  0.8923
+Class 1:
+  Precision: 0.5719
+  Recall:    0.6289
+  F1-score:  0.5990
+
+-------------------- SPE + DecisionTree, Dataset:churn (Average over seeds) --------------------
+ACC: 0.8224
+AUC: 0.8308
+MCC: 0.4480
+G-mean: 0.7042
+F1 (macro): 0.7239
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8884
+  Recall:    0.8892
+  F1-score:  0.8888
+Class 1:
+  Precision: 0.5605
+  Recall:    0.5579
+  F1-score:  0.5589
+
+-------------------- SPE + DecisionTree, Dataset:adult (Average over seeds) --------------------
+ACC: 0.8455
+AUC: 0.9039
+MCC: 0.5791
+G-mean: 0.7834
+F1 (macro): 0.7895
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8996
+  Recall:    0.8966
+  F1-score:  0.8981
+Class 1:
+  Precision: 0.6774
+  Recall:    0.6846
+  F1-score:  0.6809
+
+-------------------- SPE + DecisionTree, Dataset:shopper (Average over seeds) --------------------
+ACC: 0.8905
+AUC: 0.9238
+MCC: 0.5914
+G-mean: 0.7998
+F1 (macro): 0.7950
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9441
+  Recall:    0.9259
+  F1-score:  0.9349
+Class 1:
+  Precision: 0.6230
+  Recall:    0.6909
+  F1-score:  0.6552
+
+-------------------- SPE + DecisionTree, Dataset:magic (Average over seeds) --------------------
+ACC: 0.8833
+AUC: 0.9390
+MCC: 0.7440
+G-mean: 0.8657
+F1 (macro): 0.8716
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8977
+  Recall:    0.9233
+  F1-score:  0.9103
+Class 1:
+  Precision: 0.8553
+  Recall:    0.8116
+  F1-score:  0.8329
+
+-------------------- SPE + DecisionTree, Dataset:bean (Average over seeds) --------------------
+ACC: 1.0000
+AUC: 1.0000
+MCC: 1.0000
+G-mean: 1.0000
+F1 (macro): 1.0000
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 1.0000
+  Recall:    1.0000
+  F1-score:  1.0000
+Class 1:
+  Precision: 1.0000
+  Recall:    1.0000
+  F1-score:  1.0000
+
+-------------------- SPE + DecisionTree, Dataset:winequality (Average over seeds) --------------------
+ACC: 0.8915
+AUC: 0.8332
+MCC: 0.2189
+G-mean: 0.6587
+F1 (macro): 0.5809
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9815
+  Recall:    0.9050
+  F1-score:  0.9417
+Class 1:
+  Precision: 0.1429
+  Recall:    0.4806
+  F1-score:  0.2201
+
+-------------------- SPE + DecisionTree, Dataset:obesity (Average over seeds) --------------------
+ACC: 0.9858
+AUC: 0.9986
+MCC: 0.9496
+G-mean: 0.9811
+F1 (macro): 0.9746
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9949
+  Recall:    0.9881
+  F1-score:  0.9915
+Class 1:
+  Precision: 0.9421
+  Recall:    0.9743
+  F1-score:  0.9578
+
+-------------------- SPE + DecisionTree, Dataset:yeast_me2 (Average over seeds) --------------------
+ACC: 0.9435
+AUC: 0.8896
+MCC: 0.3049
+G-mean: 0.6088
+F1 (macro): 0.6497
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9769
+  Recall:    0.9642
+  F1-score:  0.9705
+Class 1:
+  Precision: 0.2890
+  Recall:    0.3875
+  F1-score:  0.3289
+
+-------------------- SPE + DecisionTree, Dataset:page (Average over seeds) --------------------
+ACC: 0.9974
+AUC: 0.9992
+MCC: 0.8068
+G-mean: 0.9015
+F1 (macro): 0.9024
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9988
+  Recall:    0.9986
+  F1-score:  0.9987
+Class 1:
+  Precision: 0.8000
+  Recall:    0.8200
+  F1-score:  0.8061
+
+-------------------- SPE + DecisionTree, Dataset:buddy (Average over seeds) --------------------
+ACC: 0.9679
+AUC: 0.9379
+MCC: 0.2246
+G-mean: 0.7340
+F1 (macro): 0.5756
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9974
+  Recall:    0.9702
+  F1-score:  0.9836
+Class 1:
+  Precision: 0.0993
+  Recall:    0.5563
+  F1-score:  0.1676
+
+-------------------- SPE + DecisionTree, Dataset:mammography (Average over seeds) --------------------
+ACC: 0.9797
+AUC: 0.9071
+MCC: 0.5150
+G-mean: 0.7285
+F1 (macro): 0.7573
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9901
+  Recall:    0.9892
+  F1-score:  0.9896
+Class 1:
+  Precision: 0.5143
+  Recall:    0.5371
+  F1-score:  0.5250
