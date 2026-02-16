@@ -1,5 +1,5 @@
-parent_dir = "D:/Study/自学/表格数据生成/LogiCoTab-vae/exp/obesity/CoTable"
-real_data_path = "D:/Study/自学/表格数据生成/LogiCoTab-vae/Dataset-all/obesity/"
+parent_dir = "D:/Study/自学/表格数据生成/LogiCoTab-LP-GAT/exp/obesity/CoTable"
+real_data_path = "D:/Study/自学/表格数据生成/LogiCoTab-LP-GAT/Dataset-all/obesity/"
 dataname = "obesity"
 task_type = "binclass"
 num_classes = 2
@@ -112,3 +112,18 @@ normalization = "minmax"
 cat_encode_policy = "Ordinal"
 y_policy = "Ordinal"
 y_plus1 = false
+
+
+[LP]
+lp_k=30
+lp_alpha=0.9
+lp_seed_ratio=0.2
+lp_max_iter=200
+lp_boundary_lambda=1.0
+alpha_pos=0.80
+alpha_neg=0.85
+flip_margin=0.1
+
+[Train]
+epochs = 400
+focal_alpha = 0.25

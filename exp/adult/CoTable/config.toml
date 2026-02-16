@@ -1,5 +1,5 @@
-parent_dir = "D:/Study/自学/表格数据生成/LogiCoTab-vae/exp/adult/CoTable"
-real_data_path = "D:/Study/自学/表格数据生成/LogiCoTab-vae/Dataset-all/adult/"
+parent_dir = "D:/Study/自学/表格数据生成/LogiCoTab-LP-GAT/exp/adult/CoTable"
+real_data_path = "D:/Study/自学/表格数据生成/LogiCoTab-LP-GAT/Dataset-all/adult/"
 dataname = "adult"
 task_type = "binclass"
 num_classes = 2

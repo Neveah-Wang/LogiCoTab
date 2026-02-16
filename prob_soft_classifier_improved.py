@@ -89,10 +89,10 @@ class LabelPropagationSoftLabelGenerator:
 
     def _propagate(
         self, neigh_idx, weights, seeds_mask, y,
-        # alpha_pos=0.80,
-        # alpha_neg=0.95,
-        alpha_pos=0.00,
-        alpha_neg=0.85,
+        alpha_pos=0.50,
+        alpha_neg=0.95,
+        # alpha_pos=0.00,
+        # alpha_neg=0.85,
         forbid_flip=True,
         flip_margin=1e-2
     ):
@@ -158,7 +158,7 @@ class LabelPropagationSoftLabelGenerator:
         p = np.clip(F_cur[:, 1], 0.0, 1.0)
         return p
 
-    def generate(self, Z: np.ndarray, y: np.ndarray):
+    def generate(self, raw_config, Z: np.ndarray, y: np.ndarray):
         """
         返回：
             soft_p: (n,) 软标签
@@ -173,7 +173,12 @@ class LabelPropagationSoftLabelGenerator:
         weights = self._compute_weights(neigh_dist)
         seeds_mask, purity = self._select_seeds(y, neigh_idx)
 
-        soft_p = self._propagate(neigh_idx, weights, seeds_mask, y)
+        soft_p = self._propagate(
+            neigh_idx, weights, seeds_mask, y,
+            alpha_pos=raw_config['LP']['alpha_pos'],
+            alpha_neg=raw_config['LP']['alpha_neg'],
+            flip_margin=raw_config['LP']['flip_margin']
+        )
 
         u = 1.0 - np.abs(2.0 * soft_p - 1.0)
         sample_weight = 1.0 + self.boundary_weight_lambda * u

@@ -1,0 +1,4066 @@
+
+数据统计:
+  训练集: (13185, 40), 正类比例: 0.47%, 正类数量: 62, 负类数量: 13123
+  验证集: (2826, 40), 正类比例: 0.57%
+  测试集: (2825, 40), 正类比例: 0.35%
+
+================================================================================
+ RUN 1/30 (Seed=0)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0036 | KL=0.0517 | Con=9.5620 | Total=0.0552 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0026 | KL=0.0225 | Con=9.5445 | Total=0.0251 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0020 | KL=0.0183 | Con=9.5454 | Total=0.0202 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0018 | KL=0.0152 | Con=9.5432 | Total=0.0170 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0016 | KL=0.0133 | Con=9.5432 | Total=0.0149 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0014 | KL=0.0123 | Con=9.5450 | Total=0.0137 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0013 | KL=0.0114 | Con=9.5438 | Total=0.0126 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0012 | KL=0.0109 | Con=9.5461 | Total=0.0120 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0012 | KL=0.0107 | Con=9.5465 | Total=0.0119 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0011 | KL=0.0102 | Con=9.5452 | Total=0.0113 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0011 | KL=0.0099 | Con=9.5457 | Total=0.0111 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0009 | KL=0.0090 | Con=9.5422 | Total=0.0099 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0009 | KL=0.0089 | Con=9.5417 | Total=0.0098 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0010 | KL=0.0092 | Con=9.5448 | Total=0.0101 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0009 | KL=0.0087 | Con=9.5478 | Total=0.0095 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0008 | KL=0.0082 | Con=9.5478 | Total=0.0090 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0007 | KL=0.0080 | Con=9.5530 | Total=0.0087 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0007 | KL=0.0078 | Con=9.5516 | Total=0.0085 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0007 | KL=0.0074 | Con=9.5528 | Total=0.0080 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0007 | KL=0.0076 | Con=9.5543 | Total=0.0083 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0006 | KL=0.0074 | Con=9.5605 | Total=0.0080 | ValF1@0.5=0.5541
+Ep 220 | Focal=0.0007 | KL=0.0073 | Con=9.5796 | Total=0.0080 | ValF1@0.5=0.5986
+Ep 230 | Focal=0.0007 | KL=0.0076 | Con=9.5854 | Total=0.0083 | ValF1@0.5=0.5986
+Ep 240 | Focal=0.0006 | KL=0.0070 | Con=9.5894 | Total=0.0076 | ValF1@0.5=0.5511
+Ep 250 | Focal=0.0006 | KL=0.0067 | Con=9.5992 | Total=0.0073 | ValF1@0.5=0.5986
+Ep 260 | Focal=0.0005 | KL=0.0066 | Con=9.6018 | Total=0.0071 | ValF1@0.5=0.6806
+Ep 270 | Focal=0.0006 | KL=0.0067 | Con=9.6138 | Total=0.0073 | ValF1@0.5=0.7371
+Ep 280 | Focal=0.0005 | KL=0.0062 | Con=9.6317 | Total=0.0067 | ValF1@0.5=0.6415
+Ep 290 | Focal=0.0005 | KL=0.0061 | Con=9.6282 | Total=0.0066 | ValF1@0.5=0.5575
+Ep 300 | Focal=0.0005 | KL=0.0061 | Con=9.6410 | Total=0.0065 | ValF1@0.5=0.4986
+Ep 310 | Focal=0.0004 | KL=0.0056 | Con=9.6233 | Total=0.0060 | ValF1@0.5=0.4984
+Ep 320 | Focal=0.0004 | KL=0.0053 | Con=9.6365 | Total=0.0057 | ValF1@0.5=0.7388
+Ep 330 | Focal=0.0005 | KL=0.0056 | Con=9.6454 | Total=0.0061 | ValF1@0.5=0.7262
+Ep 340 | Focal=0.0004 | KL=0.0053 | Con=9.6230 | Total=0.0056 | ValF1@0.5=0.7599
+Ep 350 | Focal=0.0003 | KL=0.0048 | Con=9.6165 | Total=0.0052 | ValF1@0.5=0.7162
+Ep 360 | Focal=0.0004 | KL=0.0052 | Con=9.6300 | Total=0.0056 | ValF1@0.5=0.5511
+Ep 370 | Focal=0.0003 | KL=0.0048 | Con=9.6086 | Total=0.0052 | ValF1@0.5=0.7243
+Ep 380 | Focal=0.0004 | KL=0.0050 | Con=9.6192 | Total=0.0054 | ValF1@0.5=0.7295
+Ep 390 | Focal=0.0003 | KL=0.0045 | Con=9.6349 | Total=0.0048 | ValF1@0.5=0.7209
+Ep 400 | Focal=0.0003 | KL=0.0045 | Con=9.6230 | Total=0.0049 | ValF1@0.5=0.7262
+
+[OK] Load best model by ValF1@0.5=0.7599
+
+[VAL] best threshold=0.480, best macroF1=0.7790
+
+================ TRAIN ================
+Threshold: 0.480
+Accuracy : 0.9961
+Macro-F1 : 0.7950 (Class0: 0.9981, Class1: 0.5920)
+AUC      : 0.9902
+MCC      : 0.5901
+G-Mean   : 0.7717
+Sensitivity: 0.5968
+Specificity: 0.9980
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9981    0.9980    0.9981     13123
+           1     0.5873    0.5968    0.5920        62
+
+    accuracy                         0.9961     13185
+   macro avg     0.7927    0.7974    0.7950     13185
+weighted avg     0.9962    0.9961    0.9961     13185
+
+
+================ VAL ================
+Threshold: 0.480
+Accuracy : 0.9961
+Macro-F1 : 0.7790 (Class0: 0.9980, Class1: 0.5600)
+AUC      : 0.9621
+MCC      : 0.5817
+G-Mean   : 0.6612
+Sensitivity: 0.4375
+Specificity: 0.9993
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9968    0.9993    0.9980      2810
+           1     0.7778    0.4375    0.5600        16
+
+    accuracy                         0.9961      2826
+   macro avg     0.8873    0.7184    0.7790      2826
+weighted avg     0.9956    0.9961    0.9956      2826
+
+
+================ TEST ================
+Threshold: 0.480
+Accuracy : 0.9933
+Macro-F1 : 0.4983 (Class0: 0.9966, Class1: 0.0000)
+AUC      : 0.9425
+MCC      : -0.0034
+G-Mean   : 0.0000
+Sensitivity: 0.0000
+Specificity: 0.9968
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9964    0.9968    0.9966      2815
+           1     0.0000    0.0000    0.0000        10
+
+    accuracy                         0.9933      2825
+   macro avg     0.4982    0.4984    0.4983      2825
+weighted avg     0.9929    0.9933    0.9931      2825
+
+
+================================================================================
+ RUN 2/30 (Seed=1)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0041 | KL=0.0460 | Con=9.5477 | Total=0.0501 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0023 | KL=0.0219 | Con=9.5421 | Total=0.0242 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0019 | KL=0.0171 | Con=9.5398 | Total=0.0190 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0017 | KL=0.0153 | Con=9.5412 | Total=0.0170 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0017 | KL=0.0140 | Con=9.5398 | Total=0.0157 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0013 | KL=0.0122 | Con=9.5408 | Total=0.0135 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0013 | KL=0.0115 | Con=9.5396 | Total=0.0128 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0012 | KL=0.0112 | Con=9.5402 | Total=0.0124 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0011 | KL=0.0106 | Con=9.5395 | Total=0.0117 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0012 | KL=0.0106 | Con=9.5394 | Total=0.0118 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0010 | KL=0.0097 | Con=9.5397 | Total=0.0108 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0010 | KL=0.0098 | Con=9.5394 | Total=0.0108 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0009 | KL=0.0089 | Con=9.5362 | Total=0.0097 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0009 | KL=0.0088 | Con=9.5382 | Total=0.0097 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0008 | KL=0.0087 | Con=9.5405 | Total=0.0095 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0007 | KL=0.0080 | Con=9.5360 | Total=0.0088 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0007 | KL=0.0080 | Con=9.5370 | Total=0.0087 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0008 | KL=0.0081 | Con=9.5395 | Total=0.0089 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0008 | KL=0.0080 | Con=9.5427 | Total=0.0088 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0007 | KL=0.0074 | Con=9.5420 | Total=0.0080 | ValF1@0.5=0.4985
+Ep 210 | Focal=0.0006 | KL=0.0073 | Con=9.5482 | Total=0.0079 | ValF1@0.5=0.5484
+Ep 220 | Focal=0.0006 | KL=0.0069 | Con=9.5548 | Total=0.0075 | ValF1@0.5=0.6488
+Ep 230 | Focal=0.0006 | KL=0.0071 | Con=9.5682 | Total=0.0077 | ValF1@0.5=0.6987
+Ep 240 | Focal=0.0006 | KL=0.0068 | Con=9.5690 | Total=0.0074 | ValF1@0.5=0.7054
+Ep 250 | Focal=0.0005 | KL=0.0065 | Con=9.5855 | Total=0.0070 | ValF1@0.5=0.7071
+Ep 260 | Focal=0.0006 | KL=0.0066 | Con=9.5800 | Total=0.0072 | ValF1@0.5=0.7054
+Ep 270 | Focal=0.0006 | KL=0.0067 | Con=9.6092 | Total=0.0072 | ValF1@0.5=0.7071
+Ep 280 | Focal=0.0005 | KL=0.0061 | Con=9.6238 | Total=0.0066 | ValF1@0.5=0.5937
+Ep 290 | Focal=0.0005 | KL=0.0064 | Con=9.6327 | Total=0.0070 | ValF1@0.5=0.7171
+Ep 300 | Focal=0.0005 | KL=0.0060 | Con=9.6499 | Total=0.0065 | ValF1@0.5=0.6821
+Ep 310 | Focal=0.0005 | KL=0.0059 | Con=9.6354 | Total=0.0064 | ValF1@0.5=0.6349
+Ep 320 | Focal=0.0004 | KL=0.0055 | Con=9.6189 | Total=0.0059 | ValF1@0.5=0.5511
+Ep 330 | Focal=0.0004 | KL=0.0054 | Con=9.6343 | Total=0.0058 | ValF1@0.5=0.5511
+Ep 340 | Focal=0.0004 | KL=0.0052 | Con=9.6213 | Total=0.0056 | ValF1@0.5=0.6039
+Ep 350 | Focal=0.0004 | KL=0.0049 | Con=9.6164 | Total=0.0052 | ValF1@0.5=0.6770
+Ep 360 | Focal=0.0004 | KL=0.0050 | Con=9.6252 | Total=0.0054 | ValF1@0.5=0.6289
+Ep 370 | Focal=0.0003 | KL=0.0048 | Con=9.6147 | Total=0.0051 | ValF1@0.5=0.6415
+Ep 380 | Focal=0.0004 | KL=0.0050 | Con=9.6210 | Total=0.0054 | ValF1@0.5=0.6987
+Ep 390 | Focal=0.0003 | KL=0.0044 | Con=9.6200 | Total=0.0047 | ValF1@0.5=0.5484
+Ep 400 | Focal=0.0003 | KL=0.0044 | Con=9.6084 | Total=0.0047 | ValF1@0.5=0.7129
+
+[OK] Load best model by ValF1@0.5=0.7171
+
+[VAL] best threshold=0.500, best macroF1=0.7171
+
+================ TRAIN ================
+Threshold: 0.500
+Accuracy : 0.9942
+Macro-F1 : 0.7652 (Class0: 0.9971, Class1: 0.5333)
+AUC      : 0.9932
+MCC      : 0.5480
+G-Mean   : 0.8405
+Sensitivity: 0.7097
+Specificity: 0.9955
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9986    0.9955    0.9971     13123
+           1     0.4272    0.7097    0.5333        62
+
+    accuracy                         0.9942     13185
+   macro avg     0.7129    0.8526    0.7652     13185
+weighted avg     0.9959    0.9942    0.9949     13185
+
+
+================ VAL ================
+Threshold: 0.500
+Accuracy : 0.9936
+Macro-F1 : 0.7171 (Class0: 0.9968, Class1: 0.4375)
+AUC      : 0.9566
+MCC      : 0.4343
+G-Mean   : 0.6604
+Sensitivity: 0.4375
+Specificity: 0.9968
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9968    0.9968    0.9968      2810
+           1     0.4375    0.4375    0.4375        16
+
+    accuracy                         0.9936      2826
+   macro avg     0.7171    0.7171    0.7171      2826
+weighted avg     0.9936    0.9936    0.9936      2826
+
+
+================ TEST ================
+Threshold: 0.500
+Accuracy : 0.9901
+Macro-F1 : 0.5600 (Class0: 0.9950, Class1: 0.1250)
+AUC      : 0.9192
+MCC      : 0.1303
+G-Mean   : 0.4456
+Sensitivity: 0.2000
+Specificity: 0.9929
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9971    0.9929    0.9950      2815
+           1     0.0909    0.2000    0.1250        10
+
+    accuracy                         0.9901      2825
+   macro avg     0.5440    0.5964    0.5600      2825
+weighted avg     0.9939    0.9901    0.9919      2825
+
+
+================================================================================
+ RUN 3/30 (Seed=2)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0039 | KL=0.0488 | Con=9.5462 | Total=0.0528 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0024 | KL=0.0217 | Con=9.5390 | Total=0.0241 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0022 | KL=0.0176 | Con=9.5365 | Total=0.0198 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0017 | KL=0.0155 | Con=9.5371 | Total=0.0172 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0017 | KL=0.0140 | Con=9.5366 | Total=0.0157 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0014 | KL=0.0127 | Con=9.5379 | Total=0.0140 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0015 | KL=0.0123 | Con=9.5377 | Total=0.0138 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0014 | KL=0.0121 | Con=9.5377 | Total=0.0135 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0012 | KL=0.0109 | Con=9.5366 | Total=0.0121 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0012 | KL=0.0106 | Con=9.5370 | Total=0.0118 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0012 | KL=0.0105 | Con=9.5382 | Total=0.0117 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0010 | KL=0.0095 | Con=9.5387 | Total=0.0105 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0010 | KL=0.0095 | Con=9.5384 | Total=0.0105 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0009 | KL=0.0090 | Con=9.5423 | Total=0.0100 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0009 | KL=0.0087 | Con=9.5430 | Total=0.0096 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0009 | KL=0.0087 | Con=9.5473 | Total=0.0095 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0008 | KL=0.0079 | Con=9.5561 | Total=0.0087 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0007 | KL=0.0077 | Con=9.5675 | Total=0.0084 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0007 | KL=0.0075 | Con=9.5674 | Total=0.0082 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0007 | KL=0.0074 | Con=9.5877 | Total=0.0080 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0006 | KL=0.0073 | Con=9.6140 | Total=0.0079 | ValF1@0.5=0.6039
+Ep 220 | Focal=0.0006 | KL=0.0069 | Con=9.6445 | Total=0.0075 | ValF1@0.5=0.6349
+Ep 230 | Focal=0.0005 | KL=0.0066 | Con=9.6526 | Total=0.0071 | ValF1@0.5=0.6726
+Ep 240 | Focal=0.0005 | KL=0.0065 | Con=9.6614 | Total=0.0071 | ValF1@0.5=0.6726
+Ep 250 | Focal=0.0005 | KL=0.0063 | Con=9.6526 | Total=0.0068 | ValF1@0.5=0.6349
+Ep 260 | Focal=0.0004 | KL=0.0058 | Con=9.6383 | Total=0.0063 | ValF1@0.5=0.7071
+Ep 270 | Focal=0.0005 | KL=0.0060 | Con=9.6555 | Total=0.0065 | ValF1@0.5=0.6415
+Ep 280 | Focal=0.0004 | KL=0.0057 | Con=9.6436 | Total=0.0062 | ValF1@0.5=0.6488
+Ep 290 | Focal=0.0004 | KL=0.0053 | Con=9.6579 | Total=0.0057 | ValF1@0.5=0.6289
+Ep 300 | Focal=0.0003 | KL=0.0051 | Con=9.6245 | Total=0.0054 | ValF1@0.5=0.6349
+Ep 310 | Focal=0.0004 | KL=0.0052 | Con=9.6113 | Total=0.0056 | ValF1@0.5=0.4986
+Ep 320 | Focal=0.0004 | KL=0.0051 | Con=9.6271 | Total=0.0054 | ValF1@0.5=0.4986
+Ep 330 | Focal=0.0003 | KL=0.0047 | Con=9.6299 | Total=0.0051 | ValF1@0.5=0.4986
+Ep 340 | Focal=0.0003 | KL=0.0048 | Con=9.6193 | Total=0.0052 | ValF1@0.5=0.4986
+Ep 350 | Focal=0.0004 | KL=0.0047 | Con=9.6370 | Total=0.0051 | ValF1@0.5=0.6289
+Ep 360 | Focal=0.0004 | KL=0.0048 | Con=9.6401 | Total=0.0052 | ValF1@0.5=0.6837
+Ep 370 | Focal=0.0003 | KL=0.0044 | Con=9.6217 | Total=0.0047 | ValF1@0.5=0.4986
+Ep 380 | Focal=0.0003 | KL=0.0041 | Con=9.5951 | Total=0.0044 | ValF1@0.5=0.4986
+Ep 390 | Focal=0.0003 | KL=0.0041 | Con=9.6221 | Total=0.0043 | ValF1@0.5=0.5541
+Ep 400 | Focal=0.0004 | KL=0.0045 | Con=9.6417 | Total=0.0048 | ValF1@0.5=0.5937
+
+[OK] Load best model by ValF1@0.5=0.7071
+
+[VAL] best threshold=0.480, best macroF1=0.7388
+
+================ TRAIN ================
+Threshold: 0.480
+Accuracy : 0.9958
+Macro-F1 : 0.7694 (Class0: 0.9979, Class1: 0.5410)
+AUC      : 0.9888
+MCC      : 0.5389
+G-Mean   : 0.7288
+Sensitivity: 0.5323
+Specificity: 0.9979
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9978    0.9979    0.9979     13123
+           1     0.5500    0.5323    0.5410        62
+
+    accuracy                         0.9958     13185
+   macro avg     0.7739    0.7651    0.7694     13185
+weighted avg     0.9957    0.9958    0.9957     13185
+
+
+================ VAL ================
+Threshold: 0.480
+Accuracy : 0.9954
+Macro-F1 : 0.7388 (Class0: 0.9977, Class1: 0.4800)
+AUC      : 0.9600
+MCC      : 0.4980
+G-Mean   : 0.6120
+Sensitivity: 0.3750
+Specificity: 0.9989
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9965    0.9989    0.9977      2810
+           1     0.6667    0.3750    0.4800        16
+
+    accuracy                         0.9954      2826
+   macro avg     0.8316    0.6870    0.7388      2826
+weighted avg     0.9946    0.9954    0.9948      2826
+
+
+================ TEST ================
+Threshold: 0.480
+Accuracy : 0.9926
+Macro-F1 : 0.4981 (Class0: 0.9963, Class1: 0.0000)
+AUC      : 0.9344
+MCC      : -0.0037
+G-Mean   : 0.0000
+Sensitivity: 0.0000
+Specificity: 0.9961
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9964    0.9961    0.9963      2815
+           1     0.0000    0.0000    0.0000        10
+
+    accuracy                         0.9926      2825
+   macro avg     0.4982    0.4980    0.4981      2825
+weighted avg     0.9929    0.9926    0.9927      2825
+
+
+================================================================================
+ RUN 4/30 (Seed=3)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0042 | KL=0.0466 | Con=9.5662 | Total=0.0507 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0023 | KL=0.0216 | Con=9.5556 | Total=0.0240 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0019 | KL=0.0180 | Con=9.5522 | Total=0.0199 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0019 | KL=0.0158 | Con=9.5449 | Total=0.0177 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0016 | KL=0.0143 | Con=9.5492 | Total=0.0158 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0016 | KL=0.0132 | Con=9.5505 | Total=0.0148 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0014 | KL=0.0123 | Con=9.5512 | Total=0.0137 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0013 | KL=0.0112 | Con=9.5503 | Total=0.0124 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0013 | KL=0.0110 | Con=9.5500 | Total=0.0123 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0012 | KL=0.0106 | Con=9.5475 | Total=0.0119 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0011 | KL=0.0100 | Con=9.5491 | Total=0.0111 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0010 | KL=0.0096 | Con=9.5475 | Total=0.0106 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0009 | KL=0.0090 | Con=9.5502 | Total=0.0099 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0008 | KL=0.0086 | Con=9.5511 | Total=0.0094 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0009 | KL=0.0086 | Con=9.5564 | Total=0.0095 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0008 | KL=0.0084 | Con=9.5538 | Total=0.0093 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0007 | KL=0.0080 | Con=9.5512 | Total=0.0087 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0007 | KL=0.0079 | Con=9.5556 | Total=0.0086 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0007 | KL=0.0077 | Con=9.5590 | Total=0.0084 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0006 | KL=0.0074 | Con=9.5589 | Total=0.0081 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0007 | KL=0.0074 | Con=9.5676 | Total=0.0081 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0006 | KL=0.0072 | Con=9.5665 | Total=0.0078 | ValF1@0.5=0.4986
+Ep 230 | Focal=0.0006 | KL=0.0072 | Con=9.5676 | Total=0.0078 | ValF1@0.5=0.4986
+Ep 240 | Focal=0.0006 | KL=0.0071 | Con=9.5701 | Total=0.0077 | ValF1@0.5=0.4986
+Ep 250 | Focal=0.0006 | KL=0.0068 | Con=9.5656 | Total=0.0073 | ValF1@0.5=0.4986
+Ep 260 | Focal=0.0006 | KL=0.0068 | Con=9.5791 | Total=0.0073 | ValF1@0.5=0.4986
+Ep 270 | Focal=0.0005 | KL=0.0065 | Con=9.5736 | Total=0.0070 | ValF1@0.5=0.4986
+Ep 280 | Focal=0.0005 | KL=0.0066 | Con=9.5821 | Total=0.0071 | ValF1@0.5=0.4986
+Ep 290 | Focal=0.0006 | KL=0.0067 | Con=9.6013 | Total=0.0072 | ValF1@0.5=0.4986
+Ep 300 | Focal=0.0005 | KL=0.0062 | Con=9.6033 | Total=0.0066 | ValF1@0.5=0.4986
+Ep 310 | Focal=0.0005 | KL=0.0061 | Con=9.6100 | Total=0.0065 | ValF1@0.5=0.4985
+Ep 320 | Focal=0.0005 | KL=0.0060 | Con=9.6480 | Total=0.0065 | ValF1@0.5=0.5541
+Ep 330 | Focal=0.0005 | KL=0.0060 | Con=9.6407 | Total=0.0064 | ValF1@0.5=0.7388
+Ep 340 | Focal=0.0005 | KL=0.0060 | Con=9.6524 | Total=0.0065 | ValF1@0.5=0.6522
+Ep 350 | Focal=0.0004 | KL=0.0057 | Con=9.6498 | Total=0.0061 | ValF1@0.5=0.7054
+Ep 360 | Focal=0.0004 | KL=0.0053 | Con=9.6464 | Total=0.0057 | ValF1@0.5=0.6602
+Ep 370 | Focal=0.0005 | KL=0.0057 | Con=9.6717 | Total=0.0061 | ValF1@0.5=0.6919
+Ep 380 | Focal=0.0004 | KL=0.0051 | Con=9.6498 | Total=0.0054 | ValF1@0.5=0.6594
+Ep 390 | Focal=0.0004 | KL=0.0052 | Con=9.6567 | Total=0.0056 | ValF1@0.5=0.6806
+Ep 400 | Focal=0.0004 | KL=0.0052 | Con=9.6553 | Total=0.0056 | ValF1@0.5=0.5541
+
+[OK] Load best model by ValF1@0.5=0.7388
+
+[VAL] best threshold=0.500, best macroF1=0.7388
+
+================ TRAIN ================
+Threshold: 0.500
+Accuracy : 0.9958
+Macro-F1 : 0.7717 (Class0: 0.9979, Class1: 0.5455)
+AUC      : 0.9933
+MCC      : 0.5435
+G-Mean   : 0.7288
+Sensitivity: 0.5323
+Specificity: 0.9980
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9978    0.9980    0.9979     13123
+           1     0.5593    0.5323    0.5455        62
+
+    accuracy                         0.9958     13185
+   macro avg     0.7786    0.7651    0.7717     13185
+weighted avg     0.9957    0.9958    0.9958     13185
+
+
+================ VAL ================
+Threshold: 0.500
+Accuracy : 0.9954
+Macro-F1 : 0.7388 (Class0: 0.9977, Class1: 0.4800)
+AUC      : 0.9604
+MCC      : 0.4980
+G-Mean   : 0.6120
+Sensitivity: 0.3750
+Specificity: 0.9989
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9965    0.9989    0.9977      2810
+           1     0.6667    0.3750    0.4800        16
+
+    accuracy                         0.9954      2826
+   macro avg     0.8316    0.6870    0.7388      2826
+weighted avg     0.9946    0.9954    0.9948      2826
+
+
+================ TEST ================
+Threshold: 0.500
+Accuracy : 0.9940
+Macro-F1 : 0.4985 (Class0: 0.9970, Class1: 0.0000)
+AUC      : 0.9352
+MCC      : -0.0030
+G-Mean   : 0.0000
+Sensitivity: 0.0000
+Specificity: 0.9975
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9965    0.9975    0.9970      2815
+           1     0.0000    0.0000    0.0000        10
+
+    accuracy                         0.9940      2825
+   macro avg     0.4982    0.4988    0.4985      2825
+weighted avg     0.9929    0.9940    0.9935      2825
+
+
+================================================================================
+ RUN 5/30 (Seed=4)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0037 | KL=0.0473 | Con=9.5438 | Total=0.0510 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0025 | KL=0.0224 | Con=9.5416 | Total=0.0250 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0022 | KL=0.0178 | Con=9.5384 | Total=0.0199 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0017 | KL=0.0154 | Con=9.5389 | Total=0.0171 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0015 | KL=0.0134 | Con=9.5376 | Total=0.0149 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0014 | KL=0.0127 | Con=9.5396 | Total=0.0141 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0014 | KL=0.0121 | Con=9.5398 | Total=0.0135 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0013 | KL=0.0111 | Con=9.5374 | Total=0.0124 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0012 | KL=0.0109 | Con=9.5388 | Total=0.0121 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0011 | KL=0.0102 | Con=9.5371 | Total=0.0113 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0012 | KL=0.0106 | Con=9.5380 | Total=0.0119 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0010 | KL=0.0098 | Con=9.5375 | Total=0.0108 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0009 | KL=0.0092 | Con=9.5364 | Total=0.0101 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0009 | KL=0.0088 | Con=9.5345 | Total=0.0097 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0008 | KL=0.0083 | Con=9.5350 | Total=0.0091 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0007 | KL=0.0081 | Con=9.5389 | Total=0.0088 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0008 | KL=0.0083 | Con=9.5440 | Total=0.0091 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0007 | KL=0.0078 | Con=9.5450 | Total=0.0086 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0007 | KL=0.0077 | Con=9.5728 | Total=0.0085 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0006 | KL=0.0071 | Con=9.5881 | Total=0.0077 | ValF1@0.5=0.5511
+Ep 210 | Focal=0.0007 | KL=0.0072 | Con=9.6085 | Total=0.0079 | ValF1@0.5=0.6349
+Ep 220 | Focal=0.0006 | KL=0.0069 | Con=9.6292 | Total=0.0075 | ValF1@0.5=0.6726
+Ep 230 | Focal=0.0005 | KL=0.0065 | Con=9.6299 | Total=0.0070 | ValF1@0.5=0.6652
+Ep 240 | Focal=0.0005 | KL=0.0064 | Con=9.6376 | Total=0.0069 | ValF1@0.5=0.7071
+Ep 250 | Focal=0.0005 | KL=0.0061 | Con=9.6279 | Total=0.0066 | ValF1@0.5=0.4986
+Ep 260 | Focal=0.0005 | KL=0.0060 | Con=9.6404 | Total=0.0066 | ValF1@0.5=0.5511
+Ep 270 | Focal=0.0005 | KL=0.0056 | Con=9.6272 | Total=0.0061 | ValF1@0.5=0.4984
+Ep 280 | Focal=0.0005 | KL=0.0055 | Con=9.6257 | Total=0.0060 | ValF1@0.5=0.5937
+Ep 290 | Focal=0.0004 | KL=0.0051 | Con=9.6249 | Total=0.0055 | ValF1@0.5=0.6585
+Ep 300 | Focal=0.0004 | KL=0.0053 | Con=9.6207 | Total=0.0057 | ValF1@0.5=0.5986
+Ep 310 | Focal=0.0004 | KL=0.0048 | Con=9.6320 | Total=0.0052 | ValF1@0.5=0.6585
+Ep 320 | Focal=0.0004 | KL=0.0050 | Con=9.6277 | Total=0.0055 | ValF1@0.5=0.4986
+Ep 330 | Focal=0.0004 | KL=0.0050 | Con=9.6265 | Total=0.0054 | ValF1@0.5=0.5541
+Ep 340 | Focal=0.0004 | KL=0.0048 | Con=9.6239 | Total=0.0052 | ValF1@0.5=0.4985
+Ep 350 | Focal=0.0003 | KL=0.0044 | Con=9.6060 | Total=0.0047 | ValF1@0.5=0.6652
+Ep 360 | Focal=0.0003 | KL=0.0041 | Con=9.5881 | Total=0.0044 | ValF1@0.5=0.6707
+Ep 370 | Focal=0.0003 | KL=0.0044 | Con=9.6027 | Total=0.0047 | ValF1@0.5=0.4985
+Ep 380 | Focal=0.0003 | KL=0.0041 | Con=9.6065 | Total=0.0043 | ValF1@0.5=0.4982
+Ep 390 | Focal=0.0003 | KL=0.0043 | Con=9.5883 | Total=0.0046 | ValF1@0.5=0.5816
+Ep 400 | Focal=0.0004 | KL=0.0042 | Con=9.6248 | Total=0.0046 | ValF1@0.5=0.6585
+
+[OK] Load best model by ValF1@0.5=0.7071
+
+[VAL] best threshold=0.500, best macroF1=0.7071
+
+================ TRAIN ================
+Threshold: 0.500
+Accuracy : 0.9954
+Macro-F1 : 0.7336 (Class0: 0.9977, Class1: 0.4696)
+AUC      : 0.9882
+MCC      : 0.4687
+G-Mean   : 0.6593
+Sensitivity: 0.4355
+Specificity: 0.9980
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9973    0.9980    0.9977     13123
+           1     0.5094    0.4355    0.4696        62
+
+    accuracy                         0.9954     13185
+   macro avg     0.7534    0.7168    0.7336     13185
+weighted avg     0.9950    0.9954    0.9952     13185
+
+
+================ VAL ================
+Threshold: 0.500
+Accuracy : 0.9950
+Macro-F1 : 0.7071 (Class0: 0.9975, Class1: 0.4167)
+AUC      : 0.9556
+MCC      : 0.4398
+G-Mean   : 0.5587
+Sensitivity: 0.3125
+Specificity: 0.9989
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9961    0.9989    0.9975      2810
+           1     0.6250    0.3125    0.4167        16
+
+    accuracy                         0.9950      2826
+   macro avg     0.8105    0.6557    0.7071      2826
+weighted avg     0.9940    0.9950    0.9942      2826
+
+
+================ TEST ================
+Threshold: 0.500
+Accuracy : 0.9936
+Macro-F1 : 0.4984 (Class0: 0.9968, Class1: 0.0000)
+AUC      : 0.9430
+MCC      : -0.0032
+G-Mean   : 0.0000
+Sensitivity: 0.0000
+Specificity: 0.9972
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9965    0.9972    0.9968      2815
+           1     0.0000    0.0000    0.0000        10
+
+    accuracy                         0.9936      2825
+   macro avg     0.4982    0.4986    0.4984      2825
+weighted avg     0.9929    0.9936    0.9933      2825
+
+
+================================================================================
+ RUN 6/30 (Seed=5)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0040 | KL=0.0521 | Con=9.5646 | Total=0.0561 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0023 | KL=0.0217 | Con=9.5478 | Total=0.0241 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0020 | KL=0.0178 | Con=9.5449 | Total=0.0198 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0017 | KL=0.0150 | Con=9.5433 | Total=0.0167 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0016 | KL=0.0134 | Con=9.5428 | Total=0.0150 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0015 | KL=0.0129 | Con=9.5455 | Total=0.0144 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0015 | KL=0.0123 | Con=9.5441 | Total=0.0137 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0013 | KL=0.0114 | Con=9.5433 | Total=0.0127 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0011 | KL=0.0106 | Con=9.5418 | Total=0.0117 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0012 | KL=0.0110 | Con=9.5423 | Total=0.0122 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0012 | KL=0.0105 | Con=9.5420 | Total=0.0117 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0010 | KL=0.0096 | Con=9.5418 | Total=0.0106 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0010 | KL=0.0096 | Con=9.5402 | Total=0.0105 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0009 | KL=0.0092 | Con=9.5405 | Total=0.0101 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0009 | KL=0.0089 | Con=9.5416 | Total=0.0097 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0008 | KL=0.0085 | Con=9.5404 | Total=0.0094 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0007 | KL=0.0080 | Con=9.5394 | Total=0.0087 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0007 | KL=0.0081 | Con=9.5413 | Total=0.0089 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0007 | KL=0.0078 | Con=9.5402 | Total=0.0086 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0007 | KL=0.0080 | Con=9.5443 | Total=0.0087 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0006 | KL=0.0073 | Con=9.5401 | Total=0.0079 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0007 | KL=0.0073 | Con=9.5469 | Total=0.0080 | ValF1@0.5=0.4986
+Ep 230 | Focal=0.0006 | KL=0.0073 | Con=9.5409 | Total=0.0079 | ValF1@0.5=0.4986
+Ep 240 | Focal=0.0006 | KL=0.0070 | Con=9.5458 | Total=0.0077 | ValF1@0.5=0.4986
+Ep 250 | Focal=0.0006 | KL=0.0070 | Con=9.5528 | Total=0.0076 | ValF1@0.5=0.4986
+Ep 260 | Focal=0.0005 | KL=0.0068 | Con=9.5470 | Total=0.0073 | ValF1@0.5=0.4986
+Ep 270 | Focal=0.0006 | KL=0.0070 | Con=9.5537 | Total=0.0076 | ValF1@0.5=0.4986
+Ep 280 | Focal=0.0006 | KL=0.0069 | Con=9.5524 | Total=0.0074 | ValF1@0.5=0.4986
+Ep 290 | Focal=0.0005 | KL=0.0068 | Con=9.5542 | Total=0.0073 | ValF1@0.5=0.4986
+Ep 300 | Focal=0.0006 | KL=0.0067 | Con=9.5545 | Total=0.0072 | ValF1@0.5=0.4986
+Ep 310 | Focal=0.0005 | KL=0.0066 | Con=9.5765 | Total=0.0072 | ValF1@0.5=0.4986
+Ep 320 | Focal=0.0005 | KL=0.0065 | Con=9.5707 | Total=0.0070 | ValF1@0.5=0.4986
+Ep 330 | Focal=0.0005 | KL=0.0063 | Con=9.5780 | Total=0.0068 | ValF1@0.5=0.4986
+Ep 340 | Focal=0.0005 | KL=0.0062 | Con=9.5953 | Total=0.0067 | ValF1@0.5=0.6415
+Ep 350 | Focal=0.0004 | KL=0.0061 | Con=9.6201 | Total=0.0065 | ValF1@0.5=0.6919
+Ep 360 | Focal=0.0004 | KL=0.0060 | Con=9.6174 | Total=0.0065 | ValF1@0.5=0.6745
+Ep 370 | Focal=0.0004 | KL=0.0060 | Con=9.6231 | Total=0.0064 | ValF1@0.5=0.6837
+Ep 380 | Focal=0.0004 | KL=0.0057 | Con=9.6212 | Total=0.0062 | ValF1@0.5=0.7129
+Ep 390 | Focal=0.0004 | KL=0.0055 | Con=9.6327 | Total=0.0060 | ValF1@0.5=0.6919
+Ep 400 | Focal=0.0004 | KL=0.0054 | Con=9.6329 | Total=0.0058 | ValF1@0.5=0.6837
+
+[OK] Load best model by ValF1@0.5=0.7129
+
+[VAL] best threshold=0.520, best macroF1=0.7489
+
+================ TRAIN ================
+Threshold: 0.520
+Accuracy : 0.9960
+Macro-F1 : 0.7559 (Class0: 0.9980, Class1: 0.5138)
+AUC      : 0.9885
+MCC      : 0.5167
+G-Mean   : 0.6715
+Sensitivity: 0.4516
+Specificity: 0.9986
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9974    0.9986    0.9980     13123
+           1     0.5957    0.4516    0.5138        62
+
+    accuracy                         0.9960     13185
+   macro avg     0.7966    0.7251    0.7559     13185
+weighted avg     0.9955    0.9960    0.9957     13185
+
+
+================ VAL ================
+Threshold: 0.520
+Accuracy : 0.9958
+Macro-F1 : 0.7489 (Class0: 0.9979, Class1: 0.5000)
+AUC      : 0.9580
+MCC      : 0.5286
+G-Mean   : 0.6122
+Sensitivity: 0.3750
+Specificity: 0.9993
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9965    0.9993    0.9979      2810
+           1     0.7500    0.3750    0.5000        16
+
+    accuracy                         0.9958      2826
+   macro avg     0.8732    0.6871    0.7489      2826
+weighted avg     0.9951    0.9958    0.9950      2826
+
+
+================ TEST ================
+Threshold: 0.520
+Accuracy : 0.9933
+Macro-F1 : 0.4983 (Class0: 0.9966, Class1: 0.0000)
+AUC      : 0.9148
+MCC      : -0.0034
+G-Mean   : 0.0000
+Sensitivity: 0.0000
+Specificity: 0.9968
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9964    0.9968    0.9966      2815
+           1     0.0000    0.0000    0.0000        10
+
+    accuracy                         0.9933      2825
+   macro avg     0.4982    0.4984    0.4983      2825
+weighted avg     0.9929    0.9933    0.9931      2825
+
+
+================================================================================
+ RUN 7/30 (Seed=6)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0032 | KL=0.0470 | Con=9.5482 | Total=0.0502 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0023 | KL=0.0210 | Con=9.5412 | Total=0.0233 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0021 | KL=0.0170 | Con=9.5373 | Total=0.0191 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0016 | KL=0.0148 | Con=9.5420 | Total=0.0164 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0016 | KL=0.0137 | Con=9.5399 | Total=0.0153 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0014 | KL=0.0120 | Con=9.5430 | Total=0.0133 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0013 | KL=0.0116 | Con=9.5424 | Total=0.0128 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0012 | KL=0.0105 | Con=9.5419 | Total=0.0117 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0010 | KL=0.0100 | Con=9.5427 | Total=0.0110 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0010 | KL=0.0097 | Con=9.5458 | Total=0.0107 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0009 | KL=0.0093 | Con=9.5462 | Total=0.0102 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0009 | KL=0.0088 | Con=9.5457 | Total=0.0097 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0009 | KL=0.0086 | Con=9.5467 | Total=0.0095 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0008 | KL=0.0085 | Con=9.5558 | Total=0.0094 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0008 | KL=0.0083 | Con=9.5547 | Total=0.0091 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0008 | KL=0.0082 | Con=9.5623 | Total=0.0089 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0007 | KL=0.0075 | Con=9.5646 | Total=0.0082 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0007 | KL=0.0076 | Con=9.5722 | Total=0.0082 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0007 | KL=0.0075 | Con=9.5795 | Total=0.0082 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0007 | KL=0.0073 | Con=9.6046 | Total=0.0080 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0006 | KL=0.0072 | Con=9.6036 | Total=0.0078 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0006 | KL=0.0069 | Con=9.6040 | Total=0.0075 | ValF1@0.5=0.4986
+Ep 230 | Focal=0.0005 | KL=0.0068 | Con=9.6333 | Total=0.0074 | ValF1@0.5=0.6099
+Ep 240 | Focal=0.0005 | KL=0.0066 | Con=9.6445 | Total=0.0071 | ValF1@0.5=0.6099
+Ep 250 | Focal=0.0005 | KL=0.0064 | Con=9.6574 | Total=0.0069 | ValF1@0.5=0.6099
+Ep 260 | Focal=0.0005 | KL=0.0064 | Con=9.6745 | Total=0.0070 | ValF1@0.5=0.6567
+Ep 270 | Focal=0.0005 | KL=0.0063 | Con=9.6792 | Total=0.0069 | ValF1@0.5=0.6909
+Ep 280 | Focal=0.0004 | KL=0.0058 | Con=9.6876 | Total=0.0062 | ValF1@0.5=0.7162
+Ep 290 | Focal=0.0004 | KL=0.0058 | Con=9.6637 | Total=0.0062 | ValF1@0.5=0.7718
+Ep 300 | Focal=0.0004 | KL=0.0053 | Con=9.6855 | Total=0.0057 | ValF1@0.5=0.7489
+Ep 310 | Focal=0.0004 | KL=0.0053 | Con=9.6784 | Total=0.0057 | ValF1@0.5=0.7162
+Ep 320 | Focal=0.0004 | KL=0.0053 | Con=9.6588 | Total=0.0056 | ValF1@0.5=0.5575
+Ep 330 | Focal=0.0004 | KL=0.0050 | Con=9.6760 | Total=0.0054 | ValF1@0.5=0.6488
+Ep 340 | Focal=0.0004 | KL=0.0053 | Con=9.6520 | Total=0.0057 | ValF1@0.5=0.7071
+Ep 350 | Focal=0.0003 | KL=0.0047 | Con=9.6474 | Total=0.0050 | ValF1@0.5=0.7162
+Ep 360 | Focal=0.0003 | KL=0.0047 | Con=9.6606 | Total=0.0050 | ValF1@0.5=0.6893
+Ep 370 | Focal=0.0003 | KL=0.0046 | Con=9.6613 | Total=0.0049 | ValF1@0.5=0.6567
+Ep 380 | Focal=0.0003 | KL=0.0045 | Con=9.6630 | Total=0.0048 | ValF1@0.5=0.5575
+Ep 390 | Focal=0.0003 | KL=0.0046 | Con=9.6696 | Total=0.0049 | ValF1@0.5=0.6909
+Ep 400 | Focal=0.0003 | KL=0.0044 | Con=9.6362 | Total=0.0047 | ValF1@0.5=0.6289
+
+[OK] Load best model by ValF1@0.5=0.7718
+
+[VAL] best threshold=0.490, best macroF1=0.7718
+
+================ TRAIN ================
+Threshold: 0.490
+Accuracy : 0.9964
+Macro-F1 : 0.7382 (Class0: 0.9982, Class1: 0.4783)
+AUC      : 0.9860
+MCC      : 0.5086
+G-Mean   : 0.5955
+Sensitivity: 0.3548
+Specificity: 0.9994
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9970    0.9994    0.9982     13123
+           1     0.7333    0.3548    0.4783        62
+
+    accuracy                         0.9964     13185
+   macro avg     0.8651    0.6771    0.7382     13185
+weighted avg     0.9957    0.9964    0.9957     13185
+
+
+================ VAL ================
+Threshold: 0.490
+Accuracy : 0.9965
+Macro-F1 : 0.7718 (Class0: 0.9982, Class1: 0.5455)
+AUC      : 0.9456
+MCC      : 0.6113
+G-Mean   : 0.6124
+Sensitivity: 0.3750
+Specificity: 1.0000
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9965    1.0000    0.9982      2810
+           1     1.0000    0.3750    0.5455        16
+
+    accuracy                         0.9965      2826
+   macro avg     0.9982    0.6875    0.7718      2826
+weighted avg     0.9965    0.9965    0.9957      2826
+
+
+================ TEST ================
+Threshold: 0.490
+Accuracy : 0.9954
+Macro-F1 : 0.4988 (Class0: 0.9977, Class1: 0.0000)
+AUC      : 0.9322
+MCC      : -0.0019
+G-Mean   : 0.0000
+Sensitivity: 0.0000
+Specificity: 0.9989
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9965    0.9989    0.9977      2815
+           1     0.0000    0.0000    0.0000        10
+
+    accuracy                         0.9954      2825
+   macro avg     0.4982    0.4995    0.4988      2825
+weighted avg     0.9929    0.9954    0.9942      2825
+
+
+================================================================================
+ RUN 8/30 (Seed=7)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0039 | KL=0.0439 | Con=9.5567 | Total=0.0478 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0024 | KL=0.0216 | Con=9.5423 | Total=0.0240 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0021 | KL=0.0168 | Con=9.5390 | Total=0.0189 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0016 | KL=0.0150 | Con=9.5426 | Total=0.0166 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0016 | KL=0.0132 | Con=9.5409 | Total=0.0148 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0015 | KL=0.0126 | Con=9.5425 | Total=0.0141 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0013 | KL=0.0114 | Con=9.5402 | Total=0.0127 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0013 | KL=0.0114 | Con=9.5416 | Total=0.0127 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0011 | KL=0.0106 | Con=9.5412 | Total=0.0117 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0010 | KL=0.0099 | Con=9.5408 | Total=0.0109 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0010 | KL=0.0097 | Con=9.5429 | Total=0.0107 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0010 | KL=0.0094 | Con=9.5424 | Total=0.0104 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0008 | KL=0.0087 | Con=9.5403 | Total=0.0095 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0009 | KL=0.0087 | Con=9.5426 | Total=0.0096 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0008 | KL=0.0084 | Con=9.5422 | Total=0.0092 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0008 | KL=0.0082 | Con=9.5440 | Total=0.0090 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0008 | KL=0.0081 | Con=9.5441 | Total=0.0089 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0007 | KL=0.0078 | Con=9.5455 | Total=0.0085 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0007 | KL=0.0075 | Con=9.5478 | Total=0.0082 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0007 | KL=0.0074 | Con=9.5473 | Total=0.0081 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0007 | KL=0.0074 | Con=9.5563 | Total=0.0081 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0006 | KL=0.0071 | Con=9.5534 | Total=0.0077 | ValF1@0.5=0.4986
+Ep 230 | Focal=0.0006 | KL=0.0070 | Con=9.5534 | Total=0.0076 | ValF1@0.5=0.4986
+Ep 240 | Focal=0.0006 | KL=0.0070 | Con=9.5561 | Total=0.0076 | ValF1@0.5=0.4986
+Ep 250 | Focal=0.0005 | KL=0.0067 | Con=9.5538 | Total=0.0072 | ValF1@0.5=0.4986
+Ep 260 | Focal=0.0005 | KL=0.0066 | Con=9.5602 | Total=0.0071 | ValF1@0.5=0.4986
+Ep 270 | Focal=0.0005 | KL=0.0065 | Con=9.5629 | Total=0.0070 | ValF1@0.5=0.4986
+Ep 280 | Focal=0.0005 | KL=0.0066 | Con=9.5669 | Total=0.0071 | ValF1@0.5=0.4986
+Ep 290 | Focal=0.0005 | KL=0.0065 | Con=9.5702 | Total=0.0070 | ValF1@0.5=0.4986
+Ep 300 | Focal=0.0005 | KL=0.0064 | Con=9.5805 | Total=0.0069 | ValF1@0.5=0.4986
+Ep 310 | Focal=0.0005 | KL=0.0062 | Con=9.5803 | Total=0.0067 | ValF1@0.5=0.4986
+Ep 320 | Focal=0.0005 | KL=0.0062 | Con=9.5817 | Total=0.0066 | ValF1@0.5=0.4986
+Ep 330 | Focal=0.0005 | KL=0.0062 | Con=9.5820 | Total=0.0067 | ValF1@0.5=0.4986
+Ep 340 | Focal=0.0005 | KL=0.0062 | Con=9.5950 | Total=0.0067 | ValF1@0.5=0.4986
+Ep 350 | Focal=0.0004 | KL=0.0058 | Con=9.5963 | Total=0.0062 | ValF1@0.5=0.5986
+Ep 360 | Focal=0.0004 | KL=0.0057 | Con=9.6111 | Total=0.0062 | ValF1@0.5=0.5986
+Ep 370 | Focal=0.0004 | KL=0.0058 | Con=9.6120 | Total=0.0062 | ValF1@0.5=0.4985
+Ep 380 | Focal=0.0004 | KL=0.0055 | Con=9.6204 | Total=0.0059 | ValF1@0.5=0.6652
+Ep 390 | Focal=0.0004 | KL=0.0054 | Con=9.6319 | Total=0.0058 | ValF1@0.5=0.6919
+Ep 400 | Focal=0.0003 | KL=0.0050 | Con=9.6089 | Total=0.0053 | ValF1@0.5=0.6726
+
+[OK] Load best model by ValF1@0.5=0.6919
+
+[VAL] best threshold=0.500, best macroF1=0.6919
+
+================ TRAIN ================
+Threshold: 0.500
+Accuracy : 0.9950
+Macro-F1 : 0.7845 (Class0: 0.9975, Class1: 0.5714)
+AUC      : 0.9932
+MCC      : 0.5803
+G-Mean   : 0.8409
+Sensitivity: 0.7097
+Specificity: 0.9963
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9986    0.9963    0.9975     13123
+           1     0.4783    0.7097    0.5714        62
+
+    accuracy                         0.9950     13185
+   macro avg     0.7384    0.8530    0.7845     13185
+weighted avg     0.9962    0.9950    0.9955     13185
+
+
+================ VAL ================
+Threshold: 0.500
+Accuracy : 0.9933
+Macro-F1 : 0.6919 (Class0: 0.9966, Class1: 0.3871)
+AUC      : 0.9566
+MCC      : 0.3839
+G-Mean   : 0.6114
+Sensitivity: 0.3750
+Specificity: 0.9968
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9964    0.9968    0.9966      2810
+           1     0.4000    0.3750    0.3871        16
+
+    accuracy                         0.9933      2826
+   macro avg     0.6982    0.6859    0.6919      2826
+weighted avg     0.9931    0.9933    0.9932      2826
+
+
+================ TEST ================
+Threshold: 0.500
+Accuracy : 0.9904
+Macro-F1 : 0.5321 (Class0: 0.9952, Class1: 0.0690)
+AUC      : 0.9401
+MCC      : 0.0680
+G-Mean   : 0.3152
+Sensitivity: 0.1000
+Specificity: 0.9936
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9968    0.9936    0.9952      2815
+           1     0.0526    0.1000    0.0690        10
+
+    accuracy                         0.9904      2825
+   macro avg     0.5247    0.5468    0.5321      2825
+weighted avg     0.9935    0.9904    0.9919      2825
+
+
+================================================================================
+ RUN 9/30 (Seed=8)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0038 | KL=0.0522 | Con=9.5591 | Total=0.0559 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0025 | KL=0.0225 | Con=9.5506 | Total=0.0250 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0021 | KL=0.0186 | Con=9.5496 | Total=0.0207 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0018 | KL=0.0157 | Con=9.5456 | Total=0.0176 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0016 | KL=0.0137 | Con=9.5442 | Total=0.0154 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0014 | KL=0.0125 | Con=9.5476 | Total=0.0138 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0015 | KL=0.0124 | Con=9.5472 | Total=0.0139 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0012 | KL=0.0110 | Con=9.5448 | Total=0.0122 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0012 | KL=0.0108 | Con=9.5450 | Total=0.0120 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0011 | KL=0.0103 | Con=9.5452 | Total=0.0115 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0010 | KL=0.0095 | Con=9.5433 | Total=0.0104 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0009 | KL=0.0093 | Con=9.5475 | Total=0.0103 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0010 | KL=0.0091 | Con=9.5471 | Total=0.0101 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0009 | KL=0.0089 | Con=9.5471 | Total=0.0099 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0008 | KL=0.0084 | Con=9.5468 | Total=0.0092 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0008 | KL=0.0081 | Con=9.5521 | Total=0.0089 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0007 | KL=0.0078 | Con=9.5616 | Total=0.0085 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0007 | KL=0.0077 | Con=9.5679 | Total=0.0084 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0007 | KL=0.0074 | Con=9.5802 | Total=0.0081 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0006 | KL=0.0073 | Con=9.5862 | Total=0.0080 | ValF1@0.5=0.5575
+Ep 210 | Focal=0.0007 | KL=0.0073 | Con=9.6087 | Total=0.0079 | ValF1@0.5=0.6039
+Ep 220 | Focal=0.0006 | KL=0.0072 | Con=9.6151 | Total=0.0078 | ValF1@0.5=0.6488
+Ep 230 | Focal=0.0006 | KL=0.0068 | Con=9.6318 | Total=0.0073 | ValF1@0.5=0.6415
+Ep 240 | Focal=0.0005 | KL=0.0064 | Con=9.6407 | Total=0.0069 | ValF1@0.5=0.6349
+Ep 250 | Focal=0.0005 | KL=0.0065 | Con=9.6496 | Total=0.0070 | ValF1@0.5=0.6415
+Ep 260 | Focal=0.0004 | KL=0.0059 | Con=9.6410 | Total=0.0063 | ValF1@0.5=0.5937
+Ep 270 | Focal=0.0005 | KL=0.0061 | Con=9.6819 | Total=0.0066 | ValF1@0.5=0.6415
+Ep 280 | Focal=0.0005 | KL=0.0058 | Con=9.6476 | Total=0.0063 | ValF1@0.5=0.6806
+Ep 290 | Focal=0.0005 | KL=0.0059 | Con=9.6596 | Total=0.0064 | ValF1@0.5=0.6984
+Ep 300 | Focal=0.0004 | KL=0.0054 | Con=9.6375 | Total=0.0058 | ValF1@0.5=0.6488
+Ep 310 | Focal=0.0004 | KL=0.0055 | Con=9.6603 | Total=0.0059 | ValF1@0.5=0.6726
+Ep 320 | Focal=0.0004 | KL=0.0049 | Con=9.6431 | Total=0.0053 | ValF1@0.5=0.6349
+Ep 330 | Focal=0.0004 | KL=0.0052 | Con=9.6496 | Total=0.0056 | ValF1@0.5=0.4986
+Ep 340 | Focal=0.0004 | KL=0.0050 | Con=9.6352 | Total=0.0053 | ValF1@0.5=0.4986
+Ep 350 | Focal=0.0003 | KL=0.0047 | Con=9.6027 | Total=0.0050 | ValF1@0.5=0.6099
+Ep 360 | Focal=0.0004 | KL=0.0049 | Con=9.6235 | Total=0.0052 | ValF1@0.5=0.6806
+Ep 370 | Focal=0.0003 | KL=0.0046 | Con=9.6211 | Total=0.0049 | ValF1@0.5=0.6039
+Ep 380 | Focal=0.0003 | KL=0.0047 | Con=9.6292 | Total=0.0051 | ValF1@0.5=0.4986
+Ep 390 | Focal=0.0003 | KL=0.0044 | Con=9.6280 | Total=0.0048 | ValF1@0.5=0.6099
+Ep 400 | Focal=0.0003 | KL=0.0042 | Con=9.6159 | Total=0.0045 | ValF1@0.5=0.6039
+
+[OK] Load best model by ValF1@0.5=0.6984
+
+[VAL] best threshold=0.500, best macroF1=0.6984
+
+================ TRAIN ================
+Threshold: 0.500
+Accuracy : 0.9949
+Macro-F1 : 0.7708 (Class0: 0.9974, Class1: 0.5442)
+AUC      : 0.9924
+MCC      : 0.5486
+G-Mean   : 0.8018
+Sensitivity: 0.6452
+Specificity: 0.9966
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9983    0.9966    0.9974     13123
+           1     0.4706    0.6452    0.5442        62
+
+    accuracy                         0.9949     13185
+   macro avg     0.7345    0.8209    0.7708     13185
+weighted avg     0.9958    0.9949    0.9953     13185
+
+
+================ VAL ================
+Threshold: 0.500
+Accuracy : 0.9936
+Macro-F1 : 0.6984 (Class0: 0.9968, Class1: 0.4000)
+AUC      : 0.9665
+MCC      : 0.3977
+G-Mean   : 0.6115
+Sensitivity: 0.3750
+Specificity: 0.9972
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9964    0.9972    0.9968      2810
+           1     0.4286    0.3750    0.4000        16
+
+    accuracy                         0.9936      2826
+   macro avg     0.7125    0.6861    0.6984      2826
+weighted avg     0.9932    0.9936    0.9934      2826
+
+
+================ TEST ================
+Threshold: 0.500
+Accuracy : 0.9915
+Macro-F1 : 0.4979 (Class0: 0.9957, Class1: 0.0000)
+AUC      : 0.9436
+MCC      : -0.0042
+G-Mean   : 0.0000
+Sensitivity: 0.0000
+Specificity: 0.9950
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9964    0.9950    0.9957      2815
+           1     0.0000    0.0000    0.0000        10
+
+    accuracy                         0.9915      2825
+   macro avg     0.4982    0.4975    0.4979      2825
+weighted avg     0.9929    0.9915    0.9922      2825
+
+
+================================================================================
+ RUN 10/30 (Seed=9)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0044 | KL=0.0461 | Con=9.5473 | Total=0.0504 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0022 | KL=0.0222 | Con=9.5486 | Total=0.0244 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0020 | KL=0.0176 | Con=9.5410 | Total=0.0196 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0017 | KL=0.0156 | Con=9.5415 | Total=0.0173 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0016 | KL=0.0136 | Con=9.5401 | Total=0.0152 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0014 | KL=0.0127 | Con=9.5447 | Total=0.0141 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0014 | KL=0.0119 | Con=9.5444 | Total=0.0132 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0013 | KL=0.0114 | Con=9.5452 | Total=0.0127 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0012 | KL=0.0109 | Con=9.5458 | Total=0.0121 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0012 | KL=0.0106 | Con=9.5446 | Total=0.0118 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0010 | KL=0.0098 | Con=9.5449 | Total=0.0108 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0010 | KL=0.0100 | Con=9.5516 | Total=0.0111 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0010 | KL=0.0094 | Con=9.5491 | Total=0.0104 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0009 | KL=0.0090 | Con=9.5486 | Total=0.0099 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0010 | KL=0.0091 | Con=9.5531 | Total=0.0100 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0008 | KL=0.0085 | Con=9.5519 | Total=0.0093 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0007 | KL=0.0081 | Con=9.5585 | Total=0.0088 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0008 | KL=0.0082 | Con=9.5663 | Total=0.0090 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0007 | KL=0.0081 | Con=9.5598 | Total=0.0088 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0008 | KL=0.0079 | Con=9.5617 | Total=0.0087 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0007 | KL=0.0077 | Con=9.5648 | Total=0.0085 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0007 | KL=0.0075 | Con=9.5693 | Total=0.0082 | ValF1@0.5=0.4986
+Ep 230 | Focal=0.0007 | KL=0.0073 | Con=9.5880 | Total=0.0080 | ValF1@0.5=0.4986
+Ep 240 | Focal=0.0006 | KL=0.0073 | Con=9.5866 | Total=0.0079 | ValF1@0.5=0.4986
+Ep 250 | Focal=0.0006 | KL=0.0070 | Con=9.6024 | Total=0.0076 | ValF1@0.5=0.4986
+Ep 260 | Focal=0.0006 | KL=0.0069 | Con=9.5992 | Total=0.0075 | ValF1@0.5=0.4986
+Ep 270 | Focal=0.0006 | KL=0.0068 | Con=9.6080 | Total=0.0073 | ValF1@0.5=0.4986
+Ep 280 | Focal=0.0005 | KL=0.0066 | Con=9.6090 | Total=0.0071 | ValF1@0.5=0.4986
+Ep 290 | Focal=0.0005 | KL=0.0065 | Con=9.6280 | Total=0.0070 | ValF1@0.5=0.5511
+Ep 300 | Focal=0.0005 | KL=0.0063 | Con=9.6396 | Total=0.0068 | ValF1@0.5=0.4985
+Ep 310 | Focal=0.0005 | KL=0.0062 | Con=9.6612 | Total=0.0067 | ValF1@0.5=0.7054
+Ep 320 | Focal=0.0004 | KL=0.0060 | Con=9.6382 | Total=0.0064 | ValF1@0.5=0.5893
+Ep 330 | Focal=0.0004 | KL=0.0059 | Con=9.6510 | Total=0.0063 | ValF1@0.5=0.4985
+Ep 340 | Focal=0.0004 | KL=0.0056 | Con=9.6541 | Total=0.0061 | ValF1@0.5=0.5937
+Ep 350 | Focal=0.0004 | KL=0.0057 | Con=9.6391 | Total=0.0062 | ValF1@0.5=0.6707
+Ep 360 | Focal=0.0004 | KL=0.0054 | Con=9.6478 | Total=0.0058 | ValF1@0.5=0.6745
+Ep 370 | Focal=0.0004 | KL=0.0054 | Con=9.6295 | Total=0.0058 | ValF1@0.5=0.6039
+Ep 380 | Focal=0.0004 | KL=0.0051 | Con=9.6547 | Total=0.0055 | ValF1@0.5=0.6411
+Ep 390 | Focal=0.0003 | KL=0.0049 | Con=9.6277 | Total=0.0053 | ValF1@0.5=0.6488
+Ep 400 | Focal=0.0004 | KL=0.0051 | Con=9.6662 | Total=0.0055 | ValF1@0.5=0.4986
+
+[OK] Load best model by ValF1@0.5=0.7054
+
+[VAL] best threshold=0.510, best macroF1=0.7209
+
+================ TRAIN ================
+Threshold: 0.510
+Accuracy : 0.9949
+Macro-F1 : 0.7430 (Class0: 0.9974, Class1: 0.4885)
+AUC      : 0.9907
+MCC      : 0.4867
+G-Mean   : 0.7174
+Sensitivity: 0.5161
+Specificity: 0.9972
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9977    0.9972    0.9974     13123
+           1     0.4638    0.5161    0.4885        62
+
+    accuracy                         0.9949     13185
+   macro avg     0.7307    0.7567    0.7430     13185
+weighted avg     0.9952    0.9949    0.9951     13185
+
+
+================ VAL ================
+Threshold: 0.510
+Accuracy : 0.9947
+Macro-F1 : 0.7209 (Class0: 0.9973, Class1: 0.4444)
+AUC      : 0.9632
+MCC      : 0.4497
+G-Mean   : 0.6118
+Sensitivity: 0.3750
+Specificity: 0.9982
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9964    0.9982    0.9973      2810
+           1     0.5455    0.3750    0.4444        16
+
+    accuracy                         0.9947      2826
+   macro avg     0.7710    0.6866    0.7209      2826
+weighted avg     0.9939    0.9947    0.9942      2826
+
+
+================ TEST ================
+Threshold: 0.510
+Accuracy : 0.9922
+Macro-F1 : 0.5397 (Class0: 0.9961, Class1: 0.0833)
+AUC      : 0.9447
+MCC      : 0.0807
+G-Mean   : 0.3155
+Sensitivity: 0.1000
+Specificity: 0.9954
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9968    0.9954    0.9961      2815
+           1     0.0714    0.1000    0.0833        10
+
+    accuracy                         0.9922      2825
+   macro avg     0.5341    0.5477    0.5397      2825
+weighted avg     0.9935    0.9922    0.9929      2825
+
+
+================================================================================
+ RUN 11/30 (Seed=10)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0038 | KL=0.0436 | Con=9.5584 | Total=0.0474 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0023 | KL=0.0212 | Con=9.5526 | Total=0.0235 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0020 | KL=0.0171 | Con=9.5465 | Total=0.0191 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0017 | KL=0.0147 | Con=9.5464 | Total=0.0164 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0016 | KL=0.0134 | Con=9.5445 | Total=0.0150 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0014 | KL=0.0124 | Con=9.5462 | Total=0.0138 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0013 | KL=0.0112 | Con=9.5429 | Total=0.0125 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0012 | KL=0.0109 | Con=9.5453 | Total=0.0122 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0011 | KL=0.0103 | Con=9.5453 | Total=0.0113 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0011 | KL=0.0100 | Con=9.5439 | Total=0.0111 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0011 | KL=0.0098 | Con=9.5451 | Total=0.0109 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0010 | KL=0.0094 | Con=9.5427 | Total=0.0104 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0009 | KL=0.0089 | Con=9.5425 | Total=0.0098 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0010 | KL=0.0088 | Con=9.5457 | Total=0.0098 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0008 | KL=0.0082 | Con=9.5446 | Total=0.0090 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0007 | KL=0.0081 | Con=9.5468 | Total=0.0088 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0008 | KL=0.0079 | Con=9.5464 | Total=0.0086 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0007 | KL=0.0075 | Con=9.5441 | Total=0.0082 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0007 | KL=0.0074 | Con=9.5457 | Total=0.0081 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0007 | KL=0.0074 | Con=9.5514 | Total=0.0081 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0006 | KL=0.0072 | Con=9.5506 | Total=0.0078 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0006 | KL=0.0071 | Con=9.5432 | Total=0.0077 | ValF1@0.5=0.5575
+Ep 230 | Focal=0.0006 | KL=0.0068 | Con=9.5434 | Total=0.0074 | ValF1@0.5=0.6099
+Ep 240 | Focal=0.0006 | KL=0.0068 | Con=9.5436 | Total=0.0073 | ValF1@0.5=0.6099
+Ep 250 | Focal=0.0006 | KL=0.0070 | Con=9.5506 | Total=0.0076 | ValF1@0.5=0.6726
+Ep 260 | Focal=0.0005 | KL=0.0065 | Con=9.5534 | Total=0.0071 | ValF1@0.5=0.5986
+Ep 270 | Focal=0.0005 | KL=0.0066 | Con=9.5464 | Total=0.0071 | ValF1@0.5=0.5986
+Ep 280 | Focal=0.0005 | KL=0.0064 | Con=9.5488 | Total=0.0069 | ValF1@0.5=0.5937
+Ep 290 | Focal=0.0005 | KL=0.0063 | Con=9.5455 | Total=0.0068 | ValF1@0.5=0.4985
+Ep 300 | Focal=0.0005 | KL=0.0062 | Con=9.5518 | Total=0.0067 | ValF1@0.5=0.5575
+Ep 310 | Focal=0.0005 | KL=0.0063 | Con=9.5455 | Total=0.0067 | ValF1@0.5=0.5511
+Ep 320 | Focal=0.0005 | KL=0.0063 | Con=9.5477 | Total=0.0067 | ValF1@0.5=0.6349
+Ep 330 | Focal=0.0004 | KL=0.0061 | Con=9.5482 | Total=0.0065 | ValF1@0.5=0.4986
+Ep 340 | Focal=0.0004 | KL=0.0059 | Con=9.5520 | Total=0.0063 | ValF1@0.5=0.5937
+Ep 350 | Focal=0.0004 | KL=0.0059 | Con=9.5483 | Total=0.0063 | ValF1@0.5=0.6289
+Ep 360 | Focal=0.0004 | KL=0.0058 | Con=9.5485 | Total=0.0062 | ValF1@0.5=0.5937
+Ep 370 | Focal=0.0005 | KL=0.0060 | Con=9.5501 | Total=0.0064 | ValF1@0.5=0.5937
+Ep 380 | Focal=0.0004 | KL=0.0059 | Con=9.5550 | Total=0.0063 | ValF1@0.5=0.7071
+Ep 390 | Focal=0.0004 | KL=0.0057 | Con=9.5600 | Total=0.0061 | ValF1@0.5=0.4985
+Ep 400 | Focal=0.0004 | KL=0.0057 | Con=9.5539 | Total=0.0060 | ValF1@0.5=0.4985
+
+[OK] Load best model by ValF1@0.5=0.7071
+
+[VAL] best threshold=0.490, best macroF1=0.7295
+
+================ TRAIN ================
+Threshold: 0.490
+Accuracy : 0.9964
+Macro-F1 : 0.7991 (Class0: 0.9982, Class1: 0.6000)
+AUC      : 0.9925
+MCC      : 0.5985
+G-Mean   : 0.7614
+Sensitivity: 0.5806
+Specificity: 0.9983
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9980    0.9983    0.9982     13123
+           1     0.6207    0.5806    0.6000        62
+
+    accuracy                         0.9964     13185
+   macro avg     0.8094    0.7895    0.7991     13185
+weighted avg     0.9962    0.9964    0.9963     13185
+
+
+================ VAL ================
+Threshold: 0.490
+Accuracy : 0.9950
+Macro-F1 : 0.7295 (Class0: 0.9975, Class1: 0.4615)
+AUC      : 0.9510
+MCC      : 0.4720
+G-Mean   : 0.6119
+Sensitivity: 0.3750
+Specificity: 0.9986
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9964    0.9986    0.9975      2810
+           1     0.6000    0.3750    0.4615        16
+
+    accuracy                         0.9950      2826
+   macro avg     0.7982    0.6868    0.7295      2826
+weighted avg     0.9942    0.9950    0.9945      2826
+
+
+================ TEST ================
+Threshold: 0.490
+Accuracy : 0.9940
+Macro-F1 : 0.4985 (Class0: 0.9970, Class1: 0.0000)
+AUC      : 0.9446
+MCC      : -0.0030
+G-Mean   : 0.0000
+Sensitivity: 0.0000
+Specificity: 0.9975
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9965    0.9975    0.9970      2815
+           1     0.0000    0.0000    0.0000        10
+
+    accuracy                         0.9940      2825
+   macro avg     0.4982    0.4988    0.4985      2825
+weighted avg     0.9929    0.9940    0.9935      2825
+
+
+================================================================================
+ RUN 12/30 (Seed=11)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0038 | KL=0.0412 | Con=9.5493 | Total=0.0450 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0023 | KL=0.0219 | Con=9.5399 | Total=0.0242 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0022 | KL=0.0170 | Con=9.5362 | Total=0.0191 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0016 | KL=0.0149 | Con=9.5369 | Total=0.0166 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0016 | KL=0.0134 | Con=9.5368 | Total=0.0150 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0015 | KL=0.0127 | Con=9.5363 | Total=0.0142 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0013 | KL=0.0115 | Con=9.5364 | Total=0.0128 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0012 | KL=0.0112 | Con=9.5356 | Total=0.0124 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0011 | KL=0.0105 | Con=9.5354 | Total=0.0116 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0011 | KL=0.0099 | Con=9.5350 | Total=0.0110 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0009 | KL=0.0093 | Con=9.5345 | Total=0.0102 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0009 | KL=0.0091 | Con=9.5337 | Total=0.0100 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0008 | KL=0.0086 | Con=9.5327 | Total=0.0094 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0007 | KL=0.0081 | Con=9.5322 | Total=0.0088 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0007 | KL=0.0082 | Con=9.5331 | Total=0.0089 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0007 | KL=0.0080 | Con=9.5313 | Total=0.0088 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0007 | KL=0.0078 | Con=9.5326 | Total=0.0085 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0007 | KL=0.0076 | Con=9.5323 | Total=0.0083 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0006 | KL=0.0072 | Con=9.5302 | Total=0.0078 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0006 | KL=0.0073 | Con=9.5319 | Total=0.0080 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0006 | KL=0.0070 | Con=9.5319 | Total=0.0077 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0006 | KL=0.0069 | Con=9.5359 | Total=0.0075 | ValF1@0.5=0.4986
+Ep 230 | Focal=0.0005 | KL=0.0066 | Con=9.5309 | Total=0.0072 | ValF1@0.5=0.4986
+Ep 240 | Focal=0.0005 | KL=0.0066 | Con=9.5300 | Total=0.0071 | ValF1@0.5=0.5541
+Ep 250 | Focal=0.0005 | KL=0.0066 | Con=9.5314 | Total=0.0071 | ValF1@0.5=0.4986
+Ep 260 | Focal=0.0005 | KL=0.0065 | Con=9.5387 | Total=0.0070 | ValF1@0.5=0.5986
+Ep 270 | Focal=0.0005 | KL=0.0062 | Con=9.5611 | Total=0.0067 | ValF1@0.5=0.6652
+Ep 280 | Focal=0.0005 | KL=0.0062 | Con=9.5775 | Total=0.0067 | ValF1@0.5=0.5986
+Ep 290 | Focal=0.0005 | KL=0.0063 | Con=9.6224 | Total=0.0068 | ValF1@0.5=0.6411
+Ep 300 | Focal=0.0004 | KL=0.0056 | Con=9.6128 | Total=0.0059 | ValF1@0.5=0.6349
+Ep 310 | Focal=0.0004 | KL=0.0054 | Con=9.6275 | Total=0.0058 | ValF1@0.5=0.5575
+Ep 320 | Focal=0.0004 | KL=0.0054 | Con=9.6377 | Total=0.0058 | ValF1@0.5=0.4980
+Ep 330 | Focal=0.0004 | KL=0.0051 | Con=9.6283 | Total=0.0055 | ValF1@0.5=0.6567
+Ep 340 | Focal=0.0003 | KL=0.0049 | Con=9.6106 | Total=0.0053 | ValF1@0.5=0.5575
+Ep 350 | Focal=0.0003 | KL=0.0047 | Con=9.6171 | Total=0.0051 | ValF1@0.5=0.4986
+Ep 360 | Focal=0.0003 | KL=0.0046 | Con=9.6224 | Total=0.0050 | ValF1@0.5=0.6304
+Ep 370 | Focal=0.0003 | KL=0.0045 | Con=9.6078 | Total=0.0048 | ValF1@0.5=0.4985
+Ep 380 | Focal=0.0003 | KL=0.0043 | Con=9.6163 | Total=0.0046 | ValF1@0.5=0.6039
+Ep 390 | Focal=0.0003 | KL=0.0043 | Con=9.6057 | Total=0.0046 | ValF1@0.5=0.5937
+Ep 400 | Focal=0.0003 | KL=0.0044 | Con=9.6106 | Total=0.0047 | ValF1@0.5=0.5857
+
+[OK] Load best model by ValF1@0.5=0.6652
+
+[VAL] best threshold=0.420, best macroF1=0.7204
+
+================ TRAIN ================
+Threshold: 0.420
+Accuracy : 0.9929
+Macro-F1 : 0.7482 (Class0: 0.9964, Class1: 0.5000)
+AUC      : 0.9937
+MCC      : 0.5288
+G-Mean   : 0.8680
+Sensitivity: 0.7581
+Specificity: 0.9940
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9989    0.9940    0.9964     13123
+           1     0.3730    0.7581    0.5000        62
+
+    accuracy                         0.9929     13185
+   macro avg     0.6859    0.8760    0.7482     13185
+weighted avg     0.9959    0.9929    0.9941     13185
+
+
+================ VAL ================
+Threshold: 0.420
+Accuracy : 0.9929
+Macro-F1 : 0.7204 (Class0: 0.9964, Class1: 0.4444)
+AUC      : 0.9656
+MCC      : 0.4437
+G-Mean   : 0.7056
+Sensitivity: 0.5000
+Specificity: 0.9957
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9971    0.9957    0.9964      2810
+           1     0.4000    0.5000    0.4444        16
+
+    accuracy                         0.9929      2826
+   macro avg     0.6986    0.7479    0.7204      2826
+weighted avg     0.9938    0.9929    0.9933      2826
+
+
+================ TEST ================
+Threshold: 0.420
+Accuracy : 0.9890
+Macro-F1 : 0.5783 (Class0: 0.9945, Class1: 0.1622)
+AUC      : 0.9377
+MCC      : 0.1779
+G-Mean   : 0.5454
+Sensitivity: 0.3000
+Specificity: 0.9915
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9975    0.9915    0.9945      2815
+           1     0.1111    0.3000    0.1622        10
+
+    accuracy                         0.9890      2825
+   macro avg     0.5543    0.6457    0.5783      2825
+weighted avg     0.9944    0.9890    0.9915      2825
+
+
+================================================================================
+ RUN 13/30 (Seed=12)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0041 | KL=0.0412 | Con=9.5460 | Total=0.0452 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0023 | KL=0.0214 | Con=9.5402 | Total=0.0236 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0019 | KL=0.0172 | Con=9.5382 | Total=0.0191 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0016 | KL=0.0149 | Con=9.5378 | Total=0.0166 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0016 | KL=0.0135 | Con=9.5361 | Total=0.0151 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0013 | KL=0.0120 | Con=9.5357 | Total=0.0132 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0013 | KL=0.0113 | Con=9.5353 | Total=0.0126 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0011 | KL=0.0105 | Con=9.5350 | Total=0.0116 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0011 | KL=0.0101 | Con=9.5335 | Total=0.0112 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0011 | KL=0.0100 | Con=9.5348 | Total=0.0111 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0010 | KL=0.0095 | Con=9.5350 | Total=0.0105 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0010 | KL=0.0093 | Con=9.5350 | Total=0.0103 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0008 | KL=0.0085 | Con=9.5335 | Total=0.0094 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0008 | KL=0.0084 | Con=9.5331 | Total=0.0092 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0008 | KL=0.0084 | Con=9.5318 | Total=0.0092 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0008 | KL=0.0082 | Con=9.5322 | Total=0.0090 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0008 | KL=0.0080 | Con=9.5328 | Total=0.0087 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0007 | KL=0.0076 | Con=9.5314 | Total=0.0083 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0007 | KL=0.0076 | Con=9.5331 | Total=0.0083 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0006 | KL=0.0073 | Con=9.5314 | Total=0.0079 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0006 | KL=0.0071 | Con=9.5302 | Total=0.0077 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0006 | KL=0.0071 | Con=9.5304 | Total=0.0077 | ValF1@0.5=0.4986
+Ep 230 | Focal=0.0006 | KL=0.0071 | Con=9.5304 | Total=0.0078 | ValF1@0.5=0.4986
+Ep 240 | Focal=0.0005 | KL=0.0068 | Con=9.5300 | Total=0.0073 | ValF1@0.5=0.4986
+Ep 250 | Focal=0.0006 | KL=0.0069 | Con=9.5319 | Total=0.0074 | ValF1@0.5=0.4986
+Ep 260 | Focal=0.0005 | KL=0.0066 | Con=9.5304 | Total=0.0071 | ValF1@0.5=0.4985
+Ep 270 | Focal=0.0005 | KL=0.0065 | Con=9.5303 | Total=0.0070 | ValF1@0.5=0.4985
+Ep 280 | Focal=0.0005 | KL=0.0064 | Con=9.5299 | Total=0.0069 | ValF1@0.5=0.4984
+Ep 290 | Focal=0.0005 | KL=0.0064 | Con=9.5281 | Total=0.0069 | ValF1@0.5=0.5937
+Ep 300 | Focal=0.0005 | KL=0.0064 | Con=9.5344 | Total=0.0069 | ValF1@0.5=0.6806
+Ep 310 | Focal=0.0004 | KL=0.0059 | Con=9.5349 | Total=0.0064 | ValF1@0.5=0.7262
+Ep 320 | Focal=0.0005 | KL=0.0062 | Con=9.5308 | Total=0.0067 | ValF1@0.5=0.6893
+Ep 330 | Focal=0.0005 | KL=0.0062 | Con=9.5391 | Total=0.0067 | ValF1@0.5=0.4986
+Ep 340 | Focal=0.0005 | KL=0.0063 | Con=9.5301 | Total=0.0068 | ValF1@0.5=0.6726
+Ep 350 | Focal=0.0004 | KL=0.0060 | Con=9.5340 | Total=0.0064 | ValF1@0.5=0.5575
+Ep 360 | Focal=0.0005 | KL=0.0062 | Con=9.5396 | Total=0.0066 | ValF1@0.5=0.7388
+Ep 370 | Focal=0.0004 | KL=0.0059 | Con=9.5325 | Total=0.0063 | ValF1@0.5=0.6987
+Ep 380 | Focal=0.0004 | KL=0.0057 | Con=9.5316 | Total=0.0060 | ValF1@0.5=0.7209
+Ep 390 | Focal=0.0004 | KL=0.0058 | Con=9.5369 | Total=0.0062 | ValF1@0.5=0.6289
+Ep 400 | Focal=0.0004 | KL=0.0059 | Con=9.5361 | Total=0.0063 | ValF1@0.5=0.7295
+
+[OK] Load best model by ValF1@0.5=0.7388
+
+[VAL] best threshold=0.510, best macroF1=0.7489
+
+================ TRAIN ================
+Threshold: 0.510
+Accuracy : 0.9973
+Macro-F1 : 0.8262 (Class0: 0.9986, Class1: 0.6538)
+AUC      : 0.9930
+MCC      : 0.6650
+G-Mean   : 0.7403
+Sensitivity: 0.5484
+Specificity: 0.9994
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9979    0.9994    0.9986     13123
+           1     0.8095    0.5484    0.6538        62
+
+    accuracy                         0.9973     13185
+   macro avg     0.9037    0.7739    0.8262     13185
+weighted avg     0.9970    0.9973    0.9970     13185
+
+
+================ VAL ================
+Threshold: 0.510
+Accuracy : 0.9958
+Macro-F1 : 0.7489 (Class0: 0.9979, Class1: 0.5000)
+AUC      : 0.9619
+MCC      : 0.5286
+G-Mean   : 0.6122
+Sensitivity: 0.3750
+Specificity: 0.9993
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9965    0.9993    0.9979      2810
+           1     0.7500    0.3750    0.5000        16
+
+    accuracy                         0.9958      2826
+   macro avg     0.8732    0.6871    0.7489      2826
+weighted avg     0.9951    0.9958    0.9950      2826
+
+
+================ TEST ================
+Threshold: 0.510
+Accuracy : 0.9961
+Macro-F1 : 0.4990 (Class0: 0.9980, Class1: 0.0000)
+AUC      : 0.9386
+MCC      : -0.0011
+G-Mean   : 0.0000
+Sensitivity: 0.0000
+Specificity: 0.9996
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9965    0.9996    0.9980      2815
+           1     0.0000    0.0000    0.0000        10
+
+    accuracy                         0.9961      2825
+   macro avg     0.4982    0.4998    0.4990      2825
+weighted avg     0.9929    0.9961    0.9945      2825
+
+
+================================================================================
+ RUN 14/30 (Seed=13)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0036 | KL=0.0595 | Con=9.5568 | Total=0.0631 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0026 | KL=0.0218 | Con=9.5399 | Total=0.0244 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0021 | KL=0.0173 | Con=9.5393 | Total=0.0194 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0015 | KL=0.0144 | Con=9.5416 | Total=0.0159 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0015 | KL=0.0130 | Con=9.5410 | Total=0.0146 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0014 | KL=0.0124 | Con=9.5445 | Total=0.0138 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0012 | KL=0.0113 | Con=9.5418 | Total=0.0125 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0012 | KL=0.0108 | Con=9.5438 | Total=0.0120 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0011 | KL=0.0101 | Con=9.5440 | Total=0.0112 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0010 | KL=0.0097 | Con=9.5487 | Total=0.0107 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0010 | KL=0.0097 | Con=9.5461 | Total=0.0108 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0010 | KL=0.0094 | Con=9.5466 | Total=0.0104 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0009 | KL=0.0088 | Con=9.5472 | Total=0.0097 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0009 | KL=0.0087 | Con=9.5512 | Total=0.0096 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0008 | KL=0.0081 | Con=9.5557 | Total=0.0088 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0008 | KL=0.0081 | Con=9.5641 | Total=0.0088 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0007 | KL=0.0076 | Con=9.5569 | Total=0.0083 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0007 | KL=0.0074 | Con=9.5561 | Total=0.0081 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0006 | KL=0.0073 | Con=9.5618 | Total=0.0079 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0007 | KL=0.0075 | Con=9.5648 | Total=0.0082 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0006 | KL=0.0073 | Con=9.5621 | Total=0.0079 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0006 | KL=0.0070 | Con=9.5707 | Total=0.0076 | ValF1@0.5=0.4986
+Ep 230 | Focal=0.0006 | KL=0.0070 | Con=9.5724 | Total=0.0076 | ValF1@0.5=0.4986
+Ep 240 | Focal=0.0005 | KL=0.0065 | Con=9.5679 | Total=0.0070 | ValF1@0.5=0.4986
+Ep 250 | Focal=0.0006 | KL=0.0068 | Con=9.5824 | Total=0.0074 | ValF1@0.5=0.4986
+Ep 260 | Focal=0.0005 | KL=0.0066 | Con=9.5822 | Total=0.0072 | ValF1@0.5=0.4986
+Ep 270 | Focal=0.0005 | KL=0.0063 | Con=9.5804 | Total=0.0068 | ValF1@0.5=0.4986
+Ep 280 | Focal=0.0005 | KL=0.0064 | Con=9.5750 | Total=0.0069 | ValF1@0.5=0.4986
+Ep 290 | Focal=0.0005 | KL=0.0064 | Con=9.5791 | Total=0.0068 | ValF1@0.5=0.4986
+Ep 300 | Focal=0.0005 | KL=0.0063 | Con=9.5941 | Total=0.0068 | ValF1@0.5=0.4986
+Ep 310 | Focal=0.0004 | KL=0.0061 | Con=9.5949 | Total=0.0065 | ValF1@0.5=0.4986
+Ep 320 | Focal=0.0004 | KL=0.0060 | Con=9.5911 | Total=0.0065 | ValF1@0.5=0.4986
+Ep 330 | Focal=0.0004 | KL=0.0059 | Con=9.5951 | Total=0.0063 | ValF1@0.5=0.4985
+Ep 340 | Focal=0.0004 | KL=0.0060 | Con=9.6140 | Total=0.0064 | ValF1@0.5=0.5459
+Ep 350 | Focal=0.0004 | KL=0.0058 | Con=9.6226 | Total=0.0063 | ValF1@0.5=0.4983
+Ep 360 | Focal=0.0004 | KL=0.0056 | Con=9.6270 | Total=0.0060 | ValF1@0.5=0.5937
+Ep 370 | Focal=0.0004 | KL=0.0054 | Con=9.6216 | Total=0.0058 | ValF1@0.5=0.5484
+Ep 380 | Focal=0.0004 | KL=0.0054 | Con=9.6226 | Total=0.0057 | ValF1@0.5=0.6349
+Ep 390 | Focal=0.0004 | KL=0.0054 | Con=9.6364 | Total=0.0058 | ValF1@0.5=0.6652
+Ep 400 | Focal=0.0004 | KL=0.0053 | Con=9.6589 | Total=0.0057 | ValF1@0.5=0.6857
+
+[OK] Load best model by ValF1@0.5=0.6857
+
+[VAL] best threshold=0.510, best macroF1=0.6984
+
+================ TRAIN ================
+Threshold: 0.510
+Accuracy : 0.9945
+Macro-F1 : 0.7774 (Class0: 0.9972, Class1: 0.5576)
+AUC      : 0.9955
+MCC      : 0.5732
+G-Mean   : 0.8595
+Sensitivity: 0.7419
+Specificity: 0.9957
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9988    0.9957    0.9972     13123
+           1     0.4466    0.7419    0.5576        62
+
+    accuracy                         0.9945     13185
+   macro avg     0.7227    0.8688    0.7774     13185
+weighted avg     0.9962    0.9945    0.9951     13185
+
+
+================ VAL ================
+Threshold: 0.510
+Accuracy : 0.9936
+Macro-F1 : 0.6984 (Class0: 0.9968, Class1: 0.4000)
+AUC      : 0.9663
+MCC      : 0.3977
+G-Mean   : 0.6115
+Sensitivity: 0.3750
+Specificity: 0.9972
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9964    0.9972    0.9968      2810
+           1     0.4286    0.3750    0.4000        16
+
+    accuracy                         0.9936      2826
+   macro avg     0.7125    0.6861    0.6984      2826
+weighted avg     0.9932    0.9936    0.9934      2826
+
+
+================ TEST ================
+Threshold: 0.510
+Accuracy : 0.9901
+Macro-F1 : 0.5600 (Class0: 0.9950, Class1: 0.1250)
+AUC      : 0.9423
+MCC      : 0.1303
+G-Mean   : 0.4456
+Sensitivity: 0.2000
+Specificity: 0.9929
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9971    0.9929    0.9950      2815
+           1     0.0909    0.2000    0.1250        10
+
+    accuracy                         0.9901      2825
+   macro avg     0.5440    0.5964    0.5600      2825
+weighted avg     0.9939    0.9901    0.9919      2825
+
+
+================================================================================
+ RUN 15/30 (Seed=14)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0046 | KL=0.0507 | Con=9.5519 | Total=0.0553 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0024 | KL=0.0222 | Con=9.5441 | Total=0.0246 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0019 | KL=0.0180 | Con=9.5429 | Total=0.0199 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0018 | KL=0.0155 | Con=9.5412 | Total=0.0173 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0016 | KL=0.0140 | Con=9.5417 | Total=0.0156 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0014 | KL=0.0128 | Con=9.5422 | Total=0.0142 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0014 | KL=0.0121 | Con=9.5402 | Total=0.0136 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0013 | KL=0.0117 | Con=9.5422 | Total=0.0130 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0012 | KL=0.0110 | Con=9.5411 | Total=0.0122 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0011 | KL=0.0103 | Con=9.5406 | Total=0.0115 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0011 | KL=0.0099 | Con=9.5413 | Total=0.0110 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0010 | KL=0.0095 | Con=9.5415 | Total=0.0105 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0010 | KL=0.0095 | Con=9.5424 | Total=0.0105 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0009 | KL=0.0089 | Con=9.5405 | Total=0.0098 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0009 | KL=0.0089 | Con=9.5439 | Total=0.0099 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0009 | KL=0.0085 | Con=9.5443 | Total=0.0094 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0008 | KL=0.0080 | Con=9.5451 | Total=0.0088 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0008 | KL=0.0082 | Con=9.5528 | Total=0.0090 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0007 | KL=0.0078 | Con=9.5516 | Total=0.0085 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0007 | KL=0.0080 | Con=9.5696 | Total=0.0087 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0006 | KL=0.0073 | Con=9.5634 | Total=0.0080 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0006 | KL=0.0072 | Con=9.5724 | Total=0.0078 | ValF1@0.5=0.4986
+Ep 230 | Focal=0.0006 | KL=0.0072 | Con=9.5916 | Total=0.0078 | ValF1@0.5=0.4986
+Ep 240 | Focal=0.0005 | KL=0.0068 | Con=9.6076 | Total=0.0074 | ValF1@0.5=0.6099
+Ep 250 | Focal=0.0005 | KL=0.0066 | Con=9.6195 | Total=0.0071 | ValF1@0.5=0.6349
+Ep 260 | Focal=0.0005 | KL=0.0066 | Con=9.6412 | Total=0.0071 | ValF1@0.5=0.7071
+Ep 270 | Focal=0.0006 | KL=0.0065 | Con=9.6549 | Total=0.0070 | ValF1@0.5=0.6909
+Ep 280 | Focal=0.0004 | KL=0.0061 | Con=9.6457 | Total=0.0065 | ValF1@0.5=0.6594
+Ep 290 | Focal=0.0005 | KL=0.0061 | Con=9.6523 | Total=0.0065 | ValF1@0.5=0.6837
+Ep 300 | Focal=0.0004 | KL=0.0057 | Con=9.6356 | Total=0.0061 | ValF1@0.5=0.7054
+Ep 310 | Focal=0.0005 | KL=0.0057 | Con=9.6614 | Total=0.0061 | ValF1@0.5=0.6349
+Ep 320 | Focal=0.0004 | KL=0.0055 | Con=9.6436 | Total=0.0059 | ValF1@0.5=0.6726
+Ep 330 | Focal=0.0004 | KL=0.0053 | Con=9.6592 | Total=0.0057 | ValF1@0.5=0.6987
+Ep 340 | Focal=0.0004 | KL=0.0053 | Con=9.6457 | Total=0.0057 | ValF1@0.5=0.6415
+Ep 350 | Focal=0.0003 | KL=0.0048 | Con=9.6532 | Total=0.0051 | ValF1@0.5=0.6039
+Ep 360 | Focal=0.0003 | KL=0.0049 | Con=9.6336 | Total=0.0052 | ValF1@0.5=0.6893
+Ep 370 | Focal=0.0003 | KL=0.0049 | Con=9.6493 | Total=0.0052 | ValF1@0.5=0.5541
+Ep 380 | Focal=0.0004 | KL=0.0048 | Con=9.6494 | Total=0.0051 | ValF1@0.5=0.6039
+Ep 390 | Focal=0.0004 | KL=0.0047 | Con=9.6534 | Total=0.0051 | ValF1@0.5=0.7489
+Ep 400 | Focal=0.0004 | KL=0.0046 | Con=9.6417 | Total=0.0049 | ValF1@0.5=0.6488
+
+[OK] Load best model by ValF1@0.5=0.7489
+
+[VAL] best threshold=0.470, best macroF1=0.7790
+
+================ TRAIN ================
+Threshold: 0.470
+Accuracy : 0.9968
+Macro-F1 : 0.8182 (Class0: 0.9984, Class1: 0.6379)
+AUC      : 0.9931
+MCC      : 0.6379
+G-Mean   : 0.7720
+Sensitivity: 0.5968
+Specificity: 0.9987
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9981    0.9987    0.9984     13123
+           1     0.6852    0.5968    0.6379        62
+
+    accuracy                         0.9968     13185
+   macro avg     0.8416    0.7977    0.8182     13185
+weighted avg     0.9966    0.9968    0.9967     13185
+
+
+================ VAL ================
+Threshold: 0.470
+Accuracy : 0.9961
+Macro-F1 : 0.7790 (Class0: 0.9980, Class1: 0.5600)
+AUC      : 0.9577
+MCC      : 0.5817
+G-Mean   : 0.6612
+Sensitivity: 0.4375
+Specificity: 0.9993
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9968    0.9993    0.9980      2810
+           1     0.7778    0.4375    0.5600        16
+
+    accuracy                         0.9961      2826
+   macro avg     0.8873    0.7184    0.7790      2826
+weighted avg     0.9956    0.9961    0.9956      2826
+
+
+================ TEST ================
+Threshold: 0.470
+Accuracy : 0.9929
+Macro-F1 : 0.4982 (Class0: 0.9964, Class1: 0.0000)
+AUC      : 0.9453
+MCC      : -0.0036
+G-Mean   : 0.0000
+Sensitivity: 0.0000
+Specificity: 0.9964
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9964    0.9964    0.9964      2815
+           1     0.0000    0.0000    0.0000        10
+
+    accuracy                         0.9929      2825
+   macro avg     0.4982    0.4982    0.4982      2825
+weighted avg     0.9929    0.9929    0.9929      2825
+
+
+================================================================================
+ RUN 16/30 (Seed=15)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0036 | KL=0.0477 | Con=9.5591 | Total=0.0514 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0023 | KL=0.0223 | Con=9.5477 | Total=0.0246 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0021 | KL=0.0184 | Con=9.5427 | Total=0.0205 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0018 | KL=0.0158 | Con=9.5400 | Total=0.0176 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0017 | KL=0.0142 | Con=9.5384 | Total=0.0159 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0014 | KL=0.0130 | Con=9.5393 | Total=0.0144 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0014 | KL=0.0123 | Con=9.5381 | Total=0.0137 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0013 | KL=0.0116 | Con=9.5373 | Total=0.0129 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0012 | KL=0.0109 | Con=9.5374 | Total=0.0121 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0012 | KL=0.0106 | Con=9.5375 | Total=0.0118 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0011 | KL=0.0101 | Con=9.5386 | Total=0.0112 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0010 | KL=0.0095 | Con=9.5362 | Total=0.0105 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0010 | KL=0.0093 | Con=9.5372 | Total=0.0102 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0010 | KL=0.0092 | Con=9.5398 | Total=0.0102 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0008 | KL=0.0086 | Con=9.5386 | Total=0.0094 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0008 | KL=0.0084 | Con=9.5368 | Total=0.0092 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0007 | KL=0.0082 | Con=9.5395 | Total=0.0089 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0007 | KL=0.0080 | Con=9.5395 | Total=0.0087 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0008 | KL=0.0083 | Con=9.5429 | Total=0.0091 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0007 | KL=0.0080 | Con=9.5474 | Total=0.0088 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0006 | KL=0.0074 | Con=9.5480 | Total=0.0081 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0006 | KL=0.0072 | Con=9.5404 | Total=0.0078 | ValF1@0.5=0.4986
+Ep 230 | Focal=0.0006 | KL=0.0071 | Con=9.5462 | Total=0.0077 | ValF1@0.5=0.4986
+Ep 240 | Focal=0.0006 | KL=0.0069 | Con=9.5652 | Total=0.0075 | ValF1@0.5=0.4986
+Ep 250 | Focal=0.0006 | KL=0.0070 | Con=9.5713 | Total=0.0076 | ValF1@0.5=0.4986
+Ep 260 | Focal=0.0006 | KL=0.0069 | Con=9.5701 | Total=0.0074 | ValF1@0.5=0.4986
+Ep 270 | Focal=0.0005 | KL=0.0065 | Con=9.5889 | Total=0.0070 | ValF1@0.5=0.5575
+Ep 280 | Focal=0.0005 | KL=0.0066 | Con=9.6121 | Total=0.0072 | ValF1@0.5=0.6909
+Ep 290 | Focal=0.0005 | KL=0.0063 | Con=9.6483 | Total=0.0068 | ValF1@0.5=0.6099
+Ep 300 | Focal=0.0005 | KL=0.0064 | Con=9.6397 | Total=0.0069 | ValF1@0.5=0.7129
+Ep 310 | Focal=0.0005 | KL=0.0061 | Con=9.6491 | Total=0.0066 | ValF1@0.5=0.5937
+Ep 320 | Focal=0.0004 | KL=0.0056 | Con=9.6288 | Total=0.0060 | ValF1@0.5=0.6602
+Ep 330 | Focal=0.0004 | KL=0.0058 | Con=9.6607 | Total=0.0062 | ValF1@0.5=0.6909
+Ep 340 | Focal=0.0004 | KL=0.0055 | Con=9.6349 | Total=0.0059 | ValF1@0.5=0.6289
+Ep 350 | Focal=0.0004 | KL=0.0053 | Con=9.6399 | Total=0.0057 | ValF1@0.5=0.6361
+Ep 360 | Focal=0.0004 | KL=0.0053 | Con=9.6630 | Total=0.0057 | ValF1@0.5=0.7162
+Ep 370 | Focal=0.0004 | KL=0.0053 | Con=9.6430 | Total=0.0057 | ValF1@0.5=0.7209
+Ep 380 | Focal=0.0004 | KL=0.0053 | Con=9.6234 | Total=0.0057 | ValF1@0.5=0.7104
+Ep 390 | Focal=0.0004 | KL=0.0051 | Con=9.6440 | Total=0.0054 | ValF1@0.5=0.5459
+Ep 400 | Focal=0.0004 | KL=0.0050 | Con=9.6464 | Total=0.0053 | ValF1@0.5=0.6585
+
+[OK] Load best model by ValF1@0.5=0.7209
+
+[VAL] best threshold=0.510, best macroF1=0.7295
+
+================ TRAIN ================
+Threshold: 0.510
+Accuracy : 0.9969
+Macro-F1 : 0.8145 (Class0: 0.9984, Class1: 0.6306)
+AUC      : 0.9930
+MCC      : 0.6335
+G-Mean   : 0.7509
+Sensitivity: 0.5645
+Specificity: 0.9989
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9979    0.9989    0.9984     13123
+           1     0.7143    0.5645    0.6306        62
+
+    accuracy                         0.9969     13185
+   macro avg     0.8561    0.7817    0.8145     13185
+weighted avg     0.9966    0.9969    0.9967     13185
+
+
+================ VAL ================
+Threshold: 0.510
+Accuracy : 0.9950
+Macro-F1 : 0.7295 (Class0: 0.9975, Class1: 0.4615)
+AUC      : 0.9592
+MCC      : 0.4720
+G-Mean   : 0.6119
+Sensitivity: 0.3750
+Specificity: 0.9986
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9964    0.9986    0.9975      2810
+           1     0.6000    0.3750    0.4615        16
+
+    accuracy                         0.9950      2826
+   macro avg     0.7982    0.6868    0.7295      2826
+weighted avg     0.9942    0.9950    0.9945      2826
+
+
+================ TEST ================
+Threshold: 0.510
+Accuracy : 0.9950
+Macro-F1 : 0.5613 (Class0: 0.9975, Class1: 0.1250)
+AUC      : 0.9367
+MCC      : 0.1267
+G-Mean   : 0.3159
+Sensitivity: 0.1000
+Specificity: 0.9982
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9968    0.9982    0.9975      2815
+           1     0.1667    0.1000    0.1250        10
+
+    accuracy                         0.9950      2825
+   macro avg     0.5817    0.5491    0.5613      2825
+weighted avg     0.9939    0.9950    0.9944      2825
+
+
+================================================================================
+ RUN 17/30 (Seed=16)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0040 | KL=0.0480 | Con=9.5527 | Total=0.0519 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0027 | KL=0.0236 | Con=9.5442 | Total=0.0263 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0020 | KL=0.0198 | Con=9.5436 | Total=0.0218 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0019 | KL=0.0163 | Con=9.5400 | Total=0.0182 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0016 | KL=0.0139 | Con=9.5411 | Total=0.0154 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0015 | KL=0.0129 | Con=9.5416 | Total=0.0144 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0014 | KL=0.0119 | Con=9.5419 | Total=0.0133 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0012 | KL=0.0110 | Con=9.5410 | Total=0.0122 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0012 | KL=0.0108 | Con=9.5428 | Total=0.0120 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0010 | KL=0.0099 | Con=9.5398 | Total=0.0109 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0010 | KL=0.0101 | Con=9.5426 | Total=0.0111 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0010 | KL=0.0098 | Con=9.5399 | Total=0.0108 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0010 | KL=0.0097 | Con=9.5436 | Total=0.0107 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0009 | KL=0.0091 | Con=9.5409 | Total=0.0100 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0008 | KL=0.0087 | Con=9.5420 | Total=0.0095 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0008 | KL=0.0085 | Con=9.5447 | Total=0.0093 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0008 | KL=0.0085 | Con=9.5436 | Total=0.0093 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0008 | KL=0.0083 | Con=9.5394 | Total=0.0091 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0008 | KL=0.0082 | Con=9.5425 | Total=0.0090 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0006 | KL=0.0078 | Con=9.5436 | Total=0.0084 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0007 | KL=0.0077 | Con=9.5476 | Total=0.0084 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0006 | KL=0.0071 | Con=9.5471 | Total=0.0077 | ValF1@0.5=0.5937
+Ep 230 | Focal=0.0006 | KL=0.0070 | Con=9.5455 | Total=0.0075 | ValF1@0.5=0.6289
+Ep 240 | Focal=0.0006 | KL=0.0073 | Con=9.5548 | Total=0.0079 | ValF1@0.5=0.6415
+Ep 250 | Focal=0.0006 | KL=0.0073 | Con=9.5511 | Total=0.0079 | ValF1@0.5=0.7162
+Ep 260 | Focal=0.0005 | KL=0.0067 | Con=9.5588 | Total=0.0073 | ValF1@0.5=0.6726
+Ep 270 | Focal=0.0005 | KL=0.0068 | Con=9.5503 | Total=0.0073 | ValF1@0.5=0.6726
+Ep 280 | Focal=0.0005 | KL=0.0066 | Con=9.5554 | Total=0.0071 | ValF1@0.5=0.7295
+Ep 290 | Focal=0.0005 | KL=0.0066 | Con=9.5626 | Total=0.0071 | ValF1@0.5=0.6837
+Ep 300 | Focal=0.0004 | KL=0.0062 | Con=9.5565 | Total=0.0067 | ValF1@0.5=0.7488
+Ep 310 | Focal=0.0005 | KL=0.0062 | Con=9.5566 | Total=0.0067 | ValF1@0.5=0.7071
+Ep 320 | Focal=0.0005 | KL=0.0062 | Con=9.5667 | Total=0.0066 | ValF1@0.5=0.7295
+Ep 330 | Focal=0.0005 | KL=0.0063 | Con=9.5636 | Total=0.0068 | ValF1@0.5=0.6349
+Ep 340 | Focal=0.0005 | KL=0.0062 | Con=9.5810 | Total=0.0066 | ValF1@0.5=0.5937
+Ep 350 | Focal=0.0004 | KL=0.0059 | Con=9.5769 | Total=0.0064 | ValF1@0.5=0.6909
+Ep 360 | Focal=0.0004 | KL=0.0058 | Con=9.5834 | Total=0.0062 | ValF1@0.5=0.6349
+Ep 370 | Focal=0.0004 | KL=0.0057 | Con=9.5901 | Total=0.0061 | ValF1@0.5=0.5893
+Ep 380 | Focal=0.0004 | KL=0.0058 | Con=9.5930 | Total=0.0062 | ValF1@0.5=0.7129
+Ep 390 | Focal=0.0004 | KL=0.0058 | Con=9.6007 | Total=0.0062 | ValF1@0.5=0.7319
+Ep 400 | Focal=0.0004 | KL=0.0055 | Con=9.6040 | Total=0.0059 | ValF1@0.5=0.7071
+
+[OK] Load best model by ValF1@0.5=0.7488
+
+[VAL] best threshold=0.490, best macroF1=0.7488
+
+================ TRAIN ================
+Threshold: 0.490
+Accuracy : 0.9958
+Macro-F1 : 0.7754 (Class0: 0.9979, Class1: 0.5528)
+AUC      : 0.9911
+MCC      : 0.5508
+G-Mean   : 0.7398
+Sensitivity: 0.5484
+Specificity: 0.9979
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9979    0.9979    0.9979     13123
+           1     0.5574    0.5484    0.5528        62
+
+    accuracy                         0.9958     13185
+   macro avg     0.7776    0.7732    0.7754     13185
+weighted avg     0.9958    0.9958    0.9958     13185
+
+
+================ VAL ================
+Threshold: 0.490
+Accuracy : 0.9950
+Macro-F1 : 0.7488 (Class0: 0.9975, Class1: 0.5000)
+AUC      : 0.9578
+MCC      : 0.5028
+G-Mean   : 0.6608
+Sensitivity: 0.4375
+Specificity: 0.9982
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9968    0.9982    0.9975      2810
+           1     0.5833    0.4375    0.5000        16
+
+    accuracy                         0.9950      2826
+   macro avg     0.7901    0.7179    0.7488      2826
+weighted avg     0.9945    0.9950    0.9947      2826
+
+
+================ TEST ================
+Threshold: 0.490
+Accuracy : 0.9936
+Macro-F1 : 0.4984 (Class0: 0.9968, Class1: 0.0000)
+AUC      : 0.9312
+MCC      : -0.0032
+G-Mean   : 0.0000
+Sensitivity: 0.0000
+Specificity: 0.9972
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9965    0.9972    0.9968      2815
+           1     0.0000    0.0000    0.0000        10
+
+    accuracy                         0.9936      2825
+   macro avg     0.4982    0.4986    0.4984      2825
+weighted avg     0.9929    0.9936    0.9933      2825
+
+
+================================================================================
+ RUN 18/30 (Seed=17)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0041 | KL=0.0461 | Con=9.5510 | Total=0.0502 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0024 | KL=0.0216 | Con=9.5483 | Total=0.0240 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0020 | KL=0.0185 | Con=9.5456 | Total=0.0205 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0019 | KL=0.0156 | Con=9.5417 | Total=0.0175 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0016 | KL=0.0137 | Con=9.5414 | Total=0.0153 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0015 | KL=0.0131 | Con=9.5429 | Total=0.0147 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0014 | KL=0.0120 | Con=9.5412 | Total=0.0134 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0014 | KL=0.0117 | Con=9.5416 | Total=0.0131 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0012 | KL=0.0110 | Con=9.5407 | Total=0.0122 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0011 | KL=0.0102 | Con=9.5391 | Total=0.0113 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0010 | KL=0.0099 | Con=9.5389 | Total=0.0109 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0009 | KL=0.0094 | Con=9.5393 | Total=0.0103 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0009 | KL=0.0094 | Con=9.5392 | Total=0.0104 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0009 | KL=0.0089 | Con=9.5386 | Total=0.0098 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0008 | KL=0.0084 | Con=9.5397 | Total=0.0092 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0008 | KL=0.0085 | Con=9.5392 | Total=0.0093 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0007 | KL=0.0079 | Con=9.5378 | Total=0.0086 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0007 | KL=0.0077 | Con=9.5400 | Total=0.0084 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0007 | KL=0.0077 | Con=9.5405 | Total=0.0084 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0007 | KL=0.0076 | Con=9.5452 | Total=0.0083 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0006 | KL=0.0072 | Con=9.5400 | Total=0.0078 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0006 | KL=0.0072 | Con=9.5441 | Total=0.0079 | ValF1@0.5=0.5575
+Ep 230 | Focal=0.0006 | KL=0.0071 | Con=9.5444 | Total=0.0077 | ValF1@0.5=0.5575
+Ep 240 | Focal=0.0006 | KL=0.0072 | Con=9.5508 | Total=0.0078 | ValF1@0.5=0.6806
+Ep 250 | Focal=0.0006 | KL=0.0068 | Con=9.5495 | Total=0.0074 | ValF1@0.5=0.6806
+Ep 260 | Focal=0.0005 | KL=0.0066 | Con=9.5605 | Total=0.0071 | ValF1@0.5=0.5937
+Ep 270 | Focal=0.0005 | KL=0.0065 | Con=9.5623 | Total=0.0070 | ValF1@0.5=0.7295
+Ep 280 | Focal=0.0005 | KL=0.0065 | Con=9.5510 | Total=0.0069 | ValF1@0.5=0.5893
+Ep 290 | Focal=0.0006 | KL=0.0067 | Con=9.5724 | Total=0.0072 | ValF1@0.5=0.6909
+Ep 300 | Focal=0.0005 | KL=0.0064 | Con=9.5773 | Total=0.0069 | ValF1@0.5=0.7071
+Ep 310 | Focal=0.0005 | KL=0.0061 | Con=9.5902 | Total=0.0066 | ValF1@0.5=0.6289
+Ep 320 | Focal=0.0005 | KL=0.0062 | Con=9.5995 | Total=0.0067 | ValF1@0.5=0.6488
+Ep 330 | Focal=0.0005 | KL=0.0061 | Con=9.6006 | Total=0.0065 | ValF1@0.5=0.6726
+Ep 340 | Focal=0.0004 | KL=0.0058 | Con=9.6140 | Total=0.0063 | ValF1@0.5=0.6909
+Ep 350 | Focal=0.0004 | KL=0.0054 | Con=9.6052 | Total=0.0058 | ValF1@0.5=0.6649
+Ep 360 | Focal=0.0004 | KL=0.0057 | Con=9.6281 | Total=0.0061 | ValF1@0.5=0.6987
+Ep 370 | Focal=0.0004 | KL=0.0054 | Con=9.6116 | Total=0.0058 | ValF1@0.5=0.6806
+Ep 380 | Focal=0.0004 | KL=0.0052 | Con=9.6107 | Total=0.0056 | ValF1@0.5=0.6349
+Ep 390 | Focal=0.0004 | KL=0.0051 | Con=9.6069 | Total=0.0055 | ValF1@0.5=0.5541
+Ep 400 | Focal=0.0003 | KL=0.0048 | Con=9.6094 | Total=0.0051 | ValF1@0.5=0.4985
+
+[OK] Load best model by ValF1@0.5=0.7295
+
+[VAL] best threshold=0.480, best macroF1=0.7319
+
+================ TRAIN ================
+Threshold: 0.480
+Accuracy : 0.9941
+Macro-F1 : 0.7548 (Class0: 0.9970, Class1: 0.5125)
+AUC      : 0.9902
+MCC      : 0.5233
+G-Mean   : 0.8114
+Sensitivity: 0.6613
+Specificity: 0.9957
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9984    0.9957    0.9970     13123
+           1     0.4184    0.6613    0.5125        62
+
+    accuracy                         0.9941     13185
+   macro avg     0.7084    0.8285    0.7548     13185
+weighted avg     0.9957    0.9941    0.9947     13185
+
+
+================ VAL ================
+Threshold: 0.480
+Accuracy : 0.9943
+Macro-F1 : 0.7319 (Class0: 0.9972, Class1: 0.4667)
+AUC      : 0.9572
+MCC      : 0.4649
+G-Mean   : 0.6606
+Sensitivity: 0.4375
+Specificity: 0.9975
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9968    0.9975    0.9972      2810
+           1     0.5000    0.4375    0.4667        16
+
+    accuracy                         0.9943      2826
+   macro avg     0.7484    0.7175    0.7319      2826
+weighted avg     0.9940    0.9943    0.9942      2826
+
+
+================ TEST ================
+Threshold: 0.480
+Accuracy : 0.9908
+Macro-F1 : 0.5334 (Class0: 0.9954, Class1: 0.0714)
+AUC      : 0.9217
+MCC      : 0.0701
+G-Mean   : 0.3153
+Sensitivity: 0.1000
+Specificity: 0.9940
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9968    0.9940    0.9954      2815
+           1     0.0556    0.1000    0.0714        10
+
+    accuracy                         0.9908      2825
+   macro avg     0.5262    0.5470    0.5334      2825
+weighted avg     0.9935    0.9908    0.9921      2825
+
+
+================================================================================
+ RUN 19/30 (Seed=18)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0039 | KL=0.0509 | Con=9.5499 | Total=0.0548 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0025 | KL=0.0226 | Con=9.5427 | Total=0.0251 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0020 | KL=0.0176 | Con=9.5381 | Total=0.0195 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0018 | KL=0.0158 | Con=9.5387 | Total=0.0176 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0016 | KL=0.0137 | Con=9.5374 | Total=0.0154 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0014 | KL=0.0127 | Con=9.5397 | Total=0.0141 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0014 | KL=0.0123 | Con=9.5401 | Total=0.0138 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0012 | KL=0.0111 | Con=9.5397 | Total=0.0123 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0012 | KL=0.0108 | Con=9.5424 | Total=0.0120 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0011 | KL=0.0105 | Con=9.5411 | Total=0.0117 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0010 | KL=0.0099 | Con=9.5419 | Total=0.0109 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0010 | KL=0.0096 | Con=9.5407 | Total=0.0105 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0009 | KL=0.0092 | Con=9.5417 | Total=0.0102 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0008 | KL=0.0087 | Con=9.5436 | Total=0.0095 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0009 | KL=0.0086 | Con=9.5481 | Total=0.0095 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0008 | KL=0.0085 | Con=9.5475 | Total=0.0094 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0008 | KL=0.0084 | Con=9.5572 | Total=0.0092 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0008 | KL=0.0082 | Con=9.5551 | Total=0.0090 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0007 | KL=0.0078 | Con=9.5599 | Total=0.0085 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0007 | KL=0.0078 | Con=9.5592 | Total=0.0086 | ValF1@0.5=0.6099
+Ep 210 | Focal=0.0007 | KL=0.0076 | Con=9.5714 | Total=0.0082 | ValF1@0.5=0.6488
+Ep 220 | Focal=0.0006 | KL=0.0072 | Con=9.5574 | Total=0.0077 | ValF1@0.5=0.6567
+Ep 230 | Focal=0.0006 | KL=0.0072 | Con=9.5685 | Total=0.0078 | ValF1@0.5=0.6893
+Ep 240 | Focal=0.0006 | KL=0.0070 | Con=9.5850 | Total=0.0076 | ValF1@0.5=0.6652
+Ep 250 | Focal=0.0006 | KL=0.0069 | Con=9.5818 | Total=0.0074 | ValF1@0.5=0.6987
+Ep 260 | Focal=0.0006 | KL=0.0068 | Con=9.5968 | Total=0.0074 | ValF1@0.5=0.5986
+Ep 270 | Focal=0.0006 | KL=0.0068 | Con=9.6217 | Total=0.0074 | ValF1@0.5=0.5986
+Ep 280 | Focal=0.0006 | KL=0.0068 | Con=9.6027 | Total=0.0073 | ValF1@0.5=0.7071
+Ep 290 | Focal=0.0005 | KL=0.0064 | Con=9.6183 | Total=0.0069 | ValF1@0.5=0.7041
+Ep 300 | Focal=0.0006 | KL=0.0065 | Con=9.6314 | Total=0.0070 | ValF1@0.5=0.6871
+Ep 310 | Focal=0.0005 | KL=0.0063 | Con=9.6234 | Total=0.0068 | ValF1@0.5=0.7054
+Ep 320 | Focal=0.0004 | KL=0.0059 | Con=9.6237 | Total=0.0063 | ValF1@0.5=0.6925
+Ep 330 | Focal=0.0004 | KL=0.0059 | Con=9.6377 | Total=0.0063 | ValF1@0.5=0.7129
+Ep 340 | Focal=0.0004 | KL=0.0057 | Con=9.6178 | Total=0.0061 | ValF1@0.5=0.7071
+Ep 350 | Focal=0.0004 | KL=0.0056 | Con=9.6386 | Total=0.0061 | ValF1@0.5=0.7171
+Ep 360 | Focal=0.0004 | KL=0.0056 | Con=9.6594 | Total=0.0060 | ValF1@0.5=0.6925
+Ep 370 | Focal=0.0005 | KL=0.0056 | Con=9.6526 | Total=0.0061 | ValF1@0.5=0.6919
+Ep 380 | Focal=0.0004 | KL=0.0055 | Con=9.6603 | Total=0.0060 | ValF1@0.5=0.6925
+Ep 390 | Focal=0.0003 | KL=0.0050 | Con=9.6245 | Total=0.0053 | ValF1@0.5=0.7129
+Ep 400 | Focal=0.0004 | KL=0.0053 | Con=9.6376 | Total=0.0057 | ValF1@0.5=0.6987
+
+[OK] Load best model by ValF1@0.5=0.7171
+
+[VAL] best threshold=0.560, best macroF1=0.7295
+
+================ TRAIN ================
+Threshold: 0.560
+Accuracy : 0.9963
+Macro-F1 : 0.7999 (Class0: 0.9981, Class1: 0.6016)
+AUC      : 0.9939
+MCC      : 0.5998
+G-Mean   : 0.7718
+Sensitivity: 0.5968
+Specificity: 0.9982
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9981    0.9982    0.9981     13123
+           1     0.6066    0.5968    0.6016        62
+
+    accuracy                         0.9963     13185
+   macro avg     0.8023    0.7975    0.7999     13185
+weighted avg     0.9963    0.9963    0.9963     13185
+
+
+================ VAL ================
+Threshold: 0.560
+Accuracy : 0.9950
+Macro-F1 : 0.7295 (Class0: 0.9975, Class1: 0.4615)
+AUC      : 0.9623
+MCC      : 0.4720
+G-Mean   : 0.6119
+Sensitivity: 0.3750
+Specificity: 0.9986
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9964    0.9986    0.9975      2810
+           1     0.6000    0.3750    0.4615        16
+
+    accuracy                         0.9950      2826
+   macro avg     0.7982    0.6868    0.7295      2826
+weighted avg     0.9942    0.9950    0.9945      2826
+
+
+================ TEST ================
+Threshold: 0.560
+Accuracy : 0.9936
+Macro-F1 : 0.5484 (Class0: 0.9968, Class1: 0.1000)
+AUC      : 0.9508
+MCC      : 0.0968
+G-Mean   : 0.3157
+Sensitivity: 0.1000
+Specificity: 0.9968
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9968    0.9968    0.9968      2815
+           1     0.1000    0.1000    0.1000        10
+
+    accuracy                         0.9936      2825
+   macro avg     0.5484    0.5484    0.5484      2825
+weighted avg     0.9936    0.9936    0.9936      2825
+
+
+================================================================================
+ RUN 20/30 (Seed=19)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0034 | KL=0.0759 | Con=9.5776 | Total=0.0793 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0030 | KL=0.0233 | Con=9.5414 | Total=0.0263 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0020 | KL=0.0192 | Con=9.5454 | Total=0.0211 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0020 | KL=0.0161 | Con=9.5399 | Total=0.0181 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0016 | KL=0.0146 | Con=9.5430 | Total=0.0162 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0016 | KL=0.0135 | Con=9.5427 | Total=0.0151 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0015 | KL=0.0128 | Con=9.5440 | Total=0.0142 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0014 | KL=0.0120 | Con=9.5440 | Total=0.0134 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0012 | KL=0.0112 | Con=9.5443 | Total=0.0124 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0013 | KL=0.0113 | Con=9.5444 | Total=0.0125 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0011 | KL=0.0104 | Con=9.5428 | Total=0.0115 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0009 | KL=0.0095 | Con=9.5424 | Total=0.0105 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0010 | KL=0.0095 | Con=9.5431 | Total=0.0104 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0008 | KL=0.0089 | Con=9.5427 | Total=0.0098 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0009 | KL=0.0087 | Con=9.5433 | Total=0.0096 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0009 | KL=0.0087 | Con=9.5426 | Total=0.0096 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0008 | KL=0.0085 | Con=9.5431 | Total=0.0093 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0007 | KL=0.0078 | Con=9.5445 | Total=0.0084 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0007 | KL=0.0075 | Con=9.5411 | Total=0.0082 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0007 | KL=0.0078 | Con=9.5491 | Total=0.0085 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0007 | KL=0.0075 | Con=9.5443 | Total=0.0082 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0007 | KL=0.0075 | Con=9.5519 | Total=0.0081 | ValF1@0.5=0.4986
+Ep 230 | Focal=0.0006 | KL=0.0071 | Con=9.5477 | Total=0.0077 | ValF1@0.5=0.5575
+Ep 240 | Focal=0.0007 | KL=0.0073 | Con=9.5586 | Total=0.0080 | ValF1@0.5=0.4986
+Ep 250 | Focal=0.0006 | KL=0.0069 | Con=9.5498 | Total=0.0075 | ValF1@0.5=0.5575
+Ep 260 | Focal=0.0005 | KL=0.0067 | Con=9.5512 | Total=0.0072 | ValF1@0.5=0.5575
+Ep 270 | Focal=0.0005 | KL=0.0068 | Con=9.5495 | Total=0.0073 | ValF1@0.5=0.5575
+Ep 280 | Focal=0.0005 | KL=0.0066 | Con=9.5521 | Total=0.0071 | ValF1@0.5=0.5541
+Ep 290 | Focal=0.0006 | KL=0.0068 | Con=9.5489 | Total=0.0074 | ValF1@0.5=0.4985
+Ep 300 | Focal=0.0005 | KL=0.0065 | Con=9.5574 | Total=0.0071 | ValF1@0.5=0.5484
+Ep 310 | Focal=0.0005 | KL=0.0064 | Con=9.5529 | Total=0.0069 | ValF1@0.5=0.6726
+Ep 320 | Focal=0.0004 | KL=0.0061 | Con=9.5535 | Total=0.0065 | ValF1@0.5=0.6349
+Ep 330 | Focal=0.0005 | KL=0.0063 | Con=9.5637 | Total=0.0068 | ValF1@0.5=0.6652
+Ep 340 | Focal=0.0005 | KL=0.0064 | Con=9.5684 | Total=0.0069 | ValF1@0.5=0.5986
+Ep 350 | Focal=0.0005 | KL=0.0063 | Con=9.5647 | Total=0.0068 | ValF1@0.5=0.6039
+Ep 360 | Focal=0.0005 | KL=0.0061 | Con=9.5691 | Total=0.0065 | ValF1@0.5=0.6039
+Ep 370 | Focal=0.0005 | KL=0.0060 | Con=9.5791 | Total=0.0065 | ValF1@0.5=0.5986
+Ep 380 | Focal=0.0004 | KL=0.0059 | Con=9.5741 | Total=0.0064 | ValF1@0.5=0.5541
+Ep 390 | Focal=0.0004 | KL=0.0059 | Con=9.5786 | Total=0.0063 | ValF1@0.5=0.5575
+Ep 400 | Focal=0.0004 | KL=0.0057 | Con=9.5862 | Total=0.0061 | ValF1@0.5=0.5541
+
+[OK] Load best model by ValF1@0.5=0.6726
+
+[VAL] best threshold=0.390, best macroF1=0.7409
+
+================ TRAIN ================
+Threshold: 0.390
+Accuracy : 0.9935
+Macro-F1 : 0.7484 (Class0: 0.9967, Class1: 0.5000)
+AUC      : 0.9897
+MCC      : 0.5178
+G-Mean   : 0.8307
+Sensitivity: 0.6935
+Specificity: 0.9949
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9985    0.9949    0.9967     13123
+           1     0.3909    0.6935    0.5000        62
+
+    accuracy                         0.9935     13185
+   macro avg     0.6947    0.8442    0.7484     13185
+weighted avg     0.9957    0.9935    0.9944     13185
+
+
+================ VAL ================
+Threshold: 0.390
+Accuracy : 0.9940
+Macro-F1 : 0.7409 (Class0: 0.9970, Class1: 0.4848)
+AUC      : 0.9608
+MCC      : 0.4820
+G-Mean   : 0.7060
+Sensitivity: 0.5000
+Specificity: 0.9968
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9972    0.9968    0.9970      2810
+           1     0.4706    0.5000    0.4848        16
+
+    accuracy                         0.9940      2826
+   macro avg     0.7339    0.7484    0.7409      2826
+weighted avg     0.9942    0.9940    0.9941      2826
+
+
+================ TEST ================
+Threshold: 0.390
+Accuracy : 0.9890
+Macro-F1 : 0.5275 (Class0: 0.9945, Class1: 0.0606)
+AUC      : 0.9459
+MCC      : 0.0609
+G-Mean   : 0.3150
+Sensitivity: 0.1000
+Specificity: 0.9922
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9968    0.9922    0.9945      2815
+           1     0.0435    0.1000    0.0606        10
+
+    accuracy                         0.9890      2825
+   macro avg     0.5201    0.5461    0.5275      2825
+weighted avg     0.9934    0.9890    0.9912      2825
+
+
+================================================================================
+ RUN 21/30 (Seed=20)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0041 | KL=0.0481 | Con=9.5524 | Total=0.0521 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0025 | KL=0.0221 | Con=9.5493 | Total=0.0246 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0020 | KL=0.0185 | Con=9.5488 | Total=0.0205 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0019 | KL=0.0158 | Con=9.5440 | Total=0.0177 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0015 | KL=0.0135 | Con=9.5443 | Total=0.0150 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0015 | KL=0.0129 | Con=9.5458 | Total=0.0144 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0014 | KL=0.0121 | Con=9.5456 | Total=0.0135 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0014 | KL=0.0119 | Con=9.5488 | Total=0.0133 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0013 | KL=0.0109 | Con=9.5461 | Total=0.0121 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0011 | KL=0.0104 | Con=9.5448 | Total=0.0115 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0010 | KL=0.0097 | Con=9.5453 | Total=0.0108 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0009 | KL=0.0093 | Con=9.5457 | Total=0.0103 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0010 | KL=0.0094 | Con=9.5450 | Total=0.0104 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0009 | KL=0.0087 | Con=9.5412 | Total=0.0096 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0009 | KL=0.0088 | Con=9.5439 | Total=0.0097 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0008 | KL=0.0083 | Con=9.5429 | Total=0.0091 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0008 | KL=0.0082 | Con=9.5458 | Total=0.0090 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0007 | KL=0.0079 | Con=9.5478 | Total=0.0086 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0007 | KL=0.0080 | Con=9.5462 | Total=0.0088 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0007 | KL=0.0076 | Con=9.5617 | Total=0.0083 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0007 | KL=0.0076 | Con=9.5929 | Total=0.0082 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0006 | KL=0.0070 | Con=9.6474 | Total=0.0076 | ValF1@0.5=0.6488
+Ep 230 | Focal=0.0007 | KL=0.0071 | Con=9.6675 | Total=0.0077 | ValF1@0.5=0.6488
+Ep 240 | Focal=0.0005 | KL=0.0064 | Con=9.6622 | Total=0.0069 | ValF1@0.5=0.5986
+Ep 250 | Focal=0.0005 | KL=0.0063 | Con=9.6752 | Total=0.0068 | ValF1@0.5=0.5511
+Ep 260 | Focal=0.0005 | KL=0.0058 | Con=9.6499 | Total=0.0063 | ValF1@0.5=0.5937
+Ep 270 | Focal=0.0005 | KL=0.0056 | Con=9.6473 | Total=0.0061 | ValF1@0.5=0.5937
+Ep 280 | Focal=0.0004 | KL=0.0055 | Con=9.6415 | Total=0.0059 | ValF1@0.5=0.4986
+Ep 290 | Focal=0.0005 | KL=0.0056 | Con=9.6423 | Total=0.0060 | ValF1@0.5=0.4984
+Ep 300 | Focal=0.0005 | KL=0.0053 | Con=9.6653 | Total=0.0058 | ValF1@0.5=0.4986
+Ep 310 | Focal=0.0004 | KL=0.0049 | Con=9.6434 | Total=0.0054 | ValF1@0.5=0.4986
+Ep 320 | Focal=0.0004 | KL=0.0048 | Con=9.6261 | Total=0.0051 | ValF1@0.5=0.5575
+Ep 330 | Focal=0.0004 | KL=0.0049 | Con=9.6474 | Total=0.0053 | ValF1@0.5=0.6488
+Ep 340 | Focal=0.0004 | KL=0.0047 | Con=9.6405 | Total=0.0050 | ValF1@0.5=0.4985
+Ep 350 | Focal=0.0004 | KL=0.0045 | Con=9.6354 | Total=0.0048 | ValF1@0.5=0.6192
+Ep 360 | Focal=0.0003 | KL=0.0041 | Con=9.6072 | Total=0.0044 | ValF1@0.5=0.7104
+Ep 370 | Focal=0.0004 | KL=0.0045 | Con=9.6378 | Total=0.0049 | ValF1@0.5=0.4986
+Ep 380 | Focal=0.0003 | KL=0.0044 | Con=9.5872 | Total=0.0046 | ValF1@0.5=0.5575
+Ep 390 | Focal=0.0003 | KL=0.0041 | Con=9.6196 | Total=0.0044 | ValF1@0.5=0.6366
+Ep 400 | Focal=0.0003 | KL=0.0039 | Con=9.6090 | Total=0.0041 | ValF1@0.5=0.6652
+
+[OK] Load best model by ValF1@0.5=0.7104
+
+[VAL] best threshold=0.360, best macroF1=0.7204
+
+================ TRAIN ================
+Threshold: 0.360
+Accuracy : 0.9943
+Macro-F1 : 0.7793 (Class0: 0.9971, Class1: 0.5614)
+AUC      : 0.9924
+MCC      : 0.5814
+G-Mean   : 0.8778
+Sensitivity: 0.7742
+Specificity: 0.9954
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9989    0.9954    0.9971     13123
+           1     0.4404    0.7742    0.5614        62
+
+    accuracy                         0.9943     13185
+   macro avg     0.7196    0.8848    0.7793     13185
+weighted avg     0.9963    0.9943    0.9951     13185
+
+
+================ VAL ================
+Threshold: 0.360
+Accuracy : 0.9929
+Macro-F1 : 0.7204 (Class0: 0.9964, Class1: 0.4444)
+AUC      : 0.9656
+MCC      : 0.4437
+G-Mean   : 0.7056
+Sensitivity: 0.5000
+Specificity: 0.9957
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9971    0.9957    0.9964      2810
+           1     0.4000    0.5000    0.4444        16
+
+    accuracy                         0.9929      2826
+   macro avg     0.6986    0.7479    0.7204      2826
+weighted avg     0.9938    0.9929    0.9933      2826
+
+
+================ TEST ================
+Threshold: 0.360
+Accuracy : 0.9890
+Macro-F1 : 0.5783 (Class0: 0.9945, Class1: 0.1622)
+AUC      : 0.9472
+MCC      : 0.1779
+G-Mean   : 0.5454
+Sensitivity: 0.3000
+Specificity: 0.9915
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9975    0.9915    0.9945      2815
+           1     0.1111    0.3000    0.1622        10
+
+    accuracy                         0.9890      2825
+   macro avg     0.5543    0.6457    0.5783      2825
+weighted avg     0.9944    0.9890    0.9915      2825
+
+
+================================================================================
+ RUN 22/30 (Seed=21)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0039 | KL=0.0481 | Con=9.5487 | Total=0.0520 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0022 | KL=0.0207 | Con=9.5420 | Total=0.0229 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0022 | KL=0.0177 | Con=9.5409 | Total=0.0199 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0016 | KL=0.0149 | Con=9.5430 | Total=0.0165 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0015 | KL=0.0132 | Con=9.5393 | Total=0.0147 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0014 | KL=0.0124 | Con=9.5407 | Total=0.0138 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0014 | KL=0.0119 | Con=9.5406 | Total=0.0133 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0012 | KL=0.0109 | Con=9.5407 | Total=0.0121 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0012 | KL=0.0108 | Con=9.5406 | Total=0.0121 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0011 | KL=0.0102 | Con=9.5423 | Total=0.0113 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0010 | KL=0.0096 | Con=9.5396 | Total=0.0106 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0009 | KL=0.0091 | Con=9.5383 | Total=0.0100 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0010 | KL=0.0092 | Con=9.5410 | Total=0.0102 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0008 | KL=0.0084 | Con=9.5385 | Total=0.0091 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0008 | KL=0.0083 | Con=9.5402 | Total=0.0091 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0008 | KL=0.0081 | Con=9.5373 | Total=0.0088 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0007 | KL=0.0080 | Con=9.5414 | Total=0.0087 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0007 | KL=0.0077 | Con=9.5404 | Total=0.0083 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0007 | KL=0.0075 | Con=9.5415 | Total=0.0081 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0007 | KL=0.0076 | Con=9.5514 | Total=0.0084 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0006 | KL=0.0074 | Con=9.5451 | Total=0.0080 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0006 | KL=0.0072 | Con=9.5488 | Total=0.0078 | ValF1@0.5=0.4986
+Ep 230 | Focal=0.0006 | KL=0.0071 | Con=9.5500 | Total=0.0077 | ValF1@0.5=0.4986
+Ep 240 | Focal=0.0006 | KL=0.0068 | Con=9.5574 | Total=0.0074 | ValF1@0.5=0.4986
+Ep 250 | Focal=0.0006 | KL=0.0067 | Con=9.5653 | Total=0.0073 | ValF1@0.5=0.4986
+Ep 260 | Focal=0.0005 | KL=0.0066 | Con=9.5752 | Total=0.0071 | ValF1@0.5=0.4986
+Ep 270 | Focal=0.0006 | KL=0.0068 | Con=9.5845 | Total=0.0074 | ValF1@0.5=0.6099
+Ep 280 | Focal=0.0005 | KL=0.0064 | Con=9.5956 | Total=0.0069 | ValF1@0.5=0.6099
+Ep 290 | Focal=0.0005 | KL=0.0062 | Con=9.6084 | Total=0.0067 | ValF1@0.5=0.5575
+Ep 300 | Focal=0.0005 | KL=0.0062 | Con=9.6168 | Total=0.0067 | ValF1@0.5=0.7071
+Ep 310 | Focal=0.0005 | KL=0.0062 | Con=9.6413 | Total=0.0066 | ValF1@0.5=0.6415
+Ep 320 | Focal=0.0005 | KL=0.0059 | Con=9.6366 | Total=0.0064 | ValF1@0.5=0.6039
+Ep 330 | Focal=0.0005 | KL=0.0059 | Con=9.6201 | Total=0.0064 | ValF1@0.5=0.6488
+Ep 340 | Focal=0.0004 | KL=0.0056 | Con=9.6242 | Total=0.0060 | ValF1@0.5=0.7388
+Ep 350 | Focal=0.0004 | KL=0.0056 | Con=9.6364 | Total=0.0060 | ValF1@0.5=0.6987
+Ep 360 | Focal=0.0004 | KL=0.0051 | Con=9.6400 | Total=0.0054 | ValF1@0.5=0.6909
+Ep 370 | Focal=0.0004 | KL=0.0052 | Con=9.6282 | Total=0.0056 | ValF1@0.5=0.4986
+Ep 380 | Focal=0.0004 | KL=0.0050 | Con=9.6452 | Total=0.0054 | ValF1@0.5=0.6039
+Ep 390 | Focal=0.0004 | KL=0.0051 | Con=9.6264 | Total=0.0055 | ValF1@0.5=0.6349
+Ep 400 | Focal=0.0004 | KL=0.0049 | Con=9.6350 | Total=0.0053 | ValF1@0.5=0.7162
+
+[OK] Load best model by ValF1@0.5=0.7388
+
+[VAL] best threshold=0.430, best macroF1=0.7682
+
+================ TRAIN ================
+Threshold: 0.430
+Accuracy : 0.9948
+Macro-F1 : 0.7690 (Class0: 0.9974, Class1: 0.5405)
+AUC      : 0.9898
+MCC      : 0.5453
+G-Mean   : 0.8018
+Sensitivity: 0.6452
+Specificity: 0.9965
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9983    0.9965    0.9974     13123
+           1     0.4651    0.6452    0.5405        62
+
+    accuracy                         0.9948     13185
+   macro avg     0.7317    0.8208    0.7690     13185
+weighted avg     0.9958    0.9948    0.9953     13185
+
+
+================ VAL ================
+Threshold: 0.430
+Accuracy : 0.9958
+Macro-F1 : 0.7682 (Class0: 0.9979, Class1: 0.5385)
+AUC      : 0.9595
+MCC      : 0.5515
+G-Mean   : 0.6611
+Sensitivity: 0.4375
+Specificity: 0.9989
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9968    0.9989    0.9979      2810
+           1     0.7000    0.4375    0.5385        16
+
+    accuracy                         0.9958      2826
+   macro avg     0.8484    0.7182    0.7682      2826
+weighted avg     0.9951    0.9958    0.9953      2826
+
+
+================ TEST ================
+Threshold: 0.430
+Accuracy : 0.9929
+Macro-F1 : 0.6136 (Class0: 0.9964, Class1: 0.2308)
+AUC      : 0.9350
+MCC      : 0.2338
+G-Mean   : 0.5465
+Sensitivity: 0.3000
+Specificity: 0.9954
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9975    0.9954    0.9964      2815
+           1     0.1875    0.3000    0.2308        10
+
+    accuracy                         0.9929      2825
+   macro avg     0.5925    0.6477    0.6136      2825
+weighted avg     0.9946    0.9929    0.9937      2825
+
+
+================================================================================
+ RUN 23/30 (Seed=22)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0038 | KL=0.0437 | Con=9.5792 | Total=0.0475 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0022 | KL=0.0214 | Con=9.5558 | Total=0.0236 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0020 | KL=0.0169 | Con=9.5478 | Total=0.0188 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0017 | KL=0.0148 | Con=9.5488 | Total=0.0165 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0016 | KL=0.0135 | Con=9.5461 | Total=0.0151 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0015 | KL=0.0130 | Con=9.5453 | Total=0.0145 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0014 | KL=0.0120 | Con=9.5440 | Total=0.0134 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0012 | KL=0.0110 | Con=9.5424 | Total=0.0122 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0012 | KL=0.0106 | Con=9.5408 | Total=0.0118 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0011 | KL=0.0105 | Con=9.5405 | Total=0.0117 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0010 | KL=0.0099 | Con=9.5398 | Total=0.0110 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0010 | KL=0.0094 | Con=9.5380 | Total=0.0104 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0009 | KL=0.0090 | Con=9.5382 | Total=0.0099 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0008 | KL=0.0086 | Con=9.5358 | Total=0.0094 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0009 | KL=0.0089 | Con=9.5368 | Total=0.0098 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0009 | KL=0.0086 | Con=9.5377 | Total=0.0095 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0008 | KL=0.0082 | Con=9.5351 | Total=0.0090 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0007 | KL=0.0080 | Con=9.5367 | Total=0.0087 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0007 | KL=0.0077 | Con=9.5346 | Total=0.0084 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0007 | KL=0.0078 | Con=9.5390 | Total=0.0085 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0006 | KL=0.0074 | Con=9.5365 | Total=0.0081 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0007 | KL=0.0075 | Con=9.5350 | Total=0.0082 | ValF1@0.5=0.4986
+Ep 230 | Focal=0.0006 | KL=0.0071 | Con=9.5395 | Total=0.0077 | ValF1@0.5=0.4986
+Ep 240 | Focal=0.0006 | KL=0.0070 | Con=9.5387 | Total=0.0076 | ValF1@0.5=0.4986
+Ep 250 | Focal=0.0006 | KL=0.0067 | Con=9.5368 | Total=0.0073 | ValF1@0.5=0.4986
+Ep 260 | Focal=0.0005 | KL=0.0069 | Con=9.5406 | Total=0.0074 | ValF1@0.5=0.4986
+Ep 270 | Focal=0.0006 | KL=0.0069 | Con=9.5470 | Total=0.0074 | ValF1@0.5=0.4986
+Ep 280 | Focal=0.0005 | KL=0.0066 | Con=9.5390 | Total=0.0072 | ValF1@0.5=0.4986
+Ep 290 | Focal=0.0005 | KL=0.0064 | Con=9.5467 | Total=0.0069 | ValF1@0.5=0.4986
+Ep 300 | Focal=0.0005 | KL=0.0066 | Con=9.5420 | Total=0.0071 | ValF1@0.5=0.4986
+Ep 310 | Focal=0.0006 | KL=0.0066 | Con=9.5468 | Total=0.0071 | ValF1@0.5=0.4986
+Ep 320 | Focal=0.0005 | KL=0.0062 | Con=9.5427 | Total=0.0067 | ValF1@0.5=0.4986
+Ep 330 | Focal=0.0004 | KL=0.0060 | Con=9.5443 | Total=0.0064 | ValF1@0.5=0.5575
+Ep 340 | Focal=0.0005 | KL=0.0063 | Con=9.5491 | Total=0.0067 | ValF1@0.5=0.6415
+Ep 350 | Focal=0.0005 | KL=0.0063 | Con=9.5612 | Total=0.0068 | ValF1@0.5=0.5986
+Ep 360 | Focal=0.0004 | KL=0.0060 | Con=9.5548 | Total=0.0064 | ValF1@0.5=0.5937
+Ep 370 | Focal=0.0004 | KL=0.0060 | Con=9.5621 | Total=0.0064 | ValF1@0.5=0.6039
+Ep 380 | Focal=0.0004 | KL=0.0059 | Con=9.5598 | Total=0.0063 | ValF1@0.5=0.6652
+Ep 390 | Focal=0.0004 | KL=0.0059 | Con=9.5699 | Total=0.0064 | ValF1@0.5=0.5937
+Ep 400 | Focal=0.0004 | KL=0.0059 | Con=9.5874 | Total=0.0063 | ValF1@0.5=0.6349
+
+[OK] Load best model by ValF1@0.5=0.6652
+
+[VAL] best threshold=0.440, best macroF1=0.7129
+
+================ TRAIN ================
+Threshold: 0.440
+Accuracy : 0.9947
+Macro-F1 : 0.7878 (Class0: 0.9973, Class1: 0.5783)
+AUC      : 0.9938
+MCC      : 0.5954
+G-Mean   : 0.8780
+Sensitivity: 0.7742
+Specificity: 0.9957
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9989    0.9957    0.9973     13123
+           1     0.4615    0.7742    0.5783        62
+
+    accuracy                         0.9947     13185
+   macro avg     0.7302    0.8850    0.7878     13185
+weighted avg     0.9964    0.9947    0.9954     13185
+
+
+================ VAL ================
+Threshold: 0.440
+Accuracy : 0.9943
+Macro-F1 : 0.7129 (Class0: 0.9972, Class1: 0.4286)
+AUC      : 0.9546
+MCC      : 0.4302
+G-Mean   : 0.6117
+Sensitivity: 0.3750
+Specificity: 0.9979
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9964    0.9979    0.9972      2810
+           1     0.5000    0.3750    0.4286        16
+
+    accuracy                         0.9943      2826
+   macro avg     0.7482    0.6864    0.7129      2826
+weighted avg     0.9936    0.9943    0.9939      2826
+
+
+================ TEST ================
+Threshold: 0.440
+Accuracy : 0.9904
+Macro-F1 : 0.5321 (Class0: 0.9952, Class1: 0.0690)
+AUC      : 0.9375
+MCC      : 0.0680
+G-Mean   : 0.3152
+Sensitivity: 0.1000
+Specificity: 0.9936
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9968    0.9936    0.9952      2815
+           1     0.0526    0.1000    0.0690        10
+
+    accuracy                         0.9904      2825
+   macro avg     0.5247    0.5468    0.5321      2825
+weighted avg     0.9935    0.9904    0.9919      2825
+
+
+================================================================================
+ RUN 24/30 (Seed=23)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0040 | KL=0.0471 | Con=9.5472 | Total=0.0512 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0022 | KL=0.0219 | Con=9.5436 | Total=0.0241 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0022 | KL=0.0176 | Con=9.5377 | Total=0.0198 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0016 | KL=0.0156 | Con=9.5393 | Total=0.0172 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0017 | KL=0.0142 | Con=9.5387 | Total=0.0159 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0014 | KL=0.0126 | Con=9.5400 | Total=0.0140 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0014 | KL=0.0121 | Con=9.5398 | Total=0.0134 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0013 | KL=0.0114 | Con=9.5390 | Total=0.0127 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0011 | KL=0.0106 | Con=9.5387 | Total=0.0117 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0010 | KL=0.0100 | Con=9.5381 | Total=0.0110 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0010 | KL=0.0097 | Con=9.5383 | Total=0.0108 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0010 | KL=0.0095 | Con=9.5398 | Total=0.0105 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0009 | KL=0.0093 | Con=9.5411 | Total=0.0102 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0008 | KL=0.0088 | Con=9.5376 | Total=0.0097 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0008 | KL=0.0085 | Con=9.5406 | Total=0.0094 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0009 | KL=0.0086 | Con=9.5384 | Total=0.0094 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0008 | KL=0.0083 | Con=9.5416 | Total=0.0091 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0008 | KL=0.0083 | Con=9.5425 | Total=0.0091 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0008 | KL=0.0081 | Con=9.5398 | Total=0.0089 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0007 | KL=0.0076 | Con=9.5354 | Total=0.0083 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0007 | KL=0.0076 | Con=9.5405 | Total=0.0083 | ValF1@0.5=0.4985
+Ep 220 | Focal=0.0007 | KL=0.0074 | Con=9.5382 | Total=0.0081 | ValF1@0.5=0.5986
+Ep 230 | Focal=0.0006 | KL=0.0071 | Con=9.5429 | Total=0.0077 | ValF1@0.5=0.4985
+Ep 240 | Focal=0.0006 | KL=0.0069 | Con=9.5399 | Total=0.0075 | ValF1@0.5=0.4985
+Ep 250 | Focal=0.0006 | KL=0.0071 | Con=9.5485 | Total=0.0078 | ValF1@0.5=0.4985
+Ep 260 | Focal=0.0006 | KL=0.0071 | Con=9.5395 | Total=0.0077 | ValF1@0.5=0.6349
+Ep 270 | Focal=0.0006 | KL=0.0068 | Con=9.5452 | Total=0.0073 | ValF1@0.5=0.5511
+Ep 280 | Focal=0.0006 | KL=0.0071 | Con=9.5491 | Total=0.0077 | ValF1@0.5=0.4986
+Ep 290 | Focal=0.0006 | KL=0.0068 | Con=9.5454 | Total=0.0074 | ValF1@0.5=0.6349
+Ep 300 | Focal=0.0006 | KL=0.0068 | Con=9.5434 | Total=0.0073 | ValF1@0.5=0.4986
+Ep 310 | Focal=0.0005 | KL=0.0064 | Con=9.5443 | Total=0.0069 | ValF1@0.5=0.4986
+Ep 320 | Focal=0.0005 | KL=0.0063 | Con=9.5418 | Total=0.0068 | ValF1@0.5=0.4986
+Ep 330 | Focal=0.0005 | KL=0.0063 | Con=9.5466 | Total=0.0068 | ValF1@0.5=0.6039
+Ep 340 | Focal=0.0005 | KL=0.0062 | Con=9.5531 | Total=0.0067 | ValF1@0.5=0.7295
+Ep 350 | Focal=0.0005 | KL=0.0062 | Con=9.5571 | Total=0.0067 | ValF1@0.5=0.6099
+Ep 360 | Focal=0.0005 | KL=0.0061 | Con=9.5443 | Total=0.0066 | ValF1@0.5=0.6039
+Ep 370 | Focal=0.0005 | KL=0.0061 | Con=9.5518 | Total=0.0065 | ValF1@0.5=0.4986
+Ep 380 | Focal=0.0004 | KL=0.0058 | Con=9.5453 | Total=0.0062 | ValF1@0.5=0.4986
+Ep 390 | Focal=0.0005 | KL=0.0060 | Con=9.5509 | Total=0.0065 | ValF1@0.5=0.6893
+Ep 400 | Focal=0.0004 | KL=0.0058 | Con=9.5493 | Total=0.0062 | ValF1@0.5=0.4985
+
+[OK] Load best model by ValF1@0.5=0.7295
+
+[VAL] best threshold=0.420, best macroF1=0.7319
+
+================ TRAIN ================
+Threshold: 0.420
+Accuracy : 0.9937
+Macro-F1 : 0.7613 (Class0: 0.9968, Class1: 0.5257)
+AUC      : 0.9932
+MCC      : 0.5469
+G-Mean   : 0.8592
+Sensitivity: 0.7419
+Specificity: 0.9949
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9988    0.9949    0.9968     13123
+           1     0.4071    0.7419    0.5257        62
+
+    accuracy                         0.9937     13185
+   macro avg     0.7029    0.8684    0.7613     13185
+weighted avg     0.9960    0.9937    0.9946     13185
+
+
+================ VAL ================
+Threshold: 0.420
+Accuracy : 0.9943
+Macro-F1 : 0.7319 (Class0: 0.9972, Class1: 0.4667)
+AUC      : 0.9575
+MCC      : 0.4649
+G-Mean   : 0.6606
+Sensitivity: 0.4375
+Specificity: 0.9975
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9968    0.9975    0.9972      2810
+           1     0.5000    0.4375    0.4667        16
+
+    accuracy                         0.9943      2826
+   macro avg     0.7484    0.7175    0.7319      2826
+weighted avg     0.9940    0.9943    0.9942      2826
+
+
+================ TEST ================
+Threshold: 0.420
+Accuracy : 0.9897
+Macro-F1 : 0.5580 (Class0: 0.9948, Class1: 0.1212)
+AUC      : 0.9372
+MCC      : 0.1273
+G-Mean   : 0.4455
+Sensitivity: 0.2000
+Specificity: 0.9925
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9971    0.9925    0.9948      2815
+           1     0.0870    0.2000    0.1212        10
+
+    accuracy                         0.9897      2825
+   macro avg     0.5421    0.5963    0.5580      2825
+weighted avg     0.9939    0.9897    0.9917      2825
+
+
+================================================================================
+ RUN 25/30 (Seed=24)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0039 | KL=0.0507 | Con=9.5476 | Total=0.0546 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0025 | KL=0.0232 | Con=9.5384 | Total=0.0257 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0021 | KL=0.0175 | Con=9.5361 | Total=0.0196 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0017 | KL=0.0153 | Con=9.5372 | Total=0.0169 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0015 | KL=0.0133 | Con=9.5361 | Total=0.0148 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0015 | KL=0.0129 | Con=9.5376 | Total=0.0144 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0013 | KL=0.0115 | Con=9.5380 | Total=0.0127 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0012 | KL=0.0110 | Con=9.5372 | Total=0.0123 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0012 | KL=0.0107 | Con=9.5372 | Total=0.0118 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0010 | KL=0.0099 | Con=9.5358 | Total=0.0109 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0010 | KL=0.0099 | Con=9.5371 | Total=0.0109 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0009 | KL=0.0093 | Con=9.5361 | Total=0.0102 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0010 | KL=0.0094 | Con=9.5363 | Total=0.0104 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0009 | KL=0.0090 | Con=9.5366 | Total=0.0099 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0007 | KL=0.0083 | Con=9.5339 | Total=0.0090 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0007 | KL=0.0080 | Con=9.5348 | Total=0.0087 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0007 | KL=0.0080 | Con=9.5364 | Total=0.0087 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0008 | KL=0.0080 | Con=9.5381 | Total=0.0088 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0006 | KL=0.0075 | Con=9.5353 | Total=0.0082 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0006 | KL=0.0072 | Con=9.5379 | Total=0.0078 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0007 | KL=0.0074 | Con=9.5428 | Total=0.0081 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0006 | KL=0.0072 | Con=9.5505 | Total=0.0079 | ValF1@0.5=0.4986
+Ep 230 | Focal=0.0006 | KL=0.0070 | Con=9.5489 | Total=0.0075 | ValF1@0.5=0.4986
+Ep 240 | Focal=0.0006 | KL=0.0069 | Con=9.5522 | Total=0.0075 | ValF1@0.5=0.5575
+Ep 250 | Focal=0.0005 | KL=0.0066 | Con=9.5588 | Total=0.0072 | ValF1@0.5=0.5575
+Ep 260 | Focal=0.0006 | KL=0.0067 | Con=9.5690 | Total=0.0072 | ValF1@0.5=0.6039
+Ep 270 | Focal=0.0005 | KL=0.0065 | Con=9.5728 | Total=0.0070 | ValF1@0.5=0.6039
+Ep 280 | Focal=0.0005 | KL=0.0063 | Con=9.5902 | Total=0.0068 | ValF1@0.5=0.6567
+Ep 290 | Focal=0.0005 | KL=0.0062 | Con=9.6193 | Total=0.0067 | ValF1@0.5=0.6039
+Ep 300 | Focal=0.0004 | KL=0.0059 | Con=9.6154 | Total=0.0064 | ValF1@0.5=0.6652
+Ep 310 | Focal=0.0005 | KL=0.0061 | Con=9.6256 | Total=0.0066 | ValF1@0.5=0.6349
+Ep 320 | Focal=0.0004 | KL=0.0059 | Con=9.6166 | Total=0.0064 | ValF1@0.5=0.7054
+Ep 330 | Focal=0.0004 | KL=0.0057 | Con=9.6208 | Total=0.0061 | ValF1@0.5=0.6039
+Ep 340 | Focal=0.0004 | KL=0.0055 | Con=9.6311 | Total=0.0059 | ValF1@0.5=0.6806
+Ep 350 | Focal=0.0004 | KL=0.0054 | Con=9.6202 | Total=0.0058 | ValF1@0.5=0.6349
+Ep 360 | Focal=0.0004 | KL=0.0055 | Con=9.6422 | Total=0.0060 | ValF1@0.5=0.6799
+Ep 370 | Focal=0.0003 | KL=0.0048 | Con=9.5945 | Total=0.0051 | ValF1@0.5=0.6987
+Ep 380 | Focal=0.0004 | KL=0.0050 | Con=9.6159 | Total=0.0053 | ValF1@0.5=0.6893
+Ep 390 | Focal=0.0004 | KL=0.0051 | Con=9.6190 | Total=0.0055 | ValF1@0.5=0.6909
+Ep 400 | Focal=0.0004 | KL=0.0048 | Con=9.6057 | Total=0.0052 | ValF1@0.5=0.6652
+
+[OK] Load best model by ValF1@0.5=0.7054
+
+[VAL] best threshold=0.490, best macroF1=0.7243
+
+================ TRAIN ================
+Threshold: 0.490
+Accuracy : 0.9945
+Macro-F1 : 0.7486 (Class0: 0.9973, Class1: 0.5000)
+AUC      : 0.9924
+MCC      : 0.5022
+G-Mean   : 0.7607
+Sensitivity: 0.5806
+Specificity: 0.9965
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9980    0.9965    0.9973     13123
+           1     0.4390    0.5806    0.5000        62
+
+    accuracy                         0.9945     13185
+   macro avg     0.7185    0.7886    0.7486     13185
+weighted avg     0.9954    0.9945    0.9949     13185
+
+
+================ VAL ================
+Threshold: 0.490
+Accuracy : 0.9940
+Macro-F1 : 0.7243 (Class0: 0.9970, Class1: 0.4516)
+AUC      : 0.9621
+MCC      : 0.4488
+G-Mean   : 0.6605
+Sensitivity: 0.4375
+Specificity: 0.9972
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9968    0.9972    0.9970      2810
+           1     0.4667    0.4375    0.4516        16
+
+    accuracy                         0.9940      2826
+   macro avg     0.7317    0.7173    0.7243      2826
+weighted avg     0.9938    0.9940    0.9939      2826
+
+
+================ TEST ================
+Threshold: 0.490
+Accuracy : 0.9901
+Macro-F1 : 0.5308 (Class0: 0.9950, Class1: 0.0667)
+AUC      : 0.9419
+MCC      : 0.0661
+G-Mean   : 0.3152
+Sensitivity: 0.1000
+Specificity: 0.9933
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9968    0.9933    0.9950      2815
+           1     0.0500    0.1000    0.0667        10
+
+    accuracy                         0.9901      2825
+   macro avg     0.5234    0.5466    0.5308      2825
+weighted avg     0.9934    0.9901    0.9917      2825
+
+
+================================================================================
+ RUN 26/30 (Seed=25)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0039 | KL=0.0402 | Con=9.5505 | Total=0.0442 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0022 | KL=0.0207 | Con=9.5484 | Total=0.0229 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0020 | KL=0.0172 | Con=9.5455 | Total=0.0191 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0018 | KL=0.0156 | Con=9.5473 | Total=0.0174 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0017 | KL=0.0140 | Con=9.5471 | Total=0.0157 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0014 | KL=0.0129 | Con=9.5467 | Total=0.0144 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0014 | KL=0.0124 | Con=9.5461 | Total=0.0138 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0013 | KL=0.0116 | Con=9.5462 | Total=0.0129 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0012 | KL=0.0108 | Con=9.5459 | Total=0.0120 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0012 | KL=0.0104 | Con=9.5449 | Total=0.0116 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0011 | KL=0.0099 | Con=9.5432 | Total=0.0110 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0009 | KL=0.0093 | Con=9.5439 | Total=0.0102 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0009 | KL=0.0091 | Con=9.5432 | Total=0.0100 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0008 | KL=0.0085 | Con=9.5457 | Total=0.0093 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0008 | KL=0.0083 | Con=9.5464 | Total=0.0090 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0008 | KL=0.0083 | Con=9.5495 | Total=0.0091 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0008 | KL=0.0083 | Con=9.5518 | Total=0.0091 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0007 | KL=0.0078 | Con=9.5498 | Total=0.0086 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0007 | KL=0.0075 | Con=9.5568 | Total=0.0081 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0007 | KL=0.0075 | Con=9.5477 | Total=0.0081 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0007 | KL=0.0074 | Con=9.5510 | Total=0.0081 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0006 | KL=0.0071 | Con=9.5499 | Total=0.0077 | ValF1@0.5=0.4986
+Ep 230 | Focal=0.0006 | KL=0.0071 | Con=9.5496 | Total=0.0077 | ValF1@0.5=0.4986
+Ep 240 | Focal=0.0006 | KL=0.0070 | Con=9.5530 | Total=0.0077 | ValF1@0.5=0.4986
+Ep 250 | Focal=0.0006 | KL=0.0070 | Con=9.5648 | Total=0.0076 | ValF1@0.5=0.4986
+Ep 260 | Focal=0.0005 | KL=0.0068 | Con=9.5650 | Total=0.0074 | ValF1@0.5=0.4986
+Ep 270 | Focal=0.0005 | KL=0.0065 | Con=9.5660 | Total=0.0070 | ValF1@0.5=0.4986
+Ep 280 | Focal=0.0006 | KL=0.0067 | Con=9.5699 | Total=0.0073 | ValF1@0.5=0.4986
+Ep 290 | Focal=0.0005 | KL=0.0064 | Con=9.5795 | Total=0.0069 | ValF1@0.5=0.4986
+Ep 300 | Focal=0.0005 | KL=0.0064 | Con=9.5829 | Total=0.0069 | ValF1@0.5=0.4986
+Ep 310 | Focal=0.0005 | KL=0.0062 | Con=9.5900 | Total=0.0067 | ValF1@0.5=0.6099
+Ep 320 | Focal=0.0005 | KL=0.0061 | Con=9.5872 | Total=0.0066 | ValF1@0.5=0.6099
+Ep 330 | Focal=0.0004 | KL=0.0060 | Con=9.5955 | Total=0.0064 | ValF1@0.5=0.6349
+Ep 340 | Focal=0.0004 | KL=0.0059 | Con=9.6014 | Total=0.0063 | ValF1@0.5=0.6099
+Ep 350 | Focal=0.0004 | KL=0.0057 | Con=9.6278 | Total=0.0061 | ValF1@0.5=0.6099
+Ep 360 | Focal=0.0005 | KL=0.0060 | Con=9.6135 | Total=0.0064 | ValF1@0.5=0.5986
+Ep 370 | Focal=0.0004 | KL=0.0057 | Con=9.6290 | Total=0.0061 | ValF1@0.5=0.5541
+Ep 380 | Focal=0.0004 | KL=0.0056 | Con=9.6445 | Total=0.0060 | ValF1@0.5=0.6039
+Ep 390 | Focal=0.0004 | KL=0.0053 | Con=9.6187 | Total=0.0056 | ValF1@0.5=0.5937
+Ep 400 | Focal=0.0004 | KL=0.0053 | Con=9.6456 | Total=0.0057 | ValF1@0.5=0.4985
+
+[OK] Load best model by ValF1@0.5=0.6349
+
+[VAL] best threshold=0.470, best macroF1=0.6919
+
+================ TRAIN ================
+Threshold: 0.470
+Accuracy : 0.9958
+Macro-F1 : 0.7890 (Class0: 0.9979, Class1: 0.5802)
+AUC      : 0.9922
+MCC      : 0.5789
+G-Mean   : 0.7820
+Sensitivity: 0.6129
+Specificity: 0.9976
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9982    0.9976    0.9979     13123
+           1     0.5507    0.6129    0.5802        62
+
+    accuracy                         0.9958     13185
+   macro avg     0.7744    0.8053    0.7890     13185
+weighted avg     0.9961    0.9958    0.9959     13185
+
+
+================ VAL ================
+Threshold: 0.470
+Accuracy : 0.9933
+Macro-F1 : 0.6919 (Class0: 0.9966, Class1: 0.3871)
+AUC      : 0.9618
+MCC      : 0.3839
+G-Mean   : 0.6114
+Sensitivity: 0.3750
+Specificity: 0.9968
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9964    0.9968    0.9966      2810
+           1     0.4000    0.3750    0.3871        16
+
+    accuracy                         0.9933      2826
+   macro avg     0.6982    0.6859    0.6919      2826
+weighted avg     0.9931    0.9933    0.9932      2826
+
+
+================ TEST ================
+Threshold: 0.470
+Accuracy : 0.9940
+Macro-F1 : 0.6289 (Class0: 0.9970, Class1: 0.2609)
+AUC      : 0.9390
+MCC      : 0.2601
+G-Mean   : 0.5467
+Sensitivity: 0.3000
+Specificity: 0.9964
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9975    0.9964    0.9970      2815
+           1     0.2308    0.3000    0.2609        10
+
+    accuracy                         0.9940      2825
+   macro avg     0.6141    0.6482    0.6289      2825
+weighted avg     0.9948    0.9940    0.9944      2825
+
+
+================================================================================
+ RUN 27/30 (Seed=26)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0037 | KL=0.0399 | Con=9.5486 | Total=0.0436 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0022 | KL=0.0203 | Con=9.5436 | Total=0.0225 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0021 | KL=0.0170 | Con=9.5395 | Total=0.0191 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0016 | KL=0.0145 | Con=9.5416 | Total=0.0161 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0016 | KL=0.0131 | Con=9.5405 | Total=0.0147 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0015 | KL=0.0125 | Con=9.5413 | Total=0.0140 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0013 | KL=0.0118 | Con=9.5410 | Total=0.0131 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0013 | KL=0.0110 | Con=9.5397 | Total=0.0123 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0011 | KL=0.0103 | Con=9.5390 | Total=0.0114 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0010 | KL=0.0098 | Con=9.5381 | Total=0.0108 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0011 | KL=0.0099 | Con=9.5379 | Total=0.0110 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0010 | KL=0.0092 | Con=9.5377 | Total=0.0101 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0009 | KL=0.0090 | Con=9.5367 | Total=0.0099 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0009 | KL=0.0087 | Con=9.5358 | Total=0.0096 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0008 | KL=0.0082 | Con=9.5343 | Total=0.0089 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0008 | KL=0.0082 | Con=9.5372 | Total=0.0090 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0007 | KL=0.0078 | Con=9.5335 | Total=0.0085 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0007 | KL=0.0078 | Con=9.5366 | Total=0.0085 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0008 | KL=0.0077 | Con=9.5376 | Total=0.0085 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0006 | KL=0.0072 | Con=9.5343 | Total=0.0078 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0006 | KL=0.0073 | Con=9.5322 | Total=0.0079 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0006 | KL=0.0070 | Con=9.5382 | Total=0.0076 | ValF1@0.5=0.4986
+Ep 230 | Focal=0.0007 | KL=0.0072 | Con=9.5421 | Total=0.0079 | ValF1@0.5=0.4986
+Ep 240 | Focal=0.0006 | KL=0.0067 | Con=9.5355 | Total=0.0073 | ValF1@0.5=0.4986
+Ep 250 | Focal=0.0005 | KL=0.0067 | Con=9.5391 | Total=0.0072 | ValF1@0.5=0.4986
+Ep 260 | Focal=0.0006 | KL=0.0069 | Con=9.5477 | Total=0.0075 | ValF1@0.5=0.4986
+Ep 270 | Focal=0.0005 | KL=0.0064 | Con=9.5426 | Total=0.0068 | ValF1@0.5=0.4986
+Ep 280 | Focal=0.0004 | KL=0.0062 | Con=9.5451 | Total=0.0067 | ValF1@0.5=0.4986
+Ep 290 | Focal=0.0005 | KL=0.0064 | Con=9.5470 | Total=0.0069 | ValF1@0.5=0.4986
+Ep 300 | Focal=0.0005 | KL=0.0063 | Con=9.5450 | Total=0.0068 | ValF1@0.5=0.4986
+Ep 310 | Focal=0.0004 | KL=0.0060 | Con=9.5456 | Total=0.0065 | ValF1@0.5=0.4986
+Ep 320 | Focal=0.0004 | KL=0.0060 | Con=9.5417 | Total=0.0064 | ValF1@0.5=0.4986
+Ep 330 | Focal=0.0005 | KL=0.0060 | Con=9.5474 | Total=0.0065 | ValF1@0.5=0.4986
+Ep 340 | Focal=0.0004 | KL=0.0058 | Con=9.5464 | Total=0.0063 | ValF1@0.5=0.4986
+Ep 350 | Focal=0.0004 | KL=0.0060 | Con=9.5445 | Total=0.0064 | ValF1@0.5=0.4986
+Ep 360 | Focal=0.0004 | KL=0.0058 | Con=9.5424 | Total=0.0062 | ValF1@0.5=0.4986
+Ep 370 | Focal=0.0004 | KL=0.0059 | Con=9.5536 | Total=0.0063 | ValF1@0.5=0.4986
+Ep 380 | Focal=0.0004 | KL=0.0056 | Con=9.5456 | Total=0.0060 | ValF1@0.5=0.5893
+Ep 390 | Focal=0.0004 | KL=0.0058 | Con=9.5435 | Total=0.0062 | ValF1@0.5=0.6415
+Ep 400 | Focal=0.0004 | KL=0.0057 | Con=9.5511 | Total=0.0062 | ValF1@0.5=0.6289
+
+[OK] Load best model by ValF1@0.5=0.6415
+
+[VAL] best threshold=0.490, best macroF1=0.7162
+
+================ TRAIN ================
+Threshold: 0.490
+Accuracy : 0.9966
+Macro-F1 : 0.8191 (Class0: 0.9983, Class1: 0.6400)
+AUC      : 0.9923
+MCC      : 0.6383
+G-Mean   : 0.8025
+Sensitivity: 0.6452
+Specificity: 0.9982
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9983    0.9982    0.9983     13123
+           1     0.6349    0.6452    0.6400        62
+
+    accuracy                         0.9966     13185
+   macro avg     0.8166    0.8217    0.8191     13185
+weighted avg     0.9966    0.9966    0.9966     13185
+
+
+================ VAL ================
+Threshold: 0.490
+Accuracy : 0.9954
+Macro-F1 : 0.7162 (Class0: 0.9977, Class1: 0.4348)
+AUC      : 0.9627
+MCC      : 0.4706
+G-Mean   : 0.5588
+Sensitivity: 0.3125
+Specificity: 0.9993
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9961    0.9993    0.9977      2810
+           1     0.7143    0.3125    0.4348        16
+
+    accuracy                         0.9954      2826
+   macro avg     0.8552    0.6559    0.7162      2826
+weighted avg     0.9945    0.9954    0.9945      2826
+
+
+================ TEST ================
+Threshold: 0.490
+Accuracy : 0.9933
+Macro-F1 : 0.5459 (Class0: 0.9966, Class1: 0.0952)
+AUC      : 0.9472
+MCC      : 0.0920
+G-Mean   : 0.3157
+Sensitivity: 0.1000
+Specificity: 0.9964
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9968    0.9964    0.9966      2815
+           1     0.0909    0.1000    0.0952        10
+
+    accuracy                         0.9933      2825
+   macro avg     0.5439    0.5482    0.5459      2825
+weighted avg     0.9936    0.9933    0.9934      2825
+
+
+================================================================================
+ RUN 28/30 (Seed=27)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0034 | KL=0.0580 | Con=9.5674 | Total=0.0614 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0026 | KL=0.0214 | Con=9.5424 | Total=0.0240 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0019 | KL=0.0168 | Con=9.5427 | Total=0.0187 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0017 | KL=0.0150 | Con=9.5420 | Total=0.0168 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0016 | KL=0.0137 | Con=9.5411 | Total=0.0153 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0014 | KL=0.0126 | Con=9.5427 | Total=0.0140 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0013 | KL=0.0118 | Con=9.5399 | Total=0.0131 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0014 | KL=0.0116 | Con=9.5409 | Total=0.0130 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0011 | KL=0.0105 | Con=9.5396 | Total=0.0116 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0012 | KL=0.0104 | Con=9.5394 | Total=0.0116 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0010 | KL=0.0097 | Con=9.5432 | Total=0.0107 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0010 | KL=0.0094 | Con=9.5440 | Total=0.0104 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0010 | KL=0.0092 | Con=9.5585 | Total=0.0101 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0008 | KL=0.0086 | Con=9.5846 | Total=0.0094 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0007 | KL=0.0079 | Con=9.6159 | Total=0.0086 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0007 | KL=0.0075 | Con=9.6403 | Total=0.0082 | ValF1@0.5=0.4985
+Ep 170 | Focal=0.0007 | KL=0.0074 | Con=9.6533 | Total=0.0081 | ValF1@0.5=0.6987
+Ep 180 | Focal=0.0007 | KL=0.0072 | Con=9.7132 | Total=0.0079 | ValF1@0.5=0.6039
+Ep 190 | Focal=0.0007 | KL=0.0071 | Con=9.6760 | Total=0.0077 | ValF1@0.5=0.4982
+Ep 200 | Focal=0.0007 | KL=0.0068 | Con=9.7092 | Total=0.0075 | ValF1@0.5=0.4985
+Ep 210 | Focal=0.0006 | KL=0.0065 | Con=9.6800 | Total=0.0071 | ValF1@0.5=0.5541
+Ep 220 | Focal=0.0006 | KL=0.0066 | Con=9.6728 | Total=0.0072 | ValF1@0.5=0.4985
+Ep 230 | Focal=0.0005 | KL=0.0058 | Con=9.6736 | Total=0.0063 | ValF1@0.5=0.5541
+Ep 240 | Focal=0.0005 | KL=0.0057 | Con=9.6744 | Total=0.0062 | ValF1@0.5=0.5575
+Ep 250 | Focal=0.0005 | KL=0.0057 | Con=9.6616 | Total=0.0062 | ValF1@0.5=0.5541
+Ep 260 | Focal=0.0004 | KL=0.0051 | Con=9.6505 | Total=0.0055 | ValF1@0.5=0.4985
+Ep 270 | Focal=0.0005 | KL=0.0053 | Con=9.6654 | Total=0.0057 | ValF1@0.5=0.4985
+Ep 280 | Focal=0.0005 | KL=0.0055 | Con=9.6699 | Total=0.0060 | ValF1@0.5=0.5541
+Ep 290 | Focal=0.0003 | KL=0.0047 | Con=9.6214 | Total=0.0050 | ValF1@0.5=0.5986
+Ep 300 | Focal=0.0004 | KL=0.0048 | Con=9.6365 | Total=0.0051 | ValF1@0.5=0.5575
+Ep 310 | Focal=0.0004 | KL=0.0047 | Con=9.6533 | Total=0.0051 | ValF1@0.5=0.4986
+Ep 320 | Focal=0.0004 | KL=0.0047 | Con=9.6316 | Total=0.0051 | ValF1@0.5=0.5816
+Ep 330 | Focal=0.0004 | KL=0.0043 | Con=9.6288 | Total=0.0047 | ValF1@0.5=0.5397
+Ep 340 | Focal=0.0003 | KL=0.0043 | Con=9.6240 | Total=0.0046 | ValF1@0.5=0.5437
+Ep 350 | Focal=0.0003 | KL=0.0042 | Con=9.6210 | Total=0.0044 | ValF1@0.5=0.6649
+Ep 360 | Focal=0.0003 | KL=0.0041 | Con=9.6131 | Total=0.0044 | ValF1@0.5=0.5986
+Ep 370 | Focal=0.0004 | KL=0.0042 | Con=9.6121 | Total=0.0045 | ValF1@0.5=0.5937
+Ep 380 | Focal=0.0003 | KL=0.0039 | Con=9.6179 | Total=0.0043 | ValF1@0.5=0.6652
+Ep 390 | Focal=0.0003 | KL=0.0041 | Con=9.6176 | Total=0.0044 | ValF1@0.5=0.7054
+Ep 400 | Focal=0.0003 | KL=0.0038 | Con=9.6167 | Total=0.0041 | ValF1@0.5=0.6304
+
+[OK] Load best model by ValF1@0.5=0.7054
+
+[VAL] best threshold=0.630, best macroF1=0.7388
+
+================ TRAIN ================
+Threshold: 0.630
+Accuracy : 0.9973
+Macro-F1 : 0.8262 (Class0: 0.9986, Class1: 0.6538)
+AUC      : 0.9929
+MCC      : 0.6650
+G-Mean   : 0.7403
+Sensitivity: 0.5484
+Specificity: 0.9994
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9979    0.9994    0.9986     13123
+           1     0.8095    0.5484    0.6538        62
+
+    accuracy                         0.9973     13185
+   macro avg     0.9037    0.7739    0.8262     13185
+weighted avg     0.9970    0.9973    0.9970     13185
+
+
+================ VAL ================
+Threshold: 0.630
+Accuracy : 0.9954
+Macro-F1 : 0.7388 (Class0: 0.9977, Class1: 0.4800)
+AUC      : 0.9642
+MCC      : 0.4980
+G-Mean   : 0.6120
+Sensitivity: 0.3750
+Specificity: 0.9989
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9965    0.9989    0.9977      2810
+           1     0.6667    0.3750    0.4800        16
+
+    accuracy                         0.9954      2826
+   macro avg     0.8316    0.6870    0.7388      2826
+weighted avg     0.9946    0.9954    0.9948      2826
+
+
+================ TEST ================
+Threshold: 0.630
+Accuracy : 0.9943
+Macro-F1 : 0.5541 (Class0: 0.9972, Class1: 0.1111)
+AUC      : 0.9469
+MCC      : 0.1090
+G-Mean   : 0.3158
+Sensitivity: 0.1000
+Specificity: 0.9975
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9968    0.9975    0.9972      2815
+           1     0.1250    0.1000    0.1111        10
+
+    accuracy                         0.9943      2825
+   macro avg     0.5609    0.5488    0.5541      2825
+weighted avg     0.9937    0.9943    0.9940      2825
+
+
+================================================================================
+ RUN 29/30 (Seed=28)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0039 | KL=0.0625 | Con=9.5637 | Total=0.0664 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0026 | KL=0.0222 | Con=9.5458 | Total=0.0249 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0020 | KL=0.0181 | Con=9.5482 | Total=0.0201 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0018 | KL=0.0155 | Con=9.5433 | Total=0.0173 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0017 | KL=0.0139 | Con=9.5445 | Total=0.0155 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0014 | KL=0.0126 | Con=9.5475 | Total=0.0140 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0014 | KL=0.0120 | Con=9.5451 | Total=0.0134 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0013 | KL=0.0114 | Con=9.5475 | Total=0.0126 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0013 | KL=0.0108 | Con=9.5467 | Total=0.0120 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0011 | KL=0.0102 | Con=9.5457 | Total=0.0113 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0011 | KL=0.0101 | Con=9.5455 | Total=0.0111 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0010 | KL=0.0096 | Con=9.5471 | Total=0.0106 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0010 | KL=0.0095 | Con=9.5484 | Total=0.0106 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0009 | KL=0.0088 | Con=9.5482 | Total=0.0097 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0008 | KL=0.0086 | Con=9.5482 | Total=0.0094 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0008 | KL=0.0086 | Con=9.5490 | Total=0.0095 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0008 | KL=0.0082 | Con=9.5515 | Total=0.0090 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0008 | KL=0.0080 | Con=9.5516 | Total=0.0088 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0008 | KL=0.0081 | Con=9.5565 | Total=0.0089 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0007 | KL=0.0079 | Con=9.5585 | Total=0.0086 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0007 | KL=0.0076 | Con=9.5512 | Total=0.0083 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0006 | KL=0.0075 | Con=9.5598 | Total=0.0081 | ValF1@0.5=0.4986
+Ep 230 | Focal=0.0007 | KL=0.0074 | Con=9.5608 | Total=0.0081 | ValF1@0.5=0.4986
+Ep 240 | Focal=0.0006 | KL=0.0071 | Con=9.5714 | Total=0.0078 | ValF1@0.5=0.4986
+Ep 250 | Focal=0.0006 | KL=0.0071 | Con=9.5769 | Total=0.0077 | ValF1@0.5=0.4986
+Ep 260 | Focal=0.0006 | KL=0.0070 | Con=9.5755 | Total=0.0076 | ValF1@0.5=0.4986
+Ep 270 | Focal=0.0005 | KL=0.0067 | Con=9.5861 | Total=0.0073 | ValF1@0.5=0.4986
+Ep 280 | Focal=0.0006 | KL=0.0067 | Con=9.5922 | Total=0.0073 | ValF1@0.5=0.6099
+Ep 290 | Focal=0.0005 | KL=0.0067 | Con=9.6123 | Total=0.0072 | ValF1@0.5=0.6039
+Ep 300 | Focal=0.0006 | KL=0.0066 | Con=9.6314 | Total=0.0072 | ValF1@0.5=0.7054
+Ep 310 | Focal=0.0005 | KL=0.0064 | Con=9.6296 | Total=0.0069 | ValF1@0.5=0.6349
+Ep 320 | Focal=0.0005 | KL=0.0063 | Con=9.6453 | Total=0.0068 | ValF1@0.5=0.6349
+Ep 330 | Focal=0.0005 | KL=0.0059 | Con=9.6542 | Total=0.0064 | ValF1@0.5=0.6837
+Ep 340 | Focal=0.0005 | KL=0.0058 | Con=9.6491 | Total=0.0062 | ValF1@0.5=0.6039
+Ep 350 | Focal=0.0005 | KL=0.0059 | Con=9.6446 | Total=0.0064 | ValF1@0.5=0.6349
+Ep 360 | Focal=0.0004 | KL=0.0056 | Con=9.6480 | Total=0.0060 | ValF1@0.5=0.4982
+Ep 370 | Focal=0.0004 | KL=0.0054 | Con=9.6447 | Total=0.0058 | ValF1@0.5=0.4986
+Ep 380 | Focal=0.0004 | KL=0.0054 | Con=9.6300 | Total=0.0057 | ValF1@0.5=0.4985
+Ep 390 | Focal=0.0004 | KL=0.0051 | Con=9.6426 | Total=0.0055 | ValF1@0.5=0.5511
+Ep 400 | Focal=0.0004 | KL=0.0050 | Con=9.6451 | Total=0.0054 | ValF1@0.5=0.6039
+
+[OK] Load best model by ValF1@0.5=0.7054
+
+[VAL] best threshold=0.480, best macroF1=0.7243
+
+================ TRAIN ================
+Threshold: 0.480
+Accuracy : 0.9948
+Macro-F1 : 0.7888 (Class0: 0.9974, Class1: 0.5802)
+AUC      : 0.9938
+MCC      : 0.5946
+G-Mean   : 0.8689
+Sensitivity: 0.7581
+Specificity: 0.9960
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9989    0.9960    0.9974     13123
+           1     0.4700    0.7581    0.5802        62
+
+    accuracy                         0.9948     13185
+   macro avg     0.7344    0.8770    0.7888     13185
+weighted avg     0.9964    0.9948    0.9954     13185
+
+
+================ VAL ================
+Threshold: 0.480
+Accuracy : 0.9940
+Macro-F1 : 0.7243 (Class0: 0.9970, Class1: 0.4516)
+AUC      : 0.9629
+MCC      : 0.4488
+G-Mean   : 0.6605
+Sensitivity: 0.4375
+Specificity: 0.9972
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9968    0.9972    0.9970      2810
+           1     0.4667    0.4375    0.4516        16
+
+    accuracy                         0.9940      2826
+   macro avg     0.7317    0.7173    0.7243      2826
+weighted avg     0.9938    0.9940    0.9939      2826
+
+
+================ TEST ================
+Threshold: 0.480
+Accuracy : 0.9904
+Macro-F1 : 0.5621 (Class0: 0.9952, Class1: 0.1290)
+AUC      : 0.9451
+MCC      : 0.1336
+G-Mean   : 0.4457
+Sensitivity: 0.2000
+Specificity: 0.9933
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9971    0.9933    0.9952      2815
+           1     0.0952    0.2000    0.1290        10
+
+    accuracy                         0.9904      2825
+   macro avg     0.5462    0.5966    0.5621      2825
+weighted avg     0.9940    0.9904    0.9921      2825
+
+
+================================================================================
+ RUN 30/30 (Seed=29)
+================================================================================
+================================================================================
+ Pipeline: LP soft labels + MLP prob + 1.0 * KL + Focal + 0.0 * SupCon
+================================================================================
+_propagate 的参数值:
+  alpha_pos = 0.0
+  alpha_neg = 0.85
+  forbid_flip = True
+  flip_margin = 0.1
+
+[LP] soft label stats (train only):
+  pos mean: 1.0000
+  neg mean: 0.0076
+  seeds ratio: 0.941
+训练函数参数值:
+  lr = 0.001
+  weight_decay = 1e-05
+  epochs = 400
+  focal_gamma = 2.0
+  focal_alpha = 0.25
+  use_contrastive = True
+  contrastive_weight = 0.0
+  contrastive_temp = 0.07
+  minority_weight = 2.0
+  use_kl = True
+  kl_weight = 1.0
+  device = cuda
+Ep 010 | Focal=0.0043 | KL=0.0506 | Con=9.5523 | Total=0.0549 | ValF1@0.5=0.4986
+Ep 020 | Focal=0.0024 | KL=0.0218 | Con=9.5404 | Total=0.0242 | ValF1@0.5=0.4986
+Ep 030 | Focal=0.0019 | KL=0.0174 | Con=9.5376 | Total=0.0193 | ValF1@0.5=0.4986
+Ep 040 | Focal=0.0019 | KL=0.0157 | Con=9.5381 | Total=0.0176 | ValF1@0.5=0.4986
+Ep 050 | Focal=0.0015 | KL=0.0137 | Con=9.5386 | Total=0.0152 | ValF1@0.5=0.4986
+Ep 060 | Focal=0.0015 | KL=0.0132 | Con=9.5406 | Total=0.0147 | ValF1@0.5=0.4986
+Ep 070 | Focal=0.0014 | KL=0.0121 | Con=9.5383 | Total=0.0135 | ValF1@0.5=0.4986
+Ep 080 | Focal=0.0012 | KL=0.0113 | Con=9.5393 | Total=0.0125 | ValF1@0.5=0.4986
+Ep 090 | Focal=0.0012 | KL=0.0110 | Con=9.5397 | Total=0.0122 | ValF1@0.5=0.4986
+Ep 100 | Focal=0.0012 | KL=0.0103 | Con=9.5398 | Total=0.0115 | ValF1@0.5=0.4986
+Ep 110 | Focal=0.0011 | KL=0.0100 | Con=9.5404 | Total=0.0111 | ValF1@0.5=0.4986
+Ep 120 | Focal=0.0010 | KL=0.0094 | Con=9.5386 | Total=0.0104 | ValF1@0.5=0.4986
+Ep 130 | Focal=0.0010 | KL=0.0093 | Con=9.5400 | Total=0.0103 | ValF1@0.5=0.4986
+Ep 140 | Focal=0.0009 | KL=0.0090 | Con=9.5408 | Total=0.0099 | ValF1@0.5=0.4986
+Ep 150 | Focal=0.0008 | KL=0.0083 | Con=9.5396 | Total=0.0091 | ValF1@0.5=0.4986
+Ep 160 | Focal=0.0008 | KL=0.0082 | Con=9.5415 | Total=0.0090 | ValF1@0.5=0.4986
+Ep 170 | Focal=0.0008 | KL=0.0082 | Con=9.5435 | Total=0.0089 | ValF1@0.5=0.4986
+Ep 180 | Focal=0.0007 | KL=0.0077 | Con=9.5437 | Total=0.0084 | ValF1@0.5=0.4986
+Ep 190 | Focal=0.0007 | KL=0.0076 | Con=9.5425 | Total=0.0083 | ValF1@0.5=0.4986
+Ep 200 | Focal=0.0007 | KL=0.0077 | Con=9.5419 | Total=0.0084 | ValF1@0.5=0.4986
+Ep 210 | Focal=0.0006 | KL=0.0074 | Con=9.5470 | Total=0.0081 | ValF1@0.5=0.4986
+Ep 220 | Focal=0.0006 | KL=0.0074 | Con=9.5491 | Total=0.0080 | ValF1@0.5=0.4986
+Ep 230 | Focal=0.0006 | KL=0.0073 | Con=9.5484 | Total=0.0079 | ValF1@0.5=0.5575
+Ep 240 | Focal=0.0006 | KL=0.0073 | Con=9.5587 | Total=0.0080 | ValF1@0.5=0.5541
+Ep 250 | Focal=0.0006 | KL=0.0069 | Con=9.5503 | Total=0.0075 | ValF1@0.5=0.4985
+Ep 260 | Focal=0.0006 | KL=0.0068 | Con=9.5498 | Total=0.0074 | ValF1@0.5=0.4985
+Ep 270 | Focal=0.0005 | KL=0.0066 | Con=9.5555 | Total=0.0071 | ValF1@0.5=0.5511
+Ep 280 | Focal=0.0006 | KL=0.0067 | Con=9.5449 | Total=0.0072 | ValF1@0.5=0.6488
+Ep 290 | Focal=0.0005 | KL=0.0065 | Con=9.5568 | Total=0.0070 | ValF1@0.5=0.5937
+Ep 300 | Focal=0.0005 | KL=0.0066 | Con=9.5600 | Total=0.0071 | ValF1@0.5=0.6415
+Ep 310 | Focal=0.0004 | KL=0.0061 | Con=9.5509 | Total=0.0065 | ValF1@0.5=0.6652
+Ep 320 | Focal=0.0005 | KL=0.0062 | Con=9.5570 | Total=0.0066 | ValF1@0.5=0.6039
+Ep 330 | Focal=0.0004 | KL=0.0061 | Con=9.5543 | Total=0.0066 | ValF1@0.5=0.6806
+Ep 340 | Focal=0.0004 | KL=0.0059 | Con=9.5574 | Total=0.0064 | ValF1@0.5=0.5511
+Ep 350 | Focal=0.0004 | KL=0.0060 | Con=9.5674 | Total=0.0064 | ValF1@0.5=0.6349
+Ep 360 | Focal=0.0004 | KL=0.0059 | Con=9.5655 | Total=0.0063 | ValF1@0.5=0.7581
+Ep 370 | Focal=0.0004 | KL=0.0059 | Con=9.5632 | Total=0.0063 | ValF1@0.5=0.7388
+Ep 380 | Focal=0.0004 | KL=0.0060 | Con=9.5737 | Total=0.0064 | ValF1@0.5=0.6726
+Ep 390 | Focal=0.0004 | KL=0.0059 | Con=9.5694 | Total=0.0063 | ValF1@0.5=0.5937
+Ep 400 | Focal=0.0004 | KL=0.0058 | Con=9.5782 | Total=0.0062 | ValF1@0.5=0.6349
+
+[OK] Load best model by ValF1@0.5=0.7581
+
+[VAL] best threshold=0.500, best macroF1=0.7581
+
+================ TRAIN ================
+Threshold: 0.500
+Accuracy : 0.9953
+Macro-F1 : 0.7835 (Class0: 0.9976, Class1: 0.5694)
+AUC      : 0.9926
+MCC      : 0.5727
+G-Mean   : 0.8119
+Sensitivity: 0.6613
+Specificity: 0.9969
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9984    0.9969    0.9976     13123
+           1     0.5000    0.6613    0.5694        62
+
+    accuracy                         0.9953     13185
+   macro avg     0.7492    0.8291    0.7835     13185
+weighted avg     0.9961    0.9953    0.9956     13185
+
+
+================ VAL ================
+Threshold: 0.500
+Accuracy : 0.9954
+Macro-F1 : 0.7581 (Class0: 0.9977, Class1: 0.5185)
+AUC      : 0.9612
+MCC      : 0.5255
+G-Mean   : 0.6610
+Sensitivity: 0.4375
+Specificity: 0.9986
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9968    0.9986    0.9977      2810
+           1     0.6364    0.4375    0.5185        16
+
+    accuracy                         0.9954      2826
+   macro avg     0.8166    0.7180    0.7581      2826
+weighted avg     0.9948    0.9954    0.9950      2826
+
+
+================ TEST ================
+Threshold: 0.500
+Accuracy : 0.9912
+Macro-F1 : 0.5348 (Class0: 0.9956, Class1: 0.0741)
+AUC      : 0.9322
+MCC      : 0.0724
+G-Mean   : 0.3153
+Sensitivity: 0.1000
+Specificity: 0.9943
+Classification report:
+              precision    recall  f1-score   support
+
+           0     0.9968    0.9943    0.9956      2815
+           1     0.0588    0.1000    0.0741        10
+
+    accuracy                         0.9912      2825
+   macro avg     0.5278    0.5472    0.5348      2825
+weighted avg     0.9935    0.9912    0.9923      2825
+
+
+================================================================================
+实验结果统计 (平均值 ± 标准差 | 最小值 ~ 最大值)
+================================================================================
+
+[TRAIN SET]
+Metric          Mean ± Std                Min ~ Max                
+------------------------------------------------------------
+accuracy        0.9954 ± 0.0011    0.9929 ~ 0.9973
+macro_f1        0.7781 ± 0.0259    0.7336 ~ 0.8262
+f1_class0       0.9977 ± 0.0006    0.9964 ~ 0.9986
+f1_class1       0.5585 ± 0.0513    0.4696 ~ 0.6538
+auc             0.9918 ± 0.0021    0.9860 ~ 0.9955
+mcc             0.5660 ± 0.0496    0.4687 ~ 0.6650
+gmean           0.7815 ± 0.0675    0.5955 ~ 0.8780
+
+[VAL SET]
+Metric          Mean ± Std                Min ~ Max                
+------------------------------------------------------------
+accuracy        0.9947 ± 0.0010    0.9929 ~ 0.9965
+macro_f1        0.7319 ± 0.0235    0.6919 ~ 0.7790
+f1_class0       0.9973 ± 0.0005    0.9964 ~ 0.9982
+f1_class1       0.4665 ± 0.0466    0.3871 ~ 0.5600
+auc             0.9599 ± 0.0045    0.9456 ~ 0.9665
+mcc             0.4769 ± 0.0564    0.3839 ~ 0.6113
+gmean           0.6340 ± 0.0371    0.5587 ~ 0.7060
+
+[TEST SET]
+Metric          Mean ± Std                Min ~ Max                
+------------------------------------------------------------
+accuracy        0.9922 ± 0.0020    0.9890 ~ 0.9961
+macro_f1        0.5354 ± 0.0353    0.4979 ~ 0.6289
+f1_class0       0.9961 ± 0.0010    0.9945 ~ 0.9980
+f1_class1       0.0747 ± 0.0710    0.0000 ~ 0.2609
+auc             0.9384 ± 0.0083    0.9148 ~ 0.9508
+mcc             0.0749 ± 0.0742    -0.0042 ~ 0.2601
+gmean           0.2479 ± 0.2031    0.0000 ~ 0.5467
+
+================================================================================
+n 次实验完成！
+================================================================================
