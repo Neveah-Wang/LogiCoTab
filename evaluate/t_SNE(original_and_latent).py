@@ -115,13 +115,13 @@ def plot_tsne_comparison(original_data, latent_data, labels, title_suffix=""):
         hue=labels,                 # 按标签着色
         palette=["red", "blue"],    # 颜色映射：标签0=红色，标签1=蓝色
         ax=ax1,                     # 绘制在第一个坐标轴上
-        alpha=0.6,                  # 0~1：透明~完全不透明
-        s=3,                        # 点的大小为5
+        alpha=alpha[raw_config['dataname']],                  # 0~1：透明~完全不透明
+        s=s[raw_config['dataname']],                        # 点的大小为5
         legend="full",              # 显示完整图例
         edgecolors='none',          # 去掉点的边框颜色
         linewidths=0,               # 边框线宽为0
     )
-    ax1.set_title(f"Original data t-SNE{title_suffix}", fontsize=14)
+    ax1.set_title(f"Original data t-SNE{title_suffix}", fontsize=24)
     ax1.set_xlabel("t-SNE x")
     ax1.set_ylabel("t-SNE y")
     ax1.legend()
@@ -133,26 +133,27 @@ def plot_tsne_comparison(original_data, latent_data, labels, title_suffix=""):
         hue=labels,
         palette=["red", "blue"],
         ax=ax2,
-        alpha=0.6,
-        s=3,
+        alpha=alpha[raw_config['dataname']],          # adult 0.6  magic 0.8  shopper 0.8  bean 0.8  churn 1  obesity 1    mammography 1   yeast_me2 1   page 0.8
+        s=s[raw_config['dataname']],              # adult 2    magic 2    shopper 2    bean 2    churn 2  obesity 6    mammography 2   yeast_me2 8  page 4
         legend="full",
         edgecolors='none',
         linewidths=0,
     )
-    ax2.set_title(f"VAE latent data t-SNE {title_suffix}", fontsize=14)
+    ax2.set_title(f"VAE latent data t-SNE {title_suffix}", fontsize=24)
     ax2.set_xlabel("t-SNE x")
     ax2.set_ylabel("t-SNE y")
     ax2.legend()
 
     plt.tight_layout()
     plt.savefig(f"D:\Study\自学\表格数据生成\LogiCoTab-vae\evaluate/t-SNE_LogicalVAE/tsne_{raw_config['dataname']}.pdf", format='pdf', dpi=300, bbox_inches="tight")
+    # plt.savefig(f"D:\Study\自学\表格数据生成\LogiCoTab-vae\evaluate/t-SNE_LogicalVAE/tsne_{raw_config['dataname']}.png", format='png', dpi=300, bbox_inches="tight")
     plt.show()
 
 
 if __name__ == "__main__":
-    raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/mammography\CoTable\config.toml")
+    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/mammography\CoTable\config.toml")
     # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/winequality\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/yeast_me2\CoTable\config.toml")
+    raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/yeast_me2\CoTable\config.toml")
     # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/obesity\CoTable\config.toml")
     # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/bean\CoTable\config.toml")
     # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp/page\CoTable\config.toml")
@@ -160,11 +161,35 @@ if __name__ == "__main__":
     # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/LogiCoTab-vae\exp/adult\CoTable\config.toml")
     # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/LogiCoTab-vae\exp/churn\CoTable\config.toml")
     # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/LogiCoTab-vae\exp/buddy\CoTable\config.toml")
-    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/LogiCoTab-vae\exp/pageblocks\CoTable\config.toml")
+    # raw_config = lib.util.load_config("D:\Study\自学\表格数据生成/LogiCoTab-vae\exp/shopper\CoTable\config.toml")
     # parser = argparse.ArgumentParser()
     # parser.add_argument('--config', metavar='FILE')
     # args = parser.parse_args()
     # raw_config = lib.util.load_config(args.config)
+
+    alpha = {
+        'adult': 0.6,
+        'magic': 0.8,
+        'shopper': 0.8,
+        'bean': 0.8,
+        'churn': 1,
+        'obesity': 1,
+        'mammography': 1,
+        'yeast_me2': 1,
+        'page': 0.8
+    }
+
+    s = {
+        'adult': 2,
+        'magic': 2,
+        'shopper': 2,
+        'bean': 2,
+        'churn': 2,
+        'obesity': 6,
+        'mammography': 2,
+        'yeast_me2': 8,
+        'page': 4
+    }
 
     # ----------- Step1: 准备数据------------
     real_data_path = raw_config['real_data_path']
@@ -208,22 +233,6 @@ if __name__ == "__main__":
     # ----------- Step2: 绘制t-SNE对比图 ------------
     plot_tsne_comparison(original_data, latent_data, labels, title_suffix="")
 
-    # ----------- Step3: 计算量化指标 ------------
-    metrics_original = calculate_metrics(original_data, labels)
-    metrics_latent = calculate_metrics(latent_data, labels)
-
-    # 打印量化指标对比
-    print("=" * 50)
-    print("原始数据量化指标：")
-    for k, v in metrics_original.items():
-        print(f"{k}: {v:.4f}")
-    print("-" * 50)
-    print("VAE隐空间数据量化指标：")
-    for k, v in metrics_latent.items():
-        print(f"{k}: {v:.4f}")
-    print("=" * 50)
-
-    plot_metrics_comparison(metrics_original, metrics_latent)
 
 """
 python "evaluate/t-SNE(original and latent).py" --config D:\Study\自学\表格数据生成\LogiCoTab-vae\exp\churn\CoTable\config.toml
