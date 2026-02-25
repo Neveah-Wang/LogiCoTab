@@ -1,0 +1,187 @@
+
+-------------------- FRAME, Dataset:churn (Average over seeds) --------------------
+ACC: 0.7959
+AUC: 0.7207
+MCC: 0.0257
+G-mean: 0.0771
+F1 (macro): 0.4606
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8007
+  Recall:    0.9913
+  F1-score:  0.8858
+Class 1:
+  Precision: 0.2212
+  Recall:    0.0223
+  F1-score:  0.0354
+
+-------------------- FRAME, Dataset:adult (Average over seeds) --------------------
+ACC: 0.8259
+AUC: 0.8606
+MCC: 0.4727
+G-mean: 0.6303
+F1 (macro): 0.7123
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8406
+  Recall:    0.9529
+  F1-score:  0.8926
+Class 1:
+  Precision: 0.7625
+  Recall:    0.4254
+  F1-score:  0.5320
+
+-------------------- FRAME, Dataset:shopper (Average over seeds) --------------------
+ACC: 0.9016
+AUC: 0.9090
+MCC: 0.5695
+G-mean: 0.7019
+F1 (macro): 0.7757
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9177
+  Recall:    0.9713
+  F1-score:  0.9437
+Class 1:
+  Precision: 0.7601
+  Recall:    0.5081
+  F1-score:  0.6077
+
+-------------------- FRAME, Dataset:magic (Average over seeds) --------------------
+ACC: 0.8685
+AUC: 0.9249
+MCC: 0.7099
+G-mean: 0.8406
+F1 (macro): 0.8532
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8743
+  Recall:    0.9286
+  F1-score:  0.9006
+Class 1:
+  Precision: 0.8564
+  Recall:    0.7610
+  F1-score:  0.8058
+
+-------------------- FRAME, Dataset:bean (Average over seeds) --------------------
+ACC: 0.9999
+AUC: 1.0000
+MCC: 0.9993
+G-mean: 1.0000
+F1 (macro): 0.9996
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 1.0000
+  Recall:    0.9999
+  F1-score:  1.0000
+Class 1:
+  Precision: 0.9986
+  Recall:    1.0000
+  F1-score:  0.9993
+
+-------------------- FRAME, Dataset:winequality (Average over seeds) --------------------
+ACC: 0.9693
+AUC: 0.7442
+MCC: 0.2100
+G-mean: 0.2561
+F1 (macro): 0.5533
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9703
+  Recall:    0.9989
+  F1-score:  0.9844
+Class 1:
+  Precision: 0.7267
+  Recall:    0.0677
+  F1-score:  0.1221
+
+-------------------- FRAME, Dataset:obesity (Average over seeds) --------------------
+ACC: 0.9401
+AUC: 0.9785
+MCC: 0.7782
+G-mean: 0.8742
+F1 (macro): 0.8885
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9588
+  Recall:    0.9701
+  F1-score:  0.9643
+Class 1:
+  Precision: 0.8402
+  Recall:    0.7886
+  F1-score:  0.8126
+
+-------------------- FRAME, Dataset:yeast_me2 (Average over seeds) --------------------
+ACC: 0.9628
+AUC: 0.7954
+MCC: 0.2222
+G-mean: 0.3525
+F1 (macro): 0.5877
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9683
+  Recall:    0.9940
+  F1-score:  0.9809
+Class 1:
+  Precision: 0.4500
+  Recall:    0.1250
+  F1-score:  0.1945
+
+-------------------- FRAME, Dataset:page (Average over seeds) --------------------
+ACC: 0.9957
+AUC: 0.9178
+MCC: 0.6124
+G-mean: 0.6930
+F1 (macro): 0.7953
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9966
+  Recall:    0.9990
+  F1-score:  0.9978
+Class 1:
+  Precision: 0.7750
+  Recall:    0.5000
+  F1-score:  0.5929
+
+-------------------- FRAME, Dataset:buddy (Average over seeds) --------------------
+ACC: 0.9936
+AUC: 0.9032
+MCC: 0.1676
+G-mean: 0.2852
+F1 (macro): 0.5636
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9948
+  Recall:    0.9988
+  F1-score:  0.9968
+Class 1:
+  Precision: 0.3829
+  Recall:    0.0875
+  F1-score:  0.1305
+
+-------------------- FRAME, Dataset:mammography (Average over seeds) --------------------
+ACC: 0.9830
+AUC: 0.9386
+MCC: 0.5004
+G-mean: 0.6260
+F1 (macro): 0.7412
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9872
+  Recall:    0.9955
+  F1-score:  0.9913
+Class 1:
+  Precision: 0.6583
+  Recall:    0.3943
+  F1-score:  0.4910

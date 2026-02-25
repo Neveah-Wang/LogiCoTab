@@ -58,6 +58,15 @@ def main(raw_config):
         log_file="eval_average.log"
     )
 
+    # 求最大
+    avg_results = {k: np.max(v) for k, v in all_results.items()}
+
+    write_avg_results_to_file(
+        avg_results,
+        help_str=f"XGBoost + gbtree, Dataset:{dataname}",
+        log_file="eval_max.log"
+    )
+
 if __name__ == '__main__':
     raw_config_list = []
     raw_config_list.append(lib.util.load_config("D:\Study\自学\表格数据生成\LogiCoTab-vae\exp\churn\CoTable\config.toml"))

@@ -1,0 +1,187 @@
+
+-------------------- AsymBoost + DecisionTree, Dataset:churn (Average over seeds) --------------------
+ACC: 0.7963
+AUC: 0.7088
+MCC: 0.3663
+G-mean: 0.6558
+F1 (macro): 0.6832
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8720
+  Recall:    0.8731
+  F1-score:  0.8725
+Class 1:
+  Precision: 0.4951
+  Recall:    0.4926
+  F1-score:  0.4938
+
+-------------------- AsymBoost + DecisionTree, Dataset:adult (Average over seeds) --------------------
+ACC: 0.8150
+AUC: 0.8219
+MCC: 0.4969
+G-mean: 0.7391
+F1 (macro): 0.7484
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8801
+  Recall:    0.8757
+  F1-score:  0.8779
+Class 1:
+  Precision: 0.6140
+  Recall:    0.6239
+  F1-score:  0.6189
+
+-------------------- AsymBoost + DecisionTree, Dataset:shopper (Average over seeds) --------------------
+ACC: 0.8646
+AUC: 0.7764
+MCC: 0.4828
+G-mean: 0.7274
+F1 (macro): 0.7412
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9245
+  Recall:    0.9154
+  F1-score:  0.9199
+Class 1:
+  Precision: 0.5479
+  Recall:    0.5780
+  F1-score:  0.5625
+
+-------------------- AsymBoost + DecisionTree, Dataset:magic (Average over seeds) --------------------
+ACC: 0.8270
+AUC: 0.8370
+MCC: 0.6263
+G-mean: 0.8139
+F1 (macro): 0.8131
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8710
+  Recall:    0.8574
+  F1-score:  0.8642
+Class 1:
+  Precision: 0.7517
+  Recall:    0.7726
+  F1-score:  0.7620
+
+-------------------- AsymBoost + DecisionTree, Dataset:bean (Average over seeds) --------------------
+ACC: 1.0000
+AUC: 1.0000
+MCC: 1.0000
+G-mean: 1.0000
+F1 (macro): 1.0000
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 1.0000
+  Recall:    1.0000
+  F1-score:  1.0000
+Class 1:
+  Precision: 1.0000
+  Recall:    1.0000
+  F1-score:  1.0000
+
+-------------------- AsymBoost + DecisionTree, Dataset:winequality (Average over seeds) --------------------
+ACC: 0.9496
+AUC: 0.6081
+MCC: 0.2109
+G-mean: 0.4881
+F1 (macro): 0.6053
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9752
+  Recall:    0.9728
+  F1-score:  0.9740
+Class 1:
+  Precision: 0.2291
+  Recall:    0.2452
+  F1-score:  0.2366
+
+-------------------- AsymBoost + DecisionTree, Dataset:obesity (Average over seeds) --------------------
+ACC: 0.9528
+AUC: 0.9316
+MCC: 0.8228
+G-mean: 0.8868
+F1 (macro): 0.9103
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9613
+  Recall:    0.9831
+  F1-score:  0.9721
+Class 1:
+  Precision: 0.9032
+  Recall:    0.8000
+  F1-score:  0.8485
+
+-------------------- AsymBoost + DecisionTree, Dataset:yeast_me2 (Average over seeds) --------------------
+ACC: 0.9475
+AUC: 0.5497
+MCC: 0.1223
+G-mean: 0.3497
+F1 (macro): 0.5596
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9678
+  Recall:    0.9781
+  F1-score:  0.9729
+Class 1:
+  Precision: 0.1776
+  Recall:    0.1250
+  F1-score:  0.1463
+
+-------------------- AsymBoost + DecisionTree, Dataset:page (Average over seeds) --------------------
+ACC: 0.9972
+AUC: 0.9987
+MCC: 0.7959
+G-mean: 0.9042
+F1 (macro): 0.8975
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9988
+  Recall:    0.9984
+  F1-score:  0.9986
+Class 1:
+  Precision: 0.7767
+  Recall:    0.8200
+  F1-score:  0.7964
+
+-------------------- AsymBoost + DecisionTree, Dataset:buddy (Average over seeds) --------------------
+ACC: 0.9925
+AUC: 0.6848
+MCC: 0.2726
+G-mean: 0.4992
+F1 (macro): 0.6356
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9957
+  Recall:    0.9968
+  F1-score:  0.9962
+Class 1:
+  Precision: 0.3055
+  Recall:    0.2500
+  F1-score:  0.2749
+
+-------------------- AsymBoost + DecisionTree, Dataset:mammography (Average over seeds) --------------------
+ACC: 0.9805
+AUC: 0.6367
+MCC: 0.4529
+G-mean: 0.6234
+F1 (macro): 0.7230
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9871
+  Recall:    0.9931
+  F1-score:  0.9901
+Class 1:
+  Precision: 0.5468
+  Recall:    0.3914
+  F1-score:  0.4559

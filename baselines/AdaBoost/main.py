@@ -1,9 +1,9 @@
 # 加入下面这四行，是为了解决无法找到自定义包路径的问题
-import os
-import sys
-pythonpath = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
-sys.path.insert(0, pythonpath)
-sys.path.append(r'D:\Study\自学\表格数据生成\LogiCoTab-vae')
+# import os
+# import sys
+# pythonpath = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+# sys.path.insert(0, pythonpath)
+# sys.path.append(r'D:\Study\自学\表格数据生成\LogiCoTab-LP-GAT')
 
 import lib
 from lib.make_dataset import make_dataset_for_evaluation
@@ -14,10 +14,6 @@ import pandas as pd
 import numpy as np
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.datasets import make_classification
-from sklearn.metrics import classification_report, f1_score, roc_auc_score, matthews_corrcoef, confusion_matrix
-from catboost import CatBoostClassifier
-from contextlib import redirect_stdout
 from collections import defaultdict
 
 

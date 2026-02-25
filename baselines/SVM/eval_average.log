@@ -1,0 +1,187 @@
+
+-------------------- SVM (RBF Kernel), Dataset:churn (Average over seeds) --------------------
+ACC: 0.8417
+AUC: 0.8090
+MCC: 0.4183
+G-mean: 0.4800
+F1 (macro): 0.6401
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8368
+  Recall:    0.9958
+  F1-score:  0.9094
+Class 1:
+  Precision: 0.9333
+  Recall:    0.2314
+  F1-score:  0.3709
+
+-------------------- SVM (RBF Kernel), Dataset:adult (Average over seeds) --------------------
+ACC: 0.8044
+AUC: 0.8467
+MCC: 0.3797
+G-mean: 0.5463
+F1 (macro): 0.6575
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8147
+  Recall:    0.9610
+  F1-score:  0.8818
+Class 1:
+  Precision: 0.7162
+  Recall:    0.3106
+  F1-score:  0.4333
+
+-------------------- SVM (RBF Kernel), Dataset:shopper (Average over seeds) --------------------
+ACC: 0.9006
+AUC: 0.8617
+MCC: 0.5653
+G-mean: 0.7015
+F1 (macro): 0.7744
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9174
+  Recall:    0.9703
+  F1-score:  0.9431
+Class 1:
+  Precision: 0.7518
+  Recall:    0.5072
+  F1-score:  0.6057
+
+-------------------- SVM (RBF Kernel), Dataset:magic (Average over seeds) --------------------
+ACC: 0.8815
+AUC: 0.9356
+MCC: 0.7393
+G-mean: 0.8461
+F1 (macro): 0.8655
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8723
+  Recall:    0.9552
+  F1-score:  0.9118
+Class 1:
+  Precision: 0.9033
+  Recall:    0.7495
+  F1-score:  0.8193
+
+-------------------- SVM (RBF Kernel), Dataset:bean (Average over seeds) --------------------
+ACC: 1.0000
+AUC: 1.0000
+MCC: 1.0000
+G-mean: 1.0000
+F1 (macro): 1.0000
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 1.0000
+  Recall:    1.0000
+  F1-score:  1.0000
+Class 1:
+  Precision: 1.0000
+  Recall:    1.0000
+  F1-score:  1.0000
+
+-------------------- SVM (RBF Kernel), Dataset:winequality (Average over seeds) --------------------
+ACC: 0.9672
+AUC: 0.7283
+MCC: -0.0058
+G-mean: 0.0000
+F1 (macro): 0.4917
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9682
+  Recall:    0.9989
+  F1-score:  0.9833
+Class 1:
+  Precision: 0.0000
+  Recall:    0.0000
+  F1-score:  0.0000
+
+-------------------- SVM (RBF Kernel), Dataset:obesity (Average over seeds) --------------------
+ACC: 0.8585
+AUC: 0.8883
+MCC: 0.3444
+G-mean: 0.4129
+F1 (macro): 0.6036
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8585
+  Recall:    0.9944
+  F1-score:  0.9215
+Class 1:
+  Precision: 0.8571
+  Recall:    0.1714
+  F1-score:  0.2857
+
+-------------------- SVM (RBF Kernel), Dataset:yeast_me2 (Average over seeds) --------------------
+ACC: 0.9641
+AUC: 0.8721
+MCC: 0.0000
+G-mean: 0.0000
+F1 (macro): 0.4909
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9641
+  Recall:    1.0000
+  F1-score:  0.9817
+Class 1:
+  Precision: 0.0000
+  Recall:    0.0000
+  F1-score:  0.0000
+
+-------------------- SVM (RBF Kernel), Dataset:page (Average over seeds) --------------------
+ACC: 0.9946
+AUC: 0.9989
+MCC: 0.5139
+G-mean: 0.6320
+F1 (macro): 0.7486
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9959
+  Recall:    0.9986
+  F1-score:  0.9973
+Class 1:
+  Precision: 0.6667
+  Recall:    0.4000
+  F1-score:  0.5000
+
+-------------------- SVM (RBF Kernel), Dataset:buddy (Average over seeds) --------------------
+ACC: 0.9943
+AUC: 0.9243
+MCC: 0.0000
+G-mean: 0.0000
+F1 (macro): 0.4986
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9943
+  Recall:    1.0000
+  F1-score:  0.9972
+Class 1:
+  Precision: 0.0000
+  Recall:    0.0000
+  F1-score:  0.0000
+
+-------------------- SVM (RBF Kernel), Dataset:mammography (Average over seeds) --------------------
+ACC: 0.9833
+AUC: 0.8137
+MCC: 0.4735
+G-mean: 0.5599
+F1 (macro): 0.7158
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9856
+  Recall:    0.9976
+  F1-score:  0.9915
+Class 1:
+  Precision: 0.7333
+  Recall:    0.3143
+  F1-score:  0.4400

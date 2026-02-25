@@ -1,0 +1,374 @@
+
+-------------------- COAK, Dataset:churn (Average over seeds) --------------------
+ACC: 0.8067
+AUC: 0.7559
+MCC: 0.2511
+G-mean: 0.4450
+F1 (macro): 0.5945
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8270
+  Recall:    0.9582
+  F1-score:  0.8878
+Class 1:
+  Precision: 0.5556
+  Recall:    0.2066
+  F1-score:  0.3012
+
+-------------------- COAK, Dataset:adult (Average over seeds) --------------------
+ACC: 0.6017
+AUC: 0.5037
+MCC: -0.0334
+G-mean: 0.4242
+F1 (macro): 0.4824
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.7504
+  Recall:    0.7124
+  F1-score:  0.7309
+Class 1:
+  Precision: 0.2178
+  Recall:    0.2526
+  F1-score:  0.2339
+
+-------------------- COAK, Dataset:shopper (Average over seeds) --------------------
+ACC: 0.8912
+AUC: 0.9042
+MCC: 0.6386
+G-mean: 0.8580
+F1 (macro): 0.8132
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9647
+  Recall:    0.9050
+  F1-score:  0.9339
+Class 1:
+  Precision: 0.6028
+  Recall:    0.8134
+  F1-score:  0.6925
+
+-------------------- COAK, Dataset:magic (Average over seeds) --------------------
+ACC: 0.8100
+AUC: 0.8830
+MCC: 0.5762
+G-mean: 0.7370
+F1 (macro): 0.7747
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.7995
+  Recall:    0.9393
+  F1-score:  0.8638
+Class 1:
+  Precision: 0.8419
+  Recall:    0.5783
+  F1-score:  0.6856
+
+-------------------- COAK, Dataset:bean (Average over seeds) --------------------
+ACC: 1.0000
+AUC: 1.0000
+MCC: 1.0000
+G-mean: 1.0000
+F1 (macro): 1.0000
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 1.0000
+  Recall:    1.0000
+  F1-score:  1.0000
+Class 1:
+  Precision: 1.0000
+  Recall:    1.0000
+  F1-score:  1.0000
+
+-------------------- COAK, Dataset:winequality (Average over seeds) --------------------
+ACC: 0.8738
+AUC: 0.7267
+MCC: 0.0682
+G-mean: 0.4496
+F1 (macro): 0.5172
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9724
+  Recall:    0.8951
+  F1-score:  0.9322
+Class 1:
+  Precision: 0.0660
+  Recall:    0.2258
+  F1-score:  0.1022
+
+-------------------- COAK, Dataset:obesity (Average over seeds) --------------------
+ACC: 0.8255
+AUC: 0.7858
+MCC: 0.2653
+G-mean: 0.5161
+F1 (macro): 0.6250
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8684
+  Recall:    0.9322
+  F1-score:  0.8992
+Class 1:
+  Precision: 0.4545
+  Recall:    0.2857
+  F1-score:  0.3509
+
+-------------------- COAK, Dataset:yeast_me2 (Average over seeds) --------------------
+ACC: 0.9507
+AUC: 0.8651
+MCC: -0.0225
+G-mean: 0.0000
+F1 (macro): 0.4874
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9636
+  Recall:    0.9860
+  F1-score:  0.9747
+Class 1:
+  Precision: 0.0000
+  Recall:    0.0000
+  F1-score:  0.0000
+
+-------------------- COAK, Dataset:page (Average over seeds) --------------------
+ACC: 0.9594
+AUC: 0.9954
+MCC: 0.3702
+G-mean: 0.9794
+F1 (macro): 0.6146
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 1.0000
+  Recall:    0.9591
+  F1-score:  0.9791
+Class 1:
+  Precision: 0.1429
+  Recall:    1.0000
+  F1-score:  0.2500
+
+-------------------- COAK, Dataset:buddy (Average over seeds) --------------------
+ACC: 0.7594
+AUC: 0.5727
+MCC: 0.0349
+G-mean: 0.5771
+F1 (macro): 0.4415
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9958
+  Recall:    0.7612
+  F1-score:  0.8628
+Class 1:
+  Precision: 0.0103
+  Recall:    0.4375
+  F1-score:  0.0202
+
+-------------------- COAK, Dataset:mammography (Average over seeds) --------------------
+ACC: 0.7932
+AUC: 0.8632
+MCC: 0.1769
+G-mean: 0.7535
+F1 (macro): 0.5043
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9924
+  Recall:    0.7949
+  F1-score:  0.8827
+Class 1:
+  Precision: 0.0691
+  Recall:    0.7143
+  F1-score:  0.1259
+
+-------------------- COAK, Dataset:churn (Average over seeds) --------------------
+ACC: 0.8067
+AUC: 0.7603
+MCC: 0.2628
+G-mean: 0.4673
+F1 (macro): 0.6054
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8303
+  Recall:    0.9520
+  F1-score:  0.8875
+Class 1:
+  Precision: 0.5526
+  Recall:    0.2293
+  F1-score:  0.3236
+
+-------------------- COAK, Dataset:adult (Average over seeds) --------------------
+ACC: 0.5653
+AUC: 0.5822
+MCC: 0.1192
+G-mean: 0.5334
+F1 (macro): 0.5118
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8002
+  Recall:    0.5947
+  F1-score:  0.6757
+Class 1:
+  Precision: 0.3017
+  Recall:    0.4598
+  F1-score:  0.3709
+
+-------------------- COAK, Dataset:shopper (Average over seeds) --------------------
+ACC: 0.8912
+AUC: 0.9032
+MCC: 0.6386
+G-mean: 0.8580
+F1 (macro): 0.8132
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9647
+  Recall:    0.9050
+  F1-score:  0.9339
+Class 1:
+  Precision: 0.6028
+  Recall:    0.8134
+  F1-score:  0.6925
+
+-------------------- COAK, Dataset:magic (Average over seeds) --------------------
+ACC: 0.8126
+AUC: 0.8822
+MCC: 0.5820
+G-mean: 0.7482
+F1 (macro): 0.7814
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8070
+  Recall:    0.9322
+  F1-score:  0.8649
+Class 1:
+  Precision: 0.8317
+  Recall:    0.6013
+  F1-score:  0.6980
+
+-------------------- COAK, Dataset:bean (Average over seeds) --------------------
+ACC: 0.9995
+AUC: 1.0000
+MCC: 0.9928
+G-mean: 0.9997
+F1 (macro): 0.9964
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 1.0000
+  Recall:    0.9994
+  F1-score:  0.9997
+Class 1:
+  Precision: 0.9861
+  Recall:    1.0000
+  F1-score:  0.9930
+
+-------------------- COAK, Dataset:winequality (Average over seeds) --------------------
+ACC: 0.8959
+AUC: 0.7378
+MCC: 0.0495
+G-mean: 0.3839
+F1 (macro): 0.5172
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9707
+  Recall:    0.9200
+  F1-score:  0.9448
+Class 1:
+  Precision: 0.0621
+  Recall:    0.1613
+  F1-score:  0.0877
+
+-------------------- COAK, Dataset:obesity (Average over seeds) --------------------
+ACC: 0.8255
+AUC: 0.7840
+MCC: 0.2593
+G-mean: 0.5050
+F1 (macro): 0.6228
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.8672
+  Recall:    0.9322
+  F1-score:  0.8992
+Class 1:
+  Precision: 0.4545
+  Recall:    0.2714
+  F1-score:  0.3455
+
+-------------------- COAK, Dataset:yeast_me2 (Average over seeds) --------------------
+ACC: 0.9417
+AUC: 0.8846
+MCC: 0.1912
+G-mean: 0.4906
+F1 (macro): 0.5948
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9718
+  Recall:    0.9698
+  F1-score:  0.9698
+Class 1:
+  Precision: 0.2000
+  Recall:    0.2500
+  F1-score:  0.2222
+
+-------------------- COAK, Dataset:page (Average over seeds) --------------------
+ACC: 0.9520
+AUC: 0.9955
+MCC: 0.3428
+G-mean: 0.9755
+F1 (macro): 0.5975
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 1.0000
+  Recall:    0.9516
+  F1-score:  0.9752
+Class 1:
+  Precision: 0.1235
+  Recall:    1.0000
+  F1-score:  0.2198
+
+-------------------- COAK, Dataset:buddy (Average over seeds) --------------------
+ACC: 0.7558
+AUC: 0.5443
+MCC: 0.0102
+G-mean: 0.4686
+F1 (macro): 0.4369
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9947
+  Recall:    0.7582
+  F1-score:  0.8605
+Class 1:
+  Precision: 0.0071
+  Recall:    0.3125
+  F1-score:  0.0139
+
+-------------------- COAK, Dataset:mammography (Average over seeds) --------------------
+ACC: 0.7959
+AUC: 0.8580
+MCC: 0.1783
+G-mean: 0.7545
+F1 (macro): 0.5056
+
+Class-wise metrics (averaged):
+Class 0:
+  Precision: 0.9924
+  Recall:    0.7979
+  F1-score:  0.8845
+Class 1:
+  Precision: 0.0697
+  Recall:    0.7143
+  F1-score:  0.1271

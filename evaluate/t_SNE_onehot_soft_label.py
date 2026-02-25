@@ -1,14 +1,38 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
+from matplotlib.colors import LinearSegmentedColormap
 import warnings
 
 warnings.filterwarnings('ignore')
 
+alpha = {
+    'adult': 0.6,
+    'magic': 0.8,
+    'shopper': 0.8,
+    'bean': 0.8,
+    'churn': 1,
+    'obesity': 1,
+    'mammography': 1,
+    'yeast_me2': 1,
+    'page': 0.8,
+    'buddy': 0.8
+}
 
+s = {
+    'adult': 2,
+    'magic': 2,
+    'shopper': 2,
+    'bean': 2,
+    'churn': 2,
+    'obesity': 6,
+    'mammography': 2,
+    'yeast_me2': 8,
+    'page': 4,
+    'buddy': 2
+}
 
-
-def visualize_hard_vs_soft_labels(Z, y_hard, y_soft, title_prefix="", save_path=None):
+def visualize_hard_vs_soft_labels(Z, y_hard, y_soft, raw_config, save_path=True):
     """
     使用t-SNE可视化硬标签和软标签的区别
     """
@@ -28,29 +52,50 @@ def visualize_hard_vs_soft_labels(Z, y_hard, y_soft, title_prefix="", save_path=
     for label in [0, 1]:
         mask = y_hard == label
         ax1.scatter(Z_2d[mask, 0], Z_2d[mask, 1],
-                    c='red' if label == 1 else 'blue',
-                    label=f'Class {label} (n={mask.sum()})',
-                    alpha=0.6,
-                    s=3,
+                    c='red' if label == 0 else 'blue',
+                    # label=f'{label} (n={mask.sum()})',
+                    label=f'{label}',
+                    alpha=alpha[raw_config['dataname']],
+                    s=s[raw_config['dataname']],
                     edgecolors='none',
                     linewidth=0)
 
-    ax1.set_title(f'{title_prefix}Hard Labels (Binary)', fontsize=14, fontweight='bold')
-    ax1.set_xlabel('t-SNE Component 1', fontsize=12)
-    ax1.set_ylabel('t-SNE Component 2', fontsize=12)
+    ax1.set_title(f'Hard Labels (Binary)', fontsize=24)
+    ax1.set_xlabel('t-SNE x', fontsize=12)
+    ax1.set_ylabel('t-SNE y', fontsize=12)
     ax1.legend(fontsize=10)
     ax1.grid(True, alpha=0.3)
 
     # ===== 右图: 软标签 (连续色谱) =====
     ax2 = axes[1]
 
+    # 定义两个区间的颜色
+    # 左半段 [0, 0.5]: 红 -> 粉
+    # 右半段 (0.5, 1]: 浅蓝 -> 蓝
+
+    # 构造颜色列表，按归一化位置指定
+    colors = [
+        (0.0, "red"),  # 0.0
+        (0.5, "pink"),  # 0.5 —— 左侧终点（粉色）
+        (0.5, "lightblue"),  # 0.5 —— 右侧起点（浅蓝），与上一行位置相同，形成“拼接”
+        (1.0, "blue")  # 1.0
+    ]
+
+    # 创建 colormap
+    custom_cmap = LinearSegmentedColormap.from_list(
+        "RedToBlue_no_white",
+        colors,
+        N=256  # 分辨率
+    )
+
     # 使用colormap显示软标签的连续性
     scatter = ax2.scatter(Z_2d[:, 0], Z_2d[:, 1],
                           c=y_soft,
-                          cmap='RdYlBu_r',  # 红(1) -> 黄(0.5) -> 蓝(0)
+                          # cmap='RdBu_r',  # 红(0) -> 白(0.5) -> 蓝(1)
+                          cmap=custom_cmap,  # 红(0) -> 粉(0.5) -> 浅蓝(0.5) -> 蓝(1)
                           vmin=0, vmax=1,
-                          alpha=0.6,
-                          s=3,
+                          alpha=alpha[raw_config['dataname']],
+                          s=s[raw_config['dataname']],
                           edgecolors='none',
                           linewidth=0)
 
@@ -58,16 +103,18 @@ def visualize_hard_vs_soft_labels(Z, y_hard, y_soft, title_prefix="", save_path=
     cbar = plt.colorbar(scatter, ax=ax2)
     cbar.set_label('Soft Label Probability', fontsize=12, rotation=270, labelpad=20)
 
-    ax2.set_title(f'{title_prefix}Soft Labels (Continuous)', fontsize=14, fontweight='bold')
-    ax2.set_xlabel('t-SNE Component 1', fontsize=12)
-    ax2.set_ylabel('t-SNE Component 2', fontsize=12)
+    ax2.set_title(f'Soft Labels (Continuous)', fontsize=24)
+    ax2.set_xlabel('t-SNE x', fontsize=12)
+    ax2.set_ylabel('t-SNE y', fontsize=12)
     ax2.grid(True, alpha=0.3)
 
     plt.tight_layout()
 
     if save_path:
-        plt.savefig(save_path, dpi=300, bbox_inches='tight')
-        print(f"图像已保存到: {save_path}")
+        plt.savefig(
+            f"D:\Study\自学\表格数据生成\LogiCoTab-LP-GAT\evaluate/t-SNE_LogicalVAE/tsne_{raw_config['dataname']}.pdf",
+            format='pdf', dpi=300, bbox_inches="tight")
+
 
     plt.show()
     plt.close()
